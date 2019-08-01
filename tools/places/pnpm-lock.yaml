@@ -1,0 +1,10 @@
+dependencies:
+  '@types/node': 12.6.8
+lockfileVersion: 5.1
+packages:
+  /@types/node/12.6.8:
+    dev: false
+    resolution:
+      integrity: sha512-aX+gFgA5GHcDi89KG5keey2zf0WfZk/HAQotEamsK2kbey+8yGKcson0hbK8E+v0NArlCJQCqMP161YhV6ZXLg==
+specifiers:
+  '@types/node': ^12.6.8
