@@ -1,0 +1,91 @@
+dependencies:
+  '@tsfun/option': 0.0.1
+  '@types/node': 12.6.8
+  advanced-map-initialized: 0.0.2
+  tslib: 1.10.0
+lockfileVersion: 5.1
+packages:
+  /@tsfun/option/0.0.1:
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.1
+      '@types/node': 11.13.18
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-o6vnNuR5gTM+fujbB948flvKN+a/6NIWS/toEzyzd114G8jLptM9uTsDJlf/ZtkbXpRawp9CJm4pRf8sEMib1w==
+  /@tsfun/prv-option-result-common/0.0.1:
+    dependencies:
+      '@types/node': 11.13.18
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-FI4Zcc3I4lal4cMdBpWp0O86Ep4G/o8Q7cD47qLXaLa5kom+6pYRO4+XYBjSLKK+2h6rGWd1IvILmmMyAGRN3g==
+  /@types/node/10.14.13:
+    dev: false
+    resolution:
+      integrity: sha512-yN/FNNW1UYsRR1wwAoyOwqvDuLDtVXnaJTZ898XIw/Q5cCaeVAlVwvsmXLX5PuiScBYwZsZU4JYSHB3TvfdwvQ==
+  /@types/node/11.13.18:
+    dev: false
+    resolution:
+      integrity: sha512-sMHdXLccscaxI+Hlzz58yLQue3lQyXP+6aQniDRi5oju3n0123kcjhicVGF20WF7cHiwJ2vxMbXc4skOclosoA==
+  /@types/node/12.6.8:
+    dev: false
+    resolution:
+      integrity: sha512-aX+gFgA5GHcDi89KG5keey2zf0WfZk/HAQotEamsK2kbey+8yGKcson0hbK8E+v0NArlCJQCqMP161YhV6ZXLg==
+  /advanced-map-base/0.0.2:
+    dependencies:
+      '@types/node': 10.14.13
+      advanced-map-types: 0.0.2
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-fj4I4dNaEnVl9bSKsMXtgyVo4+kgV04ScFyLjyIfdNWp1FnRsCzWHtZDGblgq/Nau/2EMegOqW+PDN9qKmGDIA==
+  /advanced-map-initialized/0.0.2:
+    dependencies:
+      '@types/node': 10.14.13
+      advanced-map-base: 0.0.2
+      advanced-map-types: 0.0.2
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6/yZylpOElrSpsZTPiMvpCsgnybX8JxYZX88EO2h+yNHYoqwRCojjNOifKSuoIFiWUb5mPFA0tlW7oTM8iOiQ==
+  /advanced-map-types/0.0.2:
+    dependencies:
+      '@types/node': 10.14.13
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6IJYPR2uFyt6W/R+1j70pG1M0KzkY9TpV0ySkJuhRAhOFxc2DZ3+0621eaivFoF5Yyc2+dQDwwpRUBwwa49iw==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /typescript-miscellaneous/0.1.1:
+    dependencies:
+      '@types/node': 10.14.13
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
+specifiers:
+  '@tsfun/option': ^0.0.1
+  '@types/node': ^12.6.8
+  advanced-map-initialized: 0.0.2
+  tslib: ^1.10.0

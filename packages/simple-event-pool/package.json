@@ -1,0 +1,21 @@
+{
+  "name": "@khai96x/simple-event-pool",
+  "version": "0.0.0",
+  "description": "Set up a simple event pool",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSXGitHub/personal-packages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSXGitHub/personal-packages/issues"
+  },
+  "dependencies": {
+    "@tsfun/option": "^0.0.1",
+    "advanced-map-initialized": "0.0.2",
+    "tslib": "^1.10.0",
+    "@types/node": "^12.6.8"
+  }
+}
