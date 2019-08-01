@@ -1,0 +1,5 @@
+dependencies:
+  '@khai96x/simple-event-pool': 'link:../../packages/simple-event-pool'
+lockfileVersion: 5.1
+specifiers:
+  '@khai96x/simple-event-pool': 'file:../../packages/simple-event-pool'
