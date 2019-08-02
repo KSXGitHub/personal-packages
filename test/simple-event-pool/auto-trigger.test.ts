@@ -26,7 +26,7 @@ describe('.createAutoTrigger', () => {
     clearInterval,
     delay: 20
   })
-    .createAutoTrigger('event' as 'event', check)
+    .createAutoTrigger('event', check)
     .set()
 
   it('calls check repeatedly', async () => {
