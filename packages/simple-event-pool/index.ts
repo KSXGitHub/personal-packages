@@ -77,7 +77,7 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
     return pool
   }
 
-  function createManualTrigger<ID> (_: ID) {
+  function createManualTrigger () {
     return pool
   }
 
