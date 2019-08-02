@@ -134,7 +134,6 @@ describe('.addListener', () => {
     const listeners = Array(3)
       .fill(undefined)
       .map(() => jest.fn(() => undefined))
-      .map(args2arr)
 
     const pool = createEventPool({
       setInterval,
@@ -152,27 +151,27 @@ describe('.addListener', () => {
 
         return none()
       })
-      .addListener(eventA, listeners[0][0] as any)
-      .addListener(eventB, listeners[1][0] as any)
-      .addListener(eventC, listeners[2][0] as any)
+      .addListener(eventA, listeners[0] as any)
+      .addListener(eventB, listeners[1] as any)
+      .addListener(eventC, listeners[2] as any)
       .set()
 
     describe('every event is called', () => {
-      for (const [fn, i] of listeners) {
+      listeners.forEach((fn, i) => {
         it(`listener #${i}`, async () => {
           await lock.promise
           expect(fn).toBeCalled()
         })
-      }
+      })
     })
 
     describe('every event is called with expected arguments', () => {
-      for (const [fn, i] of listeners) {
+      listeners.forEach((fn, i) => {
         it(`listener #${i}`, async () => {
           await lock.promise
           expect(fn).toBeCalledWith(infoArray[i])
         })
-      }
+      })
     })
   })
 })
