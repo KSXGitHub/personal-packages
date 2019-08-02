@@ -24,10 +24,10 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-FI4Zcc3I4lal4cMdBpWp0O86Ep4G/o8Q7cD47qLXaLa5kom+6pYRO4+XYBjSLKK+2h6rGWd1IvILmmMyAGRN3g==
-  /@types/node/10.14.13:
+  /@types/node/10.14.14:
     dev: false
     resolution:
-      integrity: sha512-yN/FNNW1UYsRR1wwAoyOwqvDuLDtVXnaJTZ898XIw/Q5cCaeVAlVwvsmXLX5PuiScBYwZsZU4JYSHB3TvfdwvQ==
+      integrity: sha512-xXD08vZsvpv4xptQXj1+ky22f7ZoKu5ZNI/4l+/BXG3X+XaeZsmaFbbTKuhSE3NjjvRuZFxFf9sQBMXIcZNFMQ==
   /@types/node/11.13.18:
     dev: false
     resolution:
@@ -38,7 +38,7 @@ packages:
       integrity: sha512-aX+gFgA5GHcDi89KG5keey2zf0WfZk/HAQotEamsK2kbey+8yGKcson0hbK8E+v0NArlCJQCqMP161YhV6ZXLg==
   /advanced-map-base/0.0.2:
     dependencies:
-      '@types/node': 10.14.13
+      '@types/node': 10.14.14
       advanced-map-types: 0.0.2
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
@@ -50,7 +50,7 @@ packages:
       integrity: sha512-fj4I4dNaEnVl9bSKsMXtgyVo4+kgV04ScFyLjyIfdNWp1FnRsCzWHtZDGblgq/Nau/2EMegOqW+PDN9qKmGDIA==
   /advanced-map-initialized/0.0.2:
     dependencies:
-      '@types/node': 10.14.13
+      '@types/node': 10.14.14
       advanced-map-base: 0.0.2
       advanced-map-types: 0.0.2
       tslib: 1.10.0
@@ -61,7 +61,7 @@ packages:
       integrity: sha512-L6/yZylpOElrSpsZTPiMvpCsgnybX8JxYZX88EO2h+yNHYoqwRCojjNOifKSuoIFiWUb5mPFA0tlW7oTM8iOiQ==
   /advanced-map-types/0.0.2:
     dependencies:
-      '@types/node': 10.14.13
+      '@types/node': 10.14.14
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     deprecated: Depends on wrong version of "convenient-typescript-utilities"
@@ -76,7 +76,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /typescript-miscellaneous/0.1.1:
     dependencies:
-      '@types/node': 10.14.13
+      '@types/node': 10.14.14
       tslib: 1.10.0
     dev: false
     engines:
@@ -87,5 +87,5 @@ packages:
 specifiers:
   '@tsfun/option': ^0.0.1
   '@types/node': ^12.6.8
-  advanced-map-initialized: 0.0.2
+  advanced-map-initialized: ^0.0.2
   tslib: ^1.10.0
