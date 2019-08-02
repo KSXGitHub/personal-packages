@@ -119,4 +119,60 @@ describe('.addListener', () => {
       expect(listener.mock.calls).toMatchSnapshot()
     })
   })
+
+  describe('with multiple events', () => {
+    const args2arr = <Args extends any[]> (...args: Args) => args
+    const eventA = Symbol('eventA')
+    const eventB = Symbol('eventB')
+    const eventC = Symbol('eventC')
+    const infoA = Symbol('infoA')
+    const infoB = Symbol('infoB')
+    const infoC = Symbol('infoC')
+    const infoArray = args2arr(infoA, infoB, infoC)
+    const lock = createControl()
+
+    const listeners = Array(3)
+      .fill(undefined)
+      .map(() => jest.fn(() => undefined))
+      .map(args2arr)
+
+    const pool = createEventPool({
+      setInterval,
+      clearInterval,
+      delay: 20
+    })
+      .createAutoTrigger(eventA, param => param.iterationCount % 2 === 0 ? some(infoA) : none())
+      .createAutoTrigger(eventB, param => param.iterationCount % 3 === 0 ? some(infoB) : none())
+      .createAutoTrigger(eventC, param => param.iterationCount % 4 === 0 ? some(infoC) : none())
+      .createAutoTrigger('stop', param => {
+        if (param.iterationCount > 2 * 3 * 4) {
+          pool.clear()
+          void lock.resolve(undefined)
+        }
+
+        return none()
+      })
+      .addListener(eventA, listeners[0][0] as any)
+      .addListener(eventB, listeners[1][0] as any)
+      .addListener(eventC, listeners[2][0] as any)
+      .set()
+
+    describe('every event is called', () => {
+      for (const [fn, i] of listeners) {
+        it(`listener #${i}`, async () => {
+          await lock.promise
+          expect(fn).toBeCalled()
+        })
+      }
+    })
+
+    describe('every event is called with expected arguments', () => {
+      for (const [fn, i] of listeners) {
+        it(`listener #${i}`, async () => {
+          await lock.promise
+          expect(fn).toBeCalledWith(infoArray[i])
+        })
+      }
+    })
+  })
 })
