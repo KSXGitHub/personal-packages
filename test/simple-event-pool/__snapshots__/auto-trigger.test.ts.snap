@@ -42,6 +42,58 @@ Array [
 ]
 `;
 
+exports[`.removeListener multiple events, one listener for each event listener that will be removed after some invocations runs for a while 1`] = `
+Array [
+  Array [
+    3,
+  ],
+  Array [
+    6,
+  ],
+]
+`;
+
+exports[`.removeListener multiple events, one listener for each event listener that will never be removed runs as long as the loop runs 1`] = `
+Array [
+  Array [
+    2,
+  ],
+  Array [
+    4,
+  ],
+  Array [
+    6,
+  ],
+  Array [
+    8,
+  ],
+  Array [
+    10,
+  ],
+  Array [
+    12,
+  ],
+  Array [
+    14,
+  ],
+  Array [
+    16,
+  ],
+  Array [
+    18,
+  ],
+  Array [
+    20,
+  ],
+  Array [
+    22,
+  ],
+  Array [
+    24,
+  ],
+]
+`;
+
 exports[`.removeListener one event, one listener calls listener with expected arguments 1`] = `
 Array [
   Array [

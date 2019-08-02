@@ -268,4 +268,69 @@ describe('.removeListener', () => {
       expect(listener.mock.calls).toMatchSnapshot()
     })
   })
+
+  describe('multiple events, one listener for each event', () => {
+    const eventA = Symbol('eventA')
+    const eventB = Symbol('eventB')
+    const eventC = Symbol('eventC')
+    const lock = createControl()
+
+    const listenerA = jest.fn()
+    const listenerB = jest.fn((value: number) => {
+      if (value === 6) pool.removeListener(eventB, listenerB)
+    })
+    const listenerC = jest.fn()
+
+    const pool = createEventPool({
+      setInterval,
+      clearInterval,
+      delay: 20
+    })
+      .createAutoTrigger(
+        eventA,
+        param => param.iterationCount % 2 === 0 ? some(param.iterationCount) : none()
+      )
+      .createAutoTrigger(
+        eventB,
+        param => param.iterationCount % 3 === 0 ? some(param.iterationCount) : none()
+      )
+      .createAutoTrigger(
+        eventC,
+        param => param.iterationCount % 4 === 0 ? some(param.iterationCount) : none()
+      )
+      .createAutoTrigger('stop', param => {
+        if (param.iterationCount > 2 * 3 * 4) {
+          pool.stopEventLoop()
+          void lock.resolve(null)
+        }
+
+        return none()
+      })
+      .addListener(eventA, listenerA)
+      .addListener(eventB, listenerB)
+      .addListener(eventC, listenerC)
+      .startEventLoop()
+      .removeListener(eventC, listenerC)
+
+    describe('listener that will never be removed', () => {
+      it('runs as long as the loop runs', async () => {
+        await lock.promise
+        expect(listenerA.mock.calls).toMatchSnapshot()
+      })
+    })
+
+    describe('listener that will be removed after some invocations', () => {
+      it('runs for a while', async () => {
+        await lock.promise
+        expect(listenerB.mock.calls).toMatchSnapshot()
+      })
+    })
+
+    describe('listener that is removed immediately after starting of event loop', () => {
+      it('never run', async () => {
+        await lock.promise
+        expect(listenerC).not.toBeCalled()
+      })
+    })
+  })
 })
