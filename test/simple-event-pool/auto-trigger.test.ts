@@ -1,4 +1,4 @@
-import createControl from 'remote-controlled-promise'
+import createLock from 'remote-controlled-promise'
 import {
   EventChecker,
   createEventPool,
@@ -10,7 +10,7 @@ const createMockedChecker = <Info> (check: EventChecker<Info>) => jest.fn(check)
 
 describe('.createAutoTrigger', () => {
   const EXPECTED_ITERATION_COUNT = 4
-  const lock = createControl()
+  const lock = createLock()
 
   const check = createMockedChecker(param => {
     if (param.iterationCount >= EXPECTED_ITERATION_COUNT) {
@@ -45,7 +45,7 @@ describe('.addListener', () => {
     const EVENT = Symbol('EVENT')
     const EXPECTED_ITERATION_COUNT = 4
     const EXPECTED_INFO = 'EXPECTED_INFO'
-    const lock = createControl()
+    const lock = createLock()
 
     const listener = jest.fn(() => lock.resolve(null))
 
@@ -83,7 +83,7 @@ describe('.addListener', () => {
     const EVENT = Symbol('EVENT')
     const EVENT_MOD = 3
     const EVENT_COUNT = 4
-    const lock = createControl()
+    const lock = createLock()
 
     const makeInfo = (n: number) => `event #${n}`
 
@@ -129,7 +129,7 @@ describe('.addListener', () => {
     const infoB = Symbol('infoB')
     const infoC = Symbol('infoC')
     const infoArray = args2arr(infoA, infoB, infoC)
-    const lock = createControl()
+    const lock = createLock()
 
     const listeners = Array(3)
       .fill(undefined)
@@ -179,7 +179,7 @@ describe('.addListener', () => {
     const EVENT = Symbol('EVENT')
     const EXPECTED_ITERATION_COUNT = 4
     const EXPECTED_INFO = Symbol('EXPECTED_INFO')
-    const lock = createControl()
+    const lock = createLock()
 
     const listeners = Array(3)
       .fill(undefined)
@@ -230,7 +230,7 @@ describe('.addListener', () => {
 describe('.removeListener', () => {
   describe('one event, one listener', () => {
     const EVENT = Symbol('EVENT')
-    const lock = createControl()
+    const lock = createLock()
 
     const listener = jest.fn(value => {
       if (value === 8) {
@@ -271,7 +271,7 @@ describe('.removeListener', () => {
 
   describe('one event, multiple listeners', () => {
     const EVENT = Symbol('EVENT')
-    const lock = createControl()
+    const lock = createLock()
 
     const listenerA = jest.fn()
     const listenerB = jest.fn((value: number) => {
@@ -328,7 +328,7 @@ describe('.removeListener', () => {
     const eventA = Symbol('eventA')
     const eventB = Symbol('eventB')
     const eventC = Symbol('eventC')
-    const lock = createControl()
+    const lock = createLock()
 
     const listenerA = jest.fn()
     const listenerB = jest.fn((value: number) => {
