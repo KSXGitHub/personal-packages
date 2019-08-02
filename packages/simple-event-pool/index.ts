@@ -100,12 +100,12 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
 
   function intervalCallback () {
     for (const [id, check] of checkers) {
+      count += 1
+
       const param = new AutoTriggerParamInstance(count)
 
       void Promise.resolve(check(param))
         .then(opt => opt.tag && trigger(id, opt.value))
-
-      count += 1
     }
   }
 
