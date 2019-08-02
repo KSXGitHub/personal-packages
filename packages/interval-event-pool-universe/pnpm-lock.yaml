@@ -1,0 +1,68 @@
+dependencies:
+  '@khai96x/simple-event-pool': 'link:../simple-event-pool'
+  '@types/node': 12.6.9
+  advanced-map-initialized: 0.0.2
+  tslib: 1.10.0
+lockfileVersion: 5.1
+packages:
+  /@types/node/10.14.14:
+    dev: false
+    resolution:
+      integrity: sha512-xXD08vZsvpv4xptQXj1+ky22f7ZoKu5ZNI/4l+/BXG3X+XaeZsmaFbbTKuhSE3NjjvRuZFxFf9sQBMXIcZNFMQ==
+  /@types/node/12.6.9:
+    dev: false
+    resolution:
+      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
+  /advanced-map-base/0.0.2:
+    dependencies:
+      '@types/node': 10.14.14
+      advanced-map-types: 0.0.2
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-fj4I4dNaEnVl9bSKsMXtgyVo4+kgV04ScFyLjyIfdNWp1FnRsCzWHtZDGblgq/Nau/2EMegOqW+PDN9qKmGDIA==
+  /advanced-map-initialized/0.0.2:
+    dependencies:
+      '@types/node': 10.14.14
+      advanced-map-base: 0.0.2
+      advanced-map-types: 0.0.2
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6/yZylpOElrSpsZTPiMvpCsgnybX8JxYZX88EO2h+yNHYoqwRCojjNOifKSuoIFiWUb5mPFA0tlW7oTM8iOiQ==
+  /advanced-map-types/0.0.2:
+    dependencies:
+      '@types/node': 10.14.14
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6IJYPR2uFyt6W/R+1j70pG1M0KzkY9TpV0ySkJuhRAhOFxc2DZ3+0621eaivFoF5Yyc2+dQDwwpRUBwwa49iw==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /typescript-miscellaneous/0.1.1:
+    dependencies:
+      '@types/node': 10.14.14
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
+specifiers:
+  '@khai96x/simple-event-pool': ^0.0.3
+  '@types/node': ^12.6.8
+  advanced-map-initialized: ^0.0.2
+  tslib: ^1.10.0
