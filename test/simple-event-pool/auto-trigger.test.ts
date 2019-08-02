@@ -269,6 +269,61 @@ describe('.removeListener', () => {
     })
   })
 
+  describe('one event, multiple listeners', () => {
+    const EVENT = Symbol('EVENT')
+    const lock = createControl()
+
+    const listenerA = jest.fn()
+    const listenerB = jest.fn((value: number) => {
+      if (value === 6) pool.removeListener(EVENT, listenerB)
+    })
+    const listenerC = jest.fn()
+
+    const pool = createEventPool({
+      setInterval,
+      clearInterval,
+      delay: 20
+    })
+      .createAutoTrigger(EVENT, param => {
+        if (param.iterationCount % 2 === 0) {
+          return some(param.iterationCount)
+        }
+
+        if (param.iterationCount > 10) {
+          pool.stopEventLoop()
+          void lock.resolve(null)
+        }
+
+        return none()
+      })
+      .addListener(EVENT, listenerA)
+      .addListener(EVENT, listenerB)
+      .addListener(EVENT, listenerC)
+      .startEventLoop()
+      .removeListener(EVENT, listenerC)
+
+    describe('listener that will never be removed', () => {
+      it('runs as long as the loop runs', async () => {
+        await lock.promise
+        expect(listenerA.mock.calls).toMatchSnapshot()
+      })
+    })
+
+    describe('listener that will be removed after some invocations', () => {
+      it('runs for a while', async () => {
+        await lock.promise
+        expect(listenerB.mock.calls).toMatchSnapshot()
+      })
+    })
+
+    describe('listener that is removed immediately after starting of event loop', () => {
+      it('never run', async () => {
+        await lock.promise
+        expect(listenerC).not.toBeCalled()
+      })
+    })
+  })
+
   describe('multiple events, one listener for each event', () => {
     const eventA = Symbol('eventA')
     const eventB = Symbol('eventB')
