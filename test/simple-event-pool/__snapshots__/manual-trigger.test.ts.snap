@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`one event add listener then trigger calls listener with expected arguments 1`] = `
+Array [
+  Array [
+    "a",
+  ],
+  Array [
+    "b",
+  ],
+  Array [
+    "c",
+  ],
+]
+`;
+
+exports[`one event add listener, then remove listener, and then trigger calls listener with expected arguments 1`] = `
+Array [
+  Array [
+    "a",
+  ],
+  Array [
+    "b",
+  ],
+]
+`;
