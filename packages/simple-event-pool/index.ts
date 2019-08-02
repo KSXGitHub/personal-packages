@@ -102,9 +102,9 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
   let count = 0
 
   function intervalCallback () {
-    for (const [id, check] of checkers) {
-      count += 1
+    count += 1
 
+    for (const [id, check] of checkers) {
       const param = new AutoTriggerParamInstance(count)
 
       void Promise.resolve(check(param))
