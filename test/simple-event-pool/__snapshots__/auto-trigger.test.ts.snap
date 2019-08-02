@@ -42,7 +42,7 @@ Array [
 ]
 `;
 
-exports[`.removeListener when there is only one event and one listener calls listener with expected arguments 1`] = `
+exports[`.removeListener one event, one listener calls listener with expected arguments 1`] = `
 Array [
   Array [
     2,

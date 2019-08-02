@@ -228,7 +228,7 @@ describe('.addListener', () => {
 })
 
 describe('.removeListener', () => {
-  describe('when there is only one event and one listener', () => {
+  describe('one event, one listener', () => {
     const EVENT = Symbol('EVENT')
     const lock = createControl()
 
