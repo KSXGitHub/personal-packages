@@ -73,3 +73,36 @@ describe('one event', () => {
     })
   })
 })
+
+describe('multiple events', () => {
+  const TO_BE_TRIGGERED = Symbol('to be triggered')
+  const NOT_TO_BE_TRIGGERED = Symbol('not to be triggered')
+  const TO_BE_SENT = Symbol('to be sent')
+  const NOT_TO_BE_SENT = Symbol('not to be sent')
+
+  const pool = createEventPool({
+    setInterval,
+    clearInterval,
+    delay: 20
+  })
+    .createManualTrigger<typeof TO_BE_SENT, typeof TO_BE_TRIGGERED>()
+    .createManualTrigger<typeof NOT_TO_BE_SENT, typeof NOT_TO_BE_TRIGGERED>()
+
+  describe('one that is triggered', () => {
+    it('calls listener with expected argument', () => {
+      const listener = jest.fn()
+      pool
+        .addListener(TO_BE_TRIGGERED, listener)
+        .trigger(TO_BE_TRIGGERED, TO_BE_SENT)
+      expect(listener).toBeCalledWith(TO_BE_SENT)
+    })
+  })
+
+  describe('one that is not triggered', () => {
+    it('does not call listener', () => {
+      const listener = jest.fn()
+      pool.addListener(NOT_TO_BE_TRIGGERED, listener)
+      expect(listener).not.toBeCalled()
+    })
+  })
+})
