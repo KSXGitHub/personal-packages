@@ -78,4 +78,45 @@ describe('.addListener', () => {
       expect(listener).toBeCalledWith(EXPECTED_INFO)
     })
   })
+
+  describe('when event is fired multiple times', () => {
+    const EVENT = Symbol('EVENT')
+    const EVENT_MOD = 3
+    const EVENT_COUNT = 4
+    const lock = createControl()
+
+    const makeInfo = (n: number) => `event #${n}`
+
+    const listener = jest.fn(() => undefined)
+
+    const pool = createEventPool({
+      setInterval,
+      clearInterval,
+      delay: 20
+    })
+      .createAutoTrigger(EVENT, param => {
+        if (param.iterationCount % EVENT_MOD === 0) {
+          return some(makeInfo(param.iterationCount))
+        }
+
+        if (param.iterationCount > EVENT_MOD * EVENT_COUNT) {
+          pool.clear()
+          void lock.resolve(undefined)
+        }
+
+        return none()
+      })
+      .addListener(EVENT, listener)
+      .set()
+
+    it('calls listener for every time the event occurs', async () => {
+      await lock.promise
+      expect(listener).toBeCalledTimes(EVENT_COUNT)
+    })
+
+    it('calls listener with expected arguments', async () => {
+      await lock.promise
+      expect(listener.mock.calls).toMatchSnapshot()
+    })
+  })
 })

@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`.addListener when event is fired multiple times calls listener with expected arguments 1`] = `
+Array [
+  Array [
+    "event #3",
+  ],
+  Array [
+    "event #6",
+  ],
+  Array [
+    "event #9",
+  ],
+  Array [
+    "event #12",
+  ],
+]
+`;
+
 exports[`.createAutoTrigger calls check with expected arguments 1`] = `
 Array [
   Array [
