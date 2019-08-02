@@ -28,12 +28,13 @@ export interface EventTarget<Info, ID> {
   removeListener (event: ID, listener: (info: Info) => void): this
 }
 
-export interface TriggerTarget<Info, ID> extends EventTarget<Info, ID> {
+export interface TriggerTarget<Info, ID> {
   trigger (event: ID, info: Info): this
 }
 
 export interface TriggerMaker {
   createAutoTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventTarget<Info, ID> & this
+  createManualTrigger<Info, ID> (event: ID): EventTarget<Info, ID> & TriggerTarget<Info, ID> & this
 }
 
 export interface EventChecker<Info> {
@@ -72,6 +73,10 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
     return pool
   }
 
+  function createManualTrigger<ID> (_: ID) {
+    return pool
+  }
+
   // id -> [listener]
   const listeners = new AdvMapInit<any, Set<(info: any) => void>>(Map, () => new Set())
 
@@ -90,24 +95,28 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
   function intervalCallback () {
     for (const [id, check] of checkers) {
       void Promise.resolve(check(count))
-        .then(opt => opt.tag && callListeners(id, opt.value))
+        .then(opt => opt.tag && trigger(id, opt.value))
 
       count += 1
     }
   }
 
-  function callListeners (id: any, info: any) {
+  function trigger (id: any, info: any) {
     for (const fn of listeners.get(id)) {
       fn(info)
     }
+
+    return pool
   }
 
   const pool: EventPool<never, never> = {
     set,
     clear,
     createAutoTrigger,
+    createManualTrigger,
     addListener,
-    removeListener
+    removeListener,
+    trigger
   }
 
   return pool
