@@ -15,7 +15,7 @@ describe('.createAutoTrigger', () => {
   const check = createMockedChecker(param => {
     if (param.iterationCount >= EXPECTED_ITERATION_COUNT) {
       pool.clear()
-      void lock.resolve(undefined)
+      void lock.resolve(null)
     }
 
     return none()
@@ -47,7 +47,7 @@ describe('.addListener', () => {
     const EXPECTED_INFO = 'EXPECTED_INFO'
     const lock = createControl()
 
-    const listener = jest.fn(() => lock.resolve(undefined))
+    const listener = jest.fn(() => lock.resolve(null))
 
     const pool = createEventPool({
       setInterval,
@@ -101,7 +101,7 @@ describe('.addListener', () => {
 
         if (param.iterationCount > EVENT_MOD * EVENT_COUNT) {
           pool.clear()
-          void lock.resolve(undefined)
+          void lock.resolve(null)
         }
 
         return none()
@@ -146,7 +146,7 @@ describe('.addListener', () => {
       .createAutoTrigger('stop', param => {
         if (param.iterationCount > 2 * 3 * 4) {
           pool.clear()
-          void lock.resolve(undefined)
+          void lock.resolve(null)
         }
 
         return none()
@@ -197,7 +197,7 @@ describe('.addListener', () => {
 
         if (param.iterationCount > EXPECTED_ITERATION_COUNT) {
           pool.clear()
-          void lock.resolve(undefined)
+          void lock.resolve(null)
         }
 
         return none()
