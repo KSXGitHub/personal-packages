@@ -8,8 +8,8 @@ describe('when set', () => {
       delay: 0
     })
 
-    pool.set()
-    expect(() => pool.set()).toThrowErrorMatchingSnapshot()
+    pool.startEventLoop()
+    expect(() => pool.startEventLoop()).toThrowErrorMatchingSnapshot()
   })
 
   it('calls setInterval with expected arguments', () => {
@@ -22,7 +22,7 @@ describe('when set', () => {
       delay: DELAY
     })
 
-    pool.set()
+    pool.startEventLoop()
     expect(setInterval).toBeCalledWith(
       expect.any(Function),
       DELAY
@@ -41,7 +41,7 @@ describe('when clear', () => {
         delay: 0
       })
 
-      pool.clear()
+      pool.stopEventLoop()
       expect(clearInterval).not.toBeCalled()
     })
   })
@@ -57,8 +57,8 @@ describe('when clear', () => {
         delay: 0
       })
 
-      pool.set()
-      pool.clear()
+      pool.startEventLoop()
+      pool.stopEventLoop()
       expect(clearInterval).toBeCalledWith(TIMER)
     })
   })

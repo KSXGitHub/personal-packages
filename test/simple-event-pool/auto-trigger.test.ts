@@ -14,7 +14,7 @@ describe('.createAutoTrigger', () => {
 
   const check = createMockedChecker(param => {
     if (param.iterationCount >= EXPECTED_ITERATION_COUNT) {
-      pool.clear()
+      pool.stopEventLoop()
       void lock.resolve(null)
     }
 
@@ -27,7 +27,7 @@ describe('.createAutoTrigger', () => {
     delay: 20
   })
     .createAutoTrigger('event', check)
-    .set()
+    .startEventLoop()
 
   it('calls check repeatedly', async () => {
     await lock.promise
@@ -60,13 +60,13 @@ describe('.addListener', () => {
         }
 
         if (param.iterationCount > EXPECTED_ITERATION_COUNT) {
-          pool.clear()
+          pool.stopEventLoop()
         }
 
         return none()
       })
       .addListener(EVENT, listener)
-      .set()
+      .startEventLoop()
 
     it('calls listener once', async () => {
       await lock.promise
@@ -100,14 +100,14 @@ describe('.addListener', () => {
         }
 
         if (param.iterationCount > EVENT_MOD * EVENT_COUNT) {
-          pool.clear()
+          pool.stopEventLoop()
           void lock.resolve(null)
         }
 
         return none()
       })
       .addListener(EVENT, listener)
-      .set()
+      .startEventLoop()
 
     it('calls listener for every time the event occurs', async () => {
       await lock.promise
@@ -145,7 +145,7 @@ describe('.addListener', () => {
       .createAutoTrigger(eventC, param => param.iterationCount % 4 === 0 ? some(infoC) : none())
       .createAutoTrigger('stop', param => {
         if (param.iterationCount > 2 * 3 * 4) {
-          pool.clear()
+          pool.stopEventLoop()
           void lock.resolve(null)
         }
 
@@ -154,7 +154,7 @@ describe('.addListener', () => {
       .addListener(eventA, listeners[0])
       .addListener(eventB, listeners[1])
       .addListener(eventC, listeners[2])
-      .set()
+      .startEventLoop()
 
     describe('every event is called', () => {
       listeners.forEach((fn, i) => {
@@ -196,7 +196,7 @@ describe('.addListener', () => {
         }
 
         if (param.iterationCount > EXPECTED_ITERATION_COUNT) {
-          pool.clear()
+          pool.stopEventLoop()
           void lock.resolve(null)
         }
 
@@ -205,7 +205,7 @@ describe('.addListener', () => {
       .addListener(EVENT, listeners[0])
       .addListener(EVENT, listeners[1])
       .addListener(EVENT, listeners[2])
-      .set()
+      .startEventLoop()
 
     describe('calls every listener', () => {
       listeners.forEach((fn, i) => {

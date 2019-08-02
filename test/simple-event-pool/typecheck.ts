@@ -50,4 +50,6 @@ eventPool
   .trigger(eventE, infoE)
   .trigger('bar', 456)
 
-eventPool.set().clear()
+eventPool
+  .startEventLoop()
+  .stopEventLoop()

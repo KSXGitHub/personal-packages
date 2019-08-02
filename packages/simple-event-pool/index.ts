@@ -20,8 +20,8 @@ export interface EventPoolOptions<IntervalID> {
 }
 
 export interface EventLoop {
-  set (): this
-  clear (): this
+  startEventLoop (): this
+  stopEventLoop (): this
 }
 
 export interface EventTarget<Info, ID> {
@@ -61,13 +61,13 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
 
   let id: Option<IntervalID> = none()
 
-  function set () {
+  function startEventLoop () {
     if (id.tag) throw new Error('Interval already set')
     id = some(setInterval(intervalCallback, delay))
     return pool
   }
 
-  function clear () {
+  function stopEventLoop () {
     if (!id.tag) return pool
     clearInterval(id.value)
     id = none()
@@ -121,8 +121,8 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
   }
 
   const pool: EventPool<never, never> = {
-    set,
-    clear,
+    startEventLoop,
+    stopEventLoop,
     createAutoTrigger,
     createManualTrigger,
     addListener,
