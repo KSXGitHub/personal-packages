@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when set cannot be set again 1`] = `"Interval already set"`;
