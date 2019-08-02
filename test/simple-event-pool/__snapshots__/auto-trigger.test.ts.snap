@@ -41,3 +41,20 @@ Array [
   ],
 ]
 `;
+
+exports[`.removeListener when there is only one event and one listener calls listener with expected arguments 1`] = `
+Array [
+  Array [
+    2,
+  ],
+  Array [
+    4,
+  ],
+  Array [
+    6,
+  ],
+  Array [
+    8,
+  ],
+]
+`;

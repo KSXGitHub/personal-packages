@@ -226,3 +226,46 @@ describe('.addListener', () => {
     })
   })
 })
+
+describe('.removeListener', () => {
+  describe('when there is only one event and one listener', () => {
+    const EVENT = Symbol('EVENT')
+    const lock = createControl()
+
+    const listener = jest.fn(value => {
+      if (value === 8) {
+        pool.removeListener(EVENT, listener)
+      }
+    })
+
+    const pool = createEventPool({
+      setInterval,
+      clearInterval,
+      delay: 20
+    })
+      .createAutoTrigger(EVENT, param => {
+        if (param.iterationCount % 2 === 0) {
+          return some(param.iterationCount)
+        }
+
+        if (param.iterationCount > 12) {
+          pool.stopEventLoop()
+          void lock.resolve(null)
+        }
+
+        return none()
+      })
+      .addListener(EVENT, listener)
+      .startEventLoop()
+
+    it('calls listener for expected times', async () => {
+      await lock.promise
+      expect(listener).toBeCalledTimes(4)
+    })
+
+    it('calls listener with expected arguments', async () => {
+      await lock.promise
+      expect(listener.mock.calls).toMatchSnapshot()
+    })
+  })
+})
