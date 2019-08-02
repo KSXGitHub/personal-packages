@@ -1,5 +1,12 @@
 import assert from 'static-type-assert'
-import { Option, createEventPool, some, none } from '@khai96x/simple-event-pool'
+
+import {
+  Option,
+  AutoTriggerParam,
+  createEventPool,
+  some,
+  none
+} from '@khai96x/simple-event-pool'
 
 const eventA = Symbol()
 const eventB = Symbol()
@@ -22,6 +29,11 @@ const eventPool = createEventPool({
   .createAutoTrigger(eventD, async () => some(infoD))
   .createAutoTrigger('foo' as 'foo', () => some([] as []))
   .createAutoTrigger(123 as 123, async () => some({} as {}))
+  .createAutoTrigger(0 as 0, param => {
+    assert<AutoTriggerParam>(param)
+    assert<number>(param.iterationCount)
+    return none()
+  })
   .createManualTrigger<typeof infoE, typeof eventE>(eventE)
   .createManualTrigger<456, 'bar'>('bar')
 
