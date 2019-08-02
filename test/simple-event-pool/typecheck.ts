@@ -49,3 +49,5 @@ eventPool
   .removeListener(eventD, (() => undefined) as (info: typeof infoD) => void)
   .trigger(eventE, infoE)
   .trigger('bar', 456)
+
+eventPool.set().clear()
