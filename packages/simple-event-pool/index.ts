@@ -28,7 +28,11 @@ export interface EventTarget<Info, ID> {
   removeListener (event: ID, listener: (info: Info) => void): this
 }
 
-export interface EventAutoTrigger {
+export interface TriggerTarget<Info, ID> extends EventTarget<Info, ID> {
+  trigger (event: ID, info: Info): this
+}
+
+export interface TriggerMaker {
   createAutoTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventTarget<Info, ID> & this
 }
 
@@ -36,7 +40,11 @@ export interface EventChecker<Info> {
   (count: number): OptionPromise<Info>
 }
 
-export type EventPool<Info, ID> = EventLoop & EventTarget<Info, ID> & EventAutoTrigger
+export interface EventPool<Info, ID> extends
+  EventLoop,
+  EventTarget<Info, ID>,
+  TriggerTarget<Info, ID>,
+  TriggerMaker {}
 
 export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalID>) {
   const { setInterval, clearInterval, delay } = options
@@ -59,7 +67,7 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
   // id -> checker
   const checkers = new Map<any, EventChecker<any>>()
 
-  function createTrigger<Info, ID> (id: ID, check: EventChecker<Info>) {
+  function createAutoTrigger<Info, ID> (id: ID, check: EventChecker<Info>) {
     checkers.set(id, check)
     return pool
   }
@@ -97,7 +105,7 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
   const pool: EventPool<never, never> = {
     set,
     clear,
-    createAutoTrigger: createTrigger,
+    createAutoTrigger,
     addListener,
     removeListener
   }
