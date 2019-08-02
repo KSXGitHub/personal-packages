@@ -1,6 +1,7 @@
 import { Option, none, some } from '@tsfun/option'
 import AdvMapInit from 'advanced-map-initialized'
 
+type IDSet = string | symbol | number
 type MaybePromise<Value> = Value | Promise<Value>
 type OptionPromise<Value> = MaybePromise<Option<Value>>
 
@@ -33,8 +34,10 @@ export interface TriggerTarget<Info, ID> {
 }
 
 export interface TriggerMaker {
-  createAutoTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventTarget<Info, ID> & this
-  createManualTrigger<Info, ID> (): EventTarget<Info, ID> & TriggerTarget<Info, ID> & this
+  createAutoTrigger<Info, ID extends IDSet> (event: ID, check: EventChecker<Info>):
+    EventTarget<Info, ID> & this
+  createManualTrigger<Info, ID extends IDSet> ():
+    EventTarget<Info, ID> & TriggerTarget<Info, ID> & this
 }
 
 export interface EventChecker<Info> {

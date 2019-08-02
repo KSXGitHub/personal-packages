@@ -27,9 +27,9 @@ const eventPool = createEventPool({
   .createAutoTrigger(eventB, () => some(infoB))
   .createAutoTrigger(eventC, () => none() as Option<typeof infoC>)
   .createAutoTrigger(eventD, async () => some(infoD))
-  .createAutoTrigger('foo' as 'foo', () => some([] as []))
-  .createAutoTrigger(123 as 123, async () => some({} as {}))
-  .createAutoTrigger(0 as 0, param => {
+  .createAutoTrigger('foo', () => some([] as []))
+  .createAutoTrigger(123, async () => some({} as {}))
+  .createAutoTrigger(0, param => {
     assert<AutoTriggerParam>(param)
     assert<number>(param.iterationCount)
     return none()
