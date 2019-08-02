@@ -34,8 +34,8 @@ const eventPool = createEventPool({
     assert<number>(param.iterationCount)
     return none()
   })
-  .createManualTrigger<typeof infoE, typeof eventE>(eventE)
-  .createManualTrigger<456, 'bar'>('bar')
+  .createManualTrigger<typeof infoE, typeof eventE>()
+  .createManualTrigger<456, 'bar'>()
 
 eventPool
   .addListener(eventA, () => undefined)

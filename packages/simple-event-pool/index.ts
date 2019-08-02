@@ -34,7 +34,7 @@ export interface TriggerTarget<Info, ID> {
 
 export interface TriggerMaker {
   createAutoTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventTarget<Info, ID> & this
-  createManualTrigger<Info, ID> (event: ID): EventTarget<Info, ID> & TriggerTarget<Info, ID> & this
+  createManualTrigger<Info, ID> (): EventTarget<Info, ID> & TriggerTarget<Info, ID> & this
 }
 
 export interface EventChecker<Info> {
