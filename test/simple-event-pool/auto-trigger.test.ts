@@ -174,4 +174,55 @@ describe('.addListener', () => {
       })
     })
   })
+
+  describe('with multiple listeners', () => {
+    const EVENT = Symbol('EVENT')
+    const EXPECTED_ITERATION_COUNT = 4
+    const EXPECTED_INFO = Symbol('EXPECTED_INFO')
+    const lock = createControl()
+
+    const listeners = Array(3)
+      .fill(undefined)
+      .map(() => jest.fn())
+
+    const pool = createEventPool({
+      setInterval,
+      clearInterval,
+      delay: 20
+    })
+      .createAutoTrigger(EVENT, param => {
+        if (param.iterationCount === EXPECTED_ITERATION_COUNT) {
+          return some(EXPECTED_INFO)
+        }
+
+        if (param.iterationCount > EXPECTED_ITERATION_COUNT) {
+          pool.clear()
+          void lock.resolve(undefined)
+        }
+
+        return none()
+      })
+      .addListener(EVENT, listeners[0])
+      .addListener(EVENT, listeners[1])
+      .addListener(EVENT, listeners[2])
+      .set()
+
+    describe('calls every listener', () => {
+      listeners.forEach((fn, i) => {
+        it(`listener #${i}`, async () => {
+          await lock.promise
+          expect(fn).toBeCalled()
+        })
+      })
+    })
+
+    describe('calls every listener with expected argument', () => {
+      listeners.forEach((fn, i) => {
+        it(`listener #${i}`, async () => {
+          await lock.promise
+          expect(fn).toBeCalledWith(EXPECTED_INFO)
+        })
+      })
+    })
+  })
 })
