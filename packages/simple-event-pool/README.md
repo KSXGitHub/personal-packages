@@ -44,25 +44,26 @@ target
 
 **Expected Output:**
 
-<code><pre>1x <font color="#C3A000">1</font>
-1x <font color="#C3A000">2</font>
-1x <font color="#C3A000">3</font>
-3x <font color="#C3A000">3</font>
-1x <font color="#C3A000">4</font>
-1x <font color="#C3A000">5</font>
-1x <font color="#C3A000">6</font>
-3x <font color="#C3A000">6</font>
-1x <font color="#C3A000">7</font>
-1x <font color="#C3A000">8</font>
-1x <font color="#C3A000">9</font>
-3x <font color="#C3A000">9</font>
-1x <font color="#C3A000">10</font>
-1x <font color="#C3A000">11</font>
-1x <font color="#C3A000">12</font>
-3x <font color="#C3A000">12</font>
-1x <font color="#C3A000">13</font>
-1x <font color="#C3A000">14</font>
-1x <font color="#C3A000">15</font>
-3x <font color="#C3A000">15</font>
-15x <font color="#C3A000">15</font>
-</pre></code>
+```
+1x 1
+1x 2
+1x 3
+3x 3
+1x 4
+1x 5
+1x 6
+3x 6
+1x 7
+1x 8
+1x 9
+3x 9
+1x 10
+1x 11
+1x 12
+3x 12
+1x 13
+1x 14
+1x 15
+3x 15
+15x 15
+```
