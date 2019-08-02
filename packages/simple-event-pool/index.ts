@@ -47,9 +47,11 @@ export interface EventPool<Info, ID> extends
   TriggerTarget<Info, ID>,
   TriggerMaker {}
 
-export class AutoTriggerParam {
+class AutoTriggerParamInstance {
   constructor (public readonly iterationCount: number) {}
 }
+
+export interface AutoTriggerParam extends AutoTriggerParamInstance {}
 
 export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalID>) {
   const { setInterval, clearInterval, delay } = options
@@ -98,7 +100,7 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
 
   function intervalCallback () {
     for (const [id, check] of checkers) {
-      const param = new AutoTriggerParam(count)
+      const param = new AutoTriggerParamInstance(count)
 
       void Promise.resolve(check(param))
         .then(opt => opt.tag && trigger(id, opt.value))
