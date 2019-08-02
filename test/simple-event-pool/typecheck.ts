@@ -14,12 +14,12 @@ const eventPool = createEventPool({
   clearInterval,
   delay: 1000
 })
-  .createTrigger(eventA, () => none())
-  .createTrigger(eventB, () => some(infoB))
-  .createTrigger(eventC, () => none() as Option<typeof infoC>)
-  .createTrigger(eventD, async () => some(infoD))
-  .createTrigger('foo' as 'foo', () => some([] as []))
-  .createTrigger(123 as 123, async () => some({} as {}))
+  .createAutoTrigger(eventA, () => none())
+  .createAutoTrigger(eventB, () => some(infoB))
+  .createAutoTrigger(eventC, () => none() as Option<typeof infoC>)
+  .createAutoTrigger(eventD, async () => some(infoD))
+  .createAutoTrigger('foo' as 'foo', () => some([] as []))
+  .createAutoTrigger(123 as 123, async () => some({} as {}))
 
 eventPool
   .addListener(eventA, () => undefined)

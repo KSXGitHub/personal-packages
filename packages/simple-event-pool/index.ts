@@ -28,15 +28,15 @@ export interface EventTarget<Info, ID> {
   removeListener (event: ID, listener: (info: Info) => void): this
 }
 
-export interface EventTrigger<Info, ID> extends EventTarget<Info, ID> {
-  createTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventTrigger<Info, ID> & this
+export interface EventAutoTrigger<Info, ID> extends EventTarget<Info, ID> {
+  createAutoTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventAutoTrigger<Info, ID> & this
 }
 
 export interface EventChecker<Info> {
   (count: number): OptionPromise<Info>
 }
 
-export type EventPool<Info, ID> = EventLoop & EventTrigger<Info, ID>
+export type EventPool<Info, ID> = EventLoop & EventAutoTrigger<Info, ID>
 
 export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalID>) {
   const { setInterval, clearInterval, delay } = options
@@ -97,7 +97,7 @@ export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalI
   const pool: EventPool<never, never> = {
     set,
     clear,
-    createTrigger,
+    createAutoTrigger: createTrigger,
     addListener,
     removeListener
   }
