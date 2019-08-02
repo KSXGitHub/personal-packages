@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`.createAutoTrigger calls check with expected arguments 1`] = `
+Array [
+  Array [
+    AutoTriggerParamInstance {
+      "iterationCount": 1,
+    },
+  ],
+  Array [
+    AutoTriggerParamInstance {
+      "iterationCount": 2,
+    },
+  ],
+  Array [
+    AutoTriggerParamInstance {
+      "iterationCount": 3,
+    },
+  ],
+  Array [
+    AutoTriggerParamInstance {
+      "iterationCount": 4,
+    },
+  ],
+]
+`;
