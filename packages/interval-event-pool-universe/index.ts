@@ -1,7 +1,7 @@
 import { createEventPool, some } from '@khai96x/simple-event-pool'
 import AdvMapInit from 'advanced-map-initialized'
 
-const INTERVAL_EVENT = Symbol('INTERVAL_EVENT')
+export const INTERVAL_EVENT = Symbol('INTERVAL_EVENT')
 
 const universe = new AdvMapInit(
   Map,
