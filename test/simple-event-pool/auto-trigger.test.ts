@@ -87,7 +87,7 @@ describe('.addListener', () => {
 
     const makeInfo = (n: number) => `event #${n}`
 
-    const listener = jest.fn(() => undefined)
+    const listener = jest.fn()
 
     const pool = createEventPool({
       setInterval,
@@ -133,7 +133,7 @@ describe('.addListener', () => {
 
     const listeners = Array(3)
       .fill(undefined)
-      .map(() => jest.fn(() => undefined))
+      .map(() => jest.fn())
 
     const pool = createEventPool({
       setInterval,
@@ -151,9 +151,9 @@ describe('.addListener', () => {
 
         return none()
       })
-      .addListener(eventA, listeners[0] as any)
-      .addListener(eventB, listeners[1] as any)
-      .addListener(eventC, listeners[2] as any)
+      .addListener(eventA, listeners[0])
+      .addListener(eventB, listeners[1])
+      .addListener(eventC, listeners[2])
       .set()
 
     describe('every event is called', () => {
