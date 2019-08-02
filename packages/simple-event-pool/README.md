@@ -67,3 +67,7 @@ target
 3x 15
 15x 15
 ```
+
+## License
+
+[MIT](https://git.io/fj9XO) © [Hoàng Văn Khải](https://github.com/KSXGitHub)
