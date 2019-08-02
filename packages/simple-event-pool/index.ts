@@ -23,10 +23,13 @@ export interface EventLoop {
   clear (): this
 }
 
-export interface EventTrigger<Info, ID> {
-  createTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventTrigger<Info, ID> & this
+export interface EventTarget<Info, ID> {
   addListener (event: ID, listener: (info: Info) => void): this
   removeListener (event: ID, listener: (info: Info) => void): this
+}
+
+export interface EventTrigger<Info, ID> extends EventTarget<Info, ID> {
+  createTrigger<Info, ID> (event: ID, check: EventChecker<Info>): EventTrigger<Info, ID> & this
 }
 
 export interface EventChecker<Info> {
