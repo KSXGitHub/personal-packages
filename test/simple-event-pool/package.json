@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "remote-controlled-promise": "0.0.4",
     "static-type-assert": "3.0.1",
     "@khai96x/simple-event-pool": "file:../../packages/simple-event-pool"
   }
