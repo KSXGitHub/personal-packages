@@ -16,6 +16,7 @@ const universe = new AdvMapInit(
         param.iterationCount
       ))
     })
+    .startEventLoop()
 )
 
 class IntervalEventParam {
