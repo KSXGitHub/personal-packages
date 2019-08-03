@@ -20,8 +20,8 @@ export interface EventPoolOptions<IntervalID> {
 }
 
 export interface EventLoop {
-  startEventLoop (): this
-  stopEventLoop (): this
+  startEventLoop (callback?: EventLoopCallback): this
+  stopEventLoop (callback?: EventLoopCallback): this
 }
 
 export interface EventTarget<Info, ID> {
@@ -38,6 +38,10 @@ export interface TriggerMaker {
     EventTarget<Info, ID> & this
   createManualTrigger<Info, ID extends IDSet> ():
     EventTarget<Info, ID> & TriggerTarget<Info, ID> & this
+}
+
+export interface EventLoopCallback {
+  (error: Option<Error>): void
 }
 
 export interface EventListener<Info> {
@@ -60,21 +64,33 @@ class AutoTriggerParamInstance {
 
 export interface AutoTriggerParam extends AutoTriggerParamInstance {}
 
+function mayCall<X, Y> (fn?: (x: X) => Y) {
+  return fn ? fn : () => undefined as void
+}
+
 export function createEventPool<IntervalID> (options: EventPoolOptions<IntervalID>) {
   const { setInterval, clearInterval, delay } = options
 
   let id: Option<IntervalID> = none()
 
-  function startEventLoop () {
-    if (id.tag) throw new Error('Interval already set')
-    id = some(setInterval(intervalCallback, delay))
+  function startEventLoop (callback?: EventLoopCallback) {
+    if (id.tag) {
+      mayCall(callback)(some(new Error(`Event loop already started`)))
+    } else {
+      id = some(setInterval(intervalCallback, delay))
+      mayCall(callback)(none())
+    }
     return pool
   }
 
-  function stopEventLoop () {
-    if (!id.tag) return pool
-    clearInterval(id.value)
-    id = none()
+  function stopEventLoop (callback?: EventLoopCallback) {
+    if (id.tag) {
+      clearInterval(id.value)
+      id = none()
+      mayCall(callback)(none())
+    } else {
+      mayCall(callback)(some(new Error(`Event loop already stopped`)))
+    }
     return pool
   }
 

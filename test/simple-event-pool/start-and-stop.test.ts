@@ -1,7 +1,30 @@
-import { createEventPool } from '@khai96x/simple-event-pool'
+import { createEventPool, some, none } from '@khai96x/simple-event-pool'
 
 describe('when set', () => {
+  describe('calls callback', () => {
+    const callback = jest.fn()
+
+    createEventPool({
+      setInterval: () => undefined,
+      clearInterval: () => undefined,
+      delay: 0
+    })
+      .startEventLoop(callback)
+      .startEventLoop(callback)
+      .startEventLoop(callback)
+
+    it('for every time', () => {
+      expect(callback).toBeCalledTimes(3)
+    })
+
+    it('with expected arguments', () => {
+      expect(callback.mock.calls).toMatchSnapshot()
+    })
+  })
+
   it('cannot be set again', () => {
+    expect.assertions(1)
+
     const pool = createEventPool({
       setInterval: () => undefined,
       clearInterval: () => undefined,
@@ -9,7 +32,7 @@ describe('when set', () => {
     })
 
     pool.startEventLoop()
-    expect(() => pool.startEventLoop()).toThrowErrorMatchingSnapshot()
+    pool.startEventLoop(error => expect(error).toMatchSnapshot())
   })
 
   it('calls setInterval with expected arguments', () => {
@@ -44,6 +67,19 @@ describe('when clear', () => {
       pool.stopEventLoop()
       expect(clearInterval).not.toBeCalled()
     })
+
+    it('calls callback with some(Error)', () => {
+      const callback = jest.fn()
+
+      const pool = createEventPool({
+        setInterval: () => undefined,
+        clearInterval: () => undefined,
+        delay: 0
+      })
+
+      pool.stopEventLoop(callback)
+      expect(callback).toBeCalledWith(some(expect.any(Error)))
+    })
   })
 
   describe('after set', () => {
@@ -61,5 +97,51 @@ describe('when clear', () => {
       pool.stopEventLoop()
       expect(clearInterval).toBeCalledWith(TIMER)
     })
+
+    it('calls callback with none()', () => {
+      const callback = jest.fn()
+
+      const pool = createEventPool({
+        setInterval: () => undefined,
+        clearInterval: () => undefined,
+        delay: 0
+      })
+
+      pool.startEventLoop()
+      pool.stopEventLoop(callback)
+      expect(callback).toBeCalledWith(none())
+    })
   })
+})
+
+it('interleave', () => {
+  const callback = jest.fn()
+
+  createEventPool({
+    setInterval: () => undefined,
+    clearInterval: () => undefined,
+    delay: 0
+  })
+    .startEventLoop(callback)
+    .stopEventLoop(callback)
+    .startEventLoop(callback)
+    .stopEventLoop(callback)
+    .startEventLoop(callback)
+    .stopEventLoop(callback)
+    .startEventLoop(callback)
+    .startEventLoop(callback)
+    .stopEventLoop(callback)
+    .stopEventLoop(callback)
+    .startEventLoop(callback)
+    .startEventLoop(callback)
+    .stopEventLoop(callback)
+    .stopEventLoop(callback)
+    .startEventLoop(callback)
+    .startEventLoop(callback)
+    .startEventLoop(callback)
+    .stopEventLoop(callback)
+    .stopEventLoop(callback)
+    .stopEventLoop(callback)
+
+  expect(callback.mock.calls).toMatchSnapshot()
 })
