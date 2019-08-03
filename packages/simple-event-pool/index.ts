@@ -25,8 +25,8 @@ export interface EventLoop {
 }
 
 export interface EventTarget<Info, ID> {
-  addListener (event: ID, listener: (info: Info) => void): this
-  removeListener (event: ID, listener: (info: Info) => void): this
+  addListener (event: ID, listener: EventListener<Info>): this
+  removeListener (event: ID, listener: EventListener<Info>): this
 }
 
 export interface TriggerTarget<Info, ID> {
@@ -38,6 +38,10 @@ export interface TriggerMaker {
     EventTarget<Info, ID> & this
   createManualTrigger<Info, ID extends IDSet> ():
     EventTarget<Info, ID> & TriggerTarget<Info, ID> & this
+}
+
+export interface EventListener<Info> {
+  (info: Info): void
 }
 
 export interface EventChecker<Info> {
