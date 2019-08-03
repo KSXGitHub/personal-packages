@@ -62,7 +62,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@khai96x/simple-event-pool': ^0.0.3
+  '@khai96x/simple-event-pool': ^0.0.4
   '@types/node': ^12.6.9
   advanced-map-initialized: ^0.0.2
   tslib: ^1.10.0

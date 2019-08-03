@@ -13,7 +13,7 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "@khai96x/simple-event-pool": "^0.0.3",
+    "@khai96x/simple-event-pool": "^0.0.4",
     "advanced-map-initialized": "^0.0.2",
     "tslib": "^1.10.0",
     "@types/node": "^12.6.9"
