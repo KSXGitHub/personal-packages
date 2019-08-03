@@ -1,7 +1,7 @@
 {
   "name": "@khai96x/interval-event-pool-universe",
   "version": "0.0.0",
-  "description": "A map of event pool by delay",
+  "description": "A pool of interval event pool",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
