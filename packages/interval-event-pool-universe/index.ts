@@ -21,8 +21,8 @@ const universe = new AdvMapInit(
 
 export class IntervalEventParam {
   constructor (
-    public readonly internalDelay: number,
-    public readonly internalCount: number
+    public readonly intervalDelay: number,
+    public readonly intervalCount: number
   ) {}
 }
 
