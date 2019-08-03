@@ -25,6 +25,6 @@ class IntervalEventParam {
   ) {}
 }
 
-export function get (delay: number) {
+export function getEventPool (delay: number) {
   return universe.get(delay)
 }
