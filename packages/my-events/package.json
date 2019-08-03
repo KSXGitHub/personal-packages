@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@khai96x/interval-event-pool-universe": "^0.0.0",
+    "@khai96x/simple-event-pool": "^0.0.4",
     "tslib": "^1.10.0",
     "@types/node": "^12.6.9"
   }
