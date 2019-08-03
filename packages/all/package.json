@@ -1,0 +1,22 @@
+{
+  "name": "@khai96x/all",
+  "version": "0.0.0",
+  "description": "All packages within @khai96x",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSXGitHub/personal-packages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSXGitHub/personal-packages/issues"
+  },
+  "dependencies": {
+    "@khai96x/simple-event-pool": "^0.0.4",
+    "@khai96x/interval-event-pool-universe": "^0.0.0",
+    "@khai96x/my-events": "^0.0.0",
+    "tslib": "^1.10.0",
+    "@types/node": "^12.6.9"
+  }
+}
