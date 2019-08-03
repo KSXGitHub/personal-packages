@@ -19,7 +19,7 @@ const universe = new AdvMapInit(
     .startEventLoop()
 )
 
-class IntervalEventParam {
+export class IntervalEventParam {
   constructor (
     public readonly internalDelay: number,
     public readonly internalCount: number
