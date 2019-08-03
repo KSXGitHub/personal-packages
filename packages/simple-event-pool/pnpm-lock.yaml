@@ -1,6 +1,6 @@
 dependencies:
   '@tsfun/option': 0.0.1
-  '@types/node': 12.6.8
+  '@types/node': 12.6.9
   advanced-map-initialized: 0.0.2
   tslib: 1.10.0
 lockfileVersion: 5.1
@@ -32,10 +32,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-sMHdXLccscaxI+Hlzz58yLQue3lQyXP+6aQniDRi5oju3n0123kcjhicVGF20WF7cHiwJ2vxMbXc4skOclosoA==
-  /@types/node/12.6.8:
+  /@types/node/12.6.9:
     dev: false
     resolution:
-      integrity: sha512-aX+gFgA5GHcDi89KG5keey2zf0WfZk/HAQotEamsK2kbey+8yGKcson0hbK8E+v0NArlCJQCqMP161YhV6ZXLg==
+      integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
   /advanced-map-base/0.0.2:
     dependencies:
       '@types/node': 10.14.14
@@ -86,6 +86,6 @@ packages:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
   '@tsfun/option': ^0.0.1
-  '@types/node': ^12.6.8
+  '@types/node': ^12.6.9
   advanced-map-initialized: ^0.0.2
   tslib: ^1.10.0
