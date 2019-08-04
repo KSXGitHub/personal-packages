@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/all",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "All packages within @khai96x",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@khai96x/simple-event-pool": "^0.0.5",
     "@khai96x/interval-event-pool-universe": "^0.0.1",
-    "@khai96x/my-events": "^0.0.1",
+    "@khai96x/my-events": "^0.0.2",
     "tslib": "^1.10.0",
     "@types/node": "^12.6.9"
   }
