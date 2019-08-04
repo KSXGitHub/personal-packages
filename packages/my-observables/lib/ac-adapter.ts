@@ -1,4 +1,3 @@
-import AdvMapInit from 'advanced-map-initialized'
 import spawn from 'advanced-spawn-async'
 import { getIntervalObservable, pipeline, from, operators } from '@khai96x/interval-observable-universe'
 const { map, filter, mergeAll, pairwise } = operators
@@ -21,18 +20,12 @@ export function analyzeAcpiOutput (output: string) {
   return /on-line/i.test(output)
 }
 
-const universe = new AdvMapInit(
-  Map,
-  (period: number) => getIntervalObservable(period)
-    .pipe(map(checkStatus))
-    .pipe(map(x => from(x)))
-    .pipe(mergeAll())
-    .pipe(filter((x): x is Status => x !== 'Unknown'))
-)
-
-export function getStatusObservable (period: number) {
-  return universe.get(period)
-}
+export const getStatusObservable = pipeline(getIntervalObservable)
+  .to(map(checkStatus))
+  .to(map(x => from(x)))
+  .to(mergeAll())
+  .to(filter((x): x is Status => x !== 'Unknown'))
+  .fn
 
 export const getStatusPairObservable = pipeline(getStatusObservable)
   .to(pairwise())
