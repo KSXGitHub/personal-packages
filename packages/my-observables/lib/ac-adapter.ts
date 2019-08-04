@@ -1,8 +1,7 @@
-import { from } from 'rxjs'
-import { map, filter, mergeAll, pairwise } from 'rxjs/operators'
 import AdvMapInit from 'advanced-map-initialized'
 import spawn from 'advanced-spawn-async'
-import getIntervalObservable, { pipeline } from '@khai96x/interval-observable-universe'
+import { getIntervalObservable, pipeline, from, operators } from '@khai96x/interval-observable-universe'
+const { map, filter, mergeAll, pairwise } = operators
 
 export enum Status {
   Plugged = 'Plugged',

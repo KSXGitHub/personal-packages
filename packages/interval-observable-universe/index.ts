@@ -18,3 +18,8 @@ export function pipeline<X, Y> (fn: (x: X) => Observable<Y>) {
     fn
   }
 }
+
+export * from 'rxjs'
+
+import * as operators from 'rxjs/operators'
+export { operators }

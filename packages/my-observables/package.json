@@ -13,7 +13,6 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "rxjs": "^6.5.2",
     "advanced-map-initialized": "^0.0.2",
     "advanced-spawn-async": "^0.0.1",
     "@khai96x/interval-observable-universe": "^0.0.0",
