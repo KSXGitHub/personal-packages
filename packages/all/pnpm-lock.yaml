@@ -1,22 +1,128 @@
 dependencies:
   '@khai96x/interval-event-pool-universe': 'link:../interval-event-pool-universe'
-  '@khai96x/my-events': 'link:../my-events'
+  '@khai96x/my-events': 0.0.2
   '@khai96x/simple-event-pool': 'link:../simple-event-pool'
   '@types/node': 12.6.9
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
+  /@khai96x/interval-event-pool-universe/0.0.1:
+    dependencies:
+      '@khai96x/simple-event-pool': 0.0.5
+      '@types/node': 12.6.9
+      advanced-map-initialized: 0.0.2
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-VnpjgvS3NwhICnRrZeI//vRBflzLtlkY+2TRG5/JY86GeqwkFS/5UaT74jtR+YxeGa5N4wXPU1pFQPJm6lfxrA==
+  /@khai96x/my-events/0.0.2:
+    dependencies:
+      '@khai96x/interval-event-pool-universe': 0.0.1
+      '@khai96x/simple-event-pool': 0.0.5
+      '@types/node': 12.6.9
+      advanced-spawn-async: 0.0.1
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-OF3oQAM6rPUBT5Du+vbGKU40uRYp6JnAoeLveyDHky59dbz9ZS6i3YQKVaSIkukup8EBvFtSN7D/1LOs4yEPOw==
+  /@khai96x/simple-event-pool/0.0.5:
+    dependencies:
+      '@tsfun/option': 0.0.1
+      '@types/node': 12.6.9
+      advanced-map-initialized: 0.0.2
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-hK4ZhAxf5v586oGFYexRO95NzrigSNwN2j9I8scMVtQ8UA5Wokv8Zxbfe6rg9vIXyHXSvQzAFiuLqayoHxI5kw==
+  /@tsfun/option/0.0.1:
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.1
+      '@types/node': 11.13.18
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-o6vnNuR5gTM+fujbB948flvKN+a/6NIWS/toEzyzd114G8jLptM9uTsDJlf/ZtkbXpRawp9CJm4pRf8sEMib1w==
+  /@tsfun/prv-option-result-common/0.0.1:
+    dependencies:
+      '@types/node': 11.13.18
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-FI4Zcc3I4lal4cMdBpWp0O86Ep4G/o8Q7cD47qLXaLa5kom+6pYRO4+XYBjSLKK+2h6rGWd1IvILmmMyAGRN3g==
+  /@types/node/10.14.14:
+    dev: false
+    resolution:
+      integrity: sha512-xXD08vZsvpv4xptQXj1+ky22f7ZoKu5ZNI/4l+/BXG3X+XaeZsmaFbbTKuhSE3NjjvRuZFxFf9sQBMXIcZNFMQ==
+  /@types/node/11.13.18:
+    dev: false
+    resolution:
+      integrity: sha512-sMHdXLccscaxI+Hlzz58yLQue3lQyXP+6aQniDRi5oju3n0123kcjhicVGF20WF7cHiwJ2vxMbXc4skOclosoA==
   /@types/node/12.6.9:
     dev: false
     resolution:
       integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
+  /advanced-map-base/0.0.2:
+    dependencies:
+      '@types/node': 10.14.14
+      advanced-map-types: 0.0.2
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-fj4I4dNaEnVl9bSKsMXtgyVo4+kgV04ScFyLjyIfdNWp1FnRsCzWHtZDGblgq/Nau/2EMegOqW+PDN9qKmGDIA==
+  /advanced-map-initialized/0.0.2:
+    dependencies:
+      '@types/node': 10.14.14
+      advanced-map-base: 0.0.2
+      advanced-map-types: 0.0.2
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6/yZylpOElrSpsZTPiMvpCsgnybX8JxYZX88EO2h+yNHYoqwRCojjNOifKSuoIFiWUb5mPFA0tlW7oTM8iOiQ==
+  /advanced-map-types/0.0.2:
+    dependencies:
+      '@types/node': 10.14.14
+      tslib: 1.10.0
+      typescript-miscellaneous: 0.1.1
+    deprecated: Depends on wrong version of "convenient-typescript-utilities"
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-L6IJYPR2uFyt6W/R+1j70pG1M0KzkY9TpV0ySkJuhRAhOFxc2DZ3+0621eaivFoF5Yyc2+dQDwwpRUBwwa49iw==
+  /advanced-spawn-async/0.0.1:
+    dependencies:
+      '@types/node': 10.14.14
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-EsKb2UZs11vA8KtsnOb+XJMH3MaSt7Yh7DCp5Rd64xcqrwXyEbUOTY85w8YI/ek7/3rNEHpB/8z/DfUfNjy/mQ==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /typescript-miscellaneous/0.1.1:
+    dependencies:
+      '@types/node': 10.14.14
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+      typescript: '>= 3.0.0'
+    resolution:
+      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@khai96x/interval-event-pool-universe': ^0.0.0
-  '@khai96x/my-events': ^0.0.0
-  '@khai96x/simple-event-pool': ^0.0.4
+  '@khai96x/interval-event-pool-universe': ^0.0.1
+  '@khai96x/my-events': ^0.0.2
+  '@khai96x/simple-event-pool': ^0.0.5
   '@types/node': ^12.6.9
   tslib: ^1.10.0
