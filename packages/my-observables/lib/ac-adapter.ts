@@ -1,7 +1,7 @@
 import AdvMapInit from 'advanced-map-initialized'
 import spawn from 'advanced-spawn-async'
 import { getIntervalObservable, pipeline, from, operators } from '@khai96x/interval-observable-universe'
-const { map, filter, mergeAll, pairwise, share } = operators
+const { map, filter, mergeAll, pairwise } = operators
 
 export enum Status {
   Plugged = 'Plugged',
@@ -28,7 +28,6 @@ const universe = new AdvMapInit(
     .pipe(map(x => from(x)))
     .pipe(mergeAll())
     .pipe(filter((x): x is Status => x !== 'Unknown'))
-    .pipe(share())
 )
 
 export function getStatusObservable (period: number) {
