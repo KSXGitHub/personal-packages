@@ -13,6 +13,7 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
+    "advanced-spawn-async": "^0.0.1",
     "@khai96x/interval-event-pool-universe": "^0.0.1",
     "@khai96x/simple-event-pool": "^0.0.5",
     "tslib": "^1.10.0",

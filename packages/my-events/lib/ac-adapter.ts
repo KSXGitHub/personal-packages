@@ -1,4 +1,4 @@
-import { spawn } from 'child_process'
+import spawn from 'advanced-spawn-async'
 export { INTERVAL_EVENT } from '@khai96x/interval-event-pool-universe'
 import { some, none } from '@khai96x/simple-event-pool'
 import base from '../utils/event-target-base'
@@ -15,20 +15,13 @@ export type PLUGGED = typeof PLUGGED
 export const UNPLUGGED = Symbol('UNPLUGGED')
 export type UNPLUGGED = typeof UNPLUGGED
 
-export function checkStatus () {
-  const cp = spawn('acpi', ['-a'])
-
-  let text = ''
-  cp.stdout.addListener('data', chunk => text += chunk)
-
-  return new Promise<Status | 'unknown'>(resolve => {
-    cp.stdout.addListener('close', () => {
-      const plugged = analyzeAcpiOutput(String(text.trim()))
-      resolve(plugged ? Status.Plugged : Status.Unplugged)
-    })
-
-    cp.addListener('error', () => resolve('unknown'))
-  })
+export function checkStatus (): Promise<Status | 'unknown'> {
+  return spawn('acpi', ['-a']).onclose.then(
+    x => analyzeAcpiOutput(x.stdout.trim())
+      ? Status.Plugged
+      : Status.Unplugged,
+    (): 'unknown' => 'unknown'
+  )
 }
 
 export function analyzeAcpiOutput (output: string) {
