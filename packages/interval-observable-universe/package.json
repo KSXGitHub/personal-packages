@@ -1,7 +1,7 @@
 {
-  "name": "@khai96x/my-events",
-  "version": "0.0.2",
-  "description": "A pool of interval event pool",
+  "name": "@khai96x/interval-observable-universe",
+  "version": "0.0.0",
+  "description": "A pool of interval observable",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
@@ -13,9 +13,8 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "advanced-spawn-async": "^0.0.1",
-    "@khai96x/interval-event-pool-universe": "^0.0.1",
-    "@khai96x/simple-event-pool": "^0.0.5",
+    "rxjs": "^6.5.2",
+    "advanced-map-initialized": "^0.0.2",
     "tslib": "^1.10.0",
     "@types/node": "^12.6.9"
   }

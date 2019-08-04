@@ -1,7 +1,7 @@
 dependencies:
-  '@khai96x/simple-event-pool': 'link:../simple-event-pool'
   '@types/node': 12.6.9
   advanced-map-initialized: 0.0.2
+  rxjs: 6.5.2
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
@@ -47,6 +47,14 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-L6IJYPR2uFyt6W/R+1j70pG1M0KzkY9TpV0ySkJuhRAhOFxc2DZ3+0621eaivFoF5Yyc2+dQDwwpRUBwwa49iw==
+  /rxjs/6.5.2:
+    dependencies:
+      tslib: 1.10.0
+    dev: false
+    engines:
+      npm: '>=2.0.0'
+    resolution:
+      integrity: sha512-HUb7j3kvb7p7eCUHE3FqjoDsC1xfZQ4AHFWfTKSpZ+sAhhz5X1WX0ZuUqWbzB2QhSLp3DoLUG+hMdEDKqWo2Zg==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -62,7 +70,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@khai96x/simple-event-pool': ^0.0.5
   '@types/node': ^12.6.9
   advanced-map-initialized: ^0.0.2
+  rxjs: ^6.5.2
   tslib: ^1.10.0

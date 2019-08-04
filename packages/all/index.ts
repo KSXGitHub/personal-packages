@@ -1,8 +1,5 @@
-import * as simpleEventPool from '@khai96x/simple-event-pool'
-export { simpleEventPool }
+import * as intervalObservableUniverse from '@khai96x/interval-observable-universe'
+export { intervalObservableUniverse }
 
-import * as intervalEventPoolUniverse from '@khai96x/interval-event-pool-universe'
-export { intervalEventPoolUniverse }
-
-import * as myEvents from '@khai96x/my-events'
-export { myEvents }
+import * as myObservables from '@khai96x/my-observables'
+export { myObservables }
