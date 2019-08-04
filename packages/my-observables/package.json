@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/my-observables",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Events that I use",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -13,9 +13,8 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "advanced-map-initialized": "^0.0.2",
     "advanced-spawn-async": "^0.0.1",
-    "@khai96x/interval-observable-universe": "^0.0.0",
+    "@khai96x/interval-observable-universe": "^0.0.1",
     "tslib": "^1.10.0",
     "@types/node": "^12.6.9"
   }

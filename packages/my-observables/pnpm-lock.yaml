@@ -1,9 +1,7 @@
 dependencies:
   '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
   '@types/node': 12.6.9
-  advanced-map-initialized: 0.0.2
   advanced-spawn-async: 0.0.1
-  rxjs: 6.5.2
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
@@ -15,40 +13,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-+YB9FtyxXGyD54p8rXwWaN1EWEyar5L58GlGWgtH2I9rGmLGBQcw63+0jw+ujqVavNuO47S1ByAjm9zdHMnskw==
-  /advanced-map-base/0.0.2:
-    dependencies:
-      '@types/node': 10.14.14
-      advanced-map-types: 0.0.2
-      tslib: 1.10.0
-      typescript-miscellaneous: 0.1.1
-    deprecated: Depends on wrong version of "convenient-typescript-utilities"
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-fj4I4dNaEnVl9bSKsMXtgyVo4+kgV04ScFyLjyIfdNWp1FnRsCzWHtZDGblgq/Nau/2EMegOqW+PDN9qKmGDIA==
-  /advanced-map-initialized/0.0.2:
-    dependencies:
-      '@types/node': 10.14.14
-      advanced-map-base: 0.0.2
-      advanced-map-types: 0.0.2
-      tslib: 1.10.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-L6/yZylpOElrSpsZTPiMvpCsgnybX8JxYZX88EO2h+yNHYoqwRCojjNOifKSuoIFiWUb5mPFA0tlW7oTM8iOiQ==
-  /advanced-map-types/0.0.2:
-    dependencies:
-      '@types/node': 10.14.14
-      tslib: 1.10.0
-      typescript-miscellaneous: 0.1.1
-    deprecated: Depends on wrong version of "convenient-typescript-utilities"
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-L6IJYPR2uFyt6W/R+1j70pG1M0KzkY9TpV0ySkJuhRAhOFxc2DZ3+0621eaivFoF5Yyc2+dQDwwpRUBwwa49iw==
   /advanced-spawn-async/0.0.1:
     dependencies:
       '@types/node': 10.14.14
@@ -56,32 +20,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-EsKb2UZs11vA8KtsnOb+XJMH3MaSt7Yh7DCp5Rd64xcqrwXyEbUOTY85w8YI/ek7/3rNEHpB/8z/DfUfNjy/mQ==
-  /rxjs/6.5.2:
-    dependencies:
-      tslib: 1.10.0
-    dev: false
-    engines:
-      npm: '>=2.0.0'
-    resolution:
-      integrity: sha512-HUb7j3kvb7p7eCUHE3FqjoDsC1xfZQ4AHFWfTKSpZ+sAhhz5X1WX0ZuUqWbzB2QhSLp3DoLUG+hMdEDKqWo2Zg==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /typescript-miscellaneous/0.1.1:
-    dependencies:
-      '@types/node': 10.14.14
-      tslib: 1.10.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-      typescript: '>= 3.0.0'
-    resolution:
-      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@khai96x/interval-observable-universe': ^0.0.0
+  '@khai96x/interval-observable-universe': ^0.0.1
   '@types/node': ^12.6.9
-  advanced-map-initialized: ^0.0.2
   advanced-spawn-async: ^0.0.1
-  rxjs: ^6.5.2
   tslib: ^1.10.0
