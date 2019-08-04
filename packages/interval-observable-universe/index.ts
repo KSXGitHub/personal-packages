@@ -8,14 +8,9 @@ export default getIntervalObservable
 
 export function pipeline<X, Y> (fn: (x: X) => Observable<Y>) {
   const map = new AdvMapInit(Map, (x: X) => fn(x).pipe(share()))
-
-  return {
-    to<Z> (opt: OperatorFunction<Y, Z>) {
-      return pipeline((x: X) => map.get(x).pipe(opt))
-    },
-
-    fn
-  }
+  const to = <Z> (opt: OperatorFunction<Y, Z>) =>
+    pipeline((x: X) => map.get(x).pipe(opt))
+  return { fn, to }
 }
 
 export * from 'rxjs'
