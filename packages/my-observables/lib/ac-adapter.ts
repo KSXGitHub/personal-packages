@@ -50,3 +50,9 @@ export const getPluggedObservable = pipeline(getStatusDiffObservable)
 export const getUnpluggedObservable = pipeline(getStatusDiffObservable)
   .to(filter(x => x.newStatus === Status.Unplugged))
   .fn
+
+export const statuses = getStatusObservable
+export const pairs = getStatusPairObservable
+export const diffs = getStatusDiffObservable
+export const plugged = getPluggedObservable
+export const unplugged = getUnpluggedObservable
