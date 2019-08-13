@@ -1,0 +1,35 @@
+dependencies:
+  '@khai96x/repo-manager': 'link:../../packages/repo-manager'
+  '@tsfun/result': 0.0.2
+lockfileVersion: 5.1
+packages:
+  /@tsfun/prv-option-result-common/0.0.1:
+    dependencies:
+      '@types/node': 11.13.19
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-FI4Zcc3I4lal4cMdBpWp0O86Ep4G/o8Q7cD47qLXaLa5kom+6pYRO4+XYBjSLKK+2h6rGWd1IvILmmMyAGRN3g==
+  /@tsfun/result/0.0.2:
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.1
+      '@types/node': 11.13.19
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-v/A75llml0syFbjQneR4kxeSR7qSNICqpZS3E0jYIkwcVoJo+4J6f5gk8B8KZFifwIc6VUkDFMwLmLXAA3Sa4w==
+  /@types/node/11.13.19:
+    dev: false
+    resolution:
+      integrity: sha512-tLRDU1hmcWamtgRT2iVRdraAQVGFQGgtcqracSo9XyMN1VeZLSVGb8RJJxVqab7UGbijoUijGPVFMjmqzyZIUw==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+specifiers:
+  '@khai96x/repo-manager': 'file:../../packages/repo-manager'
+  '@tsfun/result': ^0.0.2

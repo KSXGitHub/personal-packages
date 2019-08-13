@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "@tsfun/result": "^0.0.2",
+    "@khai96x/repo-manager": "file:../../packages/repo-manager"
+  }
+}
