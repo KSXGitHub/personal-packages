@@ -1,0 +1,22 @@
+{
+  "name": "@khai96x/repo-manager",
+  "version": "0.0.0",
+  "description": "A way to manage my local git repositories",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSXGitHub/personal-packages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSXGitHub/personal-packages/issues"
+  },
+  "dependencies": {
+    "@tsfun/pipe": "^0.0.0",
+    "@tsfun/result": "^0.0.2",
+    "isomorphic-git": "^0.60.1",
+    "tslib": "^1.10.0",
+    "@types/node": "^12.6.9"
+  }
+}
