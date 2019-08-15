@@ -29,6 +29,20 @@ export class UnsupportedHostName extends ErrorBase {
   }
 }
 
+abstract class MissingComponent extends ErrorBase {
+  constructor (public readonly pathname: string) {
+    super(`Path too short: ${pathname}`)
+  }
+}
+
+export class MissingOwner extends MissingComponent {
+  readonly NAME = 'MissingOwner'
+}
+
+export class MissingName extends MissingComponent {
+  readonly NAME = 'MissingName'
+}
+
 export class ExcessivePath extends ErrorBase {
   readonly NAME = 'ExcessivePath'
 
