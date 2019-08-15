@@ -242,4 +242,8 @@ describe('getLocationByUrl', () => {
   it('with prefix', () => {
     expect(get('prefix')).toEqual(ok(path.join('prefix', Host.GitHub, 'org', 'repo')))
   })
+
+  it('invalid url', () => {
+    expect(getLocationByUrl('invalid://invalid')).toEqual(err(expect.any(Error)))
+  })
 })
