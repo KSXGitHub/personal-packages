@@ -168,6 +168,7 @@ describe('parseGitURL', () => {
 
       it('contains expected properties', () => {
         expect(get()).toEqual(err(expect.objectContaining({
+          pathname: '/org/repo/tree/master/README.md',
           excess: ['tree', 'master', 'README.md']
         })))
       })
