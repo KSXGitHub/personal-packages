@@ -3,11 +3,19 @@ import path from 'path'
 import { pipe } from '@tsfun/pipe'
 import { ok, unwrap } from '@tsfun/result'
 import { Result, GitUrlInfo, Host } from './types'
-import { UnsupportedProtocol, UnsupportedHostName, ExcessivePath } from './errors'
+import {
+  UnsupportedProtocol,
+  UnsupportedHostName,
+  MissingOwner,
+  MissingName,
+  ExcessivePath
+} from './errors'
 
 type ParseGitUrlErr =
   UnsupportedProtocol |
   UnsupportedHostName |
+  MissingOwner |
+  MissingName |
   ExcessivePath
 
 function classifyHostName (hostname: string): Result<Host, UnsupportedHostName> {
@@ -40,7 +48,10 @@ export function parseGitUrl (url: string): Result<GitUrlInfo, ParseGitUrlErr> {
   if (!host.tag) return host
 
   const [owner, repo, ...rest] = pathname.split('/').slice(1)
+  if (!owner) return new MissingOwner(pathname).err()
+  if (!repo) return new MissingName(pathname).err()
   if (rest.length) return new ExcessivePath(pathname, rest).err()
+
   const [name] = repo.split(/\.git$/)
   return ok(new GitUrlInfoInstance(
     host.value,

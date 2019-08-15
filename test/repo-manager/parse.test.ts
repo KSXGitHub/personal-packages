@@ -121,6 +121,44 @@ describe('parseGitURL', () => {
       })
     })
 
+    describe('insufficient path', () => {
+      describe('missing org', () => {
+        const get = () => parseGitUrl('https://github.com')
+
+        it('returns an err', () => {
+          expect(get()).toEqual(err(expect.any(Error)))
+        })
+
+        it('contains expected properties', () => {
+          expect(get()).toEqual(err(expect.objectContaining({
+            pathname: '/'
+          })))
+        })
+
+        it('matches snapshot', () => {
+          expect(get()).toMatchSnapshot()
+        })
+      })
+
+      describe('missing name', () => {
+        const get = () => parseGitUrl('https://github.com/org')
+
+        it('returns an err', () => {
+          expect(get()).toEqual(err(expect.any(Error)))
+        })
+
+        it('contains expected properties', () => {
+          expect(get()).toEqual(err(expect.objectContaining({
+            pathname: '/org'
+          })))
+        })
+
+        it('matches snapshot', () => {
+          expect(get()).toMatchSnapshot()
+        })
+      })
+    })
+
     describe('excessive path', () => {
       const get = () => parseGitUrl('https://github.com/org/repo/tree/master/README.md')
 
