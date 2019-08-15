@@ -1,4 +1,5 @@
 import { URL } from 'url'
+import path from 'path'
 import { pipe } from '@tsfun/pipe'
 import { ok, unwrap } from '@tsfun/result'
 import { Result, GitUrlInfo, Host } from './types'
@@ -62,3 +63,16 @@ export function createGitUrl (info: GitUrlInfo): string {
   const repo = encodeURIComponent(name)
   return `https://${hostname}/${org}/${repo}.git`
 }
+
+export function getLocationByInfo (info: GitUrlInfo, prefix = ''): string {
+  const { host, owner, name } = info
+  return path.join(prefix, host, owner, name)
+}
+
+export function getLocationByUrl (url: string, prefix = ''): Result<string, ParseGitUrlErr> {
+  const parseResult = parseGitUrl(url)
+  if (!parseResult.tag) return parseResult
+  return ok(getLocationByInfo(parseResult.value, prefix))
+}
+
+export const unwrapGetLocationByUrl = pipe(getLocationByUrl).to(unwrap).get

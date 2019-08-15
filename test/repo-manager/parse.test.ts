@@ -1,5 +1,13 @@
+import path from 'path'
 import { ok, err, unwrap } from '@tsfun/result'
-import { parseGitUrl, createGitUrl, GitUrlInfo, Host } from '@khai96x/repo-manager'
+import {
+  parseGitUrl,
+  createGitUrl,
+  getLocationByInfo,
+  getLocationByUrl,
+  GitUrlInfo,
+  Host
+} from '@khai96x/repo-manager'
 
 describe('parseGitURL', () => {
   describe('valid links', () => {
@@ -202,5 +210,36 @@ describe('encode - decode', () => {
     it('url → parseGitUrl → createGitUrl', () => {
       expect(createGitUrl(unwrap(parseGitUrl(url)))).toBe(url)
     })
+  })
+})
+
+describe('getLocationByInfo', () => {
+  const get = (prefix?: string) => getLocationByInfo({
+    host: Host.GitHub,
+    owner: 'org',
+    name: 'repo'
+  }, prefix)
+
+  it('without prefix', () => {
+    expect(get()).toBe(path.join(Host.GitHub, 'org', 'repo'))
+  })
+
+  it('with prefix', () => {
+    expect(get('prefix')).toBe(path.join('prefix', Host.GitHub, 'org', 'repo'))
+  })
+})
+
+describe('getLocationByUrl', () => {
+  const get = (prefix?: string) => getLocationByUrl(
+    'https://github.com/org/repo.git',
+    prefix
+  )
+
+  it('without prefix', () => {
+    expect(get()).toEqual(ok(path.join(Host.GitHub, 'org', 'repo')))
+  })
+
+  it('with prefix', () => {
+    expect(get('prefix')).toEqual(ok(path.join('prefix', Host.GitHub, 'org', 'repo')))
   })
 })
