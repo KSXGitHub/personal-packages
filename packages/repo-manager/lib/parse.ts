@@ -50,18 +50,14 @@ export function parseGitUrl (url: string): Result<GitUrlInfo, ParseGitUrlErr> {
 
 export const unwrapParseGitUrl = pipe(parseGitUrl).to(unwrap).get
 
-function lookupHostName (host: Host): string {
-  switch (host) {
-    case Host.GitHub:
-      return 'github.com'
-    case Host.GitLab:
-      return 'gitlab.com'
-  }
+const lookupHostName = class {
+  public static readonly [Host.GitHub] = 'github.com'
+  public static readonly [Host.GitLab] = 'gitlab.com'
 }
 
 export function createGitUrl (info: GitUrlInfo): string {
   const { host, owner, name } = info
-  const hostname = lookupHostName(host)
+  const hostname = lookupHostName[host]
   const org = encodeURIComponent(owner)
   const repo = encodeURIComponent(name)
   return `https://${hostname}/${org}/${repo}.git`
