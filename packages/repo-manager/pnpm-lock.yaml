@@ -1,20 +1,21 @@
 dependencies:
-  '@tsfun/pipe': 0.0.0
+  '@tsfun/pipe': 0.0.1
   '@tsfun/result': 0.0.3
   '@types/node': 12.7.2
   isomorphic-git: 0.60.1
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/pipe/0.0.0:
+  /@tsfun/pipe/0.0.1:
     dependencies:
-      '@types/node': 11.13.19
+      '@tsfun/tap': 0.0.0
+      '@types/node': 12.7.2
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-wg7ncJiy0TVm0iLLJoNckmS3Eq3zjmjXw2FWYxyZ46pyLHZ92f0Jzn3nQCdmjX/AKaML5HbCQGMPIDhP4xCA9w==
+      integrity: sha512-l1Rxz9zoR4taPtcRkaAA4nPlS8XoR/q6yRVYWqY2oXPNy64/OkxiwiRaCp6RSqrxzJPPzACRXXq3HOZUCh8wCw==
   /@tsfun/prv-option-result-common/0.0.1:
     dependencies:
       '@types/node': 11.13.19
@@ -259,7 +260,7 @@ packages:
     resolution:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 specifiers:
-  '@tsfun/pipe': ^0.0.0
+  '@tsfun/pipe': ^0.0.1
   '@tsfun/result': ^0.0.3
   '@types/node': ^12.7.1
   isomorphic-git: ^0.60.1
