@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@tsfun/pipe": "^0.0.0",
-    "@tsfun/result": "^0.0.2",
+    "@tsfun/result": "^0.0.3",
     "isomorphic-git": "^0.60.1",
     "tslib": "^1.10.0",
     "@types/node": "^12.7.1"

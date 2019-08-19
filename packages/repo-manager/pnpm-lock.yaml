@@ -1,7 +1,7 @@
 dependencies:
   '@tsfun/pipe': 0.0.0
-  '@tsfun/result': 0.0.2
-  '@types/node': 12.7.1
+  '@tsfun/result': 0.0.3
+  '@types/node': 12.7.2
   isomorphic-git: 0.60.1
   tslib: 1.10.0
 lockfileVersion: 5.1
@@ -24,24 +24,32 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-FI4Zcc3I4lal4cMdBpWp0O86Ep4G/o8Q7cD47qLXaLa5kom+6pYRO4+XYBjSLKK+2h6rGWd1IvILmmMyAGRN3g==
-  /@tsfun/result/0.0.2:
+  /@tsfun/result/0.0.3:
     dependencies:
       '@tsfun/prv-option-result-common': 0.0.1
-      '@types/node': 11.13.19
+      '@tsfun/tap': 0.0.0
+      '@types/node': 12.7.2
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-v/A75llml0syFbjQneR4kxeSR7qSNICqpZS3E0jYIkwcVoJo+4J6f5gk8B8KZFifwIc6VUkDFMwLmLXAA3Sa4w==
+      integrity: sha512-L/+QX438aOALaFVtj3az61dhhtqMUjpallnmAlxWvF862uNToeTZdD9VMojM+8K7HOJvpUMswEp3uRTbKYtlAw==
+  /@tsfun/tap/0.0.0:
+    dependencies:
+      '@types/node': 12.7.2
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-6NPk8oXn4sXqxdy3bjXlcd+E9NQB+emivkT+O0zVc6PeakN9Vt2Bxczi5KoNVqQTLSuFUvDDLzSvbsYelJJpEQ==
   /@types/node/11.13.19:
     dev: false
     resolution:
       integrity: sha512-tLRDU1hmcWamtgRT2iVRdraAQVGFQGgtcqracSo9XyMN1VeZLSVGb8RJJxVqab7UGbijoUijGPVFMjmqzyZIUw==
-  /@types/node/12.7.1:
+  /@types/node/12.7.2:
     dev: false
     resolution:
-      integrity: sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
+      integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
   /async-lock/1.2.2:
     dev: false
     resolution:
@@ -114,12 +122,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
-  /ignore/5.1.2:
+  /ignore/5.1.4:
     dev: false
     engines:
       node: '>= 4'
     resolution:
-      integrity: sha512-vdqWBp7MyzdmHkkRWV5nY+PfGRbYbahfuvsBCh277tq+w9zyNi7h5CYJCK0kmzti9kU+O/cB7sE8HvKv6aXAKQ==
+      integrity: sha512-MzbUSahkTW1u7JpKKjY7LCARd1fU5W2rLdxlM4kdkayuCwZImjkpluF9CM1aLewYJguPDqewLam18Y6AU69A8A==
   /inherits/2.0.4:
     dev: false
     resolution:
@@ -133,7 +141,7 @@ packages:
       git-apply-delta: 0.0.7
       globalyzer: 0.1.4
       globrex: 0.1.2
-      ignore: 5.1.2
+      ignore: 5.1.4
       marky: 1.2.1
       minimisted: 2.0.0
       pako: 1.0.10
@@ -193,17 +201,13 @@ packages:
   /readable-stream/3.4.0:
     dependencies:
       inherits: 2.0.4
-      string_decoder: 1.2.0
+      string_decoder: 1.3.0
       util-deprecate: 1.0.2
     dev: false
     engines:
       node: '>= 6'
     resolution:
       integrity: sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
-  /safe-buffer/5.1.2:
-    dev: false
-    resolution:
-      integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
   /safe-buffer/5.2.0:
     dev: false
     resolution:
@@ -228,12 +232,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Wvre/Jq5vgoz31Z9stYWPLn0PqRqmBDpFSdypAnHu5AvRVCYPRYGnvryNLiXu8GOBNDH82J2FRHUGMjjHUpXFw==
-  /string_decoder/1.2.0:
+  /string_decoder/1.3.0:
     dependencies:
-      safe-buffer: 5.1.2
+      safe-buffer: 5.2.0
     dev: false
     resolution:
-      integrity: sha512-6YqyX6ZWEYguAxgZzHGL7SsCeGx3V2TtOTqZz1xSTSWnqsbWwbptafNyvf/ACquZUXV3DANr5BDIwNYe1mN42w==
+      integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
   /to-utf8/0.0.1:
     dev: false
     resolution:
@@ -256,7 +260,7 @@ packages:
       integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 specifiers:
   '@tsfun/pipe': ^0.0.0
-  '@tsfun/result': ^0.0.2
+  '@tsfun/result': ^0.0.3
   '@types/node': ^12.7.1
   isomorphic-git: ^0.60.1
   tslib: ^1.10.0
