@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pullOrCloneByInfo when directory already exists history matches snapshot 1`] = `
+Array [
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "fastForwardOnly": true,
+      "ref": "master",
+    },
+    "func": "pull",
+  },
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "ref": "master",
+    },
+    "func": "checkout",
+  },
+]
+`;
+
+exports[`pullOrCloneByInfo when directory has yet to exist history matches snapshot 1`] = `
+Array [
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "url": "https://github.com/org/repo.git",
+    },
+    "func": "clone",
+  },
+]
+`;
+
+exports[`pullOrCloneByUrl when directory already exists history matches snapshot 1`] = `
+Array [
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "fastForwardOnly": true,
+      "ref": "master",
+    },
+    "func": "pull",
+  },
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "ref": "master",
+    },
+    "func": "checkout",
+  },
+]
+`;
+
+exports[`pullOrCloneByUrl when directory has yet to exist history matches snapshot 1`] = `
+Array [
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "url": "https://github.com/org/repo.git",
+    },
+    "func": "clone",
+  },
+]
+`;

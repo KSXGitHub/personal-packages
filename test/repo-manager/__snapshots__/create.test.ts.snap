@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createByInfo history matches snapshot 1`] = `
+Array [
+  Object {
+    "arg": Object {
+      "info": Object {
+        "host": "github",
+        "name": "repo",
+        "owner": "org",
+      },
+      "url": "https://github.com/org/repo.git",
+    },
+    "func": "apiCreate",
+  },
+  Object {
+    "arg": "prefix/github/org/repo",
+    "func": "ensureDir",
+  },
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+    },
+    "func": "init",
+  },
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "remote": "origin",
+      "url": "https://github.com/org/repo.git",
+    },
+    "func": "addRemote",
+  },
+]
+`;
+
+exports[`createByUrl history matches snapshot 1`] = `
+Array [
+  Object {
+    "arg": Object {
+      "info": GitUrlInfoInstance {
+        "host": "github",
+        "name": "repo",
+        "owner": "org",
+      },
+      "url": "https://github.com/org/repo.git",
+    },
+    "func": "apiCreate",
+  },
+  Object {
+    "arg": "prefix/github/org/repo",
+    "func": "ensureDir",
+  },
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+    },
+    "func": "init",
+  },
+  Object {
+    "arg": Object {
+      "dir": "prefix/github/org/repo",
+      "remote": "origin",
+      "url": "https://github.com/org/repo.git",
+    },
+    "func": "addRemote",
+  },
+]
+`;

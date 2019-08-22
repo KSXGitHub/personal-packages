@@ -1,3 +1,7 @@
 export * from './lib/types'
+export * from './lib/constants'
 export * from './lib/errors'
 export * from './lib/parse'
+export * from './lib/clone'
+export * from './lib/pull-or-clone'
+export * from './lib/create'
