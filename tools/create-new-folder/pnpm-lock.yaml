@@ -1,6 +1,8 @@
 dependencies:
   '@tools/pkgcfg': 'link:../pkgcfg'
   '@tools/places': 'link:../places'
+  '@tools/preloaded-node': 'link:../preloaded-node'
+  '@tools/utils': 'link:../utils'
   '@types/fs-extra': 8.0.0
   '@types/inquirer': 6.5.0
   fs-extra: 8.1.0
@@ -454,6 +456,8 @@ packages:
 specifiers:
   '@tools/pkgcfg': 'file:../pkgcfg'
   '@tools/places': 'file:../places'
+  '@tools/preloaded-node': 'file:../preloaded-node'
+  '@tools/utils': 'file:../utils'
   '@types/fs-extra': ^8.0.0
   '@types/inquirer': ^6.5.0
   fs-extra: ^8.1.0
