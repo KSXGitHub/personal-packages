@@ -13,12 +13,12 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "@tsfun/pipe": "^0.0.0",
-    "@tsfun/result": "^0.0.2",
-    "isomorphic-git": "^0.60.1",
+    "@tsfun/pipe": "^0.0.1",
+    "@tsfun/result": "^0.0.3",
+    "isomorphic-git": "^0.64.0",
     "fs-extra": "^8.1.0",
     "tslib": "^1.10.0",
     "@types/fs-extra": "^8.0.0",
-    "@types/node": "^12.7.1"
+    "@types/node": "^12.7.2"
   }
 }

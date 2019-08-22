@@ -3,11 +3,15 @@
     "target": "es2017",
     "module": "commonjs",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "lib": [
       "es2017",
       "es2018",
       "esnext"
     ],
+    "preserveConstEnums": true,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
     "declaration": true,
     "sourceMap": true,
     "importHelpers": true,
