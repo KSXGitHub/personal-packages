@@ -2,7 +2,7 @@ dependencies:
   '@tsfun/pipe': 0.0.1
   '@tsfun/result': 0.0.3
   '@types/node': 12.7.2
-  isomorphic-git: 0.60.1
+  isomorphic-git: 0.64.0
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
@@ -68,10 +68,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tKClqDmkBkVK8P4FqLkaenZqVOI=
-  /clean-git-ref/1.0.3:
+  /clean-git-ref/2.0.1:
     dev: false
     resolution:
-      integrity: sha1-UyXcg56rAcl0rg6X9XNHgnUPiOw=
+      integrity: sha512-bLSptAy2P0s6hU4PzuIMKmMJJSE6gLXGH1cntDu7bWJUksvuM+7ReOK61mozULErYvP6a15rnYl0zFDef+pyPw==
   /crc-32/1.2.0:
     dependencies:
       exit-on-epipe: 1.0.1
@@ -133,10 +133,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
-  /isomorphic-git/0.60.1:
+  /isomorphic-git/0.64.0:
     dependencies:
       async-lock: 1.2.2
-      clean-git-ref: 1.0.3
+      clean-git-ref: 2.0.1
       crc-32: 1.2.0
       diff-lines: 1.1.1
       git-apply-delta: 0.0.7
@@ -155,7 +155,7 @@ packages:
       node: '>=7.6.0'
     hasBin: true
     resolution:
-      integrity: sha512-dI6TFOFCY/+Pzd5+90Ut7EJ2+/csIltlzMDId7kqyYIQAoDXzDpFvzYdg1Fo7LiEFgADDvcgTsIf0qcqjPsX2w==
+      integrity: sha512-6zUjD3B5Y9kcK8s/DHBFcjH30Yt0Ewxj3YPzDUXqdmSz1BnWnrOhgKeOA5x+FB5dcqFPe2fLLeyrEpKAxIjDOQ==
   /marky/1.2.1:
     dev: false
     resolution:
@@ -263,5 +263,5 @@ specifiers:
   '@tsfun/pipe': ^0.0.1
   '@tsfun/result': ^0.0.3
   '@types/node': ^12.7.1
-  isomorphic-git: ^0.60.1
+  isomorphic-git: ^0.64.0
   tslib: ^1.10.0
