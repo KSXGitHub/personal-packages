@@ -297,17 +297,17 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
-  /p-limit/2.2.0:
+  /p-limit/2.2.1:
     dependencies:
       p-try: 2.2.0
     dev: false
     engines:
       node: '>=6'
     resolution:
-      integrity: sha512-pZbTJpoUsCzV48Mc9Nh51VbwO0X9cuPFE8gYwx9BTCt9SF8/b7Zljd2fVgOxhIF/HDTKgpVzs+GPhyKfjLLFRQ==
+      integrity: sha512-85Tk+90UCVWvbDavCLKPOLC9vvY8OwEX/RtKF+/1OADJMVlFfEHOiMTPVyxg7mk/dKa+ipdHm0OUkTvCpMTuwg==
   /p-locate/3.0.0:
     dependencies:
-      p-limit: 2.2.0
+      p-limit: 2.2.1
     dev: false
     engines:
       node: '>=6'
