@@ -13,7 +13,7 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "advanced-spawn-async": "^0.0.1",
+    "advanced-spawn-async": "^0.0.2",
     "@khai96x/interval-observable-universe": "^0.0.1",
     "tslib": "^1.10.0",
     "@types/node": "^12.7.2"
