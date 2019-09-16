@@ -1,47 +1,51 @@
 dependencies:
   '@khai96x/repo-manager': 'link:../../packages/repo-manager'
-  '@tsfun/result': 0.0.3
+  '@tsfun/result': 0.0.7
 lockfileVersion: 5.1
 packages:
-  /@tsfun/prv-option-result-common/0.0.1:
+  /@tsfun/prv-option-result-common/0.0.4:
     dependencies:
-      '@types/node': 11.13.19
+      '@types/node': 12.7.5
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-FI4Zcc3I4lal4cMdBpWp0O86Ep4G/o8Q7cD47qLXaLa5kom+6pYRO4+XYBjSLKK+2h6rGWd1IvILmmMyAGRN3g==
-  /@tsfun/result/0.0.3:
+      integrity: sha512-UPmMMyK7SWu71/syglfWu1zM2kLn5PkqWaAN6QMxSDJISzAU4VC+d6fCFhNrDaGZst4yc+YfB0rfzbUNyAI/Vg==
+  /@tsfun/prv-types/0.0.2:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.1
-      '@tsfun/tap': 0.0.0
-      '@types/node': 12.7.2
+      '@types/node': 12.7.5
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-Z/qMzMExe1UQaFUuU7pTfba4cBRXeFOP75LyDDs1z7bEz0JZN5/4A5TEMjn35M8uIfybW91HrLLYghCy7fCOfw==
+  /@tsfun/result/0.0.7:
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.4
+      '@tsfun/prv-types': 0.0.2
+      '@tsfun/tap': 0.0.3
+      '@types/node': 12.7.5
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-L/+QX438aOALaFVtj3az61dhhtqMUjpallnmAlxWvF862uNToeTZdD9VMojM+8K7HOJvpUMswEp3uRTbKYtlAw==
-  /@tsfun/tap/0.0.0:
+      integrity: sha512-lLMyqXmfpYMaPqDDbg1lTHXOfE/qWa5ucucBIHoVWny4S47Wfrm5hu8dKaMFleoS3dkNCn8ivcKYZFxRPU2q5A==
+  /@tsfun/tap/0.0.3:
     dependencies:
-      '@types/node': 12.7.2
+      '@types/node': 12.7.5
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-6NPk8oXn4sXqxdy3bjXlcd+E9NQB+emivkT+O0zVc6PeakN9Vt2Bxczi5KoNVqQTLSuFUvDDLzSvbsYelJJpEQ==
-  /@types/node/11.13.19:
+      integrity: sha512-oRGoEyT0rm2ACZh2MU96PGC6dG7sSHMbZwdE6j/T4UQHSDcrON5twqalZ2+UXAlbXYnXM+ItWdlZ9JiTqCrDJQ==
+  /@types/node/12.7.5:
     dev: false
     resolution:
-      integrity: sha512-tLRDU1hmcWamtgRT2iVRdraAQVGFQGgtcqracSo9XyMN1VeZLSVGb8RJJxVqab7UGbijoUijGPVFMjmqzyZIUw==
-  /@types/node/12.7.2:
-    dev: false
-    resolution:
-      integrity: sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
+      integrity: sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@khai96x/repo-manager': 'file:../../packages/repo-manager'
-  '@tsfun/result': ^0.0.3
+  '@tsfun/result': ^0.0.7
