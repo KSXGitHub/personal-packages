@@ -11,14 +11,14 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "devDependencies": {
-    "standard": "^14.0.0",
-    "tslint": "^5.19.0",
+    "standard": "^14.3.1",
+    "tslint": "^5.20.0",
     "tslint-config-standard": "^8.0.1",
-    "typescript": "^3.5.3",
+    "typescript": "^3.6.3",
     "toolcheck": "^0.0.5",
     "tslib": "^1.10.0",
     "@types/jest": "^24.0.18",
-    "@types/node": "^12.7.2",
+    "@types/node": "^12.7.11",
     "@tools/scripts": "file:./tools/scripts"
   },
   "scripts": {
@@ -29,19 +29,23 @@
     "console": "node tools/repl/bin.js",
     "preloaded-node": "node tools/preloaded-node/bin.js",
     "execute": "execute",
+    "glob": "execute glob",
     "workspace": "execute workspace",
     "standardjs": "execute runStandardJS",
     "standardjs:fix": "execute runStandardJS --fix",
     "tslint": "execute runTSLint",
     "tslint:fix": "execute runTSLint --fix",
     "test": "execute test",
+    "test:ci": "execute testAll",
+    "test:no-coverage": "execute testWithoutCoverage",
     "build": "execute build",
     "clean": "execute clean",
     "clean-typescript-build": "execute cleanTypescriptBuild",
     "git-tag-versions": "execute gitTagVersions",
     "git-tag-versions:dry": "execute gitTagVersions --dry",
     "project-publish": "execute publish",
-    "project-publish:dry": "execute publish --dry"
+    "project-publish:dry": "execute publish --dry",
+    "publish-tag-push": "execute publishTagPush"
   },
   "standard": {
     "env": {
@@ -50,6 +54,7 @@
     }
   },
   "engines": {
-    "pnpm": ">= 2.16.0"
+    "node": ">= 10.13.0",
+    "pnpm": ">= 3.8.0"
   }
 }

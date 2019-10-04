@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "lib": [
-      "es2017",
       "es2018",
+      "es2019",
+      "es2020",
       "esnext"
     ],
     "preserveConstEnums": true,
-    "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
+    "incremental": false,
     "declaration": true,
     "sourceMap": true,
     "importHelpers": true,
