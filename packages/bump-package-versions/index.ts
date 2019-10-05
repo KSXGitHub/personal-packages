@@ -100,8 +100,6 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
     oldVer: string,
     newVer: string
   ): void {
-    console.info(dbg`bump> ${filename}: ${oldVer} → ${newVer}`)
-
     const prev = act
     act = async () => {
       jsonObject.version = newVer
@@ -109,6 +107,7 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
       const promise = fs.writeFile(filename, outputText)
       await prev()
       await promise
+      console.info(dbg`bump> ${filename}: ${oldVer} → ${newVer}`)
     }
   }
 
@@ -143,7 +142,7 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
   }
 
   if (errorCount) {
-    console.info(`[SUMMARY] Encountered ${errorCount} errors`)
+    console.error(`[SUMMARY] Encountered ${errorCount} errors`)
     return process.exit(ExitStatus.Failure)
   }
 
