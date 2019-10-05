@@ -82,11 +82,7 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
     process
   } = options
 
-  const defInc = (ver: SemVer) => incSemVer(ver, changeType)
-
-  const mayInc = skipPrivate
-    ? (ver: SemVer, prv: boolean) => prv ? ver : defInc(ver)
-    : defInc
+  const inc = (ver: SemVer) => incSemVer(ver, changeType)
 
   let errorCount = 0
 
@@ -139,7 +135,14 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
       continue
     }
 
-    const newVer = mayInc(semver, jsonObject.private as any).raw
+    if (skipPrivate && jsonObject.private) {
+      console.info('[SKIP]')
+      console.info(dbg`[INFO] filename: ${filename}`)
+      console.info(dbg`[INFO] content: ${jsonObject.private}`)
+      continue
+    }
+
+    const newVer = inc(semver).raw
     addAct(filename, jsonObject, version, newVer)
   }
 
