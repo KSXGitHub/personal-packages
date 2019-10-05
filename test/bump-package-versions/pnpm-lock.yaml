@@ -2,9 +2,11 @@ dependencies:
   '@khai96x/bump-package-versions': 'link:../../packages/bump-package-versions'
   '@types/diff': 4.0.2
   '@types/js-yaml': 3.12.1
+  '@types/semver': 6.0.2
   diff: 4.0.1
   js-yaml: 3.13.1
   just-json-type: 0.1.0
+  semver: 6.3.0
   string-template-format-inspect: 0.1.1
 lockfileVersion: 5.1
 packages:
@@ -20,6 +22,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+  /@types/semver/6.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-G1Ggy7/9Nsa1Jt2yiBR2riEuyK2DFNnqow6R7cromXPMNynackRY1vqFTLz/gwnef1LHokbXThcPhqMRjUbkpQ==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -54,6 +60,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-M2xt7Uj0v5yZM1CdBhEzVETILXRxTnZ1rBJFh3JwpVd0FVY/olin76g8TmBD8PReh3srNa3e3G0zGBfOn73wDg==
+  /semver/6.3.0:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
   /sprintf-js/1.0.3:
     dev: false
     resolution:
@@ -81,7 +92,9 @@ specifiers:
   '@khai96x/bump-package-versions': 'file:../../packages/bump-package-versions'
   '@types/diff': ^4.0.2
   '@types/js-yaml': ^3.12.1
+  '@types/semver': ^6.0.2
   diff: ^4.0.1
   js-yaml: ^3.13.1
   just-json-type: ^0.1.0
+  semver: ^6.3.0
   string-template-format-inspect: ^0.1.1
