@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "dependencies": {
+    "diff": "^4.0.1",
+    "js-yaml": "^3.13.1",
+    "just-json-type": "^0.1.0",
+    "string-template-format-inspect": "^0.1.1",
+    "@types/diff": "^4.0.2",
+    "@types/js-yaml": "^3.12.1",
+    "@khai96x/bump-package-versions": "file:../../packages/bump-package-versions"
+  }
+}

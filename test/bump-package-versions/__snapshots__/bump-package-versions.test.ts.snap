@@ -1,0 +1,1856 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = false calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '0.2.0'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '2.0.0'",
+  ],
+  Array [
+    "bump> 'private/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'private/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'private/0.1.2/package.json': '0.1.2' → '0.2.0'",
+  ],
+  Array [
+    "bump> 'private/1.2.3/package.json': '1.2.3' → '2.0.0'",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = false calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = false calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "private/1.2.3/package.json",
+    "{
+  \\"name\\": \\"a\\",
+  \\"private\\": true,
+  \\"version\\": \\"2.0.0\\"
+}
+",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.2.0\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"2.0.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"0.2.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = false logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '0.2.0'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '2.0.0'
+out │ bump> 'private/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'private/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'private/0.1.2/package.json': '0.1.2' → '0.2.0'
+out │ bump> 'private/1.2.3/package.json': '1.2.3' → '2.0.0'
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = false mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.2.0\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"2.0.0\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.2.0\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"2.0.0\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = true calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '0.2.0'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '2.0.0'",
+  ],
+  Array [
+    "skip> 'private/0.0.0/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.0.1/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.1.2/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/1.2.3/package.json' (\\"private\\": true)",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = true calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = true calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"2.0.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"0.2.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = true logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '0.2.0'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '2.0.0'
+out │ skip> 'private/0.0.0/package.json' (\\"private\\": true)
+out │ skip> 'private/0.0.1/package.json' (\\"private\\": true)
+out │ skip> 'private/0.1.2/package.json' (\\"private\\": true)
+out │ skip> 'private/1.2.3/package.json' (\\"private\\": true)
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.BreakingChange; skipPrivate = true mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.2.0\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"2.0.0\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.0\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.1\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.1.2\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+      \\"version\\": \\"1.2.3\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = false calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '1.3.0'",
+  ],
+  Array [
+    "bump> 'private/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'private/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'private/0.1.2/package.json': '0.1.2' → '0.1.3'",
+  ],
+  Array [
+    "bump> 'private/1.2.3/package.json': '1.2.3' → '1.3.0'",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = false calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = false calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "private/1.2.3/package.json",
+    "{
+  \\"name\\": \\"a\\",
+  \\"private\\": true,
+  \\"version\\": \\"1.3.0\\"
+}
+",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.1.3\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"1.3.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"0.1.3\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = false logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '1.3.0'
+out │ bump> 'private/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'private/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'private/0.1.2/package.json': '0.1.2' → '0.1.3'
+out │ bump> 'private/1.2.3/package.json': '1.2.3' → '1.3.0'
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = false mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.1.3\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.3.0\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.1.3\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.3.0\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = true calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '1.3.0'",
+  ],
+  Array [
+    "skip> 'private/0.0.0/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.0.1/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.1.2/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/1.2.3/package.json' (\\"private\\": true)",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = true calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = true calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"1.3.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"0.1.3\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = true logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '1.3.0'
+out │ skip> 'private/0.0.0/package.json' (\\"private\\": true)
+out │ skip> 'private/0.0.1/package.json' (\\"private\\": true)
+out │ skip> 'private/0.1.2/package.json' (\\"private\\": true)
+out │ skip> 'private/1.2.3/package.json' (\\"private\\": true)
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.FeatureAddition; skipPrivate = true mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.1.3\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.3.0\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.0\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.1\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.1.2\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+      \\"version\\": \\"1.2.3\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = false calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'",
+  ],
+  Array [
+    "bump> 'private/0.0.0/package.json': '0.0.0' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'private/0.0.1/package.json': '0.0.1' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'private/0.1.2/package.json': '0.1.2' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'private/1.2.3/package.json': '1.2.3' → '1.2.4'",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = false calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = false calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "private/1.2.3/package.json",
+    "{
+  \\"name\\": \\"a\\",
+  \\"private\\": true,
+  \\"version\\": \\"1.2.4\\"
+}
+",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"1.2.4\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = false logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '1.0.0'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '1.0.0'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '1.0.0'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'
+out │ bump> 'private/0.0.0/package.json': '0.0.0' → '1.0.0'
+out │ bump> 'private/0.0.1/package.json': '0.0.1' → '1.0.0'
+out │ bump> 'private/0.1.2/package.json': '0.1.2' → '1.0.0'
+out │ bump> 'private/1.2.3/package.json': '1.2.3' → '1.2.4'
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = false mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.2.4\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.2.4\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = true calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '1.0.0'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'",
+  ],
+  Array [
+    "skip> 'private/0.0.0/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.0.1/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.1.2/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/1.2.3/package.json' (\\"private\\": true)",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = true calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = true calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"1.2.4\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = true logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '1.0.0'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '1.0.0'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '1.0.0'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'
+out │ skip> 'private/0.0.0/package.json' (\\"private\\": true)
+out │ skip> 'private/0.0.1/package.json' (\\"private\\": true)
+out │ skip> 'private/0.1.2/package.json' (\\"private\\": true)
+out │ skip> 'private/1.2.3/package.json' (\\"private\\": true)
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.OfficialRelease; skipPrivate = true mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"1.0.0\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.2.4\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.0\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.1\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.1.2\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+      \\"version\\": \\"1.2.3\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = false calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'",
+  ],
+  Array [
+    "bump> 'private/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'private/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'private/0.1.2/package.json': '0.1.2' → '0.1.3'",
+  ],
+  Array [
+    "bump> 'private/1.2.3/package.json': '1.2.3' → '1.2.4'",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = false calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = false calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "private/1.2.3/package.json",
+    "{
+  \\"name\\": \\"a\\",
+  \\"private\\": true,
+  \\"version\\": \\"1.2.4\\"
+}
+",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.1.3\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "{
+  \\"private\\": true,
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"1.2.4\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"0.1.3\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = false logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'
+out │ bump> 'private/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'private/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'private/0.1.2/package.json': '0.1.2' → '0.1.3'
+out │ bump> 'private/1.2.3/package.json': '1.2.3' → '1.2.4'
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = false mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.1.3\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.2.4\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.1.3\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.2.4\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = true calls console.info multiple times 1`] = `
+Array [
+  Array [
+    "bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'",
+  ],
+  Array [
+    "bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'",
+  ],
+  Array [
+    "bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'",
+  ],
+  Array [
+    "bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'",
+  ],
+  Array [
+    "skip> 'private/0.0.0/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.0.1/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/0.1.2/package.json' (\\"private\\": true)",
+  ],
+  Array [
+    "skip> 'private/1.2.3/package.json' (\\"private\\": true)",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = true calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = true calls fs.writeFile multiple times 1`] = `
+Array [
+  Array [
+    "public/1.2.3/package.json",
+    "{
+  \\"version\\": \\"1.2.4\\"
+}
+",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "{
+  \\"version\\": \\"0.1.3\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "{
+  \\"version\\": \\"0.0.2\\"
+}
+",
+  ],
+  Array [
+    "public/0.0.0/package.json",
+    "{
+  \\"version\\": \\"0.0.1\\"
+}
+",
+  ],
+]
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = true logs 1`] = `
+"
+out │ bump> 'public/0.0.0/package.json': '0.0.0' → '0.0.1'
+out │ bump> 'public/0.0.1/package.json': '0.0.1' → '0.0.2'
+out │ bump> 'public/0.1.2/package.json': '0.1.2' → '0.1.3'
+out │ bump> 'public/1.2.3/package.json': '1.2.3' → '1.2.4'
+out │ skip> 'private/0.0.0/package.json' (\\"private\\": true)
+out │ skip> 'private/0.0.1/package.json' (\\"private\\": true)
+out │ skip> 'private/0.1.2/package.json' (\\"private\\": true)
+out │ skip> 'private/1.2.3/package.json' (\\"private\\": true)
+"
+`;
+
+exports[`when filenames contains only paths that point to valid files changeType = ChangeType.Patch; skipPrivate = true mutates the filesystem 1`] = `
+"  public/0.0.0/package.json: |
+    {
+-     \\"version\\": \\"0.0.0\\"
++     \\"version\\": \\"0.0.1\\"
+    }
+  public/0.0.1/package.json: |
+    {
+-     \\"version\\": \\"0.0.1\\"
++     \\"version\\": \\"0.0.2\\"
+    }
+  public/0.1.2/package.json: |
+    {
+-     \\"version\\": \\"0.1.2\\"
++     \\"version\\": \\"0.1.3\\"
+    }
+  public/1.2.3/package.json: |
+    {
+-     \\"version\\": \\"1.2.3\\"
++     \\"version\\": \\"1.2.4\\"
+    }
+  private/0.0.0/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.0\\"
+    }
+  private/0.0.1/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.0.1\\"
+    }
+  private/0.1.2/package.json: |
+    {
+      \\"private\\": true,
+      \\"version\\": \\"0.1.2\\"
+    }
+  private/1.2.3/package.json: |
+    {
+      \\"name\\": \\"a\\",
+      \\"private\\": true,
+      \\"version\\": \\"1.2.3\\"
+    }
+  invalid/no-version/package.json: |
+    {}
+  invalid/version-null/package.json: |
+    {
+      \\"version\\": null
+    }
+  invalid/version-number/package.json: |
+    {
+      \\"version\\": 123
+    }
+  invalid/version-not-semver/package.json: |
+    {
+      \\"version\\": \\"abcdef\\"
+    }
+  invalid/null/package.json: |
+    null
+  invalid/true/package.json: |
+    true
+  invalid/false/package.json: |
+    false
+  invalid/string/package.json: |
+    \\"string\\"
+  invalid/number/package.json: |
+    123
+  invalid/array/package.json: |
+    [
+      0,
+      1,
+      2,
+      3
+    ]"
+`;
+
+exports[`when filenames includes path that point to invalid file calls console.error multiple times 1`] = `
+Array [
+  Array [
+    "Error: \\"version\\" value is not a string",
+  ],
+  Array [
+    "  - filename: 'invalid/no-version/package.json'",
+  ],
+  Array [
+    "  - content: undefined",
+  ],
+  Array [
+    "Error: \\"version\\" value is not a string",
+  ],
+  Array [
+    "  - filename: 'invalid/version-null/package.json'",
+  ],
+  Array [
+    "  - content: null",
+  ],
+  Array [
+    "Error: \\"version\\" value is not a string",
+  ],
+  Array [
+    "  - filename: 'invalid/version-number/package.json'",
+  ],
+  Array [
+    "  - content: 123",
+  ],
+  Array [
+    "Error: \\"version\\" value is not a valid semver",
+  ],
+  Array [
+    "  - filename: 'invalid/version-not-semver/package.json'",
+  ],
+  Array [
+    "  - content: 'abcdef'",
+  ],
+  Array [
+    "Error: JSON content is not an object",
+  ],
+  Array [
+    "  - filename: 'invalid/null/package.json'",
+  ],
+  Array [
+    "  - content: null",
+  ],
+  Array [
+    "Error: JSON content is not an object",
+  ],
+  Array [
+    "  - filename: 'invalid/true/package.json'",
+  ],
+  Array [
+    "  - content: true",
+  ],
+  Array [
+    "Error: JSON content is not an object",
+  ],
+  Array [
+    "  - filename: 'invalid/false/package.json'",
+  ],
+  Array [
+    "  - content: false",
+  ],
+  Array [
+    "Error: JSON content is not an object",
+  ],
+  Array [
+    "  - filename: 'invalid/string/package.json'",
+  ],
+  Array [
+    "  - content: 'string'",
+  ],
+  Array [
+    "Error: JSON content is not an object",
+  ],
+  Array [
+    "  - filename: 'invalid/number/package.json'",
+  ],
+  Array [
+    "  - content: 123",
+  ],
+  Array [
+    "Error: JSON content is not an object",
+  ],
+  Array [
+    "  - filename: 'invalid/array/package.json'",
+  ],
+  Array [
+    "  - content: [ 0, 1, 2, 3 ]",
+  ],
+  Array [
+    "Error Count: 10",
+  ],
+]
+`;
+
+exports[`when filenames includes path that point to invalid file calls fs.readFile multiple times 1`] = `
+Array [
+  Array [
+    "public/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "public/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.0/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.0.1/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/0.1.2/package.json",
+    "utf8",
+  ],
+  Array [
+    "private/1.2.3/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/no-version/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/version-null/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/version-number/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/version-not-semver/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/null/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/true/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/false/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/string/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/number/package.json",
+    "utf8",
+  ],
+  Array [
+    "invalid/array/package.json",
+    "utf8",
+  ],
+]
+`;
+
+exports[`when filenames includes path that point to invalid file logs 1`] = `
+"
+err │ Error: \\"version\\" value is not a string
+err │   - filename: 'invalid/no-version/package.json'
+err │   - content: undefined
+err │ Error: \\"version\\" value is not a string
+err │   - filename: 'invalid/version-null/package.json'
+err │   - content: null
+err │ Error: \\"version\\" value is not a string
+err │   - filename: 'invalid/version-number/package.json'
+err │   - content: 123
+err │ Error: \\"version\\" value is not a valid semver
+err │   - filename: 'invalid/version-not-semver/package.json'
+err │   - content: 'abcdef'
+err │ Error: JSON content is not an object
+err │   - filename: 'invalid/null/package.json'
+err │   - content: null
+err │ Error: JSON content is not an object
+err │   - filename: 'invalid/true/package.json'
+err │   - content: true
+err │ Error: JSON content is not an object
+err │   - filename: 'invalid/false/package.json'
+err │   - content: false
+err │ Error: JSON content is not an object
+err │   - filename: 'invalid/string/package.json'
+err │   - content: 'string'
+err │ Error: JSON content is not an object
+err │   - filename: 'invalid/number/package.json'
+err │   - content: 123
+err │ Error: JSON content is not an object
+err │   - filename: 'invalid/array/package.json'
+err │   - content: [ 0, 1, 2, 3 ]
+err │ Error Count: 10
+"
+`;
