@@ -87,9 +87,9 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
   let errorCount = 0
 
   function addError (message: string, filename: string, content: any) {
-    console.error(`[ERROR] ${message}`)
-    console.error(dbg`[INFO] filename: ${filename}`)
-    console.error(dbg`[INFO] content: ${content}`)
+    console.error(`Error: ${message}`)
+    console.error(dbg`  - filename: ${filename}`)
+    console.error(dbg`  - content: ${content}`)
     errorCount += 1
   }
 
@@ -146,7 +146,7 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
   }
 
   if (errorCount) {
-    console.error(`[SUMMARY] Encountered ${errorCount} errors`)
+    console.error(`Error Count: ${errorCount}`)
     return process.exit(ExitStatus.Failure)
   }
 
