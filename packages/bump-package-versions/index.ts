@@ -100,9 +100,7 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
     oldVer: string,
     newVer: string
   ): void {
-    console.info('[ACT] Writing...')
-    console.info(dbg`[INFO] filename: ${filename}`)
-    console.info(dbg`[INFO] content: ${oldVer} → ${newVer}`)
+    console.info(dbg`bump> ${filename}: ${oldVer} → ${newVer}`)
 
     const prev = act
     act = async () => {
@@ -136,9 +134,7 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
     }
 
     if (skipPrivate && jsonObject.private) {
-      console.info('[SKIP]')
-      console.info(dbg`[INFO] filename: ${filename}`)
-      console.info(dbg`[INFO] content: ${jsonObject.private}`)
+      console.info(dbg`skip> ${filename} ("private": ${jsonObject.private})`)
       continue
     }
 
