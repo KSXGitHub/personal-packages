@@ -1,0 +1,42 @@
+{
+  "name": "@khai96x/bump-package-versions",
+  "version": "0.0.0",
+  "description": "Bump \"version\" field of multiple package.json files",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSXGitHub/personal-packages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSXGitHub/personal-packages/issues"
+  },
+  "keywords": [
+    "package",
+    "json",
+    "version",
+    "semver"
+  ],
+  "sideEffects": false,
+  "bin": {
+    "bump-package-versions": "bin/index",
+    "inc-package-versions": "bin/index",
+    "bump-pkg-vers": "bin/index",
+    "inc-pkg-vers": "bin/index",
+    "bumppkgvers": "bin/index",
+    "incpkgvers": "bin/index"
+  },
+  "dependencies": {
+    "semver": "^6.3.0",
+    "fs-extra": "^8.1.0",
+    "yargs": "^14.0.0",
+    "just-json-type": "^0.1.0",
+    "string-template-format-inspect": "^0.1.1",
+    "tslib": "^1.10.0",
+    "@types/semver": "^6.0.2",
+    "@types/fs-extra": "^8.0.0",
+    "@types/yargs": "^13.0.3",
+    "@types/node": "^12.7.11"
+  }
+}
