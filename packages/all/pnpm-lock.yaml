@@ -1,4 +1,5 @@
 dependencies:
+  '@khai96x/bump-package-versions': 'link:../bump-package-versions'
   '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
   '@khai96x/my-observables': 'link:../my-observables'
   '@types/node': 12.7.11
@@ -14,6 +15,7 @@ packages:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
+  '@khai96x/bump-package-versions': ^0.0.0
   '@khai96x/interval-observable-universe': ^0.0.2
   '@khai96x/my-observables': ^0.0.2
   '@types/node': ^12.7.11
