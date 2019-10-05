@@ -26,7 +26,7 @@ export function getReleaseType (version: SemVer, change: ChangeType): ReleaseTyp
       if (version.minor) return ReleaseType.Minor
       return ReleaseType.Patch
     case ChangeType.FeatureAddition:
-      if (version.major || version.minor) return ReleaseType.Minor
+      if (version.major) return ReleaseType.Minor
       return ReleaseType.Patch
     case ChangeType.Patch:
       return ReleaseType.Patch
