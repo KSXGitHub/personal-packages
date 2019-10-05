@@ -13,8 +13,8 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "rxjs": "^6.5.2",
-    "advanced-map-initialized": "^0.0.2",
+    "rxjs": "^6.5.3",
+    "advanced-map-initialized": "^0.0.3",
     "tslib": "^1.10.0",
     "@types/node": "^12.7.11"
   }
