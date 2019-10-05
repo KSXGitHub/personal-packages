@@ -133,7 +133,11 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
     }
 
     if (skipPrivate && jsonObject.private) {
-      console.info(dbg`skip> ${filename} ("private": ${jsonObject.private})`)
+      const oldAct = act
+      act = async () => {
+        await oldAct()
+        console.info(dbg`skip> ${filename} ("private": ${jsonObject.private})`)
+      }
       continue
     }
 
