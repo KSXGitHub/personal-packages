@@ -28,7 +28,7 @@
     "incpkgvers": "bin/index"
   },
   "dependencies": {
-    "semver": "^6.3.0",
+    "semver": "^7.0.0",
     "fs-extra": "^8.1.0",
     "yargs": "^14.0.0",
     "just-json-type": "^0.1.1",
