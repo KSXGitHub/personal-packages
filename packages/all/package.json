@@ -17,6 +17,6 @@
     "@khai96x/my-observables": "^0.0.3",
     "@khai96x/bump-package-versions": "^0.0.1",
     "tslib": "^1.10.0",
-    "@types/node": "^12.7.11"
+    "@types/node": "^12.12.21"
   }
 }

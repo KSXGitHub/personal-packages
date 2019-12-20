@@ -2,12 +2,12 @@ dependencies:
   '@khai96x/bump-package-versions': 'link:../../packages/bump-package-versions'
   '@types/diff': 4.0.2
   '@types/js-yaml': 3.12.1
-  '@types/semver': 6.0.2
+  '@types/semver': 6.2.0
   diff: 4.0.1
   js-yaml: 3.13.1
-  just-json-type: 0.1.0
-  semver: 6.3.0
-  string-template-format-inspect: 0.1.1
+  just-json-type: 0.1.1
+  semver: 7.1.1
+  string-template-format-inspect: 0.1.2
 lockfileVersion: 5.1
 packages:
   /@types/diff/4.0.2:
@@ -18,14 +18,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
-  /@types/node/12.7.11:
+  /@types/node/12.12.21:
     dev: false
     resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
-  /@types/semver/6.0.2:
+      integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
+  /@types/semver/6.2.0:
     dev: false
     resolution:
-      integrity: sha512-G1Ggy7/9Nsa1Jt2yiBR2riEuyK2DFNnqow6R7cromXPMNynackRY1vqFTLz/gwnef1LHokbXThcPhqMRjUbkpQ==
+      integrity: sha512-1OzrNb4RuAzIT7wHSsgZRlMBlNsJl+do6UblR7JMW4oB7bbR+uBEYtUh7gEc/jM84GGilh68lSOokyM/zNUlBA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -53,37 +53,39 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
-  /just-json-type/0.1.0:
+  /just-json-type/0.1.1:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.21
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-M2xt7Uj0v5yZM1CdBhEzVETILXRxTnZ1rBJFh3JwpVd0FVY/olin76g8TmBD8PReh3srNa3e3G0zGBfOn73wDg==
-  /semver/6.3.0:
+      integrity: sha512-GeYdjPyXd8ziaYOFOqSSgIvGAyJaPWwtzYiKxDbZGNZDLhf5KIYJjdUPQAGmNygwrzIDXoUgiGxbaINHKFh+gQ==
+  /semver/7.1.1:
     dev: false
+    engines:
+      node: '>=10'
     hasBin: true
     resolution:
-      integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
+      integrity: sha512-WfuG+fl6eh3eZ2qAf6goB7nhiCd7NPXhmyFxigB/TOkQyeLP8w8GsVehvtGNtnNmyboz4TgeK40B1Kbql/8c5A==
   /sprintf-js/1.0.3:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /string-template-format-base/0.1.0:
+  /string-template-format-base/0.1.1:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.21
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-YBF+r2v4foIf2F/b5S/JpusptJ1x9KJhsRMjw+VstIyHd6P/z2mqCUkFwniF6H4937rKM9mp+4OjvY9nCT7fOw==
-  /string-template-format-inspect/0.1.1:
+      integrity: sha512-XURxIRG3t9X8afee3MFIwMyUEqp1EBd8hQIPnTq0IUHqlId7smZfhpZyt5cuIwBmIY8aZYKZWJyNWdlYNobCmg==
+  /string-template-format-inspect/0.1.2:
     dependencies:
-      '@types/node': 12.7.11
-      string-template-format-base: 0.1.0
+      '@types/node': 12.12.21
+      string-template-format-base: 0.1.1
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-VF97fzpKcYZP5x6f9KUWOe5NNJGdNembVzo3e8KWFvS4utAvwufdpSZnw9L/jjhaGo9w5zhPgR68b9KZnXIXww==
+      integrity: sha512-1i/FqZVsmwUJNRihQzkrsyLD2coZd7OJLLmOPusap6WvLQgF5MA9W9vOQ5BdRwn8MTcpZp3cCt91axxs0b+V7A==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -92,9 +94,9 @@ specifiers:
   '@khai96x/bump-package-versions': 'file:../../packages/bump-package-versions'
   '@types/diff': ^4.0.2
   '@types/js-yaml': ^3.12.1
-  '@types/semver': ^6.0.2
+  '@types/semver': ^6.2.0
   diff: ^4.0.1
   js-yaml: ^3.13.1
-  just-json-type: ^0.1.0
-  semver: ^6.3.0
-  string-template-format-inspect: ^0.1.1
+  just-json-type: ^0.1.1
+  semver: ^7.1.1
+  string-template-format-inspect: ^0.1.2

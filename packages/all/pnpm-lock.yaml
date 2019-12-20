@@ -1,0 +1,22 @@
+dependencies:
+  '@khai96x/bump-package-versions': 'link:../bump-package-versions'
+  '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
+  '@khai96x/my-observables': 'link:../my-observables'
+  '@types/node': 12.12.21
+  tslib: 1.10.0
+lockfileVersion: 5.1
+packages:
+  /@types/node/12.12.21:
+    dev: false
+    resolution:
+      integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+specifiers:
+  '@khai96x/bump-package-versions': ^0.0.1
+  '@khai96x/interval-observable-universe': ^0.0.3
+  '@khai96x/my-observables': ^0.0.3
+  '@types/node': ^12.12.21
+  tslib: ^1.10.0

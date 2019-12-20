@@ -1,0 +1,27 @@
+dependencies:
+  '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
+  '@types/node': 12.12.21
+  advanced-spawn-async: 0.1.1
+  tslib: 1.10.0
+lockfileVersion: 5.1
+packages:
+  /@types/node/12.12.21:
+    dev: false
+    resolution:
+      integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
+  /advanced-spawn-async/0.1.1:
+    dependencies:
+      '@types/node': 12.12.21
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-dLx3b6reKiCnBNCyJEE3HQg5FsDEh2w86zXDb68g9WFgC6rU1XjT7rJwIL8O6D+WQX4Yg6pumiPlcwiPNJA9Fg==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+specifiers:
+  '@khai96x/interval-observable-universe': ^0.0.3
+  '@types/node': ^12.12.21
+  advanced-spawn-async: ^0.1.1
+  tslib: ^1.10.0
