@@ -8,7 +8,8 @@ branches:
 language: node_js
 
 node_js:
-  - '12'
+  - '12.11.0'
+  - '13'
 
 cache:
   directories:
