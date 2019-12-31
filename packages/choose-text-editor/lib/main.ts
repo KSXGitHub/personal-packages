@@ -1,7 +1,7 @@
 import escape from 'shell-escape'
 import { Process } from './process'
 import { Which } from './which'
-import { EditorSet } from './editors'
+import { assertEditorSet } from './assert'
 import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
 import { Status } from './status'
@@ -9,13 +9,21 @@ import { Status } from './status'
 export interface MainParam<ExitReturn> {
   readonly process: Process<ExitReturn>
   readonly which: Which
-  readonly editorSet: EditorSet
+  readonly editorSet: unknown
   readonly choose: typeof choose
 }
 
 export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   const { process, which, editorSet, choose } = param
   const { env, stdout, stderr, exit } = process
+
+  try {
+    assertEditorSet(editorSet)
+  } catch (error) {
+    stderr.write(String(error))
+    return exit(Status.InvalidEditorSet)
+  }
+
   const result = await choose({ env, which, editorSet })
 
   if (!result.tag) {
