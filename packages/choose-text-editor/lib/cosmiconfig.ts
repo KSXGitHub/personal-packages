@@ -16,5 +16,5 @@ export interface CosmiConfigResult {
 export interface CosmiConfigSearchResult {
   readonly config: unknown
   readonly filepath: string
-  readonly isEmpty: boolean
+  readonly isEmpty?: boolean
 }
