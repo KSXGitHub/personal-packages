@@ -19,6 +19,7 @@
     "shell-escape": "^0.2.0",
     "cosmiconfig": "6.0.0",
     "exec-once": "0.1.2",
+    "string-template-format": "^0.2.5",
     "@tsfun/option": "^0.0.10",
     "@tsfun/result": "^0.0.11",
     "tslib": "^1.10.0",
