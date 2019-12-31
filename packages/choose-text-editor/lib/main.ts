@@ -15,7 +15,6 @@ export interface MainParam<ExitReturn> {
   readonly process: Process<ExitReturn>
   readonly which: Which
   readonly cosmiconfig: CosmiConfig
-  readonly moduleName: string
   readonly searchPlaces?: string[]
   readonly packageProp?: string
   readonly cache?: boolean
@@ -24,13 +23,13 @@ export interface MainParam<ExitReturn> {
 }
 
 export async function main<Return> (param: MainParam<Return>): Promise<Return> {
-  const { process, which, cosmiconfig, moduleName, choose, ...configParam } = param
+  const { process, which, cosmiconfig, choose, ...configParam } = param
   const { env, exit } = process
   const { info: logInfo, error: logError } = LoggerPair(process)
 
   /* LOAD CONFIGURATION FILE */
 
-  const searchResult = await cosmiconfig(moduleName, {
+  const searchResult = await cosmiconfig(PACKAGE_PROP, {
     searchPlaces: SEARCH_PLACES,
     packageProp: PACKAGE_PROP,
     ...configParam
