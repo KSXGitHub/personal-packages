@@ -10,7 +10,7 @@ export interface CosmiConfigOptions extends cosmiconfig.Options {
 }
 
 export interface CosmiConfigResult {
-  readonly search: () => Promise<CosmiConfigSearchResult>
+  readonly search: () => Promise<CosmiConfigSearchResult | null>
 }
 
 export interface CosmiConfigSearchResult {

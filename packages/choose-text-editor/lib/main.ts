@@ -41,6 +41,12 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
     return exit(Status.ConfigLoadingFailure)
   }
 
+  if (!searchResult.value) {
+    logError('[ERROR] No config file found')
+    logError(dbg`* search places ${configParam.searchPlaces || SEARCH_PLACES}`)
+    return exit(Status.ConfigNotFound)
+  }
+
   if (searchResult.value.isEmpty) {
     logError('[ERROR] Config is empty')
     logError(dbg`* config file: ${searchResult.value.filepath}`)

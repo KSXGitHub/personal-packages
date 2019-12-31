@@ -4,7 +4,8 @@ export const enum Status {
   NotFound = 2,
   InvalidEditorSet = 3,
   ConfigLoadingFailure = 4,
-  EmptyConfig = 5
+  EmptyConfig = 5,
+  ConfigNotFound = 6
 }
 
 export default Status
