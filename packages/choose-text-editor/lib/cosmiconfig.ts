@@ -11,6 +11,9 @@ export interface CosmiConfigOptions extends cosmiconfig.Options {
 
 export interface CosmiConfigResult {
   readonly search: () => Promise<CosmiConfigSearchResult | null>
+  readonly clearLoadCache: () => void
+  readonly clearSearchCache: () => void
+  readonly clearCaches: () => void
 }
 
 export interface CosmiConfigSearchResult {

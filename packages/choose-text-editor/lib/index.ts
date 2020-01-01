@@ -1,5 +1,6 @@
 export * from './assert'
 export * from './choose'
+export * from './clear-cache'
 export * from './command'
 export * from './constants'
 export * from './cosmiconfig'

@@ -5,6 +5,7 @@ import { name as MODULE_NAME } from '../package.json'
 import { Process } from './process'
 import { Which } from './which'
 import { CosmiConfig } from './cosmiconfig'
+import { CacheType } from './clear-cache'
 import { assertEditorSet } from './assert'
 import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
@@ -19,17 +20,28 @@ export interface MainParam<ExitReturn> {
   readonly packageProp: string
   readonly cache?: boolean
   readonly stopDir?: string
+  readonly clearCache?: CacheType
   readonly choose: typeof choose
 }
 
 export async function main<Return> (param: MainParam<Return>): Promise<Return> {
-  const { process, which, cosmiconfig, choose, ...configParam } = param
+  const { process, which, cosmiconfig, clearCache, choose, ...configParam } = param
   const { env, exit } = process
   const { info: logInfo, error: logError } = LoggerPair(process)
 
+  const configExplorer = cosmiconfig(MODULE_NAME, configParam)
+
+  /* UNRELATED COMMANDS */
+
+  if (clearCache) {
+    const mod = await import('./clear-cache')
+    mod.clearCache(configExplorer, clearCache)
+    return exit(Status.Success)
+  }
+
   /* LOAD CONFIGURATION FILE */
 
-  const searchResult = await cosmiconfig(MODULE_NAME, configParam).search().then(ok, err)
+  const searchResult = await configExplorer.search().then(ok, err)
 
   if (!searchResult.tag) {
     logError('[ERROR] Fail to load configuration file')

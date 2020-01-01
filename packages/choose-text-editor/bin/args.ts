@@ -1,5 +1,5 @@
 import yargs from 'yargs'
-import { SEARCH_PLACES, PACKAGE_PROP } from '../lib'
+import { SEARCH_PLACES, PACKAGE_PROP, CacheType } from '../lib'
 
 export const args = yargs
   .option('searchPlaces', {
@@ -21,6 +21,11 @@ export const args = yargs
   .option('stopDir', {
     describe: 'Where to stop finding config file (default to your homedir)',
     type: 'string',
+    required: false
+  })
+  .option('clearCache', {
+    describe: 'Clear cache and exit',
+    choices: Object.values(CacheType),
     required: false
   })
   .env('CHOOSE_TEXT_EDITOR')
