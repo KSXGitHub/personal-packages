@@ -11,6 +11,7 @@ const param: MainParam<never> = {
   execSync,
   cosmiconfig,
   choose,
+  args: args._,
   ...args
 }
 

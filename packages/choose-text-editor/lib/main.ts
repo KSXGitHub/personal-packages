@@ -25,6 +25,7 @@ export interface MainParam<ExitReturn> {
   readonly clearCache?: CacheType
   readonly showStatus?: boolean
   readonly open?: boolean
+  readonly args: readonly string[]
   readonly choose: typeof choose
 }
 
@@ -107,21 +108,22 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   /* HANDLE CHOSEN COMMAND */
 
-  const { path, args } = result.value
+  const command = result.value
+  const finalArgs = [...command.args, ...param.args]
 
   if (param.open) {
     try {
-      param.execSync(path, args, EXEC_OPTIONS)
+      param.execSync(command.path, finalArgs, EXEC_OPTIONS)
     } catch (error) {
       logError('[ERROR] Execution of command resulted in failure')
-      logError(dbg`* executable: ${path}`)
-      logError(dbg`* arguments: ${args}`)
+      logError(dbg`* executable: ${command.path}`)
+      logError(dbg`* arguments: ${finalArgs}`)
       logError(dbg`* error: ${error}`)
       logError(dbg`* status: ${error.status}`)
       return exit(Status.ExecutionFailure)
     }
   } else {
-    const message = escape([path, ...args])
+    const message = escape([command.path, ...finalArgs])
     logInfo(message)
   }
 
