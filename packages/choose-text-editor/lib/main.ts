@@ -26,17 +26,17 @@ export interface MainParam<ExitReturn> {
 }
 
 export async function main<Return> (param: MainParam<Return>): Promise<Return> {
-  const { process, which, cosmiconfig, clearCache, choose, ...configParam } = param
+  const { process, which, ...configParam } = param
   const { env, exit } = process
   const { info: logInfo, error: logError } = LoggerPair(process)
 
-  const configExplorer = cosmiconfig(MODULE_NAME, configParam)
+  const configExplorer = param.cosmiconfig(MODULE_NAME, configParam)
 
   /* UNRELATED COMMANDS */
 
-  if (clearCache) {
+  if (param.clearCache) {
     const mod = await import('./clear-cache')
-    mod.clearCache(configExplorer, clearCache)
+    mod.clearCache(configExplorer, param.clearCache)
     return exit(Status.Success)
   }
 
@@ -84,7 +84,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   /* CHOOSE A COMMAND */
 
-  const result = await choose({ env, which, editorSet })
+  const result = await param.choose({ env, which, editorSet })
 
   if (!result.tag) {
     switch (result.error) {
