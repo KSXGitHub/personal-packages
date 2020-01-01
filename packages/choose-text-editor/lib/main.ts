@@ -1,6 +1,7 @@
 import escape from 'shell-escape'
 import { dbg } from 'string-template-format'
 import { ok, err } from '@tsfun/result'
+import { name as MODULE_NAME } from '../package.json'
 import { Process } from './process'
 import { Which } from './which'
 import { CosmiConfig } from './cosmiconfig'
@@ -9,7 +10,6 @@ import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
 import { Status } from './status'
 import { LoggerPair } from './utils'
-import { PACKAGE_PROP } from './constants'
 
 export interface MainParam<ExitReturn> {
   readonly process: Process<ExitReturn>
@@ -29,7 +29,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   /* LOAD CONFIGURATION FILE */
 
-  const searchResult = await cosmiconfig(PACKAGE_PROP, configParam).search().then(ok, err)
+  const searchResult = await cosmiconfig(MODULE_NAME, configParam).search().then(ok, err)
 
   if (!searchResult.tag) {
     logError('[ERROR] Fail to load configuration file')
