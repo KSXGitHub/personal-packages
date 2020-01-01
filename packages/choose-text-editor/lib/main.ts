@@ -9,14 +9,14 @@ import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
 import { Status } from './status'
 import { LoggerPair } from './utils'
-import { SEARCH_PLACES, PACKAGE_PROP } from './constants'
+import { PACKAGE_PROP } from './constants'
 
 export interface MainParam<ExitReturn> {
   readonly process: Process<ExitReturn>
   readonly which: Which
   readonly cosmiconfig: CosmiConfig
-  readonly searchPlaces?: string[]
-  readonly packageProp?: string
+  readonly searchPlaces: string[]
+  readonly packageProp: string
   readonly cache?: boolean
   readonly stopDir?: string
   readonly choose: typeof choose
@@ -29,11 +29,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   /* LOAD CONFIGURATION FILE */
 
-  const searchResult = await cosmiconfig(PACKAGE_PROP, {
-    searchPlaces: SEARCH_PLACES,
-    packageProp: PACKAGE_PROP,
-    ...configParam
-  }).search().then(ok, err)
+  const searchResult = await cosmiconfig(PACKAGE_PROP, configParam).search().then(ok, err)
 
   if (!searchResult.tag) {
     logError('[ERROR] Fail to load configuration file')
@@ -43,7 +39,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   if (!searchResult.value) {
     logError('[ERROR] No config file found')
-    logError(dbg`* search places ${configParam.searchPlaces || SEARCH_PLACES}`)
+    logError(dbg`* search places ${configParam.searchPlaces}`)
     return exit(Status.ConfigNotFound)
   }
 
