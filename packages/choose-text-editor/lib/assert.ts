@@ -132,7 +132,7 @@ export function assertEditorOptions (options: unknown): asserts options is Edito
     for (const item of value) {
       if (typeof item === 'string') continue
       if (typeof item === 'number') continue
-      throw new TypeError(dbg`Expecting array of ${key} to contain only strings and numbers but it has ${item}`)
+      throw new TypeError(dbg`Expecting array of ${key} to contain only strings and numbers but found ${item}`)
     }
   }
 }
