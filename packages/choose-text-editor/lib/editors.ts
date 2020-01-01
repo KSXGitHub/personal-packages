@@ -8,7 +8,7 @@ export interface Editor {
   readonly program: string
   readonly flags?: readonly string[]
   readonly options?: EditorOptions
-  readonly suffix?: readonly string[]
+  readonly suffixes?: readonly string[]
 }
 
 export interface EditorOptions {
