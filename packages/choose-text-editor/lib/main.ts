@@ -1,5 +1,4 @@
 import escape from 'shell-escape'
-import { pick } from 'ramda'
 import { dbg } from 'string-template-format'
 import { ok, err } from '@tsfun/result'
 import { name as MODULE_NAME } from '../package.json'
@@ -31,12 +30,12 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   const { env, exit } = process
   const { info: logInfo, error: logError } = LoggerPair(process)
 
-  const configExplorer = param.cosmiconfig(MODULE_NAME, pick([
-    'searchPlaces',
-    'packageProp',
-    'cache',
-    'stopDir'
-  ], param))
+  const configExplorer = param.cosmiconfig(MODULE_NAME, {
+    searchPlaces: param.searchPlaces,
+    packageProp: param.packageProp,
+    cache: param.cache,
+    stopDir: param.stopDir
+  })
 
   /* UNRELATED COMMANDS */
 
