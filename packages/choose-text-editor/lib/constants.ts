@@ -11,3 +11,5 @@ export const SEARCH_PLACES = [
 ]
 
 export const PACKAGE_PROP = PACKAGE_NAME
+
+export const EXEC_OPTIONS = { stdio: 'inherit' } as const

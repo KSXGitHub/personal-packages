@@ -3,18 +3,20 @@ import { dbg } from 'string-template-format'
 import { ok, err } from '@tsfun/result'
 import { Process } from './process'
 import { Which } from './which'
+import { ExecSync } from './exec-sync'
 import { CosmiConfig } from './cosmiconfig'
 import { CacheType } from './clear-cache'
 import { assertEditorSet } from './assert'
 import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
-import { PACKAGE_NAME } from './constants'
+import { PACKAGE_NAME, EXEC_OPTIONS } from './constants'
 import { Status } from './status'
 import { LoggerPair } from './utils'
 
 export interface MainParam<ExitReturn> {
   readonly process: Process<ExitReturn>
   readonly which: Which
+  readonly execSync: ExecSync
   readonly cosmiconfig: CosmiConfig
   readonly searchPlaces: string[]
   readonly packageProp: string
@@ -22,6 +24,7 @@ export interface MainParam<ExitReturn> {
   readonly stopDir?: string
   readonly clearCache?: CacheType
   readonly showStatus?: boolean
+  readonly open?: boolean
   readonly choose: typeof choose
 }
 
@@ -102,10 +105,25 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
     }
   }
 
-  /* PRINT CHOSEN COMMAND */
+  /* HANDLE CHOSEN COMMAND */
 
   const { path, args } = result.value
-  const message = escape([path, ...args])
-  logInfo(message)
+
+  if (param.open) {
+    try {
+      param.execSync(path, args, EXEC_OPTIONS)
+    } catch (error) {
+      logError('[ERROR] Execution of command resulted in failure')
+      logError(dbg`* executable: ${path}`)
+      logError(dbg`* arguments: ${args}`)
+      logError(dbg`* error: ${error}`)
+      logError(dbg`* status: ${error.status}`)
+      return exit(Status.ExecutionFailure)
+    }
+  } else {
+    const message = escape([path, ...args])
+    logInfo(message)
+  }
+
   return exit(Status.Success)
 }

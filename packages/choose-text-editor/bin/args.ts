@@ -32,6 +32,11 @@ export const args = yargs
     describe: 'Display exit status codes and names, then exit',
     type: 'boolean'
   })
+  .option('open', {
+    alias: ['exec', 'x'],
+    describe: 'Execute command when found',
+    type: 'boolean'
+  })
   .env('CHOOSE_TEXT_EDITOR')
   .help()
   .argv

@@ -6,6 +6,7 @@ export enum Status {
   ConfigLoadingFailure = 4,
   EmptyConfig = 5,
   ConfigNotFound = 6,
+  ExecutionFailure = 7,
   UnknownFailure = 255
 }
 
