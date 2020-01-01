@@ -1,11 +1,24 @@
 import { EditorOptions } from './editors'
 import encodeCliFlag from './encode-cli-flag'
 
-export const encodeCliOptions = (options: EditorOptions) => Object
-  .entries(options)
-  .map(([key, value]) => encodeSingleCliOption(key, value))
+export function encodeCliOptions (options: EditorOptions) {
+  const result = Array<string>()
 
-export const encodeSingleCliOption = (key: string, value: string | number | boolean) =>
-  encodeCliFlag(key) + (typeof value === 'boolean' ? '' : '=' + value)
+  for (const [key, value] of Object.entries(options)) {
+    const flag = encodeCliFlag(key)
+
+    switch (typeof value) {
+      case 'boolean':
+        if (value) result.push(flag)
+        break
+      case 'string':
+      case 'number':
+        result.push(flag, String(value))
+        break
+    }
+  }
+
+  return result
+}
 
 export default encodeCliOptions
