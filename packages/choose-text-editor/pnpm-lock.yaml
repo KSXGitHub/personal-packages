@@ -10,6 +10,7 @@ dependencies:
   cosmiconfig: 6.0.0
   exec-once: 0.1.2
   iter-tools: 6.2.6
+  jsonschema: 1.2.5
   parse-package-name: 0.1.0
   semver: 7.1.1
   shell-escape: 0.2.0
@@ -329,6 +330,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==
+  /jsonschema/1.2.5:
+    dev: false
+    resolution:
+      integrity: sha512-kVTF+08x25PQ0CjuVc0gRM9EUPb0Fe9Ln/utFOgcdxEIOHuU7ooBk/UPTd7t1M91pP35m0MU1T8M5P7vP1bRRw==
   /just-json-type/0.1.1:
     dependencies:
       '@types/node': 12.12.21
@@ -646,6 +651,7 @@ specifiers:
   cosmiconfig: 6.0.0
   exec-once: 0.1.2
   iter-tools: ^6.2.6
+  jsonschema: ^1.2.5
   parse-package-name: ^0.1.0
   semver: ^7.1.1
   shell-escape: ^0.2.0

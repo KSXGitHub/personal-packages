@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "typescript-json-schema": "^0.41.0",
+    "@tools/places": "file:../../tools/places",
+    "@khai96x/choose-text-editor": "file:../../packages/choose-text-editor"
+  }
+}
