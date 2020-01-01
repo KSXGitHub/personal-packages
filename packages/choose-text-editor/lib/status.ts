@@ -1,4 +1,4 @@
-export const enum Status {
+export enum Status {
   Success = 0,
   IndeterminableTTY = 1,
   NotFound = 2,

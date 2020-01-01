@@ -28,6 +28,10 @@ export const args = yargs
     choices: Object.values(CacheType),
     required: false
   })
+  .option('showStatus', {
+    describe: 'Display exit status codes and names, then exit',
+    type: 'boolean'
+  })
   .env('CHOOSE_TEXT_EDITOR')
   .help()
   .argv

@@ -21,6 +21,7 @@ export interface MainParam<ExitReturn> {
   readonly cache?: boolean
   readonly stopDir?: string
   readonly clearCache?: CacheType
+  readonly showStatus?: boolean
   readonly choose: typeof choose
 }
 
@@ -36,6 +37,12 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   if (clearCache) {
     const mod = await import('./clear-cache')
     mod.clearCache(configExplorer, clearCache)
+    return exit(Status.Success)
+  }
+
+  if (param.showStatus) {
+    const mod = await import('./show-status')
+    mod.showStatus(logInfo)
     return exit(Status.Success)
   }
 
