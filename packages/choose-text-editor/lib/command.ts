@@ -17,11 +17,11 @@ export interface CommandConstructorParam {
 
 export async function Command (param: CommandConstructorParam): Promise<Option<Command>> {
   const { editor, which, prefixes = [] } = param
-  const { program, flags = [], options = {} } = editor
+  const { program, flags = [], options = {}, suffix = [] } = editor
   const path = await which(program, WHICH_OPTIONS).catch(() => null)
   if (!path) return none()
   const flagArgs = flags.map(encodeCliFlag)
   const optArgs = encodeCliOptions(options)
-  const args = [...prefixes, ...flagArgs, ...optArgs]
+  const args = [...prefixes, ...flagArgs, ...optArgs, ...suffix]
   return some({ path, args })
 }

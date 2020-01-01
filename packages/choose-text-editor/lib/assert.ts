@@ -103,6 +103,18 @@ export function assertEditor (editor: unknown): asserts editor is Editor {
   if (checkKey(editor, 'options')) {
     assertEditorOptions(editor.options)
   }
+
+  if (checkKey(editor, 'suffix')) {
+    if (!Array.isArray(editor.suffix)) {
+      throw new TypeError(dbg`Expecting property 'suffix' to be an array but found ${editor.suffix} instead`)
+    }
+
+    for (const item of editor.suffix) {
+      if (typeof item !== 'string') {
+        throw new TypeError(dbg`Expecting array of 'suffix' to contain only strings but found ${item}`)
+      }
+    }
+  }
 }
 
 export function assertEditorOptions (options: unknown): asserts options is EditorOptions {
