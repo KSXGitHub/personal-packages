@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "@tsfun/option": "^0.0.10",
     "@khai96x/choose-text-editor": "file:../../packages/choose-text-editor"
   }
 }

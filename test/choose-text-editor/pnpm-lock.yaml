@@ -1,5 +1,51 @@
 dependencies:
   '@khai96x/choose-text-editor': 'link:../../packages/choose-text-editor'
+  '@tsfun/option': 0.0.10
 lockfileVersion: 5.1
+packages:
+  /@tsfun/option/0.0.10:
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.6
+      '@tsfun/prv-types': 0.0.4
+      '@tsfun/tap': 0.0.7
+      '@types/node': 12.12.21
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-AaMbpVZcwUh4RL7emzB8XRruo9GJCvih6xtafEHLkpnKFoFqn+dEE/6Mgv/VrHWVSa0HuyuPdtBZ9ijpa+G0uA==
+  /@tsfun/prv-option-result-common/0.0.6:
+    dependencies:
+      '@types/node': 12.12.21
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-aVv5GFxuIDIDXh+wDLiza5EA78/J0drPPy8MR2zdrjN2wVcETxH9+/1K/RjbR74BGHFFoofW4OfVAZI4/9pxyg==
+  /@tsfun/prv-types/0.0.4:
+    dependencies:
+      '@types/node': 12.12.21
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-F2gkqgZ8ZEVnggVUB5tg+R1e68caP1DCMsuXjIIGEoLnZ7JDGFfJNgciA3m5FS6Eovk+6DkJsjbELzNTJDmkFw==
+  /@tsfun/tap/0.0.7:
+    dependencies:
+      '@types/node': 12.12.21
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-63sdVAxTGbkFp5kikmQJDxx/OuDJ93zy63sbksv7nCJvNA9/GabeZJE/MReVNfTz73/dtRPXCumTEIacakLUSw==
+  /@types/node/12.12.21:
+    dev: false
+    resolution:
+      integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@khai96x/choose-text-editor': 'file:../../packages/choose-text-editor'
+  '@tsfun/option': ^0.0.10

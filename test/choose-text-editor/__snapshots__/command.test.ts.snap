@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when which returns a promise that resolves with editor.flags, editor.options, and editor.suffixes returns expected result 1`] = `
+Object {
+  "tag": true,
+  "value": Object {
+    "args": Array [
+      "p",
+      "r",
+      "e",
+      "f",
+      "i",
+      "x",
+      "e",
+      "s",
+      "-a",
+      "--foo",
+      "-b",
+      "-c",
+      "--bar",
+      "--abc",
+      "123",
+      "--def",
+      "456",
+      "suffix1",
+      "suffix2",
+    ],
+    "path": "/full/path/to/expected-program",
+  },
+}
+`;
