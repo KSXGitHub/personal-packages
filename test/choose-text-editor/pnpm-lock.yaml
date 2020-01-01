@@ -1,0 +1,5 @@
+dependencies:
+  '@khai96x/choose-text-editor': 'link:../../packages/choose-text-editor'
+lockfileVersion: 5.1
+specifiers:
+  '@khai96x/choose-text-editor': 'file:../../packages/choose-text-editor'

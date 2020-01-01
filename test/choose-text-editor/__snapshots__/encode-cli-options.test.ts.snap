@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Array [
+  "--stringOption",
+  "abc",
+  "--numberOption",
+  "123",
+  "--trueOption",
+  "--arrayOption",
+  "abc",
+  "def",
+  "123",
+  "456",
+  "-a",
+  "foo",
+  "-b",
+  "456",
+  "-c",
+  "-e",
+  "a",
+  "0",
+  "b",
+  "1",
+  "2",
+]
+`;

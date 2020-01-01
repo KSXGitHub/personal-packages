@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Array [
+  Object {
+    "input": "foo",
+    "output": "--foo",
+  },
+  Object {
+    "input": "foo-bar",
+    "output": "--foo-bar",
+  },
+  Object {
+    "input": "fooBar",
+    "output": "--fooBar",
+  },
+  Object {
+    "input": "f",
+    "output": "-f",
+  },
+  Object {
+    "input": "a",
+    "output": "-a",
+  },
+]
+`;
