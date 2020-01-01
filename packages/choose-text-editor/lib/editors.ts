@@ -1,7 +1,7 @@
 export interface EditorSet {
+  readonly chooser: string
   readonly graphical?: readonly Editor[]
   readonly terminal?: readonly Editor[]
-  readonly [_: string]: readonly Editor[] | undefined
 }
 
 export interface Editor {

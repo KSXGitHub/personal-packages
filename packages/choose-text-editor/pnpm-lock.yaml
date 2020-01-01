@@ -2,12 +2,16 @@ dependencies:
   '@tsfun/option': 0.0.10
   '@tsfun/result': 0.0.11
   '@types/node': 12.12.21
+  '@types/parse-package-name': 0.1.0
+  '@types/semver': 6.2.0
   '@types/shell-escape': 0.2.0
   '@types/which': 1.3.2
   '@types/yargs': 13.0.3
   cosmiconfig: 6.0.0
   exec-once: 0.1.2
   iter-tools: 6.2.6
+  parse-package-name: 0.1.0
+  semver: 7.1.1
   shell-escape: 0.2.0
   string-template-format: 0.2.5
   tslib: 1.10.0
@@ -105,6 +109,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
+  /@types/parse-package-name/0.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-+vF4M3Cd3Ec22Uwb+OKhDrSAcXQ5I6evRx+1letx4KzfzycU+AOEDHnCifus8In11i8iYNFXPfzg9HWTcC1h+Q==
+  /@types/semver/6.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-1OzrNb4RuAzIT7wHSsgZRlMBlNsJl+do6UblR7JMW4oB7bbR+uBEYtUh7gEc/jM84GGilh68lSOokyM/zNUlBA==
   /@types/shell-escape/0.2.0:
     dev: false
     resolution:
@@ -381,6 +393,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-OOY5b7PAEFV0E2Fir1KOkxchnZNCdowAJgQ5NuxjpBKTRP3pQhwkrkxqQjeoKJ+fO7bCpmIZaogI4eZGDMEGOw==
+  /parse-package-name/0.1.0:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-P0Tdg4/rTCvkvzGLrkR313BrreQ=
   /path-exists/4.0.0:
     dev: false
     engines:
@@ -413,6 +431,13 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==
+  /semver/7.1.1:
+    dev: false
+    engines:
+      node: '>=10'
+    hasBin: true
+    resolution:
+      integrity: sha512-WfuG+fl6eh3eZ2qAf6goB7nhiCd7NPXhmyFxigB/TOkQyeLP8w8GsVehvtGNtnNmyboz4TgeK40B1Kbql/8c5A==
   /set-blocking/2.0.0:
     dev: false
     resolution:
@@ -613,12 +638,16 @@ specifiers:
   '@tsfun/option': ^0.0.10
   '@tsfun/result': ^0.0.11
   '@types/node': ^12.12.21
+  '@types/parse-package-name': ^0.1.0
+  '@types/semver': ^6.2.0
   '@types/shell-escape': ^0.2.0
   '@types/which': ^1.3.2
   '@types/yargs': ^13.0.3
   cosmiconfig: 6.0.0
   exec-once: 0.1.2
   iter-tools: ^6.2.6
+  parse-package-name: ^0.1.0
+  semver: ^7.1.1
   shell-escape: ^0.2.0
   string-template-format: ^0.2.5
   tslib: ^1.10.0

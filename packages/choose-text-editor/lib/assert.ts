@@ -1,7 +1,10 @@
 // TODO: Update this to use verification-stack once it is available
 
+import semver from 'semver'
+import parsePackageName from 'parse-package-name'
 import { dbg } from 'string-template-format'
 import { EditorSet, Editor, EditorOptions } from './editors'
+import { PACKAGE_NAME } from './constants'
 
 export function assertObject (object: unknown): asserts object is object {
   if (typeof object !== 'object') {
@@ -36,8 +39,35 @@ export function assertKey<
 
 export function assertEditorSet (editorSet: unknown): asserts editorSet is EditorSet {
   assertObject(editorSet)
+  assertKey(editorSet, 'chooser')
+  assertChooser(editorSet.chooser)
   if (checkKey(editorSet, 'graphical')) assertEditorArray(editorSet.graphical)
   if (checkKey(editorSet, 'terminal')) assertEditorArray(editorSet.terminal)
+}
+
+export function assertChooser (chooser: unknown): asserts chooser is string {
+  if (typeof chooser !== 'string') {
+    throw new TypeError(dbg`Expecting a string but received ${chooser} instead`)
+  }
+
+  const { name, path, version } = parsePackageName(chooser)
+
+  if (name !== PACKAGE_NAME) {
+    throw new RangeError(dbg`Expecting chooser's package name to be ${PACKAGE_NAME} but received ${name} instead`)
+  }
+
+  if (path) {
+    throw new RangeError(dbg`Expecting chooser's path to be empty but received ${path} instead`)
+  }
+
+  if (!semver.validRange(version)) {
+    throw new RangeError(dbg`Invalid version range: ${version}`)
+  }
+
+  const actualVersion = require('../package.json').version
+  if (!semver.satisfies(actualVersion, version)) {
+    throw new Error(dbg`Incompatible version: ${actualVersion} does not satisfy ${version}`)
+  }
 }
 
 export function assertEditorArray (editorArray: unknown): asserts editorArray is readonly Editor[] {
