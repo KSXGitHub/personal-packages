@@ -1,4 +1,5 @@
 import escape from 'shell-escape'
+import { pick } from 'ramda'
 import { dbg } from 'string-template-format'
 import { ok, err } from '@tsfun/result'
 import { name as MODULE_NAME } from '../package.json'
@@ -26,11 +27,16 @@ export interface MainParam<ExitReturn> {
 }
 
 export async function main<Return> (param: MainParam<Return>): Promise<Return> {
-  const { process, which, ...configParam } = param
+  const { process, which } = param
   const { env, exit } = process
   const { info: logInfo, error: logError } = LoggerPair(process)
 
-  const configExplorer = param.cosmiconfig(MODULE_NAME, configParam)
+  const configExplorer = param.cosmiconfig(MODULE_NAME, pick([
+    'searchPlaces',
+    'packageProp',
+    'cache',
+    'stopDir'
+  ], param))
 
   /* UNRELATED COMMANDS */
 
@@ -58,7 +64,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   if (!searchResult.value) {
     logError('[ERROR] No config file found')
-    logError(dbg`* search places ${configParam.searchPlaces}`)
+    logError(dbg`* search places ${param.searchPlaces}`)
     return exit(Status.ConfigNotFound)
   }
 
