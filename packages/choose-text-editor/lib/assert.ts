@@ -36,15 +36,17 @@ export function assertKey<
 
 export function assertEditorSet (editorSet: unknown): asserts editorSet is EditorSet {
   assertObject(editorSet)
+  if (checkKey(editorSet, 'graphical')) assertEditorArray(editorSet.graphical)
+  if (checkKey(editorSet, 'terminal')) assertEditorArray(editorSet.terminal)
+}
 
-  for (const [key, editorArray] of Object.entries(editorSet)) {
-    if (!Array.isArray(editorArray)) {
-      throw new TypeError(dbg`Expecting property ${key} to be an array but received ${editorArray} instead`)
-    }
+export function assertEditorArray (editorArray: unknown): asserts editorArray is readonly Editor[] {
+  if (!Array.isArray(editorArray)) {
+    throw new TypeError(dbg`Expecting an array but received ${editorArray} instead`)
+  }
 
-    for (const editor of editorArray) {
-      assertEditor(editor)
-    }
+  for (const editor of editorArray) {
+    assertEditor(editor)
   }
 }
 
