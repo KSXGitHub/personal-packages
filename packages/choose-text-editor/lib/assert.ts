@@ -112,6 +112,15 @@ export function assertEditorOptions (options: unknown): asserts options is Edito
     if (typeof value === 'string') continue
     if (typeof value === 'number') continue
     if (typeof value === 'boolean') continue
-    throw new TypeError(dbg`Expecting property ${key} to be either a string, a number, or a boolean but received ${value} instead`)
+
+    if (!Array.isArray(value)) {
+      throw new TypeError(dbg`Expecting property ${key} to be either a string, a number, a boolean, or an array but received ${value} instead`)
+    }
+
+    for (const item of value) {
+      if (typeof item === 'string') continue
+      if (typeof item === 'number') continue
+      throw new TypeError(dbg`Expecting array of ${key} to contain only strings and numbers but it has ${item}`)
+    }
   }
 }

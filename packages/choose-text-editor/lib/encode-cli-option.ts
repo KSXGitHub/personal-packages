@@ -15,6 +15,12 @@ export function encodeCliOptions (options: EditorOptions) {
       case 'number':
         result.push(flag, String(value))
         break
+      case 'object':
+        result.push(flag)
+        for (const item of value) {
+          result.push(String(item))
+        }
+        break
     }
   }
 

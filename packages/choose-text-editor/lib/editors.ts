@@ -11,5 +11,5 @@ export interface Editor {
 }
 
 export interface EditorOptions {
-  readonly [name: string]: string | number | boolean
+  readonly [name: string]: string | number | boolean | ReadonlyArray<string | number>
 }
