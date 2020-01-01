@@ -1,7 +1,7 @@
 import cosmiconfig from 'cosmiconfig'
 
 export interface CosmiConfig {
-  (moduleName: string, options: CosmiConfigOptions): CosmiConfigResult
+  (moduleName: string, options: CosmiConfigOptions): CosmiConfigExplorer
 }
 
 export interface CosmiConfigOptions extends cosmiconfig.Options {
@@ -9,14 +9,14 @@ export interface CosmiConfigOptions extends cosmiconfig.Options {
   packageProp: string
 }
 
-export interface CosmiConfigResult {
-  readonly search: () => Promise<CosmiConfigSearchResult | null>
+export interface CosmiConfigExplorer {
+  readonly search: () => Promise<CosmiConfigResult | null>
   readonly clearLoadCache: () => void
   readonly clearSearchCache: () => void
   readonly clearCaches: () => void
 }
 
-export interface CosmiConfigSearchResult {
+export interface CosmiConfigResult {
   readonly config: unknown
   readonly filepath: string
   readonly isEmpty?: boolean

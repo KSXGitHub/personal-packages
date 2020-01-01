@@ -1,4 +1,4 @@
-import { CosmiConfigResult } from './cosmiconfig'
+import { CosmiConfigExplorer } from './cosmiconfig'
 
 export enum CacheType {
   Load = 'load',
@@ -6,7 +6,7 @@ export enum CacheType {
   All = 'all'
 }
 
-export function clearCache (explorer: CosmiConfigResult, cacheType: CacheType) {
+export function clearCache (explorer: CosmiConfigExplorer, cacheType: CacheType) {
   switch (cacheType) {
     case CacheType.Load:
       return explorer.clearLoadCache()
