@@ -1,7 +1,7 @@
 import process from 'process'
 import which from 'which'
 import { cosmiconfig } from 'cosmiconfig'
-import { MainParam, Status, main, choose } from '../lib'
+import { MainParam, Status, main, choose } from '..'
 import args from './args'
 
 const param: MainParam<never> = {

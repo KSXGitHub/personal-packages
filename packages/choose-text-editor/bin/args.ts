@@ -1,5 +1,5 @@
 import yargs from 'yargs'
-import { SEARCH_PLACES, PACKAGE_PROP, CacheType } from '../lib'
+import { SEARCH_PLACES, PACKAGE_PROP, CacheType } from '..'
 
 export const args = yargs
   .option('searchPlaces', {
