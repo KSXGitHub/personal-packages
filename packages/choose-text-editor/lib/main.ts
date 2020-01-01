@@ -1,7 +1,6 @@
 import escape from 'shell-escape'
 import { dbg } from 'string-template-format'
 import { ok, err } from '@tsfun/result'
-import { name as MODULE_NAME } from '../package.json'
 import { Process } from './process'
 import { Which } from './which'
 import { CosmiConfig } from './cosmiconfig'
@@ -9,6 +8,7 @@ import { CacheType } from './clear-cache'
 import { assertEditorSet } from './assert'
 import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
+import { PACKAGE_NAME } from './constants'
 import { Status } from './status'
 import { LoggerPair } from './utils'
 
@@ -30,7 +30,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   const { env, exit } = process
   const { info: logInfo, error: logError } = LoggerPair(process)
 
-  const configExplorer = param.cosmiconfig(MODULE_NAME, {
+  const configExplorer = param.cosmiconfig(PACKAGE_NAME, {
     searchPlaces: param.searchPlaces,
     packageProp: param.packageProp,
     cache: param.cache,

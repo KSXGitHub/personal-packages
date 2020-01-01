@@ -1,3 +1,5 @@
+export const PACKAGE_NAME = 'choose-text-editor'
+
 export const SEARCH_PLACES = [
   'choose-text-editor',
   'choose-text-editor.json',
@@ -8,4 +10,4 @@ export const SEARCH_PLACES = [
   'package.yaml'
 ]
 
-export const PACKAGE_PROP = 'choose-text-editor'
+export const PACKAGE_PROP = PACKAGE_NAME
