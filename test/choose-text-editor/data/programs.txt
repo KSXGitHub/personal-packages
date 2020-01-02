@@ -1,0 +1,8 @@
+atom
+code
+emacs
+gedit
+kate
+nano
+subl
+vim

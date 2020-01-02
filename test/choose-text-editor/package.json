@@ -1,7 +1,10 @@
 {
   "private": true,
   "dependencies": {
+    "fs-extra": "^8.1.0",
     "@tsfun/option": "^0.0.10",
+    "@tsfun/result": "^0.0.11",
+    "@types/fs-extra": "^8.0.1",
     "@khai96x/choose-text-editor": "file:../../packages/choose-text-editor"
   }
 }
