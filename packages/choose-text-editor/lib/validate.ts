@@ -23,10 +23,10 @@ export function validateEditorSet (editorSet: unknown, callback: EditorSetCallba
 }
 
 interface ChooserCallbacks {
-  readonly onInvalidPackageName: (receivedPackageName: string, expectedPackageName: typeof PACKAGE_NAME) => void
-  readonly onNonEmptyPath: (path: string) => void
-  readonly onInvalidVersionRange: (versionRange: string) => void
-  readonly onUnsatisfiedVersion: (expectedVersionRange: string, receivedVersion: string) => void
+  onInvalidPackageName (receivedPackageName: string, expectedPackageName: typeof PACKAGE_NAME): void
+  onNonEmptyPath (path: string): void
+  onInvalidVersionRange (versionRange: string): void
+  onUnsatisfiedVersion (expectedVersionRange: string, receivedVersion: string): void
 }
 
 export function validateChooser (chooser: string, callbacks: ChooserCallbacks): chooser is string {
