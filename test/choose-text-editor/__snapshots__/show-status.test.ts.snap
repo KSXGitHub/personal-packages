@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls logger function 1`] = `
+Array [
+  Array [
+    "code | name",
+  ],
+  Array [
+    "-----|----------------------",
+  ],
+  Array [
+    "   0 | Success",
+  ],
+  Array [
+    "   1 | IndeterminableTTY",
+  ],
+  Array [
+    "   2 | NotFound",
+  ],
+  Array [
+    "   3 | InvalidEditorSet",
+  ],
+  Array [
+    "   4 | ConfigLoadingFailure",
+  ],
+  Array [
+    "   5 | EmptyConfig",
+  ],
+  Array [
+    "   6 | ConfigNotFound",
+  ],
+  Array [
+    "   7 | ExecutionFailure",
+  ],
+  Array [
+    "   8 | UnsatisfiedChooser",
+  ],
+  Array [
+    " 255 | UnknownFailure",
+  ],
+]
+`;
+
+exports[`prints message 1`] = `
+"
+code | name
+-----|----------------------
+   0 | Success
+   1 | IndeterminableTTY
+   2 | NotFound
+   3 | InvalidEditorSet
+   4 | ConfigLoadingFailure
+   5 | EmptyConfig
+   6 | ConfigNotFound
+   7 | ExecutionFailure
+   8 | UnsatisfiedChooser
+ 255 | UnknownFailure
+"
+`;
