@@ -6,7 +6,7 @@ import { Which } from './which'
 import { ExecSync } from './exec-sync'
 import { CosmiConfig } from './cosmiconfig'
 import { CacheType } from './clear-cache'
-import { assertEditorSet } from './assert'
+import { validateEditorSet, validateChooser } from './validate'
 import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
 import { PACKAGE_NAME, EXEC_OPTIONS } from './constants'
@@ -82,13 +82,45 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   const editorSet = searchResult.value.config
 
-  try {
-    assertEditorSet(editorSet)
-  } catch (error) {
-    logError('[ERROR] Received object does not match schema')
-    logError(dbg`* content: ${editorSet}`)
-    logError(dbg`* message: ${error}`)
+  if (!validateEditorSet(editorSet, validatorResult => {
+    logError('[ERROR] Config does not satisfy schema')
+
+    for (const error of validatorResult.errors) {
+      logError(' '.repeat(4) + error.message)
+    }
+
+    logError(dbg`* validator result: ${validatorResult}`)
+  })) {
     return exit(Status.InvalidEditorSet)
+  }
+
+  if (!validateChooser(editorSet.chooser, {
+    onInvalidPackageName (received, expected) {
+      logError('[ERROR] Invalid chooser')
+      logError(dbg`* expected: ${expected}`)
+      logError(dbg`* received: ${received}`)
+    },
+
+    onInvalidVersionRange (versionRange) {
+      logError('[ERROR] Invalid version range for chooser')
+      logError('help: read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax')
+      logError(dbg`* version range: ${versionRange}`)
+    },
+
+    onNonEmptyPath (path) {
+      logError('[ERROR] Package path is expected to NOT be specified, but it was')
+      logError(dbg`* path: ${path}`)
+    },
+
+    onUnsatisfiedVersion (expectedVersionRange, receivedVersion) {
+      logError('[ERROR] Incompatible chooser')
+      logError(`help: This version of ${PACKAGE_NAME} does not satisfied what is required in config`)
+      logError(`help: Please update ${PACKAGE_NAME} or your config`)
+      logError(dbg`* in config: ${expectedVersionRange}`)
+      logError(dbg`* package version: ${receivedVersion}`)
+    }
+  })) {
+    return exit(Status.UnsatisfiedChooser)
   }
 
   /* CHOOSE A COMMAND */
