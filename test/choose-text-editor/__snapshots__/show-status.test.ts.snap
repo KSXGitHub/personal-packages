@@ -3,57 +3,57 @@
 exports[`calls logger function 1`] = `
 Array [
   Array [
-    "code | name",
+    " code | name",
   ],
   Array [
-    "-----|----------------------",
+    "------|----------------------",
   ],
   Array [
-    "   0 | Success",
+    "    0 | Success",
   ],
   Array [
-    "   1 | UnexpectedException",
+    "    1 | UnexpectedException",
   ],
   Array [
-    "   2 | IndeterminableTTY",
+    "    2 | IndeterminableTTY",
   ],
   Array [
-    "   3 | NotFound",
+    "    3 | NotFound",
   ],
   Array [
-    "   4 | InvalidEditorSet",
+    "    4 | InvalidEditorSet",
   ],
   Array [
-    "   5 | ConfigLoadingFailure",
+    "    5 | ConfigLoadingFailure",
   ],
   Array [
-    "   6 | EmptyConfig",
+    "    6 | EmptyConfig",
   ],
   Array [
-    "   7 | ConfigNotFound",
+    "    7 | ConfigNotFound",
   ],
   Array [
-    "   8 | ExecutionFailure",
+    "    8 | ExecutionFailure",
   ],
   Array [
-    "   9 | UnsatisfiedChooser",
+    "    9 | UnsatisfiedChooser",
   ],
 ]
 `;
 
 exports[`prints message 1`] = `
 "
-code | name
------|----------------------
-   0 | Success
-   1 | UnexpectedException
-   2 | IndeterminableTTY
-   3 | NotFound
-   4 | InvalidEditorSet
-   5 | ConfigLoadingFailure
-   6 | EmptyConfig
-   7 | ConfigNotFound
-   8 | ExecutionFailure
-   9 | UnsatisfiedChooser
+ code | name
+------|----------------------
+    0 | Success
+    1 | UnexpectedException
+    2 | IndeterminableTTY
+    3 | NotFound
+    4 | InvalidEditorSet
+    5 | ConfigLoadingFailure
+    6 | EmptyConfig
+    7 | ConfigNotFound
+    8 | ExecutionFailure
+    9 | UnsatisfiedChooser
 "
 `;

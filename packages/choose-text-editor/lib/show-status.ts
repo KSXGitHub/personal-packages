@@ -7,11 +7,11 @@ export function showStatus (logInfo: Logger) {
     .reduce((prev, current) => prev.length > current.length ? prev : current)
     .length
 
-  logInfo('code | name')
-  logInfo('-----|' + '-'.repeat(longestNameLength + 2))
+  logInfo(' code | name')
+  logInfo('------|' + '-'.repeat(longestNameLength + 2))
 
   for (const [name, code] of Object.entries(Status)) {
     if (typeof code !== 'number') continue
-    logInfo(`${String(code).padStart(4)} | ${name}`)
+    logInfo(`${String(code).padStart(5)} | ${name}`)
   }
 }
