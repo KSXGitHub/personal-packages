@@ -1,4 +1,91 @@
-import { validateChooser } from '@khai96x/choose-text-editor'
+import {
+  EditorSet,
+  JsonSchemaValidatorResult,
+  validateEditorSet,
+  validateChooser
+} from '@khai96x/choose-text-editor'
+
+describe('validateEditorSet', () => {
+  function setup<EditorSet> (editorSet: EditorSet) {
+    const callback = jest.fn()
+    const result = validateEditorSet(editorSet, callback)
+    return { editorSet, callback, result }
+  }
+
+  describe('valid EditorSet', () => {
+    describe('with neither "graphical" or "terminal" property', () => {
+      const editorSet: EditorSet = {
+        chooser: '@khai96x/choose-text-editor'
+      }
+
+      it('returns true', () => {
+        expect(setup(editorSet).result).toBe(true)
+      })
+
+      it('does not call callback', () => {
+        expect(setup(editorSet).callback).not.toBeCalled()
+      })
+    })
+
+    describe('with both "graphical" and "terminal" properties being empty arrays', () => {
+      const editorSet: EditorSet = {
+        graphical: [],
+        terminal: [],
+        chooser: '@khai96x/choose-text-editor'
+      }
+
+      it('returns true', () => {
+        expect(setup(editorSet).result).toBe(true)
+      })
+
+      it('does not call callback', () => {
+        expect(setup(editorSet).callback).not.toBeCalled()
+      })
+    })
+
+    describe('with both "graphical" and "terminal" properties being non-empty arrays', () => {
+      const editorSet: EditorSet = {
+        graphical: [
+          { program: 'code', flags: ['wait'] },
+          { program: 'atom', flags: ['wait'] },
+          { program: 'subl', flags: ['wait'] },
+          { program: 'gedit', flags: ['wait'] },
+          { program: 'kate', flags: ['wait'] }
+        ],
+        terminal: [
+          { program: 'vim' },
+          { program: 'emacs' },
+          { program: 'edit' }
+        ],
+        chooser: '@khai96x/choose-text-editor'
+      }
+
+      it('returns true', () => {
+        expect(setup(editorSet).result).toBe(true)
+      })
+
+      it('does not call callback', () => {
+        expect(setup(editorSet).callback).not.toBeCalled()
+      })
+    })
+  })
+
+  describe('invalid EditorSet', () => {
+    const editorSet = 'not an EditorSet'
+
+    it('returns false', () => {
+      expect(setup(editorSet).result).toBe(false)
+    })
+
+    it('calls callback exactly once', () => {
+      expect(setup(editorSet).callback).toBeCalledTimes(1)
+    })
+
+    it('calls callback with a ValidatorResult', () => {
+      expect(setup(editorSet).callback).toBeCalledWith(expect.any(JsonSchemaValidatorResult))
+    })
+  })
+})
 
 describe('validateChooser', () => {
   const PACKAGE_NAME = '@khai96x/choose-text-editor'
