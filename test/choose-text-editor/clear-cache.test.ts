@@ -1,7 +1,7 @@
 import { CacheType, CosmiConfigExplorer, clearCache } from '@khai96x/choose-text-editor'
 
 function NEVER_CALL (): never {
-  throw new Error('This function is unreachable')
+  throw new Error('This function is not to be called')
 }
 
 class Explorer implements CosmiConfigExplorer {
