@@ -3,7 +3,6 @@ import jsonschema from 'jsonschema'
 import parsePackageName from 'parse-package-name'
 import { schemas } from './schemas'
 import { EditorSet } from './editors'
-import { PACKAGE_NAME } from './constants'
 
 interface EditorSetCallback {
   (result: jsonschema.ValidatorResult): void
@@ -37,8 +36,8 @@ export function validateChooser (
 ): boolean {
   const expectation = parsePackageName(chooser)
 
-  if (expectation.name !== PACKAGE_NAME) {
-    callbacks.onInvalidPackageName(name, PACKAGE_NAME)
+  if (expectation.name !== name) {
+    callbacks.onInvalidPackageName(name, name)
     return false
   }
 
