@@ -23,33 +23,37 @@ export function validateEditorSet (editorSet: unknown, callback: EditorSetCallba
 }
 
 interface ChooserCallbacks {
-  onInvalidPackageName (receivedPackageName: string, expectedPackageName: typeof PACKAGE_NAME): void
+  onInvalidPackageName (receivedPackageName: string, expectedPackageName: string): void
   onNonEmptyPath (path: string): void
   onInvalidVersionRange (versionRange: string): void
   onUnsatisfiedVersion (expectedVersionRange: string, receivedVersion: string): void
 }
 
-export function validateChooser (chooser: string, callbacks: ChooserCallbacks): boolean {
-  const { name, path, version } = parsePackageName(chooser)
+export function validateChooser (
+  chooser: string,
+  name: string,
+  version: string,
+  callbacks: ChooserCallbacks
+): boolean {
+  const expectation = parsePackageName(chooser)
 
-  if (name !== PACKAGE_NAME) {
+  if (expectation.name !== PACKAGE_NAME) {
     callbacks.onInvalidPackageName(name, PACKAGE_NAME)
     return false
   }
 
-  if (path) {
-    callbacks.onNonEmptyPath(path)
+  if (expectation.path) {
+    callbacks.onNonEmptyPath(expectation.path)
     return false
   }
 
-  if (!semver.validRange(version)) {
-    callbacks.onInvalidVersionRange(version)
+  if (!semver.validRange(expectation.version)) {
+    callbacks.onInvalidVersionRange(expectation.version)
     return false
   }
 
-  const actualVersion = require('../package.json').version
-  if (!semver.satisfies(actualVersion, version)) {
-    callbacks.onUnsatisfiedVersion(version, actualVersion)
+  if (!semver.satisfies(version, expectation.version)) {
+    callbacks.onUnsatisfiedVersion(expectation.version, version)
     return false
   }
 

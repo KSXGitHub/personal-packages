@@ -96,7 +96,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
     return exit(Status.InvalidEditorSet)
   }
 
-  if (!validateChooser(editorSet.chooser, {
+  if (!validateChooser(editorSet.chooser, param.packageName, param.packageVersion, {
     onInvalidPackageName (received, expected) {
       logError('[ERROR] Invalid chooser')
       logError(dbg`* expected: ${expected}`)
