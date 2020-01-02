@@ -37,7 +37,7 @@ export function validateChooser (
   const expectation = parsePackageName(chooser)
 
   if (expectation.name !== name) {
-    callbacks.onInvalidPackageName(name, name)
+    callbacks.onInvalidPackageName(name, expectation.name)
     return false
   }
 
