@@ -25,7 +25,11 @@ export const args = yargs
   })
   .option('clearCache', {
     describe: 'Clear cache and exit',
-    choices: Object.values(CacheType),
+    choices: [
+      CacheType.Search,
+      CacheType.Load,
+      CacheType.All
+    ],
     required: false
   })
   .option('showStatus', {
@@ -35,7 +39,12 @@ export const args = yargs
   .option('onChosen', {
     alias: 'x',
     describe: 'Whether to print or to execute chosen command',
-    choices: Object.values(CommandHandlingMethod),
+    choices: [
+      CommandHandlingMethod.PrintSingleLine,
+      CommandHandlingMethod.PrintMultiLine,
+      CommandHandlingMethod.PrintJson,
+      CommandHandlingMethod.Execute
+    ],
     default: CommandHandlingMethod.PrintSingleLine
   })
   .env('CHOOSE_TEXT_EDITOR')

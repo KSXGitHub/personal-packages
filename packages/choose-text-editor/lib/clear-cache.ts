@@ -1,6 +1,6 @@
 import { CosmiConfigExplorer } from './cosmiconfig'
 
-export enum CacheType {
+export const enum CacheType {
   Load = 'load',
   Search = 'search',
   All = 'all'

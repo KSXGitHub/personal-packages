@@ -4,7 +4,7 @@ import { ExecSync } from './exec-sync'
 import { Command } from './command'
 import { Status } from './status'
 
-export enum CommandHandlingMethod {
+export const enum CommandHandlingMethod {
   PrintSingleLine = 'print:single',
   PrintMultiLine = 'print:multi',
   PrintJson = 'print:json',
