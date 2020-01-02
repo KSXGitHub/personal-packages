@@ -20,5 +20,5 @@ const param: MainParam<never> = {
 main(param).catch(error => {
   console.error('[ERROR] An error occurred')
   console.error(error)
-  return process.exit(Status.UnknownFailure)
+  return process.exit(Status.UnexpectedException)
 })

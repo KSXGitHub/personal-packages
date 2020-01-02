@@ -12,31 +12,31 @@ Array [
     "   0 | Success",
   ],
   Array [
-    "   1 | IndeterminableTTY",
+    "   1 | UnexpectedException",
   ],
   Array [
-    "   2 | NotFound",
+    "   2 | IndeterminableTTY",
   ],
   Array [
-    "   3 | InvalidEditorSet",
+    "   3 | NotFound",
   ],
   Array [
-    "   4 | ConfigLoadingFailure",
+    "   4 | InvalidEditorSet",
   ],
   Array [
-    "   5 | EmptyConfig",
+    "   5 | ConfigLoadingFailure",
   ],
   Array [
-    "   6 | ConfigNotFound",
+    "   6 | EmptyConfig",
   ],
   Array [
-    "   7 | ExecutionFailure",
+    "   7 | ConfigNotFound",
   ],
   Array [
-    "   8 | UnsatisfiedChooser",
+    "   8 | ExecutionFailure",
   ],
   Array [
-    " 255 | UnknownFailure",
+    "   9 | UnsatisfiedChooser",
   ],
 ]
 `;
@@ -46,14 +46,14 @@ exports[`prints message 1`] = `
 code | name
 -----|----------------------
    0 | Success
-   1 | IndeterminableTTY
-   2 | NotFound
-   3 | InvalidEditorSet
-   4 | ConfigLoadingFailure
-   5 | EmptyConfig
-   6 | ConfigNotFound
-   7 | ExecutionFailure
-   8 | UnsatisfiedChooser
- 255 | UnknownFailure
+   1 | UnexpectedException
+   2 | IndeterminableTTY
+   3 | NotFound
+   4 | InvalidEditorSet
+   5 | ConfigLoadingFailure
+   6 | EmptyConfig
+   7 | ConfigNotFound
+   8 | ExecutionFailure
+   9 | UnsatisfiedChooser
 "
 `;
