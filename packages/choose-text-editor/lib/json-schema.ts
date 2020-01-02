@@ -13,12 +13,13 @@ export const SchemaLoader =
 
 export class SchemaContainer {
   public readonly schemaObject: any
+  private readonly validator = new jsonschema.Validator()
 
   constructor (path: string, require: NodeRequire) {
     this.schemaObject = require(path)
   }
 
   public validate (instance: any, options?: jsonschema.Options) {
-    return jsonschema.validate(instance, this.schemaObject, options)
+    return this.validator.validate(instance, this.schemaObject, options)
   }
 }
