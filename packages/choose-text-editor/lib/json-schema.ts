@@ -2,6 +2,7 @@ import { Validator, Options } from 'jsonschema'
 import once from 'exec-once'
 
 export { Options as JsonSchemaValidationOptions }
+export { ValidatorResult as JsonSchemaValidatorResult } from 'jsonschema'
 
 export interface SchemaLoader {
   (path: string): () => SchemaContainer
