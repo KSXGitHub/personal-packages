@@ -1,7 +1,7 @@
-import jsonschema from 'jsonschema'
+import { Validator, Options as JsonSchemaValidationOptions } from 'jsonschema'
 import once from 'exec-once'
 
-export type JsonSchemaValidationOptions = jsonschema.Options
+export { JsonSchemaValidationOptions }
 
 export interface SchemaLoader {
   (path: string): () => SchemaContainer
@@ -13,13 +13,13 @@ export const SchemaLoader =
 
 export class SchemaContainer {
   public readonly schemaObject: any
-  private readonly validator = new jsonschema.Validator()
+  private readonly validator = new Validator()
 
   constructor (path: string, require: NodeRequire) {
     this.schemaObject = require(path)
   }
 
-  public validate (instance: any, options?: jsonschema.Options) {
+  public validate (instance: any, options?: JsonSchemaValidationOptions) {
     return this.validator.validate(instance, this.schemaObject, options)
   }
 }
