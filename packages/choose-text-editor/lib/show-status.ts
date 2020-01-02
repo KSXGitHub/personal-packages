@@ -1,5 +1,5 @@
 import { Status } from './status'
-import { Logger } from './utils'
+import { Logger } from './console'
 
 export function showStatus (logInfo: Logger) {
   const longestNameLength = Object

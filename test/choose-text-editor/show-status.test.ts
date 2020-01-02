@@ -8,8 +8,8 @@ it('calls logger function', () => {
 
 it('prints message', () => {
   let message = ''
-  showStatus(chunk => {
-    message += chunk + '\n'
+  showStatus((...chunks: any[]) => {
+    message += chunks.join(' ') + '\n'
   })
   expect('\n' + message).toMatchSnapshot()
 })

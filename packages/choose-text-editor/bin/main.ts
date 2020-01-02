@@ -1,5 +1,6 @@
 import { execSync } from 'child_process'
 import process from 'process'
+import console from 'console'
 import which from 'which'
 import { cosmiconfig } from 'cosmiconfig'
 import { MainParam, Status, main, choose, PACKAGE_NAME, PACKAGE_VERSION } from '..'
@@ -7,6 +8,7 @@ import args from './args'
 
 const param: MainParam<never> = {
   process,
+  console,
   which,
   execSync,
   packageName: PACKAGE_NAME,

@@ -2,6 +2,7 @@ import escape from 'shell-escape'
 import { dbg } from 'string-template-format'
 import { ok, err } from '@tsfun/result'
 import { Process } from './process'
+import { Console } from './console'
 import { Which } from './which'
 import { ExecSync } from './exec-sync'
 import { CosmiConfig } from './cosmiconfig'
@@ -11,10 +12,10 @@ import { choose } from './choose'
 import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
 import { PACKAGE_NAME, EXEC_OPTIONS } from './constants'
 import { Status } from './status'
-import { LoggerPair } from './utils'
 
 export interface MainParam<ExitReturn> {
   readonly process: Process<ExitReturn>
+  readonly console: Console
   readonly which: Which
   readonly execSync: ExecSync
   readonly packageName: string
@@ -32,9 +33,9 @@ export interface MainParam<ExitReturn> {
 }
 
 export async function main<Return> (param: MainParam<Return>): Promise<Return> {
-  const { process, which } = param
-  const { env, exit } = process
-  const { info: logInfo, error: logError } = LoggerPair(process)
+  const { which } = param
+  const { env, exit } = param.process
+  const { info: logInfo, error: logError } = param.console
 
   const configExplorer = param.cosmiconfig(param.packageName, {
     searchPlaces: param.searchPlaces,
