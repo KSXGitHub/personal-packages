@@ -8,37 +8,6 @@ import { schemas } from './schemas'
 import { EditorSet } from './editors'
 import { PACKAGE_NAME } from './constants'
 
-export function assertObject (object: unknown): asserts object is object {
-  if (typeof object !== 'object') {
-    throw new TypeError(dbg`Expecting an object but received ${object}`)
-  }
-
-  if (object === null) {
-    throw new TypeError('Expecting an object but received null')
-  }
-}
-
-export function assertArray (array: unknown): asserts array is readonly unknown[] {
-  if (Array.isArray(array)) return
-  throw new TypeError(dbg`Expecting an array but received ${array} instead`)
-}
-
-export function checkKey<
-  Object extends object,
-  Key extends string | number | symbol
-> (object: Object, key: Key): object is Object & { readonly [_ in Key]: unknown } {
-  return key in object
-}
-
-export function assertKey<
-  Object extends object,
-  Key extends string | number | symbol
-> (object: Object, key: Key): asserts object is Object & { readonly [_ in Key]: unknown } {
-  if (!checkKey(object, key)) {
-    throw new TypeError(dbg`Expecting object to have property ${key} but it hasn't`)
-  }
-}
-
 export function assertEditorSet (editorSet: unknown): asserts editorSet is EditorSet {
   const result = schemas.EditorSet().validate(editorSet, {
     allowUnknownAttributes: true
