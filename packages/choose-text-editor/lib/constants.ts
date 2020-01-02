@@ -1,4 +1,6 @@
-export const PACKAGE_NAME = 'choose-text-editor'
+export const PACKAGE_JSON = require('../package.json')
+
+export const PACKAGE_NAME = PACKAGE_JSON.name
 
 export const SEARCH_PLACES = [
   'choose-text-editor',
@@ -10,6 +12,6 @@ export const SEARCH_PLACES = [
   'package.yaml'
 ]
 
-export const PACKAGE_PROP = PACKAGE_NAME
+export const PACKAGE_PROP = 'choose-text-editor'
 
 export const EXEC_OPTIONS = { stdio: 'inherit' } as const
