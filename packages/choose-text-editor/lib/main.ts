@@ -97,29 +97,29 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   }
 
   if (!validateChooser(editorSet.chooser, param.packageName, param.packageVersion, {
-    onInvalidPackageName (received, expected) {
+    onInvalidPackageName (config, used) {
       logError('[ERROR] Invalid chooser')
-      logError(dbg`* expected: ${expected}`)
-      logError(dbg`* received: ${received}`)
+      logError(dbg`* config package: ${config}`)
+      logError(dbg`* used package: ${used}`)
     },
 
     onInvalidVersionRange (versionRange) {
       logError('[ERROR] Invalid version range for chooser')
       logError('help: read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax')
-      logError(dbg`* version range: ${versionRange}`)
+      logError(dbg`* config version range: ${versionRange}`)
     },
 
     onNonEmptyPath (path) {
       logError('[ERROR] Package path is expected to NOT be specified, but it was')
-      logError(dbg`* path: ${path}`)
+      logError(dbg`* config path: ${path}`)
     },
 
     onUnsatisfiedVersion (expectedVersionRange, receivedVersion) {
       logError('[ERROR] Incompatible chooser')
       logError(`help: This version of ${PACKAGE_NAME} does not satisfied what is required in config`)
       logError(`help: Please update ${PACKAGE_NAME} or your config`)
-      logError(dbg`* in config: ${expectedVersionRange}`)
-      logError(dbg`* package version: ${receivedVersion}`)
+      logError(dbg`* config version: ${expectedVersionRange}`)
+      logError(dbg`* used version: ${receivedVersion}`)
     }
   })) {
     return exit(Status.UnsatisfiedChooser)
