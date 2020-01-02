@@ -17,6 +17,7 @@ export interface MainParam<ExitReturn> {
   readonly process: Process<ExitReturn>
   readonly which: Which
   readonly execSync: ExecSync
+  readonly packageName: string
   readonly cosmiconfig: CosmiConfig
   readonly searchPlaces: string[]
   readonly packageProp: string
@@ -34,7 +35,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   const { env, exit } = process
   const { info: logInfo, error: logError } = LoggerPair(process)
 
-  const configExplorer = param.cosmiconfig(PACKAGE_NAME, {
+  const configExplorer = param.cosmiconfig(param.packageName, {
     searchPlaces: param.searchPlaces,
     packageProp: param.packageProp,
     cache: param.cache,
