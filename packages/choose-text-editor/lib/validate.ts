@@ -29,7 +29,7 @@ interface ChooserCallbacks {
   onUnsatisfiedVersion (expectedVersionRange: string, receivedVersion: string): void
 }
 
-export function validateChooser (chooser: string, callbacks: ChooserCallbacks): chooser is string {
+export function validateChooser (chooser: string, callbacks: ChooserCallbacks): boolean {
   const { name, path, version } = parsePackageName(chooser)
 
   if (name !== PACKAGE_NAME) {
