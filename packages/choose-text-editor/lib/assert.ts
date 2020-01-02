@@ -47,27 +47,46 @@ export function assertEditorSet (editorSet: unknown): asserts editorSet is Edito
   if (!result.valid) throw new RangeError(dbg`Object is not a valid EditorSet: ${editorSet}`)
 }
 
-export function assertChooser (chooser: unknown): asserts chooser is string {
+export const enum ChooserError {
+  NotAString,
+  PackageName,
+  HasPath,
+  InvalidVersionRange,
+  UnsatisfiedVersion
+}
+
+export interface ChooserErrorReceiver {
+  (error: ChooserError): void
+}
+
+export function validateChooser (chooser: unknown, callback: ChooserErrorReceiver): chooser is string {
   if (typeof chooser !== 'string') {
-    throw new TypeError(dbg`Expecting a string but received ${chooser} instead`)
+    callback(ChooserError.NotAString)
+    return false
   }
 
   const { name, path, version } = parsePackageName(chooser)
 
   if (name !== PACKAGE_NAME) {
-    throw new RangeError(dbg`Expecting chooser's package name to be ${PACKAGE_NAME} but received ${name} instead`)
+    callback(ChooserError.PackageName)
+    return false
   }
 
   if (path) {
-    throw new RangeError(dbg`Expecting chooser's path to be empty but received ${path} instead`)
+    callback(ChooserError.HasPath)
+    return false
   }
 
   if (!semver.validRange(version)) {
-    throw new RangeError(dbg`Invalid version range: ${version}`)
+    callback(ChooserError.InvalidVersionRange)
+    return false
   }
 
   const actualVersion = require('../package.json').version
   if (!semver.satisfies(actualVersion, version)) {
-    throw new Error(dbg`Incompatible version: ${actualVersion} does not satisfy ${version}`)
+    callback(ChooserError.UnsatisfiedVersion)
+    return false
   }
+
+  return true
 }
