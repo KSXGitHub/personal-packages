@@ -1,6 +1,7 @@
 export * from './choose'
 export * from './clear-cache'
 export * from './command'
+export * from './console'
 export * from './constants'
 export * from './cosmiconfig'
 export * from './editors'
