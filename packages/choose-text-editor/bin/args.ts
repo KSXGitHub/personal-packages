@@ -1,5 +1,5 @@
 import yargs from 'yargs'
-import { SEARCH_PLACES, PACKAGE_PROP, CacheType } from '..'
+import { SEARCH_PLACES, PACKAGE_PROP, CacheType, CommandHandlingMethod } from '..'
 
 export const args = yargs
   .option('searchPlaces', {
@@ -32,10 +32,11 @@ export const args = yargs
     describe: 'Display exit status codes and names, then exit',
     type: 'boolean'
   })
-  .option('open', {
-    alias: ['exec', 'x'],
-    describe: 'Execute command when found',
-    type: 'boolean'
+  .option('onChosen', {
+    alias: 'x',
+    describe: 'Whether to print or to execute chosen command',
+    choices: Object.values(CommandHandlingMethod),
+    default: CommandHandlingMethod.PrintSingleLine
   })
   .env('CHOOSE_TEXT_EDITOR')
   .help()
