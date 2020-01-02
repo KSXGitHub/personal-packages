@@ -18,6 +18,7 @@ export interface MainParam<ExitReturn> {
   readonly which: Which
   readonly execSync: ExecSync
   readonly packageName: string
+  readonly packageVersion: string
   readonly cosmiconfig: CosmiConfig
   readonly searchPlaces: string[]
   readonly packageProp: string
