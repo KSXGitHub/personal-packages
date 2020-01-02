@@ -47,16 +47,16 @@ class ExecutionHandler<Return> {
 
   public async [CommandHandlingMethod.Execute] (): Promise<Return> {
     const { logError, command, exit } = this.options
-    const finalArgs = [...command.args, ...this.options.args]
+    const args = [...command.args, ...this.options.args]
     const { dbg } = await import('string-template-format')
     const { EXEC_OPTIONS } = await import('./constants')
 
     try {
-      this.options.execSync(this.options.command.path, finalArgs, EXEC_OPTIONS)
+      this.options.execSync(this.options.command.path, args, EXEC_OPTIONS)
     } catch (error) {
       logError('[ERROR] Execution of command resulted in failure')
       logError(dbg`* executable: ${command.path}`)
-      logError(dbg`* arguments: ${finalArgs}`)
+      logError(dbg`* arguments: ${args}`)
       logError(dbg`* error: ${error}`)
       logError(dbg`* status: ${error.status}`)
       return exit(Status.ExecutionFailure)
