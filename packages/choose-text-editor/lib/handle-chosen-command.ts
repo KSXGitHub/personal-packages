@@ -1,3 +1,4 @@
+import { concat } from 'iter-tools'
 import { Exit } from './process'
 import { Logger } from './console'
 import { ExecSync } from './exec-sync'
@@ -34,7 +35,7 @@ class ExecutionHandler<Return> {
   public async [CommandHandlingMethod.PrintMultiLine] (): Promise<Return> {
     const { path, args } = this.options.command
     const { default: escape } = await import('shell-escape')
-    for (const line of [path, ...args, ...this.options.args]) {
+    for (const line of concat([path], args, this.options.args)) {
       this.options.logInfo(escape([line]))
     }
     return this.options.exit(Status.Success)
