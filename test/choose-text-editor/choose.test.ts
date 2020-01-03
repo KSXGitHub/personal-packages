@@ -1,5 +1,14 @@
-import { EditorSet, Env, NotFound, IndeterminableTTY, Chosen, choose } from '@khai96x/choose-text-editor'
 import mockedWhichImpl from './lib/mocked-which-impl'
+
+import {
+  EditorSet,
+  Env,
+  NotFound,
+  NoEditor,
+  IndeterminableTTY,
+  Chosen,
+  choose
+} from '@khai96x/choose-text-editor'
 
 const chooser = '@khai96x/choose-text-editor'
 
@@ -26,7 +35,7 @@ describe('when there is no editor specified', () => {
 
     it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(NotFound())
+      expect(result).toEqual(NoEditor())
     })
 
     it('does not call which', async () => {
@@ -43,7 +52,7 @@ describe('when there is no editor specified', () => {
 
     it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(NotFound())
+      expect(result).toEqual(NoEditor())
     })
 
     it('does not call which', async () => {
