@@ -1,15 +1,22 @@
 import semver from 'semver'
 import jsonschema from 'jsonschema'
 import parsePackageName from 'parse-package-name'
+import { SchemaContainer } from './json-schema'
 import { schemas } from './schemas'
 import { EditorSet, CliArguments } from './editors'
 
-interface EditorSetCallback {
+interface SchemaValidatorCallback {
   (result: jsonschema.ValidatorResult): void
 }
 
-export function validateEditorSet (editorSet: unknown, callback: EditorSetCallback): editorSet is EditorSet {
-  const result = schemas.EditorSet().validate(editorSet, {
+interface SchemaValidator<Type> {
+  (instance: unknown, callback: SchemaValidatorCallback): instance is Type
+}
+
+const SchemaValidator = <Type> (
+  loadSchemaContainer: () => SchemaContainer
+): SchemaValidator<Type> => (instance, callback): instance is Type => {
+  const result = loadSchemaContainer().validate(instance, {
     allowUnknownAttributes: true
   })
 
@@ -20,6 +27,9 @@ export function validateEditorSet (editorSet: unknown, callback: EditorSetCallba
 
   return true
 }
+
+export const validateEditorSet = SchemaValidator<EditorSet>(schemas.EditorSet)
+export const validateCliArguments = SchemaValidator<CliArguments>(schemas.CliArguments)
 
 interface ChooserCallbacks {
   onInvalidPackageName (configPackageName: string, usedPackageName: string): void
@@ -53,26 +63,6 @@ export function validateChooser (
 
   if (!semver.satisfies(version, config.version)) {
     callbacks.onUnsatisfiedVersion(config.version, version)
-    return false
-  }
-
-  return true
-}
-
-interface CliArgumentsCallback {
-  (result: jsonschema.ValidatorResult): void
-}
-
-export function validateCliArguments (
-  cliArguments: unknown,
-  callback: CliArgumentsCallback
-): cliArguments is CliArguments {
-  const result = schemas.CliArguments().validate(cliArguments, {
-    allowUnknownAttributes: true
-  })
-
-  if (!result.valid) {
-    callback(result)
     return false
   }
 
