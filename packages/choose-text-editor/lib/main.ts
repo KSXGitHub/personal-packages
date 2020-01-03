@@ -106,7 +106,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
     onInvalidVersionRange (versionRange) {
       logError('[ERROR] Invalid version range for chooser')
-      logError('help: read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax')
+      logError('help: Read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax')
       logError(dbg`* config version range: ${versionRange}`)
     },
 
@@ -133,10 +133,10 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   if (result.error) {
     switch (result.error) {
       case (INDETERMINABLE_TTY):
-        logError('[ERROR] Cannot determine whether terminal is graphical or not.')
+        logError('[ERROR] Cannot determine whether terminal is graphical or not')
         return exit(Status.IndeterminableTTY)
       case (NOT_FOUND):
-        logError('[ERROR] No editor detected.')
+        logError('[ERROR] No editor detected')
         return exit(Status.NotFound)
       case (NO_EDITOR):
         logError('[ERROR] No suitable editor')
