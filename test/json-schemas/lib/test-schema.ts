@@ -3,7 +3,10 @@ import * as TJS from 'typescript-json-schema'
 import { project } from '@tools/places'
 import { SchemaContainer } from '@khai96x/choose-text-editor'
 
-const compilerOptions: TJS.CompilerOptions = require(path.join(project, 'tsconfig.json'))
+const compilerOptions: TJS.CompilerOptions = {
+  ...require(path.join(project, 'tsconfig.json')),
+  strictNullChecks: true // workaround
+}
 
 const settings: TJS.PartialArgs = {
   topRef: true,
