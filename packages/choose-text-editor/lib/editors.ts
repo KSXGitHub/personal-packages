@@ -8,9 +8,11 @@ export interface Editor {
   readonly program: string
   readonly flags?: readonly string[]
   readonly options?: EditorOptions
-  readonly suffixes?: readonly string[]
+  readonly suffixes?: CliArguments
 }
 
 export interface EditorOptions {
   readonly [name: string]: string | number | boolean | ReadonlyArray<string | number>
 }
+
+export type CliArguments = readonly string[]

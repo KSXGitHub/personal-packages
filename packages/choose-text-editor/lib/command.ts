@@ -1,12 +1,12 @@
 import { Option, some, none } from '@tsfun/option'
 import { Which, WHICH_OPTIONS } from './which'
-import { Editor } from './editors'
+import { Editor, CliArguments } from './editors'
 import encodeCliFlag from './encode-cli-flag'
 import encodeCliOptions from './encode-cli-option'
 
 export interface Command {
   readonly path: string
-  readonly args: readonly string[]
+  readonly args: CliArguments
 }
 
 export interface CommandConstructorParam {
