@@ -22,7 +22,7 @@ export async function choose (param: ChooseParam): Promise<ChooseResult> {
   const prefixes = JSON.parse(FORCE_EDITOR_PREFIXES)
 
   if (FORCE_EDITOR) {
-    return Chosen({ path: FORCE_EDITOR, args: JSON.parse(FORCE_EDITOR_PREFIXES) })
+    return Chosen({ path: FORCE_EDITOR, args: prefixes })
   }
 
   const isInTty = STR2BOOL[ISINTTY as any]
