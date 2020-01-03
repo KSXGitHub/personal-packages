@@ -10,7 +10,9 @@ import { Which } from './which'
 import { EditorSet } from './editors'
 import { Command } from './command'
 import { STR2BOOL } from './str-to-bool'
-import { NotFound, IndeterminableTTY, PrefixesParsingFailure, Chosen, ChooseResult } from './choose-result'
+import { JsonSchemaValidatorResult } from './json-schema'
+import { validateCliArguments } from './validate'
+import { NotFound, IndeterminableTTY, PrefixesParsingFailure, Chosen, ChooseResult, InvalidPrefixes } from './choose-result'
 
 export interface ChooseParam {
   readonly env: Env
@@ -32,6 +34,18 @@ export async function choose (param: ChooseParam): Promise<ChooseResult> {
   }
 
   const prefixes = prefixesResult.value
+
+  let validatorResult: JsonSchemaValidatorResult
+  if (!validateCliArguments(prefixes, result => {
+    validatorResult = result
+  })) {
+    return InvalidPrefixes(
+      // @ts-ignore
+      validatorResult,
+      prefixes,
+      'FORCE_EDITOR_PREFIXES'
+    )
+  }
 
   if (FORCE_EDITOR) {
     return Chosen({ path: FORCE_EDITOR, args: prefixes })

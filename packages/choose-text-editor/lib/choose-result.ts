@@ -1,3 +1,4 @@
+import { JsonSchemaValidatorResult as ValidatorResult } from './json-schema'
 import { Command } from './command'
 
 interface ResultBase<Error> {
@@ -49,6 +50,23 @@ export const PrefixesParsingFailure = (
   errorObject
 })
 
+export const INVALID_PREFIXES = Symbol('INVALID_PREFIXES')
+export interface InvalidPrefixes extends ResultBase<typeof INVALID_PREFIXES> {
+  readonly envKey: string
+  readonly instance: any
+  readonly validatorResult: ValidatorResult
+}
+export const InvalidPrefixes = (
+  validatorResult: ValidatorResult,
+  instance: any,
+  envKey: string
+): InvalidPrefixes => ({
+  error: INVALID_PREFIXES,
+  envKey,
+  instance,
+  validatorResult
+})
+
 export interface Chosen extends ResultBase<null> {
   readonly command: Command
 }
@@ -61,4 +79,5 @@ export type ChooseResult =
   NotFound |
   IndeterminableTTY |
   PrefixesParsingFailure |
+  InvalidPrefixes |
   Chosen
