@@ -15,4 +15,5 @@ export interface EditorOptions {
   readonly [name: string]: string | number | boolean | ReadonlyArray<string | number>
 }
 
-export type CliArguments = readonly string[]
+export type CliArguments = readonly CliArgumentsElement[]
+export type CliArgumentsElement = string | number | boolean | null

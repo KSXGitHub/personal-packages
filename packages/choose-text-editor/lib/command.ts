@@ -1,6 +1,6 @@
 import { Option, some, none } from '@tsfun/option'
 import { Which, WHICH_OPTIONS } from './which'
-import { Editor, CliArguments } from './editors'
+import { Editor, CliArguments, CliArgumentsElement } from './editors'
 import encodeCliFlag from './encode-cli-flag'
 import encodeCliOptions from './encode-cli-option'
 
@@ -12,7 +12,7 @@ export interface Command {
 export interface CommandConstructorParam {
   readonly editor: Editor
   readonly which: Which
-  readonly prefixes: Iterable<string>
+  readonly prefixes: Iterable<CliArgumentsElement>
 }
 
 export async function Command (param: CommandConstructorParam): Promise<Option<Command>> {
