@@ -2,7 +2,7 @@ import semver from 'semver'
 import jsonschema from 'jsonschema'
 import parsePackageName from 'parse-package-name'
 import { schemas } from './schemas'
-import { EditorSet } from './editors'
+import { EditorSet, CliArguments } from './editors'
 
 interface EditorSetCallback {
   (result: jsonschema.ValidatorResult): void
@@ -53,6 +53,26 @@ export function validateChooser (
 
   if (!semver.satisfies(version, config.version)) {
     callbacks.onUnsatisfiedVersion(config.version, version)
+    return false
+  }
+
+  return true
+}
+
+interface CliArgumentsCallback {
+  (result: jsonschema.ValidatorResult): void
+}
+
+export function validateCliArguments (
+  cliArguments: unknown,
+  callback: CliArgumentsCallback
+): cliArguments is CliArguments {
+  const result = schemas.CliArguments().validate(cliArguments, {
+    allowUnknownAttributes: true
+  })
+
+  if (!result.valid) {
+    callback(result)
     return false
   }
 
