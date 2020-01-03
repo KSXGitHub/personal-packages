@@ -6,7 +6,10 @@ import {
   NotFound,
   NoEditor,
   IndeterminableTTY,
+  PrefixesParsingFailure,
+  InvalidPrefixes,
   Chosen,
+  JsonSchemaValidatorResult,
   choose
 } from '@khai96x/choose-text-editor'
 
@@ -210,6 +213,244 @@ describe('when no valid graphical editor can be found', () => {
         ['magic', { all: false }],
         ['vim', { all: false }]
       ])
+    })
+  })
+})
+
+describe('when FORCE_EDITOR is specified', () => {
+  const FORCE_EDITOR = 'Forced Editor'
+
+  describe('without FORCE_EDITOR_PREFIXES', () => {
+    const param: SetupParam = {
+      editorSet: { chooser },
+      env: { FORCE_EDITOR }
+    }
+
+    it('returns forced editor', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(Chosen({
+        path: FORCE_EDITOR,
+        args: []
+      }))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
+    })
+  })
+
+  describe('with FORCE_EDITOR_PREFIXES being a valid yaml array of primitives', () => {
+    const param: SetupParam = {
+      editorSet: { chooser },
+      env: {
+        FORCE_EDITOR,
+        FORCE_EDITOR_PREFIXES: '[abc, def, 123, ghi, 456, true, null, false]'
+      }
+    }
+
+    it('returns Chosen(<Forced Editor>)', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(Chosen({
+        path: FORCE_EDITOR,
+        args: ['abc', 'def', 123, 'ghi', 456, true, null, false]
+      }))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
+    })
+  })
+
+  describe('with FORCE_EDITOR_PREFIXES being a valid yaml array of primitives, objects and arrays', () => {
+    const param: SetupParam = {
+      editorSet: { chooser },
+      env: {
+        FORCE_EDITOR,
+        FORCE_EDITOR_PREFIXES: '[abc, 123, {}, []]'
+      }
+    }
+
+    it('returns InvalidPrefixes', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(InvalidPrefixes(
+        expect.any(JsonSchemaValidatorResult),
+        ['abc', 123, {}, []],
+        'FORCE_EDITOR_PREFIXES'
+      ))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
+    })
+  })
+
+  describe('with FORCE_EDITOR_PREFIXES being a valid yaml non-array', () => {
+    const param: SetupParam = {
+      editorSet: { chooser },
+      env: {
+        FORCE_EDITOR,
+        FORCE_EDITOR_PREFIXES: 'abc: 123'
+      }
+    }
+
+    it('returns InvalidPrefixes', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(InvalidPrefixes(
+        expect.any(JsonSchemaValidatorResult),
+        { abc: 123 },
+        'FORCE_EDITOR_PREFIXES'
+      ))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
+    })
+  })
+
+  describe('with FORCE_EDITOR_PREFIXES not being a valid yaml', () => {
+    const param: SetupParam = {
+      editorSet: { chooser },
+      env: {
+        FORCE_EDITOR,
+        FORCE_EDITOR_PREFIXES: ': invalid : yaml : syntax :'
+      }
+    }
+
+    it('returns PrefixesParsingFailure', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(PrefixesParsingFailure(
+        expect.anything(),
+        ': invalid : yaml : syntax :',
+        'FORCE_EDITOR_PREFIXES'
+      ))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
+    })
+  })
+})
+
+describe('when FORCE_EDITOR_PREFIXES is specified', () => {
+  const editorSet: EditorSet = {
+    graphical: [
+      {
+        program: 'code',
+        flags: ['prefix'],
+        options: { abc: 123, def: 456 },
+        suffixes: ['suffix']
+      }
+    ],
+    terminal: [],
+    chooser
+  }
+
+  const ISINTTY = 'false'
+
+  describe('valid yaml array of primitives', () => {
+    const param: SetupParam = {
+      editorSet,
+      env: {
+        ISINTTY,
+        FORCE_EDITOR_PREFIXES: '[abc, def, 123, ghi, 456, true, null, false]'
+      }
+    }
+
+    it('returns chosen editor', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(Chosen({
+        path: await mockedWhichImpl('code'),
+        args: [
+          'abc', 'def', 123, 'ghi', 456, true, null, false,
+          '--prefix',
+          '--abc', '123', '--def', '456',
+          'suffix'
+        ]
+      }))
+    })
+
+    it('calls which till chosen one', async () => {
+      const { which } = await setup(param)
+      expect(which.mock.calls).toEqual([
+        ['code', { all: false }]
+      ])
+    })
+  })
+
+  describe('valid yaml array of primitives and non-primitives', () => {
+    const param: SetupParam = {
+      editorSet,
+      env: {
+        ISINTTY,
+        FORCE_EDITOR_PREFIXES: '[abc, 123, {}, []]'
+      }
+    }
+
+    it('returns InvalidPrefixes', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(InvalidPrefixes(
+        expect.any(JsonSchemaValidatorResult),
+        ['abc', 123, {}, []],
+        'FORCE_EDITOR_PREFIXES'
+      ))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
+    })
+  })
+
+  describe('valid yaml non-array', () => {
+    const param: SetupParam = {
+      editorSet,
+      env: {
+        ISINTTY,
+        FORCE_EDITOR_PREFIXES: 'abc: 123'
+      }
+    }
+
+    it('returns InvalidPrefixes', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(InvalidPrefixes(
+        expect.any(JsonSchemaValidatorResult),
+        { abc: 123 },
+        'FORCE_EDITOR_PREFIXES'
+      ))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
+    })
+  })
+
+  describe('invalid yaml', () => {
+    const param: SetupParam = {
+      editorSet,
+      env: {
+        ISINTTY,
+        FORCE_EDITOR_PREFIXES: ': not : valid : yaml :'
+      }
+    }
+
+    it('returns PrefixesParsingFailure', async () => {
+      const { result } = await setup(param)
+      expect(result).toEqual(PrefixesParsingFailure(
+        expect.anything(),
+        ': not : valid : yaml :',
+        'FORCE_EDITOR_PREFIXES'
+      ))
+    })
+
+    it('does not call which', async () => {
+      const { which } = await setup(param)
+      expect(which).not.toBeCalled()
     })
   })
 })
