@@ -2,6 +2,7 @@ import yargs from 'yargs'
 import { SEARCH_PLACES, PACKAGE_PROP, CacheType, CommandHandlingMethod } from '..'
 
 export const args = yargs
+  .usage('$0 [options] ...arguments')
   .option('searchPlaces', {
     describe: 'Places to search for config file',
     type: 'array',
