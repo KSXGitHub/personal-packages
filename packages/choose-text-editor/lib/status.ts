@@ -8,7 +8,8 @@ export enum Status {
   EmptyConfig = 6,
   ConfigNotFound = 7,
   ExecutionFailure = 8,
-  UnsatisfiedChooser = 9
+  UnsatisfiedChooser = 9,
+  InvalidPrefix = 10
 }
 
 export default Status

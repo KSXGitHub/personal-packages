@@ -9,7 +9,7 @@ import { CacheType } from './clear-cache'
 import { validateEditorSet, validateChooser } from './validate'
 import { choose } from './choose'
 import { CommandHandlingMethod, handleChosenCommand } from './handle-chosen-command'
-import { INDETERMINABLE_TTY, NOT_FOUND } from './choose-result'
+import { INDETERMINABLE_TTY, NOT_FOUND, PREFIXES_PARSING_FAILURE } from './choose-result'
 import { PACKAGE_NAME } from './constants'
 import { Status } from './status'
 
@@ -138,6 +138,11 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
       case (NOT_FOUND):
         logError('[ERROR] No editor detected.')
         return exit(Status.NotFound)
+      case (PREFIXES_PARSING_FAILURE):
+        logError('[ERROR] Failed to parse prefixes')
+        logError(`* env key: ${result.envKey}`)
+        logError(`* env value: ${result.envValue}`)
+        return exit(Status.InvalidPrefix)
     }
   }
 
