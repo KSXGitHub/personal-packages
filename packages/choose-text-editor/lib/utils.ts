@@ -21,3 +21,5 @@ class ConcatLengthResult<Element> implements IterableWithLength<Element> {
 export function concatWithLength<Element> (...iterables: IterableWithLength<Element>[]) {
   return new ConcatLengthResult(iterables)
 }
+
+export const toStringArray = (array: readonly unknown[]) => array.map(item => String(item))

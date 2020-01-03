@@ -25,16 +25,16 @@ class CommandHandler {
 
   public async [CommandHandlingMethod.PrintSingleLine] (): Promise<Status> {
     const { path, args } = this.options.command
-    const { default: escape } = await import('shell-escape')
-    this.options.logInfo(escape([path, ...args, ...this.options.args]))
+    const { shellEscape } = await import('./shell-escape-any-array')
+    this.options.logInfo(shellEscape([path, ...args, ...this.options.args]))
     return Status.Success
   }
 
   public async [CommandHandlingMethod.PrintMultiLine] (): Promise<Status> {
     const { path, args } = this.options.command
-    const { default: escape } = await import('shell-escape')
+    const { shellEscape } = await import('./shell-escape-any-array')
     for (const line of concat([path], args, this.options.args)) {
-      this.options.logInfo(escape([line]))
+      this.options.logInfo(shellEscape([line]))
     }
     return Status.Success
   }
@@ -49,9 +49,10 @@ class CommandHandler {
     const args = [...command.args, ...this.options.args]
     const { dbg } = await import('string-template-format')
     const { EXEC_OPTIONS } = await import('./constants')
+    const { toStringArray } = await import('./utils')
 
     try {
-      this.options.execSync(this.options.command.path, args, EXEC_OPTIONS)
+      this.options.execSync(this.options.command.path, toStringArray(args), EXEC_OPTIONS)
     } catch (error) {
       logError('[ERROR] Execution of command resulted in failure')
       logError(dbg`* executable: ${command.path}`)
