@@ -48,6 +48,34 @@ export const args = yargs
     default: CommandHandlingMethod.PrintSingleLine
   })
   .env('CHOOSE_TEXT_EDITOR')
+  .example(
+    'choose-text-editor',
+    'Choose a text editor and print its command'
+  )
+  .example(
+    'choose-text-editor --searchPlaces editors.yaml',
+    'Only choose text editors that appear in editors.yaml'
+  )
+  .example(
+    'choose-text-editor --stopDir .',
+    'Only find config files in current directory'
+  )
+  .example(
+    'choose-text-editor -x exec -- my-file.js',
+    'Choose a text editor to open my-file.js'
+  )
+  .example(
+    'choose-text-editor -x print:json',
+    'Print chosen text editor and its argument as JSON'
+  )
+  .example(
+    'choose-text-editor --clearCache all',
+    'Clear all caches of config files'
+  )
+  .example(
+    'choose-text-editor --showStatus',
+    'Print a table of exit status codes'
+  )
   .help()
   .argv
 
