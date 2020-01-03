@@ -1,0 +1,5 @@
+dependencies:
+  '@khai96x/utils': 'link:../../packages/utils'
+lockfileVersion: 5.1
+specifiers:
+  '@khai96x/utils': 'file:../../packages/utils'
