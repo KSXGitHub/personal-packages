@@ -7,6 +7,7 @@ import { ExecSync } from './exec-sync'
 import { CosmiConfig } from './cosmiconfig'
 import { CacheType } from './clear-cache'
 import { validateEditorSet, validateChooser } from './validate'
+import { logSchemaErrors } from './log-schema-errors'
 import { choose } from './choose'
 import { CommandHandlingMethod, handleChosenCommand } from './handle-chosen-command'
 import { INDETERMINABLE_TTY, NOT_FOUND, PREFIXES_PARSING_FAILURE, INVALID_PREFIXES, NO_EDITOR } from './choose-result'
@@ -87,12 +88,7 @@ export async function main (param: MainParam): Promise<Status> {
 
   if (!validateEditorSet(editorSet, validatorResult => {
     logError('[ERROR] Config does not satisfy schema')
-
-    for (const error of validatorResult.errors) {
-      logError(' '.repeat(4) + error.message)
-    }
-
-    logError(dbg`* validator result: ${validatorResult}`)
+    logSchemaErrors(validatorResult, logError)
   })) {
     return Status.InvalidEditorSet
   }
@@ -157,7 +153,7 @@ export async function main (param: MainParam): Promise<Status> {
       logError('help: Instance must be an array of strings')
       logError(`* env key: ${result.envKey}`)
       logError(`* instance: ${result.instance}`)
-      // TODO: Print error messages from result.validatorResult.errors
+      logSchemaErrors(result.validatorResult, logError)
       return Status.InvalidPrefix
   }
 

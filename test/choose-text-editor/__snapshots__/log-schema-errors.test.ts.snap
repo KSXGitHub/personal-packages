@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls logError multiple times 1`] = `
+Array [
+  Array [
+    "* stack:",
+  ],
+  Array [
+    "    0: instance.graphical[1].flags is not of a type(s) array",
+  ],
+  Array [
+    "    1: instance.graphical[2].flags[1] is not of a type(s) string",
+  ],
+  Array [
+    "    2: instance.graphical[2] requires property \\"program\\"",
+  ],
+  Array [
+    "    3: instance.graphical[3] is not of a type(s) object",
+  ],
+  Array [
+    "    4: instance.terminal[1].flags is not of a type(s) array",
+  ],
+  Array [
+    "    5: instance.terminal[2] is not of a type(s) object",
+  ],
+  Array [
+    "    6: instance.terminal[4] is not of a type(s) object",
+  ],
+  Array [
+    "    7: instance requires property \\"chooser\\"",
+  ],
+  Array [
+    "    ",
+  ],
+]
+`;
+
+exports[`print a text 1`] = `
+"
+* stack:
+    0: instance.graphical[1].flags is not of a type(s) array
+    1: instance.graphical[2].flags[1] is not of a type(s) string
+    2: instance.graphical[2] requires property \\"program\\"
+    3: instance.graphical[3] is not of a type(s) object
+    4: instance.terminal[1].flags is not of a type(s) array
+    5: instance.terminal[2] is not of a type(s) object
+    6: instance.terminal[4] is not of a type(s) object
+    7: instance requires property \\"chooser\\"
+    
+"
+`;
