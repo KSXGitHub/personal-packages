@@ -38,6 +38,12 @@ Array [
   Array [
     "    9 | UnsatisfiedChooser",
   ],
+  Array [
+    "   10 | InvalidPrefix",
+  ],
+  Array [
+    "   11 | EmptyEditorSet",
+  ],
 ]
 `;
 
@@ -55,5 +61,7 @@ exports[`prints message 1`] = `
     7 | ConfigNotFound
     8 | ExecutionFailure
     9 | UnsatisfiedChooser
+   10 | InvalidPrefix
+   11 | EmptyEditorSet
 "
 `;
