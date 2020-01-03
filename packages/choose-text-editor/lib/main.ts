@@ -134,9 +134,12 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
     switch (result.error) {
       case (INDETERMINABLE_TTY):
         logError('[ERROR] Cannot determine whether terminal is graphical or not')
+        logError('help: You may set ISINTTY=true to use terminal editors, or ISINTTY=false to use graphical editors')
         return exit(Status.IndeterminableTTY)
       case (NOT_FOUND):
         logError('[ERROR] No editor detected')
+        logError('help: Check if (at least one of) your editors are installed')
+        logError('help: Check if there is any typo in your config')
         return exit(Status.NotFound)
       case (NO_EDITOR):
         logError('[ERROR] No suitable editor')
