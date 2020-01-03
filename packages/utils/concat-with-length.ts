@@ -22,4 +22,4 @@ export function concatWithLength<Element> (...iterables: IterableWithLength<Elem
   return new ConcatLengthResult(iterables)
 }
 
-export const toStringArray = (array: readonly unknown[]) => array.map(item => String(item))
+export default concatWithLength

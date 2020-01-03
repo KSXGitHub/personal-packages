@@ -1,0 +1,21 @@
+{
+  "name": "@khai96x/utils",
+  "version": "0.0.0",
+  "description": "Utilities to be used by other packages",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSXGitHub/personal-packages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSXGitHub/personal-packages/issues"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "iter-tools": "^6.2.6",
+    "tslib": "^1.10.0",
+    "@types/node": "^12.12.21"
+  }
+}

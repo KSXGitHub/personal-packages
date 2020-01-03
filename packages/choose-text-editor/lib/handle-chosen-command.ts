@@ -49,7 +49,7 @@ class CommandHandler {
     const args = [...command.args, ...this.options.args]
     const { dbg } = await import('string-template-format')
     const { EXEC_OPTIONS } = await import('./constants')
-    const { toStringArray } = await import('./utils')
+    const { toStringArray } = await import('@khai96x/utils')
 
     try {
       this.options.execSync(this.options.command.path, toStringArray(args), EXEC_OPTIONS)

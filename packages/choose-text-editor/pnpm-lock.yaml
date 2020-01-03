@@ -1,4 +1,5 @@
 dependencies:
+  '@khai96x/utils': 'link:../utils'
   '@tsfun/option': 0.0.10
   '@tsfun/result': 0.0.11
   '@types/js-yaml': 3.12.1
@@ -671,6 +672,7 @@ packages:
     resolution:
       integrity: sha512-GH/X/hYt+x5hOat4LMnCqMd8r5Cv78heOMIJn1hr7QPPBqfeC6p89Y78+WB9yGDvfpCvgasfmWLzNzEioOUD9Q==
 specifiers:
+  '@khai96x/utils': ^0.0.0
   '@tsfun/option': ^0.0.10
   '@tsfun/result': ^0.0.11
   '@types/js-yaml': ^3.12.1

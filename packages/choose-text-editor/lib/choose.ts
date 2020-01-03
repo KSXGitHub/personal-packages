@@ -1,5 +1,6 @@
 import { safeLoad } from 'js-yaml'
 import { tryExec } from '@tsfun/result'
+import { concatWithLength } from '@khai96x/utils'
 import { Env } from './process'
 import { Which } from './which'
 import { EditorSet } from './editors'
@@ -7,7 +8,6 @@ import { Command } from './command'
 import { STR2BOOL } from './str-to-bool'
 import { JsonSchemaValidatorResult } from './json-schema'
 import { validateCliArguments } from './validate'
-import { concatWithLength } from './utils'
 
 import {
   NotFound,
