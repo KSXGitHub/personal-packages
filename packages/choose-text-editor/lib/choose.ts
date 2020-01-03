@@ -1,7 +1,3 @@
-// TODO ASAP: Handle FORCE_EDITOR_PREFIXES not being valid JSON
-// TODO ASAP: Use YAML for FORCE_EDITOR_PREFIXES
-// TODO ASAP: Differentiate between when which finds no editor (NOT_FOUND) and editor set being empty (NO_EDITOR)
-
 import { safeLoad } from 'js-yaml'
 import { tryExec } from '@tsfun/result'
 import { Env } from './process'
