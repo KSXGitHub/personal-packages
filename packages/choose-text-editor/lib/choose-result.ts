@@ -36,11 +36,17 @@ export const PREFIXES_PARSING_FAILURE = Symbol('PARSING_FAILURE')
 export interface PrefixesParsingFailure extends ResultBase<typeof PREFIXES_PARSING_FAILURE> {
   readonly envKey: string
   readonly envValue: string
+  readonly errorObject: Error
 }
-export const PrefixesParsingFailure = (envValue: string, envKey: string): PrefixesParsingFailure => ({
+export const PrefixesParsingFailure = (
+  errorObject: Error,
+  envValue: string,
+  envKey: string
+): PrefixesParsingFailure => ({
   error: PREFIXES_PARSING_FAILURE,
   envKey,
-  envValue
+  envValue,
+  errorObject
 })
 
 export interface Chosen extends ResultBase<null> {

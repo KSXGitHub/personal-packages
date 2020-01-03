@@ -3,6 +3,7 @@
 // TODO ASAP: Differentiate between when which finds no editor (NOT_FOUND) and editor set being empty (NO_EDITOR)
 
 import { concat } from 'iter-tools'
+import { safeLoad } from 'js-yaml'
 import { tryExec } from '@tsfun/result'
 import { Env } from './process'
 import { Which } from './which'
@@ -21,9 +22,13 @@ export async function choose (param: ChooseParam): Promise<ChooseResult> {
   const { env, which, editorSet } = param
   const { FORCE_EDITOR, FORCE_EDITOR_PREFIXES = '[]', ISINTTY } = env
 
-  const prefixesResult = tryExec(() => JSON.parse(FORCE_EDITOR_PREFIXES))
+  const prefixesResult = tryExec(() => safeLoad(FORCE_EDITOR_PREFIXES))
   if (!prefixesResult.tag) {
-    return PrefixesParsingFailure(FORCE_EDITOR_PREFIXES, 'FORCE_EDITOR_PREFIXES')
+    return PrefixesParsingFailure(
+      prefixesResult.error,
+      FORCE_EDITOR_PREFIXES,
+      'FORCE_EDITOR_PREFIXES'
+    )
   }
 
   const prefixes = prefixesResult.value

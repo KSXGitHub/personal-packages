@@ -140,8 +140,10 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
         return exit(Status.NotFound)
       case (PREFIXES_PARSING_FAILURE):
         logError('[ERROR] Failed to parse prefixes')
+        logError('help: Content must be a valid yaml array of string')
         logError(`* env key: ${result.envKey}`)
         logError(`* env value: ${result.envValue}`)
+        logError(`* error: ${result.errorObject}`)
         return exit(Status.InvalidPrefix)
     }
   }
