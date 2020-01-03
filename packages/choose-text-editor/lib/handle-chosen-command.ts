@@ -22,7 +22,7 @@ interface Options<ExitReturn> {
   readonly execSync: ExecSync
 }
 
-class ExecutionHandler<Return> {
+class CommandHandler<Return> {
   constructor (private readonly options: Options<Return>) {}
 
   public async [CommandHandlingMethod.PrintSingleLine] (): Promise<Return> {
@@ -68,6 +68,6 @@ class ExecutionHandler<Return> {
 }
 
 export function handleChosenCommand<Return> (options: Options<Return>): Promise<Return> {
-  const handler = new ExecutionHandler(options)
+  const handler = new CommandHandler(options)
   return handler[options.handle]()
 }
