@@ -29,6 +29,10 @@ export const NOT_FOUND = Symbol('NOT_FOUND')
 export interface NotFound extends ResultBase<typeof NOT_FOUND> {}
 export const NotFound = SimpleConstructor<NotFound>(NOT_FOUND)
 
+export const NO_EDITOR = Symbol('NO_EDITOR')
+export interface NoEditor extends ResultBase<typeof NO_EDITOR> {}
+export const NoEditor = SimpleConstructor<NoEditor>(NO_EDITOR)
+
 export const INDETERMINABLE_TTY = Symbol('INDETERMINABLE_TTY')
 export interface IndeterminableTTY extends ResultBase<typeof INDETERMINABLE_TTY> {}
 export const IndeterminableTTY = SimpleConstructor<IndeterminableTTY>(INDETERMINABLE_TTY)
@@ -77,6 +81,7 @@ export const Chosen = (command: Command): Chosen => ({
 
 export type ChooseResult =
   NotFound |
+  NoEditor |
   IndeterminableTTY |
   PrefixesParsingFailure |
   InvalidPrefixes |

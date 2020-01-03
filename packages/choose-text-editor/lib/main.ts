@@ -9,7 +9,7 @@ import { CacheType } from './clear-cache'
 import { validateEditorSet, validateChooser } from './validate'
 import { choose } from './choose'
 import { CommandHandlingMethod, handleChosenCommand } from './handle-chosen-command'
-import { INDETERMINABLE_TTY, NOT_FOUND, PREFIXES_PARSING_FAILURE, INVALID_PREFIXES } from './choose-result'
+import { INDETERMINABLE_TTY, NOT_FOUND, PREFIXES_PARSING_FAILURE, INVALID_PREFIXES, NO_EDITOR } from './choose-result'
 import { PACKAGE_NAME } from './constants'
 import { Status } from './status'
 
@@ -138,6 +138,11 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
       case (NOT_FOUND):
         logError('[ERROR] No editor detected.')
         return exit(Status.NotFound)
+      case (NO_EDITOR):
+        logError('[ERROR] No suitable editor')
+        logError('help: When ISINTTY=true, "terminal" property of your config must not be empty')
+        logError('help: When ISINTTY=false, either "graphical" or "terminal" property of your config must not be empty')
+        return exit(Status.EmptyEditorSet)
       case (PREFIXES_PARSING_FAILURE):
         logError('[ERROR] Failed to parse prefixes')
         logError('help: Content must be a valid yaml array of strings')

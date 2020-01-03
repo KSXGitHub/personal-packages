@@ -2,7 +2,6 @@
 // TODO ASAP: Use YAML for FORCE_EDITOR_PREFIXES
 // TODO ASAP: Differentiate between when which finds no editor (NOT_FOUND) and editor set being empty (NO_EDITOR)
 
-import { concat } from 'iter-tools'
 import { safeLoad } from 'js-yaml'
 import { tryExec } from '@tsfun/result'
 import { Env } from './process'
@@ -12,7 +11,17 @@ import { Command } from './command'
 import { STR2BOOL } from './str-to-bool'
 import { JsonSchemaValidatorResult } from './json-schema'
 import { validateCliArguments } from './validate'
-import { NotFound, IndeterminableTTY, PrefixesParsingFailure, Chosen, ChooseResult, InvalidPrefixes } from './choose-result'
+import { concatWithLength } from './utils'
+
+import {
+  NotFound,
+  NoEditor,
+  IndeterminableTTY,
+  PrefixesParsingFailure,
+  Chosen,
+  ChooseResult,
+  InvalidPrefixes
+} from './choose-result'
 
 export interface ChooseParam {
   readonly env: Env
@@ -57,7 +66,9 @@ export async function choose (param: ChooseParam): Promise<ChooseResult> {
 
   const candidates = isInTty
     ? editorSet.terminal || []
-    : concat(editorSet.graphical || [], editorSet.terminal || [])
+    : concatWithLength(editorSet.graphical || [], editorSet.terminal || [])
+
+  if (!candidates.length) return NoEditor()
 
   for (const editor of candidates) {
     const command = await Command({
