@@ -1,5 +1,4 @@
 import { concat } from 'iter-tools'
-import { Exit } from './process'
 import { Logger } from './console'
 import { ExecSync } from './exec-sync'
 import { Command } from './command'
@@ -12,42 +11,41 @@ export const enum CommandHandlingMethod {
   Execute = 'exec'
 }
 
-interface Options<ExitReturn> {
+interface Options {
   readonly handle: CommandHandlingMethod
   readonly command: Command
   readonly args: readonly string[]
-  readonly exit: Exit<ExitReturn>
   readonly logInfo: Logger
   readonly logError: Logger
   readonly execSync: ExecSync
 }
 
-class CommandHandler<Return> {
-  constructor (private readonly options: Options<Return>) {}
+class CommandHandler {
+  constructor (private readonly options: Options) {}
 
-  public async [CommandHandlingMethod.PrintSingleLine] (): Promise<Return> {
+  public async [CommandHandlingMethod.PrintSingleLine] (): Promise<Status> {
     const { path, args } = this.options.command
     const { default: escape } = await import('shell-escape')
     this.options.logInfo(escape([path, ...args, ...this.options.args]))
-    return this.options.exit(Status.Success)
+    return Status.Success
   }
 
-  public async [CommandHandlingMethod.PrintMultiLine] (): Promise<Return> {
+  public async [CommandHandlingMethod.PrintMultiLine] (): Promise<Status> {
     const { path, args } = this.options.command
     const { default: escape } = await import('shell-escape')
     for (const line of concat([path], args, this.options.args)) {
       this.options.logInfo(escape([line]))
     }
-    return this.options.exit(Status.Success)
+    return Status.Success
   }
 
-  public async [CommandHandlingMethod.PrintJson] (): Promise<Return> {
+  public async [CommandHandlingMethod.PrintJson] (): Promise<Status> {
     this.options.logInfo(JSON.stringify(this.options.command, undefined, 2))
-    return this.options.exit(Status.Success)
+    return Status.Success
   }
 
-  public async [CommandHandlingMethod.Execute] (): Promise<Return> {
-    const { logError, command, exit } = this.options
+  public async [CommandHandlingMethod.Execute] (): Promise<Status> {
+    const { logError, command } = this.options
     const args = [...command.args, ...this.options.args]
     const { dbg } = await import('string-template-format')
     const { EXEC_OPTIONS } = await import('./constants')
@@ -60,14 +58,14 @@ class CommandHandler<Return> {
       logError(dbg`* arguments: ${args}`)
       logError(dbg`* error: ${error}`)
       logError(dbg`* status: ${error.status}`)
-      return exit(Status.ExecutionFailure)
+      return Status.ExecutionFailure
     }
 
-    return exit(Status.Success)
+    return Status.Success
   }
 }
 
-export function handleChosenCommand<Return> (options: Options<Return>): Promise<Return> {
+export function handleChosenCommand (options: Options): Promise<Status> {
   const handler = new CommandHandler(options)
   return handler[options.handle]()
 }

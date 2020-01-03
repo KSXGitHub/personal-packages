@@ -163,13 +163,14 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   /* HANDLE CHOSEN COMMAND */
 
-  return handleChosenCommand({
+  const status = await handleChosenCommand({
     handle: param.onChosen,
     command: result.command,
     args: param.args,
-    exit,
     logInfo,
     logError,
     execSync: param.execSync
   })
+
+  return exit(status)
 }
