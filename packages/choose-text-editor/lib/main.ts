@@ -13,8 +13,8 @@ import { INDETERMINABLE_TTY, NOT_FOUND, PREFIXES_PARSING_FAILURE, INVALID_PREFIX
 import { PACKAGE_NAME } from './constants'
 import { Status } from './status'
 
-export interface MainParam<ExitReturn> {
-  readonly process: Process<ExitReturn>
+export interface MainParam {
+  readonly process: Process
   readonly console: Console
   readonly which: Which
   readonly execSync: ExecSync
@@ -32,9 +32,9 @@ export interface MainParam<ExitReturn> {
   readonly choose: typeof choose
 }
 
-export async function main<Return> (param: MainParam<Return>): Promise<Return> {
+export async function main (param: MainParam): Promise<Status> {
   const { which } = param
-  const { env, exit } = param.process
+  const { env } = param.process
   const { info: logInfo, error: logError } = param.console
 
   const configExplorer = param.cosmiconfig(param.packageName, {
@@ -49,13 +49,13 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   if (param.clearCache) {
     const mod = await import('./clear-cache')
     mod.clearCache(configExplorer, param.clearCache)
-    return exit(Status.Success)
+    return Status.Success
   }
 
   if (param.showStatus) {
     const mod = await import('./show-status')
     mod.showStatus(logInfo)
-    return exit(Status.Success)
+    return Status.Success
   }
 
   /* LOAD CONFIGURATION FILE */
@@ -65,20 +65,20 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
   if (!searchResult.tag) {
     logError('[ERROR] Fail to load configuration file')
     logError(dbg`* message: ${searchResult.error}`)
-    return exit(Status.ConfigLoadingFailure)
+    return Status.ConfigLoadingFailure
   }
 
   if (!searchResult.value) {
     logError('[ERROR] No config file found')
     logError(dbg`* search places ${param.searchPlaces}`)
-    return exit(Status.ConfigNotFound)
+    return Status.ConfigNotFound
   }
 
   if (searchResult.value.isEmpty) {
     logError('[ERROR] Config is empty')
     logError(dbg`* config file: ${searchResult.value.filepath}`)
     logError(dbg`* config: ${searchResult.value.config}`)
-    return exit(Status.EmptyConfig)
+    return Status.EmptyConfig
   }
 
   /* VERIFY LOADED CONFIGURATION */
@@ -94,7 +94,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
     logError(dbg`* validator result: ${validatorResult}`)
   })) {
-    return exit(Status.InvalidEditorSet)
+    return Status.InvalidEditorSet
   }
 
   if (!validateChooser(editorSet.chooser, param.packageName, param.packageVersion, {
@@ -123,7 +123,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
       logError(dbg`* used version: ${receivedVersion}`)
     }
   })) {
-    return exit(Status.UnsatisfiedChooser)
+    return Status.UnsatisfiedChooser
   }
 
   /* CHOOSE A COMMAND */
@@ -134,36 +134,36 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
     case (INDETERMINABLE_TTY):
       logError('[ERROR] Cannot determine whether terminal is graphical or not')
       logError('help: You may set ISINTTY=true to use terminal editors, or ISINTTY=false to use graphical editors')
-      return exit(Status.IndeterminableTTY)
+      return Status.IndeterminableTTY
     case (NOT_FOUND):
       logError('[ERROR] No editor detected')
       logError('help: Check if (at least one of) your editors are installed')
       logError('help: Check if there is any typo in your config')
-      return exit(Status.NotFound)
+      return Status.NotFound
     case (NO_EDITOR):
       logError('[ERROR] No suitable editor')
       logError('help: When ISINTTY=true, "terminal" property of your config must not be empty')
       logError('help: When ISINTTY=false, either "graphical" or "terminal" property of your config must not be empty')
-      return exit(Status.EmptyEditorSet)
+      return Status.EmptyEditorSet
     case (PREFIXES_PARSING_FAILURE):
       logError('[ERROR] Failed to parse prefixes')
       logError('help: Content must be a valid yaml array of strings')
       logError(`* env key: ${result.envKey}`)
       logError(`* env value: ${result.envValue}`)
       logError(`* error: ${result.errorObject}`)
-      return exit(Status.InvalidPrefix)
+      return Status.InvalidPrefix
     case (INVALID_PREFIXES):
       logError('[ERROR] Prefixes does not satisfied its schema')
       logError('help: Instance must be an array of strings')
       logError(`* env key: ${result.envKey}`)
       logError(`* instance: ${result.instance}`)
       // TODO: Print error messages from result.validatorResult.errors
-      return exit(Status.InvalidPrefix)
+      return Status.InvalidPrefix
   }
 
   /* HANDLE CHOSEN COMMAND */
 
-  const status = await handleChosenCommand({
+  return handleChosenCommand({
     handle: param.onChosen,
     command: result.command,
     args: param.args,
@@ -171,6 +171,4 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
     logError,
     execSync: param.execSync
   })
-
-  return exit(status)
 }

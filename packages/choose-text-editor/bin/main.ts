@@ -6,7 +6,7 @@ import { cosmiconfig } from 'cosmiconfig'
 import { MainParam, Status, main, choose, PACKAGE_NAME, PACKAGE_VERSION } from '..'
 import args from './args'
 
-const param: MainParam<never> = {
+const param: MainParam = {
   process,
   console,
   which,
@@ -19,7 +19,7 @@ const param: MainParam<never> = {
   ...args
 }
 
-main(param).catch(error => {
+main(param).then(process.exit).catch(error => {
   console.error('[ERROR] An error occurred')
   console.error(error)
   return process.exit(Status.UnexpectedException)
