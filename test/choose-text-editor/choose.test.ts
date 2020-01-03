@@ -3,13 +3,12 @@ import mockedWhichImpl from './lib/mocked-which-impl'
 import {
   EditorSet,
   Env,
-  NotFound,
-  NoEditor,
-  IndeterminableTTY,
-  PrefixesParsingFailure,
-  InvalidPrefixes,
-  Chosen,
   JsonSchemaValidatorResult,
+  NOT_FOUND,
+  NO_EDITOR,
+  INDETERMINABLE_TTY,
+  PREFIXES_PARSING_FAILURE,
+  INVALID_PREFIXES,
   choose
 } from '@khai96x/choose-text-editor'
 
@@ -38,7 +37,7 @@ describe('when there is no editor specified', () => {
 
     it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(NoEditor())
+      expect(result).toEqual({ error: NO_EDITOR })
     })
 
     it('does not call which', async () => {
@@ -55,7 +54,7 @@ describe('when there is no editor specified', () => {
 
     it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(NoEditor())
+      expect(result).toEqual({ error: NO_EDITOR })
     })
 
     it('does not call which', async () => {
@@ -72,7 +71,7 @@ describe('when there is no editor specified', () => {
 
     it('returns IndeterminableTTY()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(IndeterminableTTY())
+      expect(result).toEqual({ error: INDETERMINABLE_TTY })
     })
 
     it('does not call which', async () => {
@@ -109,7 +108,7 @@ describe('when no valid terminal editor can be found', () => {
 
     it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(NotFound())
+      expect(result).toEqual({ error: NOT_FOUND })
     })
 
     it('calls which with non-existent terminal editor names and options', async () => {
@@ -131,10 +130,13 @@ describe('when no valid terminal editor can be found', () => {
 
     it('returns Found(<FirstFound>)', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(Chosen({
-        path: await mockedWhichImpl('code'),
-        args: ['--wait']
-      }))
+      expect(result).toEqual({
+        error: null,
+        command: {
+          path: await mockedWhichImpl('code'),
+          args: ['--wait']
+        }
+      })
     })
 
     it('calls which till <FirstFound>', async () => {
@@ -174,10 +176,13 @@ describe('when no valid graphical editor can be found', () => {
 
     it('returns Found(<FirstFoundTerminalEditor>)', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(Chosen({
-        path: await mockedWhichImpl('vim'),
-        args: []
-      }))
+      expect(result).toEqual({
+        error: null,
+        command: {
+          path: await mockedWhichImpl('vim'),
+          args: []
+        }
+      })
     })
 
     it('calls which till <FirstFoundTerminalEditor>', async () => {
@@ -198,10 +203,13 @@ describe('when no valid graphical editor can be found', () => {
 
     it('returns Found(<FirstFoundTerminalEditor>)', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(Chosen({
-        path: await mockedWhichImpl('vim'),
-        args: []
-      }))
+      expect(result).toEqual({
+        error: null,
+        command: {
+          path: await mockedWhichImpl('vim'),
+          args: []
+        }
+      })
     })
 
     it('calls which till <FirstFoundTerminalEditor>', async () => {
@@ -228,10 +236,13 @@ describe('when FORCE_EDITOR is specified', () => {
 
     it('returns forced editor', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(Chosen({
-        path: FORCE_EDITOR,
-        args: []
-      }))
+      expect(result).toEqual({
+        error: null,
+        command: {
+          path: FORCE_EDITOR,
+          args: []
+        }
+      })
     })
 
     it('does not call which', async () => {
@@ -251,10 +262,13 @@ describe('when FORCE_EDITOR is specified', () => {
 
     it('returns Chosen(<Forced Editor>)', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(Chosen({
-        path: FORCE_EDITOR,
-        args: ['abc', 'def', 123, 'ghi', 456, true, null, false]
-      }))
+      expect(result).toEqual({
+        error: null,
+        command: {
+          path: FORCE_EDITOR,
+          args: ['abc', 'def', 123, 'ghi', 456, true, null, false]
+        }
+      })
     })
 
     it('does not call which', async () => {
@@ -274,11 +288,12 @@ describe('when FORCE_EDITOR is specified', () => {
 
     it('returns InvalidPrefixes', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(InvalidPrefixes(
-        expect.any(JsonSchemaValidatorResult),
-        ['abc', 123, {}, []],
-        'FORCE_EDITOR_PREFIXES'
-      ))
+      expect(result).toEqual({
+        error: INVALID_PREFIXES,
+        validatorResult: expect.any(JsonSchemaValidatorResult),
+        instance: ['abc', 123, {}, []],
+        envKey: 'FORCE_EDITOR_PREFIXES'
+      })
     })
 
     it('does not call which', async () => {
@@ -298,11 +313,12 @@ describe('when FORCE_EDITOR is specified', () => {
 
     it('returns InvalidPrefixes', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(InvalidPrefixes(
-        expect.any(JsonSchemaValidatorResult),
-        { abc: 123 },
-        'FORCE_EDITOR_PREFIXES'
-      ))
+      expect(result).toEqual({
+        error: INVALID_PREFIXES,
+        validatorResult: expect.any(JsonSchemaValidatorResult),
+        instance: { abc: 123 },
+        envKey: 'FORCE_EDITOR_PREFIXES'
+      })
     })
 
     it('does not call which', async () => {
@@ -322,11 +338,12 @@ describe('when FORCE_EDITOR is specified', () => {
 
     it('returns PrefixesParsingFailure', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(PrefixesParsingFailure(
-        expect.anything(),
-        ': invalid : yaml : syntax :',
-        'FORCE_EDITOR_PREFIXES'
-      ))
+      expect(result).toEqual({
+        error: PREFIXES_PARSING_FAILURE,
+        errorObject: expect.anything(),
+        envValue: ': invalid : yaml : syntax :',
+        envKey: 'FORCE_EDITOR_PREFIXES'
+      })
     })
 
     it('does not call which', async () => {
@@ -363,15 +380,18 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
 
     it('returns chosen editor', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(Chosen({
-        path: await mockedWhichImpl('code'),
-        args: [
-          'abc', 'def', 123, 'ghi', 456, true, null, false,
-          '--prefix',
-          '--abc', '123', '--def', '456',
-          'suffix'
-        ]
-      }))
+      expect(result).toEqual({
+        error: null,
+        command: {
+          path: await mockedWhichImpl('code'),
+          args: [
+            'abc', 'def', 123, 'ghi', 456, true, null, false,
+            '--prefix',
+            '--abc', '123', '--def', '456',
+            'suffix'
+          ]
+        }
+      })
     })
 
     it('calls which till chosen one', async () => {
@@ -393,11 +413,12 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
 
     it('returns InvalidPrefixes', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(InvalidPrefixes(
-        expect.any(JsonSchemaValidatorResult),
-        ['abc', 123, {}, []],
-        'FORCE_EDITOR_PREFIXES'
-      ))
+      expect(result).toEqual({
+        error: INVALID_PREFIXES,
+        validatorResult: expect.any(JsonSchemaValidatorResult),
+        instance: ['abc', 123, {}, []],
+        envKey: 'FORCE_EDITOR_PREFIXES'
+      })
     })
 
     it('does not call which', async () => {
@@ -417,11 +438,12 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
 
     it('returns InvalidPrefixes', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(InvalidPrefixes(
-        expect.any(JsonSchemaValidatorResult),
-        { abc: 123 },
-        'FORCE_EDITOR_PREFIXES'
-      ))
+      expect(result).toEqual({
+        error: INVALID_PREFIXES,
+        validatorResult: expect.any(JsonSchemaValidatorResult),
+        instance: { abc: 123 },
+        envKey: 'FORCE_EDITOR_PREFIXES'
+      })
     })
 
     it('does not call which', async () => {
@@ -441,11 +463,12 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
 
     it('returns PrefixesParsingFailure', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(PrefixesParsingFailure(
-        expect.anything(),
-        ': not : valid : yaml :',
-        'FORCE_EDITOR_PREFIXES'
-      ))
+      expect(result).toEqual({
+        error: PREFIXES_PARSING_FAILURE,
+        errorObject: expect.anything(),
+        envValue: ': not : valid : yaml :',
+        envKey: 'FORCE_EDITOR_PREFIXES'
+      })
     })
 
     it('does not call which', async () => {
