@@ -1,5 +1,4 @@
-import { ok, err } from '@tsfun/result'
-import { EditorSet, Env, choose, NOT_FOUND, INDETERMINABLE_TTY } from '@khai96x/choose-text-editor'
+import { EditorSet, Env, NotFound, IndeterminableTTY, Chosen, choose } from '@khai96x/choose-text-editor'
 import mockedWhichImpl from './lib/mocked-which-impl'
 
 const chooser = '@khai96x/choose-text-editor'
@@ -25,9 +24,9 @@ describe('when there is no editor specified', () => {
       env: { ISINTTY: 'true' }
     }
 
-    it('returns err(NOT_FOUND)', async () => {
+    it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(err(NOT_FOUND))
+      expect(result).toEqual(NotFound())
     })
 
     it('does not call which', async () => {
@@ -42,9 +41,9 @@ describe('when there is no editor specified', () => {
       env: { ISINTTY: 'false' }
     }
 
-    it('returns err(NOT_FOUND)', async () => {
+    it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(err(NOT_FOUND))
+      expect(result).toEqual(NotFound())
     })
 
     it('does not call which', async () => {
@@ -59,9 +58,9 @@ describe('when there is no editor specified', () => {
       env: { ISINTTY: undefined }
     }
 
-    it('returns err(INDETERMINABLE_TTY)', async () => {
+    it('returns IndeterminableTTY()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(err(INDETERMINABLE_TTY))
+      expect(result).toEqual(IndeterminableTTY())
     })
 
     it('does not call which', async () => {
@@ -96,9 +95,9 @@ describe('when no valid terminal editor can be found', () => {
       env: { ISINTTY: 'true' }
     }
 
-    it('returns err(NOT_FOUND)', async () => {
+    it('returns NotFound()', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(err(NOT_FOUND))
+      expect(result).toEqual(NotFound())
     })
 
     it('calls which with non-existent terminal editor names and options', async () => {
@@ -118,9 +117,9 @@ describe('when no valid terminal editor can be found', () => {
       env: { ISINTTY: 'false' }
     }
 
-    it('returns ok(<FirstFound>)', async () => {
+    it('returns Found(<FirstFound>)', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(ok({
+      expect(result).toEqual(Chosen({
         path: await mockedWhichImpl('code'),
         args: ['--wait']
       }))
@@ -161,9 +160,9 @@ describe('when no valid graphical editor can be found', () => {
       env: { ISINTTY: 'true' }
     }
 
-    it('returns ok(<FirstFoundTerminalEditor>)', async () => {
+    it('returns Found(<FirstFoundTerminalEditor>)', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(ok({
+      expect(result).toEqual(Chosen({
         path: await mockedWhichImpl('vim'),
         args: []
       }))
@@ -185,9 +184,9 @@ describe('when no valid graphical editor can be found', () => {
       env: { ISINTTY: 'false' }
     }
 
-    it('returns ok(<FirstFoundTerminalEditor>)', async () => {
+    it('returns Found(<FirstFoundTerminalEditor>)', async () => {
       const { result } = await setup(param)
-      expect(result).toEqual(ok({
+      expect(result).toEqual(Chosen({
         path: await mockedWhichImpl('vim'),
         args: []
       }))

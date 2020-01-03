@@ -1,6 +1,7 @@
 dependencies:
   '@tsfun/option': 0.0.10
   '@tsfun/result': 0.0.11
+  '@types/js-yaml': 3.12.1
   '@types/node': 12.12.21
   '@types/parse-package-name': 0.1.0
   '@types/semver': 6.2.0
@@ -10,6 +11,7 @@ dependencies:
   cosmiconfig: 6.0.0
   exec-once: 0.1.2
   iter-tools: 6.2.6
+  js-yaml: 3.13.1
   jsonschema: 1.2.5
   parse-package-name: 0.1.0
   semver: 7.1.1
@@ -102,6 +104,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-63sdVAxTGbkFp5kikmQJDxx/OuDJ93zy63sbksv7nCJvNA9/GabeZJE/MReVNfTz73/dtRPXCumTEIacakLUSw==
+  /@types/js-yaml/3.12.1:
+    dev: false
+    resolution:
+      integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
   /@types/node/12.12.21:
     dev: false
     resolution:
@@ -158,6 +164,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-Qts4KCLKG+waHc9C4m07weIY8qyeixoS0h6RnbsNVD6Fw+pEZGW3vTyObL3WXpE09Mq4Oi7/lBEyLmOiLtlYWQ==
+  /argparse/1.0.10:
+    dependencies:
+      sprintf-js: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
   /callsites/3.1.0:
     dev: false
     engines:
@@ -253,6 +265,13 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+  /esprima/4.0.1:
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
   /esutils/2.0.3:
     dev: false
     engines:
@@ -326,6 +345,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
+  /js-yaml/3.13.1:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
   /json-parse-better-errors/1.0.2:
     dev: false
     resolution:
@@ -451,6 +478,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-aP0CXrBJC09WegJ/C/IkgLX4QTM=
+  /sprintf-js/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
   /string-template-format-base/0.1.1:
     dependencies:
       '@types/node': 12.12.21
@@ -642,6 +673,7 @@ packages:
 specifiers:
   '@tsfun/option': ^0.0.10
   '@tsfun/result': ^0.0.11
+  '@types/js-yaml': ^3.12.1
   '@types/node': ^12.12.21
   '@types/parse-package-name': ^0.1.0
   '@types/semver': ^6.2.0
@@ -651,6 +683,7 @@ specifiers:
   cosmiconfig: 6.0.0
   exec-once: 0.1.2
   iter-tools: ^6.2.6
+  js-yaml: ^3.13.1
   jsonschema: ^1.2.5
   parse-package-name: ^0.1.0
   semver: ^7.1.1

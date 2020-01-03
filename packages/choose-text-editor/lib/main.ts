@@ -9,7 +9,7 @@ import { CacheType } from './clear-cache'
 import { validateEditorSet, validateChooser } from './validate'
 import { choose } from './choose'
 import { CommandHandlingMethod, handleChosenCommand } from './handle-chosen-command'
-import { INDETERMINABLE_TTY, NOT_FOUND } from './errors'
+import { INDETERMINABLE_TTY, NOT_FOUND } from './choose-result'
 import { PACKAGE_NAME } from './constants'
 import { Status } from './status'
 
@@ -130,7 +130,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   const result = await param.choose({ env, which, editorSet })
 
-  if (!result.tag) {
+  if (result.error) {
     switch (result.error) {
       case (INDETERMINABLE_TTY):
         logError('[ERROR] Cannot determine whether terminal is graphical or not.')
@@ -145,7 +145,7 @@ export async function main<Return> (param: MainParam<Return>): Promise<Return> {
 
   return handleChosenCommand({
     handle: param.onChosen,
-    command: result.value,
+    command: result.command,
     args: param.args,
     exit,
     logInfo,
