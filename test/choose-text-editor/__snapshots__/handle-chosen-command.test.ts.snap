@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when handling method is exec when spawnSync returns object with 0 as status code calls spawnSync 1`] = `
+Array [
+  Array [
+    "/usr/bin/chosen-command",
+    Array [
+      "abc",
+      "def",
+      "multiple words again",
+      "a",
+      "0",
+      "true",
+      "multiple words",
+    ],
+    Object {
+      "stdio": "inherit",
+    },
+  ],
+]
+`;
+
+exports[`when handling method is exec when spawnSync returns object with non-null error calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Failed to execute command",
+  ],
+  Array [
+    "* executable: '/usr/bin/chosen-command'",
+  ],
+  Array [
+    "* error: CustomError {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawnSync',
+  path: '{path}',
+  spawnargs: []
+}",
+  ],
+]
+`;
+
+exports[`when handling method is exec when spawnSync returns object with non-null error calls spawnSync 1`] = `
+Array [
+  Array [
+    "/usr/bin/chosen-command",
+    Array [
+      "abc",
+      "def",
+      "multiple words again",
+      "a",
+      "0",
+      "true",
+      "multiple words",
+    ],
+    Object {
+      "stdio": "inherit",
+    },
+  ],
+]
+`;
+
+exports[`when handling method is exec when spawnSync returns object with non-null error prints error message matches snapshot 1`] = `
+"
+[ERROR] Failed to execute command
+* executable: '/usr/bin/chosen-command'
+* error: CustomError {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawnSync',
+  path: '{path}',
+  spawnargs: []
+}
+"
+`;
+
+exports[`when handling method is exec when spawnSync returns object with non-zero status calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Execution of command resulted in failure",
+  ],
+  Array [
+    "* executable: '/usr/bin/chosen-command'",
+  ],
+  Array [
+    "* arguments: [
+  'abc',
+  'def',
+  'multiple words again',
+  'a',
+  0,
+  true,
+  'multiple words'
+]",
+  ],
+  Array [
+    "* status: 123",
+  ],
+]
+`;
+
+exports[`when handling method is exec when spawnSync returns object with non-zero status calls spawnSync 1`] = `
+Array [
+  Array [
+    "/usr/bin/chosen-command",
+    Array [
+      "abc",
+      "def",
+      "multiple words again",
+      "a",
+      "0",
+      "true",
+      "multiple words",
+    ],
+    Object {
+      "stdio": "inherit",
+    },
+  ],
+]
+`;
+
+exports[`when handling method is exec when spawnSync returns object with non-zero status prints error message matches snapshot 1`] = `
+"
+[ERROR] Execution of command resulted in failure
+* executable: '/usr/bin/chosen-command'
+* arguments: [
+  'abc',
+  'def',
+  'multiple words again',
+  'a',
+  0,
+  true,
+  'multiple words'
+]
+* status: 123
+"
+`;
+
+exports[`when handling method is print:json calls logInfo 1`] = `
+Array [
+  Array [
+    "{
+  \\"path\\": \\"/usr/bin/chosen-command\\",
+  \\"args\\": [
+    \\"abc\\",
+    \\"def\\",
+    \\"multiple words again\\",
+    \\"a\\",
+    \\"0\\",
+    \\"true\\",
+    \\"multiple words\\"
+  ]
+}",
+  ],
+]
+`;
+
+exports[`when handling method is print:json prints a valid JSON message 1`] = `
+Object {
+  "args": Array [
+    "abc",
+    "def",
+    "multiple words again",
+    "a",
+    "0",
+    "true",
+    "multiple words",
+  ],
+  "path": "/usr/bin/chosen-command",
+}
+`;
+
+exports[`when handling method is print:multi calls logInfo 1`] = `
+Array [
+  Array [
+    "/usr/bin/chosen-command",
+  ],
+  Array [
+    "abc",
+  ],
+  Array [
+    "def",
+  ],
+  Array [
+    "'multiple words again'",
+  ],
+  Array [
+    "a",
+  ],
+  Array [
+    "0",
+  ],
+  Array [
+    "true",
+  ],
+  Array [
+    "'multiple words'",
+  ],
+]
+`;
+
+exports[`when handling method is print:multi prints message matches snapshot 1`] = `
+"
+/usr/bin/chosen-command
+abc
+def
+'multiple words again'
+a
+0
+true
+'multiple words'
+"
+`;
+
+exports[`when handling method is print:single calls logInfo 1`] = `
+Array [
+  Array [
+    "/usr/bin/chosen-command abc def 'multiple words again' a 0 true 'multiple words'",
+  ],
+]
+`;
