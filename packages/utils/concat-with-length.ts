@@ -6,20 +6,27 @@ interface IterableWithLength<Element> extends Iterable<Element> {
 
 class ConcatLengthResult<Element> implements IterableWithLength<Element> {
   constructor (
-    private iterables: readonly IterableWithLength<Element>[]
+    private readonly left: IterableWithLength<Element>,
+    private readonly right: IterableWithLength<Element>
   ) {}
 
   public get length () {
-    return this.iterables.reduce((acc, cur) => acc + cur.length, 0)
+    return this.left.length + this.right.length
   }
 
   public [Symbol.iterator] () {
-    return concat(...this.iterables)
+    return concat(this.left, this.right)
   }
 }
 
-export function concatWithLength<Element> (...iterables: IterableWithLength<Element>[]) {
-  return new ConcatLengthResult(iterables)
+export function concatWithLength<Element> (
+  a: IterableWithLength<Element>,
+  b: IterableWithLength<Element>,
+  ...more: IterableWithLength<Element>[]
+): ConcatLengthResult<Element> {
+  // 'more as [any, any[]]' is a workaround for https://github.com/microsoft/TypeScript/issues/28837
+  const bb = more.length !== 0 ? concatWithLength(b, ...more as [any, any[]]) : b
+  return new ConcatLengthResult(a, bb)
 }
 
 export default concatWithLength
