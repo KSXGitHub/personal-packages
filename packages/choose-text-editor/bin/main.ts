@@ -1,4 +1,4 @@
-import { execSync } from 'child_process'
+import { spawnSync } from 'child_process'
 import process from 'process'
 import console from 'console'
 import which from 'which'
@@ -10,7 +10,7 @@ const param: MainParam = {
   process,
   console,
   which,
-  execSync,
+  spawnSync,
   packageName: PACKAGE_NAME,
   packageVersion: PACKAGE_VERSION,
   cosmiconfig,

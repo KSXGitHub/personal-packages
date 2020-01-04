@@ -1,6 +1,6 @@
 import { concat } from 'iter-tools'
 import { Logger } from './console'
-import { ExecSync } from './exec-sync'
+import { SpawnSync } from './spawn-sync'
 import { CliArguments } from './editors'
 import { Command } from './command'
 import { Status } from './status'
@@ -18,7 +18,7 @@ interface Options {
   readonly args: CliArguments
   readonly logInfo: Logger
   readonly logError: Logger
-  readonly execSync: ExecSync
+  readonly spawnSync: SpawnSync
 }
 
 class CommandHandler {
@@ -58,14 +58,24 @@ class CommandHandler {
     const { EXEC_OPTIONS } = await import('./constants')
     const { toStringArray } = await import('@khai96x/utils')
 
-    try {
-      this.options.execSync(this.options.command.path, toStringArray(args), EXEC_OPTIONS)
-    } catch (error) {
+    const spawnReturn = this.options.spawnSync(
+      this.options.command.path,
+      toStringArray(args),
+      EXEC_OPTIONS
+    )
+
+    if (spawnReturn.error) {
+      logError('[ERROR] Failed to execute command')
+      logError(dbg`* executable: ${command.path}`)
+      logError(dbg`* error: ${spawnReturn.error}`)
+      return Status.ExecutionFailure
+    }
+
+    if (spawnReturn.status) {
       logError('[ERROR] Execution of command resulted in failure')
       logError(dbg`* executable: ${command.path}`)
       logError(dbg`* arguments: ${args}`)
-      logError(dbg`* error: ${error}`)
-      logError(dbg`* status: ${error.status}`)
+      logError(dbg`* status: ${spawnReturn.status}`)
       return Status.ExecutionFailure
     }
 

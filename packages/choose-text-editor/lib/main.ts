@@ -3,7 +3,7 @@ import { ok, err } from '@tsfun/result'
 import { Process } from './process'
 import { Console } from './console'
 import { Which } from './which'
-import { ExecSync } from './exec-sync'
+import { SpawnSync } from './spawn-sync'
 import { CosmiConfig } from './cosmiconfig'
 import { CacheType } from './clear-cache'
 import { validateEditorSet, validateChooser } from './validate'
@@ -18,7 +18,7 @@ export interface MainParam {
   readonly process: Process
   readonly console: Console
   readonly which: Which
-  readonly execSync: ExecSync
+  readonly spawnSync: SpawnSync
   readonly packageName: string
   readonly packageVersion: string
   readonly cosmiconfig: CosmiConfig
@@ -165,6 +165,6 @@ export async function main (param: MainParam): Promise<Status> {
     args: param.args,
     logInfo,
     logError,
-    execSync: param.execSync
+    spawnSync: param.spawnSync
   })
 }
