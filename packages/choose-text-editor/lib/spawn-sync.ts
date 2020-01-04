@@ -6,7 +6,7 @@ export interface SpawnSync {
 
 export interface SpawnSyncReturn {
   readonly status: number | null
-  readonly error: Error | null
+  readonly error?: Error
 }
 
 export type ExecOptions = typeof EXEC_OPTIONS

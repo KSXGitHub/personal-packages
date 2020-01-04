@@ -10,7 +10,7 @@ import MockedConsole from './lib/mocked-console'
 
 async function setup (
   handle: CommandHandlingMethod,
-  spawnSyncImpl: SpawnSync = () => ({ status: 0, error: null })
+  spawnSyncImpl: SpawnSync = () => ({ status: 0 })
 ) {
   const args = ['a', 0, true, 'multiple words']
   const command: Command = {
@@ -150,10 +150,7 @@ describe(`when handling method is ${CommandHandlingMethod.Execute}`, () => {
   })
 
   describe('when spawnSync returns object with non-zero status', () => {
-    const spawnSyncImpl: SpawnSync = () => ({
-      status: 123,
-      error: null
-    })
+    const spawnSyncImpl: SpawnSync = () => ({ status: 123 })
 
     it('does not call logInfo', async () => {
       const { console } = await setup(handle, spawnSyncImpl)
