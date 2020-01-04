@@ -41,7 +41,12 @@ class CommandHandler {
   }
 
   public async [CommandHandlingMethod.PrintJson] (): Promise<Status> {
-    this.options.logInfo(JSON.stringify(this.options.command, undefined, 2))
+    const { command } = this.options
+    const newCommand: Command = {
+      path: command.path,
+      args: [...command.args, ...this.options.args]
+    }
+    this.options.logInfo(JSON.stringify(newCommand, undefined, 2))
     return Status.Success
   }
 
