@@ -42,9 +42,10 @@ class CommandHandler {
 
   public async [CommandHandlingMethod.PrintJson] (): Promise<Status> {
     const { command } = this.options
+    const { toStringArray } = await import('@khai96x/utils')
     const newCommand: Command = {
       path: command.path,
-      args: [...command.args, ...this.options.args]
+      args: toStringArray([...command.args, ...this.options.args])
     }
     this.options.logInfo(JSON.stringify(newCommand, undefined, 2))
     return Status.Success
