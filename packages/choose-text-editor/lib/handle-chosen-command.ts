@@ -1,6 +1,7 @@
 import { concat } from 'iter-tools'
 import { Logger } from './console'
 import { ExecSync } from './exec-sync'
+import { CliArguments } from './editors'
 import { Command } from './command'
 import { Status } from './status'
 
@@ -14,7 +15,7 @@ export const enum CommandHandlingMethod {
 interface Options {
   readonly handle: CommandHandlingMethod
   readonly command: Command
-  readonly args: readonly string[]
+  readonly args: CliArguments
   readonly logInfo: Logger
   readonly logError: Logger
   readonly execSync: ExecSync
