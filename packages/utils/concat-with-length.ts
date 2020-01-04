@@ -24,8 +24,8 @@ export function concatWithLength<Element> (
   b: IterableWithLength<Element>,
   ...more: IterableWithLength<Element>[]
 ): ConcatLengthResult<Element> {
-  // 'more as [any, any[]]' is a workaround for https://github.com/microsoft/TypeScript/issues/28837
-  const bb = more.length !== 0 ? concatWithLength(b, ...more as [any, any[]]) : b
+  // 'more as [any, ...any[]]' is a workaround for https://github.com/microsoft/TypeScript/issues/28837
+  const bb = more.length !== 0 ? concatWithLength(b, ...more as [any, ...any[]]) : b
   return new ConcatLengthResult(a, bb)
 }
 
