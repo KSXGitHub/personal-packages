@@ -38,7 +38,11 @@ export async function main (param: MainParam): Promise<Status> {
   const { env } = param.process
   const { info: logInfo, error: logError } = param.console
 
-  const configExplorer = param.cosmiconfig(param.packageName, {
+  // NOTE:
+  //   * This function should be called only once for each branch
+  //   * Add test to guarantee this!
+  //   * Should this be called more than once, exec-once will be needed
+  const configExplorer = () => param.cosmiconfig(param.packageName, {
     searchPlaces: param.searchPlaces,
     packageProp: param.packageProp,
     cache: param.cache,
@@ -49,7 +53,7 @@ export async function main (param: MainParam): Promise<Status> {
 
   if (param.clearCache) {
     const mod = await import('./clear-cache')
-    mod.clearCache(configExplorer, param.clearCache)
+    mod.clearCache(configExplorer(), param.clearCache)
     return Status.Success
   }
 
@@ -61,7 +65,7 @@ export async function main (param: MainParam): Promise<Status> {
 
   /* LOAD CONFIGURATION FILE */
 
-  const searchResult = await configExplorer.search().then(ok, err)
+  const searchResult = await configExplorer().search().then(ok, err)
 
   if (!searchResult.tag) {
     logError('[ERROR] Fail to load configuration file')
