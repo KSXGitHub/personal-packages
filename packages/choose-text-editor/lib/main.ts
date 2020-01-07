@@ -6,12 +6,12 @@ import { Which } from './which'
 import { SpawnSync } from './spawn-sync'
 import { CosmiConfig } from './cosmiconfig'
 import { CacheType } from './clear-cache'
-import { validateEditorSet, validateChooser } from './validate'
+import { validateEditorSet } from './validate'
 import { logSchemaErrors } from './log-schema-errors'
 import { choose } from './choose'
+import { handleChooserValidation } from './handle-chooser-validation'
 import { CommandHandlingMethod, handleChosenCommand } from './handle-chosen-command'
 import { INDETERMINABLE_TTY, NOT_FOUND, PREFIXES_PARSING_FAILURE, INVALID_PREFIXES, NO_EDITOR } from './choose-result'
-import { PACKAGE_NAME } from './constants'
 import { Status } from './status'
 
 export interface MainParam {
@@ -97,32 +97,7 @@ export async function main (param: MainParam): Promise<Status> {
     return Status.InvalidEditorSet
   }
 
-  if (!validateChooser(editorSet.chooser, param.packageName, param.packageVersion, {
-    onInvalidPackageName (config, used) {
-      logError('[ERROR] Invalid chooser')
-      logError(dbg`* config package: ${config}`)
-      logError(dbg`* used package: ${used}`)
-    },
-
-    onInvalidVersionRange (versionRange) {
-      logError('[ERROR] Invalid version range for chooser')
-      logError('help: Read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax')
-      logError(dbg`* config version range: ${versionRange}`)
-    },
-
-    onNonEmptyPath (path) {
-      logError('[ERROR] Package path is expected to NOT be specified, but it was')
-      logError(dbg`* config path: ${path}`)
-    },
-
-    onUnsatisfiedVersion (expectedVersionRange, receivedVersion) {
-      logError('[ERROR] Incompatible chooser')
-      logError(`help: This version of ${PACKAGE_NAME} does not satisfied what is required in config`)
-      logError(`help: Please update ${PACKAGE_NAME} or your config`)
-      logError(dbg`* config version: ${expectedVersionRange}`)
-      logError(dbg`* used version: ${receivedVersion}`)
-    }
-  })) {
+  if (!handleChooserValidation(logError, editorSet.chooser, param.packageName, param.packageVersion)) {
     return Status.UnsatisfiedChooser
   }
 
