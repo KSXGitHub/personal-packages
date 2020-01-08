@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IndeterminableTTY calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Cannot determine whether terminal is graphical or not",
+  ],
+  Array [
+    "help: You may set ISINTTY=true to use terminal editors, or ISINTTY=false to use graphical editors",
+  ],
+]
+`;
+
+exports[`IndeterminableTTY prints error messages 1`] = `
+"
+[ERROR] Cannot determine whether terminal is graphical or not
+help: You may set ISINTTY=true to use terminal editors, or ISINTTY=false to use graphical editors
+"
+`;
+
+exports[`InvalidPrefixes calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Prefixes does not satisfy its schema",
+  ],
+  Array [
+    "help: Instance must be an array of strings",
+  ],
+  Array [
+    "* env key: 'FORCE_EDITOR_PREFIXES'",
+  ],
+  Array [
+    "* instance: [ 'abc', 123, true, { object: 'illegal' }, [ 'illegal', 'array' ] ]",
+  ],
+  Array [
+    "* stack:",
+  ],
+  Array [
+    "    0: instance[3] is not of a type(s) null,string,number,boolean",
+  ],
+  Array [
+    "    1: instance[4] is not of a type(s) null,string,number,boolean",
+  ],
+  Array [
+    "    ",
+  ],
+]
+`;
+
+exports[`InvalidPrefixes prints error messages 1`] = `
+"
+[ERROR] Prefixes does not satisfy its schema
+help: Instance must be an array of strings
+* env key: 'FORCE_EDITOR_PREFIXES'
+* instance: [ 'abc', 123, true, { object: 'illegal' }, [ 'illegal', 'array' ] ]
+* stack:
+    0: instance[3] is not of a type(s) null,string,number,boolean
+    1: instance[4] is not of a type(s) null,string,number,boolean
+    
+"
+`;
+
+exports[`NoEditor calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] No suitable editor",
+  ],
+  Array [
+    "help: When ISINTTY=true, \\"terminal\\" property of your config must not be empty",
+  ],
+  Array [
+    "help: When ISINTTY=false, either \\"graphical\\" or \\"terminal\\" property of your config must not be empty",
+  ],
+]
+`;
+
+exports[`NoEditor prints error messages 1`] = `
+"
+[ERROR] No suitable editor
+help: When ISINTTY=true, \\"terminal\\" property of your config must not be empty
+help: When ISINTTY=false, either \\"graphical\\" or \\"terminal\\" property of your config must not be empty
+"
+`;
+
+exports[`NotFound calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] No editor detected",
+  ],
+  Array [
+    "help: Check if (at least one of) your editors are installed",
+  ],
+  Array [
+    "help: Check if there is any typo in your config",
+  ],
+]
+`;
+
+exports[`NotFound prints error messages 1`] = `
+"
+[ERROR] No editor detected
+help: Check if (at least one of) your editors are installed
+help: Check if there is any typo in your config
+"
+`;
+
+exports[`PrefixesParsingFailure calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Failed to parse prefixes",
+  ],
+  Array [
+    "help: Content must be a valid yaml array of strings",
+  ],
+  Array [
+    "* env key: 'FORCE_EDITOR_PREFIXES'",
+  ],
+  Array [
+    "* env value: '{invalid prefixes}'",
+  ],
+  Array [
+    "* error: Error: {error message}",
+  ],
+]
+`;
+
+exports[`PrefixesParsingFailure prints error messages 1`] = `
+"
+[ERROR] Failed to parse prefixes
+help: Content must be a valid yaml array of strings
+* env key: 'FORCE_EDITOR_PREFIXES'
+* env value: '{invalid prefixes}'
+* error: Error: {error message}
+"
+`;
