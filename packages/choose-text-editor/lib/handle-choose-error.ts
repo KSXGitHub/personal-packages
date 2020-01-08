@@ -35,7 +35,7 @@ export async function handleChooseError (logError: Logger, result: ChooseError) 
       logError('help: Content must be a valid yaml array of strings')
       logError(dbg`* env key: ${result.envKey}`)
       logError(dbg`* env value: ${result.envValue}`)
-      logError(dbg`* error: ${String(result.errorObject)}`)
+      logError(`* error: ${result.errorObject}`)
       return Status.InvalidPrefix
     case (INVALID_PREFIXES):
       logError('[ERROR] Prefixes does not satisfy its schema')
