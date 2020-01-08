@@ -1,3 +1,4 @@
+import { dbg } from 'string-template-format'
 import { Logger } from './console'
 import { Status } from './status'
 
@@ -32,15 +33,15 @@ export async function handleChooseError (logError: Logger, result: ChooseError) 
     case (PREFIXES_PARSING_FAILURE):
       logError('[ERROR] Failed to parse prefixes')
       logError('help: Content must be a valid yaml array of strings')
-      logError(`* env key: ${result.envKey}`)
-      logError(`* env value: ${result.envValue}`)
-      logError(`* error: ${result.errorObject}`)
+      logError(dbg`* env key: ${result.envKey}`)
+      logError(dbg`* env value: ${result.envValue}`)
+      logError(dbg`* error: ${result.errorObject}`)
       return Status.InvalidPrefix
     case (INVALID_PREFIXES):
       logError('[ERROR] Prefixes does not satisfy its schema')
       logError('help: Instance must be an array of strings')
-      logError(`* env key: ${result.envKey}`)
-      logError(`* instance: ${result.instance}`)
+      logError(dbg`* env key: ${result.envKey}`)
+      logError(dbg`* instance: ${result.instance}`)
       const { logSchemaErrors } = await import('./log-schema-errors')
       logSchemaErrors(result.validatorResult, logError)
       return Status.InvalidPrefix
