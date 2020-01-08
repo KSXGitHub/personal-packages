@@ -37,7 +37,7 @@ export async function handleChooseError (logError: Logger, result: ChooseError) 
       logError(`* error: ${result.errorObject}`)
       return Status.InvalidPrefix
     case (INVALID_PREFIXES):
-      logError('[ERROR] Prefixes does not satisfied its schema')
+      logError('[ERROR] Prefixes does not satisfy its schema')
       logError('help: Instance must be an array of strings')
       logError(`* env key: ${result.envKey}`)
       logError(`* instance: ${result.instance}`)
