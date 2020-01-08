@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when chooser has a path calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Package path is expected to NOT be specified, but it was",
+  ],
+  Array [
+    "* config path: 'lib/index.js'",
+  ],
+]
+`;
+
+exports[`when chooser has a path prints error messages 1`] = `
+"
+[ERROR] Package path is expected to NOT be specified, but it was
+* config path: 'lib/index.js'
+"
+`;
+
+exports[`when chooser has invalid package name calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Invalid chooser",
+  ],
+  Array [
+    "* config package: 'invalid-package-name'",
+  ],
+  Array [
+    "* used package: '@khai96x/choose-text-editor'",
+  ],
+]
+`;
+
+exports[`when chooser has invalid package name prints error messages 1`] = `
+"
+[ERROR] Invalid chooser
+* config package: 'invalid-package-name'
+* used package: '@khai96x/choose-text-editor'
+"
+`;
+
+exports[`when chooser has invalid version range calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Invalid version range for chooser",
+  ],
+  Array [
+    "help: Read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax",
+  ],
+  Array [
+    "* config version range: 'invalid-version-range'",
+  ],
+]
+`;
+
+exports[`when chooser has invalid version range prints error messages 1`] = `
+"
+[ERROR] Invalid version range for chooser
+help: Read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax
+* config version range: 'invalid-version-range'
+"
+`;
+
+exports[`when chooser version is not satisfied calls logError 1`] = `
+Array [
+  Array [
+    "[ERROR] Incompatible chooser",
+  ],
+  Array [
+    "help: This version of @khai96x/choose-text-editor does not satisfied what is required in config",
+  ],
+  Array [
+    "help: Please update @khai96x/choose-text-editor or your config",
+  ],
+  Array [
+    "* config version: '>3.2.1'",
+  ],
+  Array [
+    "* used version: '3.2.1'",
+  ],
+]
+`;
+
+exports[`when chooser version is not satisfied prints error messages 1`] = `
+"
+[ERROR] Incompatible chooser
+help: This version of @khai96x/choose-text-editor does not satisfied what is required in config
+help: Please update @khai96x/choose-text-editor or your config
+* config version: '>3.2.1'
+* used version: '3.2.1'
+"
+`;
