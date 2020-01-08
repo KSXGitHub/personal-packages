@@ -11,7 +11,7 @@ import {
   NO_EDITOR
 } from './choose-result'
 
-type ChooseError = Exclude<ChooseResult, Chosen>
+export type ChooseError = Exclude<ChooseResult, Chosen>
 
 export async function handleChooseError (logError: Logger, result: ChooseError) {
   switch (result.error) {
