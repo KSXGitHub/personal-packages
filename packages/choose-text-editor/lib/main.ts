@@ -69,7 +69,7 @@ export async function main (param: MainParam): Promise<Status> {
 
   if (!searchResult.tag) {
     logError('[ERROR] Fail to load configuration file')
-    logError(dbg`* message: ${searchResult.error}`)
+    logError(dbg`* message: ${String(searchResult.error)}`)
     return Status.ConfigLoadingFailure
   }
 
