@@ -56,9 +56,7 @@ exports[`load configuration file when no configuration file found prints error m
   'choose-text-editor.json',
   'choose-text-editor.yaml',
   'choose-text-editor.config.js',
-  'choose-text-editor.js',
-  'package.json',
-  'package.yaml'
+  'choose-text-editor.js'
 ]
 "
 `;
