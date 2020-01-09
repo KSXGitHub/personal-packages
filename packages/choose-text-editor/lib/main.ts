@@ -92,6 +92,7 @@ export async function main (param: MainParam): Promise<Status> {
 
   if (!validateEditorSet(editorSet, validatorResult => {
     logError('[ERROR] Config does not satisfy schema')
+    logError(dbg`* config file: ${searchResult.value!.filepath}`)
     logSchemaErrors(validatorResult, logError)
   })) {
     return Status.InvalidEditorSet
