@@ -23,7 +23,7 @@ export const handleChooserValidation = (
 
   onNonEmptyPath (path) {
     logError('[ERROR] Package path is expected to NOT be specified, but it was')
-    logError(dbg`* config path: ${path}`)
+    logError(dbg`* package path: ${path}`)
   },
 
   onUnsatisfiedVersion (expectedVersionRange, receivedVersion) {
