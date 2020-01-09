@@ -18,3 +18,33 @@ exports[`--showStatus prints a table of status codes and names 1`] = `
    11 | EmptyEditorSet
 "
 `;
+
+exports[`load configuration file when configuration file is empty prints error messages 1`] = `
+"
+[ERROR] Config is empty
+* config file: '/path/to/config'
+* config: {loaded configuration content}
+"
+`;
+
+exports[`load configuration file when it fails to load configuration file prints error messages 1`] = `
+"
+[ERROR] Fail to load configuration file
+* message: 'Error: Failed to load configuration file'
+"
+`;
+
+exports[`load configuration file when no configuration file found prints error messages 1`] = `
+"
+[ERROR] No config file found
+* search places: [
+  'choose-text-editor',
+  'choose-text-editor.json',
+  'choose-text-editor.yaml',
+  'choose-text-editor.config.js',
+  'choose-text-editor.js',
+  'package.json',
+  'package.yaml'
+]
+"
+`;

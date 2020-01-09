@@ -1,5 +1,6 @@
-import { ok } from '@tsfun/result'
+import { ok, err } from '@tsfun/result'
 import MockedMainParam from './lib/mocked-main-param'
+import CustomInspect from './lib/custom-inspect-object'
 
 import {
   Status,
@@ -74,5 +75,65 @@ describe('--showStatus', () => {
   it('returns status code of Success', async () => {
     const { statusName } = await setup(Param)
     expect(statusName).toBe(Status[Status.Success])
+  })
+})
+
+describe('load configuration file', () => {
+  describe('when it fails to load configuration file', () => {
+    class Param extends MockedMainParam {
+      constructor () {
+        super({}, err(new Error('Failed to load configuration file')))
+      }
+    }
+
+    it('prints error messages', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getErrorText()).toMatchSnapshot()
+    })
+
+    it('returns status code of ConfigLoadingFailure', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.ConfigLoadingFailure])
+    })
+  })
+
+  describe('when no configuration file found', () => {
+    class Param extends MockedMainParam {
+      constructor () {
+        super({}, ok(null))
+      }
+    }
+
+    it('prints error messages', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getErrorText()).toMatchSnapshot()
+    })
+
+    it('returns status code of ConfigNotFound', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.ConfigNotFound])
+    })
+  })
+
+  describe('when configuration file is empty', () => {
+    class Param extends MockedMainParam {
+      constructor () {
+        super({}, ok({
+          isEmpty: true,
+          config: CustomInspect('{loaded configuration content}'),
+          filepath: '/path/to/config'
+        }))
+      }
+    }
+
+    it('prints error messages', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getErrorText()).toMatchSnapshot()
+    })
+
+    it('returns status code of EmptyConfig', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.EmptyConfig])
+    })
   })
 })
