@@ -1,3 +1,4 @@
+import { ok } from '@tsfun/result'
 import MockedMainParam from './lib/mocked-main-param'
 
 import {
@@ -8,7 +9,7 @@ import {
 
 class DefaultParam extends MockedMainParam {
   constructor () {
-    super({}, null)
+    super({}, ok(null))
   }
 }
 

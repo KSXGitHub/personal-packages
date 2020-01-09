@@ -1,6 +1,6 @@
 import MockedConsole from './mocked-console'
 import mockedWhichImpl from './mocked-which-impl'
-import MockedCosmiConfig from './mocked-cosmiconfig'
+import { MockedCosmiConfig, ConfigResult } from './mocked-cosmiconfig'
 
 import {
   MainParam,
@@ -8,7 +8,6 @@ import {
   CacheType,
   CommandHandlingMethod,
   Env,
-  CosmiConfigResult,
   choose
 } from '@khai96x/choose-text-editor'
 
@@ -26,7 +25,7 @@ function NEVER (): never {
 export class MockedMainParam implements MainParam {
   constructor (
     public readonly processEnv: Env,
-    public readonly cosmiConfigResult: CosmiConfigResult | null
+    public readonly cosmiConfigResult: ConfigResult
   ) {}
 
   public readonly mockedCosmiConfig = new MockedCosmiConfig(this.cosmiConfigResult)
