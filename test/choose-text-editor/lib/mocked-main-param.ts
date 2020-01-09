@@ -8,6 +8,7 @@ import {
   CacheType,
   CommandHandlingMethod,
   Env,
+  SEARCH_PLACES,
   choose
 } from '@khai96x/choose-text-editor'
 
@@ -37,7 +38,7 @@ export class MockedMainParam implements MainParam {
   public readonly packageName: string = '@khai96x/choose-text-editor' // not necessary actual package name
   public readonly packageVersion: string = '3.2.1' // not the actual version, for testing purpose
   public readonly cosmiconfig = this.mockedCosmiConfig.cosmiconfig
-  public readonly searchPlaces: string[] = [...'searchPlaces']
+  public readonly searchPlaces = SEARCH_PLACES
   public readonly packageProp = 'choose-text-editor'
   public readonly cache?: boolean = true
   public readonly stopDir?: string = undefined
