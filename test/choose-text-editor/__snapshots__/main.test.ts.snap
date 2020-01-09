@@ -48,3 +48,23 @@ exports[`load configuration file when no configuration file found prints error m
 ]
 "
 `;
+
+exports[`validate loaded configuration invalid chooser prints error messages 1`] = `
+"
+[ERROR] Invalid chooser
+* config file: '/path/to/config'
+* config package: 'not-valid-chooser'
+* used package: '@khai96x/choose-text-editor'
+"
+`;
+
+exports[`validate loaded configuration invalid editor set prints error messages 1`] = `
+"
+[ERROR] Config does not satisfy schema
+* config file: '/path/to/config'
+* stack:
+    0: instance.chooser is not of a type(s) string
+    1: instance.graphical[0].program is not of a type(s) string
+    
+"
+`;

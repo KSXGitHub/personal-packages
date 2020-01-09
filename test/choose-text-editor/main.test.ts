@@ -136,3 +136,60 @@ describe('load configuration file', () => {
     })
   })
 })
+
+describe('validate loaded configuration', () => {
+  describe('invalid editor set', () => {
+    const invalidEditorSet = {
+      chooser: ['not', 'a', 'string'],
+      graphical: [
+        { program: 123 }
+      ]
+    }
+
+    class Param extends MockedMainParam {
+      constructor () {
+        super({}, ok({
+          isEmpty: false,
+          config: invalidEditorSet,
+          filepath: '/path/to/config'
+        }))
+      }
+    }
+
+    it('prints error messages', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getErrorText()).toMatchSnapshot()
+    })
+
+    it('returns status code of InvalidEditorSet', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.InvalidEditorSet])
+    })
+  })
+
+  describe('invalid chooser', () => {
+    const invalidEditorSet = {
+      chooser: 'not-valid-chooser'
+    }
+
+    class Param extends MockedMainParam {
+      constructor () {
+        super({}, ok({
+          isEmpty: false,
+          config: invalidEditorSet,
+          filepath: '/path/to/config'
+        }))
+      }
+    }
+
+    it('prints error messages', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getErrorText()).toMatchSnapshot()
+    })
+
+    it('returns status code of UnsatisfiedChooser', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.UnsatisfiedChooser])
+    })
+  })
+})
