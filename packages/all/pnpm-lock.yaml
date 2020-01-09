@@ -17,7 +17,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@khai96x/bump-package-versions': ^0.0.1
-  '@khai96x/choose-text-editor': 0.0.0
+  '@khai96x/choose-text-editor': ^0.1.0
   '@khai96x/interval-observable-universe': ^0.0.3
   '@khai96x/my-observables': ^0.0.3
   '@types/node': ^12.12.21
