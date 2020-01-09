@@ -16,6 +16,7 @@
     "@khai96x/interval-observable-universe": "^0.0.3",
     "@khai96x/my-observables": "^0.0.3",
     "@khai96x/bump-package-versions": "^0.0.1",
+    "@khai96x/choose-text-editor": "0.0.0",
     "tslib": "^1.10.0",
     "@types/node": "^12.12.21"
   }
