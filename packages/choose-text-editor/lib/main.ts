@@ -86,7 +86,7 @@ export async function main (param: MainParam): Promise<Status> {
     return Status.EmptyConfig
   }
 
-  /* VERIFY LOADED CONFIGURATION */
+  /* VALIDATE LOADED CONFIGURATION */
 
   const editorSet = searchResult.value.config
 
