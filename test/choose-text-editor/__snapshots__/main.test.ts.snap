@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`--showStatus prints a table of status codes and names 1`] = `
+"
+ code | name
+------|----------------------
+    0 | Success
+    1 | UnexpectedException
+    2 | IndeterminableTTY
+    3 | NotFound
+    4 | InvalidEditorSet
+    5 | ConfigLoadingFailure
+    6 | EmptyConfig
+    7 | ConfigNotFound
+    8 | ExecutionFailure
+    9 | UnsatisfiedChooser
+   10 | InvalidPrefix
+   11 | EmptyEditorSet
+"
+`;
