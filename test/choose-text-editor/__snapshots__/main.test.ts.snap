@@ -23,7 +23,7 @@ exports[`load configuration file when configuration file is empty prints error m
 "
 [ERROR] Config is empty
 * config file: '/path/to/config'
-* config: {loaded configuration content}
+* config: undefined
 "
 `;
 

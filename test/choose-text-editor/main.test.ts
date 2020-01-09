@@ -1,6 +1,5 @@
 import { ok, err } from '@tsfun/result'
 import MockedMainParam from './lib/mocked-main-param'
-import CustomInspect from './lib/custom-inspect-object'
 
 import {
   Status,
@@ -120,7 +119,7 @@ describe('load configuration file', () => {
       constructor () {
         super({}, ok({
           isEmpty: true,
-          config: CustomInspect('{loaded configuration content}'),
+          config: undefined,
           filepath: '/path/to/config'
         }))
       }
