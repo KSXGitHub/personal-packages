@@ -27,6 +27,12 @@ help: Check if there is any typo in your config
 "
 `;
 
+exports[`handle chosen command default --onChosen prints chosen command 1`] = `
+"
+/usr/bin/code --wait 'args from cli command'
+"
+`;
+
 exports[`load configuration file when configuration file is empty prints error messages 1`] = `
 "
 [ERROR] Config is empty

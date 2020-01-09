@@ -5,6 +5,8 @@ import {
   Status,
   CacheType,
   Env,
+  CommandHandlingMethod,
+  SpawnSyncReturn,
   main
 } from '@khai96x/choose-text-editor'
 
@@ -225,5 +227,79 @@ describe('fail to choose', () => {
   it('returns non-zero status code', async () => {
     const { statusCode } = await setup(Param)
     expect(statusCode).not.toBe(Status.Success)
+  })
+})
+
+describe('handle chosen command', () => {
+  const env: Env = {
+    ISINTTY: 'false'
+  }
+
+  const editorSet = {
+    chooser: '@khai96x/choose-text-editor@^3.2.1',
+    graphical: [
+      { program: 'code', flags: ['wait'] }
+    ]
+  }
+
+  class DefaultParam extends MockedMainParam {
+    constructor () {
+      super(env, ok({
+        isEmpty: false,
+        config: editorSet,
+        filepath: 'path/to/config'
+      }))
+    }
+  }
+
+  describe('default --onChosen', () => {
+    class Param extends DefaultParam {}
+
+    it('prints chosen command', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getInfoText()).toMatchSnapshot()
+    })
+
+    it('returns status code of Success', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.Success])
+    })
+  })
+
+  describe('--onChosen exec (child process exits with code 0)', () => {
+    class Param extends DefaultParam {
+      public readonly onChosen = CommandHandlingMethod.Execute
+      public readonly spawnSync = jest.fn((): SpawnSyncReturn => ({ status: 0 }))
+    }
+
+    it('does not print anything to stdout', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.info).not.toBeCalled()
+    })
+
+    it('does not print anything to stderr', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.error).not.toBeCalled()
+    })
+
+    it('calls spawnSync once', async () => {
+      const { param } = await setup(Param)
+      expect(param.spawnSync).toBeCalledTimes(1)
+    })
+
+    it('calls spawnSync with expected arguments', async () => {
+      const { mockedWhichImpl: which } = await import('./lib/mocked-which-impl')
+      const { param } = await setup(Param)
+      expect(param.spawnSync).toBeCalledWith(
+        await which('code'),
+        ['--wait', 'args from cli command'],
+        { stdio: 'inherit' }
+      )
+    })
+
+    it('returns status code of Success', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.Success])
+    })
   })
 })
