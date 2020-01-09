@@ -75,7 +75,7 @@ export async function main (param: MainParam): Promise<Status> {
 
   if (!searchResult.value) {
     logError('[ERROR] No config file found')
-    logError(dbg`* search places ${param.searchPlaces}`)
+    logError(dbg`* search places: ${param.searchPlaces}`)
     return Status.ConfigNotFound
   }
 
