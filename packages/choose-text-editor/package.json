@@ -37,7 +37,7 @@
     "@types/js-yaml": "^3.12.1",
     "@types/parse-package-name": "^0.1.0",
     "@types/shell-escape": "^0.2.0",
-    "@types/yargs": "^13.0.3",
+    "@types/yargs": "^15.0.0",
     "@types/node": "^12.12.21"
   }
 }
