@@ -4,6 +4,7 @@ import MockedMainParam from './lib/mocked-main-param'
 import {
   Status,
   CacheType,
+  Env,
   main
 } from '@khai96x/choose-text-editor'
 
@@ -191,5 +192,38 @@ describe('validate loaded configuration', () => {
       const { statusName } = await setup(Param)
       expect(statusName).toBe(Status[Status.UnsatisfiedChooser])
     })
+  })
+})
+
+describe('fail to choose', () => {
+  const env: Env = {
+    ISINTTY: 'true'
+  }
+
+  const editorSet = {
+    chooser: '@khai96x/choose-text-editor@^3.2.1',
+    terminal: [
+      { program: 'magic' }
+    ]
+  }
+
+  class Param extends MockedMainParam {
+    constructor () {
+      super(env, ok({
+        isEmpty: false,
+        config: editorSet,
+        filepath: 'path/to/config'
+      }))
+    }
+  }
+
+  it('prints error messages', async () => {
+    const { param } = await setup(Param)
+    expect(param.console.getErrorText()).toMatchSnapshot()
+  })
+
+  it('returns non-zero status code', async () => {
+    const { statusCode } = await setup(Param)
+    expect(statusCode).not.toBe(Status.Success)
   })
 })

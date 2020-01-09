@@ -19,6 +19,14 @@ exports[`--showStatus prints a table of status codes and names 1`] = `
 "
 `;
 
+exports[`fail to choose prints error messages 1`] = `
+"
+[ERROR] No editor detected
+help: Check if (at least one of) your editors are installed
+help: Check if there is any typo in your config
+"
+`;
+
 exports[`load configuration file when configuration file is empty prints error messages 1`] = `
 "
 [ERROR] Config is empty
