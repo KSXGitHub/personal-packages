@@ -98,7 +98,13 @@ export async function main (param: MainParam): Promise<Status> {
     return Status.InvalidEditorSet
   }
 
-  if (!handleChooserValidation(logError, editorSet.chooser, param.packageName, param.packageVersion)) {
+  if (!handleChooserValidation(
+    logError,
+    editorSet.chooser,
+    param.packageName,
+    param.packageVersion,
+    searchResult.value.filepath
+  )) {
     return Status.UnsatisfiedChooser
   }
 

@@ -7,7 +7,8 @@ function setup (chooser: string) {
     log,
     chooser,
     '@khai96x/choose-text-editor', // not necessary actual package name
-    '3.2.1' // not necessary actual package version
+    '3.2.1', // not necessary actual package version
+    '/path/to/config/file'
   )
   return { chooser, log, getLogs, getText, result }
 }

@@ -6,7 +6,10 @@ Array [
     "[ERROR] Package path is expected to NOT be specified, but it was",
   ],
   Array [
-    "* config path: 'lib/index.js'",
+    "* config file: '/path/to/config/file'",
+  ],
+  Array [
+    "* package path: 'lib/index.js'",
   ],
 ]
 `;
@@ -14,7 +17,8 @@ Array [
 exports[`when chooser has a path prints error messages 1`] = `
 "
 [ERROR] Package path is expected to NOT be specified, but it was
-* config path: 'lib/index.js'
+* config file: '/path/to/config/file'
+* package path: 'lib/index.js'
 "
 `;
 
@@ -22,6 +26,9 @@ exports[`when chooser has invalid package name calls logError 1`] = `
 Array [
   Array [
     "[ERROR] Invalid chooser",
+  ],
+  Array [
+    "* config file: '/path/to/config/file'",
   ],
   Array [
     "* config package: 'invalid-package-name'",
@@ -35,6 +42,7 @@ Array [
 exports[`when chooser has invalid package name prints error messages 1`] = `
 "
 [ERROR] Invalid chooser
+* config file: '/path/to/config/file'
 * config package: 'invalid-package-name'
 * used package: '@khai96x/choose-text-editor'
 "
@@ -49,6 +57,9 @@ Array [
     "help: Read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax",
   ],
   Array [
+    "* config file: '/path/to/config/file'",
+  ],
+  Array [
     "* config version range: 'invalid-version-range'",
   ],
 ]
@@ -58,6 +69,7 @@ exports[`when chooser has invalid version range prints error messages 1`] = `
 "
 [ERROR] Invalid version range for chooser
 help: Read https://docs.npmjs.com/misc/semver#ranges for valid version range syntax
+* config file: '/path/to/config/file'
 * config version range: 'invalid-version-range'
 "
 `;
@@ -74,6 +86,9 @@ Array [
     "help: Please update @khai96x/choose-text-editor or your config",
   ],
   Array [
+    "* config file: '/path/to/config/file'",
+  ],
+  Array [
     "* config version: '>3.2.1'",
   ],
   Array [
@@ -87,6 +102,7 @@ exports[`when chooser version is not satisfied prints error messages 1`] = `
 [ERROR] Incompatible chooser
 help: This version of @khai96x/choose-text-editor does not satisfied what is required in config
 help: Please update @khai96x/choose-text-editor or your config
+* config file: '/path/to/config/file'
 * config version: '>3.2.1'
 * used version: '3.2.1'
 "
