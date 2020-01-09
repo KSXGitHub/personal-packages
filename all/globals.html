@@ -133,7 +133,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sem<wbr>Ver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SemVer</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/bump-package-versions/index.ts#L4">bump-package-versions/index.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/bump-package-versions/index.ts#L4">bump-package-versions/index.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -146,7 +146,7 @@
 					<div class="tsd-signature tsd-kind-icon">diffs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getStatusDiffObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L56">my-observables/lib/ac-adapter.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L56">my-observables/lib/ac-adapter.ts:56</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -177,7 +177,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Interval<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline((period: number) &#x3D;&gt; interval(period)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/interval-observable-universe/index.ts#L6">interval-observable-universe/index.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/interval-observable-universe/index.ts#L6">interval-observable-universe/index.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -208,7 +208,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Plugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Plugged)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L46">my-observables/lib/ac-adapter.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L46">my-observables/lib/ac-adapter.ts:46</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -239,7 +239,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Diff<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusPairObservable).to(filter(([a, b]) &#x3D;&gt; a !&#x3D;&#x3D; b)).to(map(([a, b]) &#x3D;&gt; new StatusDiff(a, b))).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L41">my-observables/lib/ac-adapter.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L41">my-observables/lib/ac-adapter.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -270,7 +270,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getIntervalObservable).to(map(checkStatus)).to(map(x &#x3D;&gt; from(x))).to(mergeAll()).to(filter((x): x is Status &#x3D;&gt; x !&#x3D;&#x3D; &#x27;Unknown&#x27;)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L23">my-observables/lib/ac-adapter.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L23">my-observables/lib/ac-adapter.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -301,7 +301,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Pair<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusObservable).to(pairwise()).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L30">my-observables/lib/ac-adapter.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L30">my-observables/lib/ac-adapter.ts:30</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -332,7 +332,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Unplugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Unplugged)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L50">my-observables/lib/ac-adapter.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L50">my-observables/lib/ac-adapter.ts:50</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -363,7 +363,7 @@
 					<div class="tsd-signature tsd-kind-icon">pairs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getStatusPairObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L55">my-observables/lib/ac-adapter.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L55">my-observables/lib/ac-adapter.ts:55</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -394,7 +394,7 @@
 					<div class="tsd-signature tsd-kind-icon">plugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getPluggedObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L57">my-observables/lib/ac-adapter.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L57">my-observables/lib/ac-adapter.ts:57</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -425,7 +425,7 @@
 					<div class="tsd-signature tsd-kind-icon">statuses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getStatusObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L54">my-observables/lib/ac-adapter.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L54">my-observables/lib/ac-adapter.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -456,7 +456,7 @@
 					<div class="tsd-signature tsd-kind-icon">unplugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getUnpluggedObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L58">my-observables/lib/ac-adapter.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L58">my-observables/lib/ac-adapter.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -494,7 +494,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L19">my-observables/lib/ac-adapter.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L19">my-observables/lib/ac-adapter.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -517,7 +517,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/bump-package-versions/index.ts#L70">bump-package-versions/index.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/bump-package-versions/index.ts#L70">bump-package-versions/index.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -546,7 +546,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/my-observables/lib/ac-adapter.ts#L10">my-observables/lib/ac-adapter.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/my-observables/lib/ac-adapter.ts#L10">my-observables/lib/ac-adapter.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="enums/status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Unknown"</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -563,7 +563,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/bump-package-versions/index.ts#L19">bump-package-versions/index.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/bump-package-versions/index.ts#L19">bump-package-versions/index.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -589,7 +589,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/bump-package-versions/index.ts#L36">bump-package-versions/index.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/bump-package-versions/index.ts#L36">bump-package-versions/index.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -615,7 +615,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d685601/packages/interval-observable-universe/index.ts#L9">interval-observable-universe/index.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/2359b9b/packages/interval-observable-universe/index.ts#L9">interval-observable-universe/index.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
