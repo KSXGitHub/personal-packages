@@ -18,6 +18,6 @@
     "@khai96x/bump-package-versions": "^0.0.1",
     "@khai96x/choose-text-editor": "^0.2.1",
     "tslib": "^1.10.0",
-    "@types/node": "^12.12.21"
+    "@types/node": "^13.1.6"
   }
 }

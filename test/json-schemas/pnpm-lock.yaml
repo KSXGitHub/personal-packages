@@ -1,7 +1,7 @@
 dependencies:
   '@khai96x/choose-text-editor': 'link:../../packages/choose-text-editor'
   '@tools/places': 'link:../../tools/places'
-  typescript-json-schema: 0.41.0
+  typescript-json-schema: 0.42.0
 lockfileVersion: 5.1
 packages:
   /@types/json-schema/7.0.4:
@@ -214,7 +214,7 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
-  /typescript-json-schema/0.41.0:
+  /typescript-json-schema/0.42.0:
     dependencies:
       '@types/json-schema': 7.0.4
       glob: 7.1.6
@@ -224,7 +224,7 @@ packages:
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-ThW7KtuMUR+kZ9Id0G+hJ0YLp3DWPjL6NkrOqAyaKttO3839wF4jiYKm7mZcpUe1BcHs12pfbEo40+qYQtm4yA==
+      integrity: sha512-9WO+lVmlph7Ecb7lPd9tU84XFUQh44kpAf3cWe/Ym4G5EKw/SS6XGpi1DZDthvxqkIdNSDlWi7FhKfxuIV/3yw==
   /typescript/3.7.4:
     dev: false
     engines:
@@ -280,4 +280,4 @@ packages:
 specifiers:
   '@khai96x/choose-text-editor': 'file:../../packages/choose-text-editor'
   '@tools/places': 'file:../../tools/places'
-  typescript-json-schema: ^0.41.0
+  typescript-json-schema: ^0.42.0
