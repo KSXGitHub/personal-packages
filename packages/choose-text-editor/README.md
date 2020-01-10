@@ -20,13 +20,13 @@ This package uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) to
 
 ## Schema
 
-A config file have a structure satisfies [schemas/editor-set.schema.json](https://raw.githubusercontent.com/KSXGitHub/personal-packages/%40khai96x/choose-text-editor/0.2.0/packages/choose-text-editor/schemas/editor-set.schema.json) or [EditorSet interface](https://github.com/KSXGitHub/personal-packages/blob/%40khai96x/choose-text-editor/0.2.0/packages/choose-text-editor/lib/editors.ts#L1-L5)
+A config file have a structure satisfies [schemas/editor-set.schema.json](https://raw.githubusercontent.com/KSXGitHub/personal-packages/%40khai96x/choose-text-editor/0.2.1/packages/choose-text-editor/schemas/editor-set.schema.json) or [EditorSet interface](https://github.com/KSXGitHub/personal-packages/blob/%40khai96x/choose-text-editor/0.2.1/packages/choose-text-editor/lib/editors.ts#L1-L5)
 
 ## Example Configuration
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/KSXGitHub/personal-packages/%40khai96x/choose-text-editor/0.2.0/packages/choose-text-editor/schemas/editor-set.schema.json#",
+  "$schema": "https://raw.githubusercontent.com/KSXGitHub/personal-packages/%40khai96x/choose-text-editor/0.2.1/packages/choose-text-editor/schemas/editor-set.schema.json#",
   "graphical": [
     { "program": "code", "flags": ["wait"] },
     { "program": "atom", "suffixes": ["--wait"] }
@@ -34,7 +34,7 @@ A config file have a structure satisfies [schemas/editor-set.schema.json](https:
   "terminal": [
     { "program": "vim" }
   ],
-  "chooser": "@khai96x/choose-text-editor@^0.2.0"
+  "chooser": "@khai96x/choose-text-editor@^0.2.1"
 }
 ```
 
