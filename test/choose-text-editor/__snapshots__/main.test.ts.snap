@@ -19,6 +19,88 @@ exports[`--showStatus prints a table of status codes and names 1`] = `
 "
 `;
 
+exports[`consider exiting early when FORCE_EDITOR environment variable is not set calls choose 1`] = `
+Array [
+  Array [
+    Object {
+      "editorSet": Object {
+        "chooser": "@khai96x/choose-text-editor@^3.2.1",
+        "terminal": Array [
+          Object {
+            "program": "vim",
+          },
+        ],
+      },
+      "env": Object {
+        "ISINTTY": "false",
+      },
+      "which": [MockFunction] {
+        "calls": Array [
+          Array [
+            "vim",
+            Object {
+              "all": false,
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": Promise {},
+          },
+        ],
+      },
+    },
+  ],
+]
+`;
+
+exports[`consider exiting early when FORCE_EDITOR environment variable is not set calls cosmiconfig 1`] = `
+Array [
+  Array [
+    "@khai96x/choose-text-editor",
+    Object {
+      "cache": true,
+      "packageProp": "choose-text-editor",
+      "searchPlaces": Array [
+        "choose-text-editor",
+        "choose-text-editor.json",
+        "choose-text-editor.yaml",
+        "choose-text-editor.config.js",
+        "choose-text-editor.js",
+      ],
+      "stopDir": undefined,
+    },
+  ],
+]
+`;
+
+exports[`consider exiting early when FORCE_EDITOR environment variable is not set prints command of found editor 1`] = `
+"
+/usr/bin/vim 'args from cli command'
+"
+`;
+
+exports[`consider exiting early when FORCE_EDITOR environment variable is set calls choose 1`] = `
+Array [
+  Array [
+    Object {
+      "editorSet": undefined,
+      "env": Object {
+        "FORCE_EDITOR": "FORCE_EDITOR",
+      },
+      "which": [MockFunction],
+    },
+  ],
+]
+`;
+
+exports[`consider exiting early when FORCE_EDITOR environment variable is set prints command of FORCE_EDITOR 1`] = `
+"
+FORCE_EDITOR 'args from cli command'
+"
+`;
+
 exports[`fail to choose prints error messages 1`] = `
 "
 [ERROR] No editor detected

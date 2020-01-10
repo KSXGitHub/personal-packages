@@ -8,6 +8,7 @@ import { CosmiConfig } from './cosmiconfig'
 import { CacheType } from './clear-cache'
 import { validateEditorSet } from './validate'
 import { logSchemaErrors } from './log-schema-errors'
+import { EditorSet } from './editors'
 import { choose } from './choose'
 import { handleChooseError } from './handle-choose-error'
 import { handleChooserValidation } from './handle-chooser-validation'
@@ -63,6 +64,10 @@ export async function main (param: MainParam): Promise<Status> {
     return Status.Success
   }
 
+  /* CONSIDER EXITING EARLY */
+
+  if (env.FORCE_EDITOR) return finalStep(undefined as any)
+
   /* LOAD CONFIGURATION FILE */
 
   const searchResult = await configExplorer().search().then(ok, err)
@@ -108,19 +113,23 @@ export async function main (param: MainParam): Promise<Status> {
     return Status.UnsatisfiedChooser
   }
 
-  /* CHOOSE A COMMAND */
+  return finalStep(editorSet)
 
-  const result = await param.choose({ env, which, editorSet })
-  if (result.error) return handleChooseError(logError, result)
+  async function finalStep (editorSet: EditorSet) {
+    /* CHOOSE A COMMAND */
 
-  /* HANDLE CHOSEN COMMAND */
+    const result = await param.choose({ env, which, editorSet })
+    if (result.error) return handleChooseError(logError, result)
 
-  return handleChosenCommand({
-    handle: param.onChosen,
-    command: result.command,
-    args: param.args,
-    logInfo,
-    logError,
-    spawnSync: param.spawnSync
-  })
+    /* HANDLE CHOSEN COMMAND */
+
+    return handleChosenCommand({
+      handle: param.onChosen,
+      command: result.command,
+      args: param.args,
+      logInfo,
+      logError,
+      spawnSync: param.spawnSync
+    })
+  }
 }

@@ -303,3 +303,84 @@ describe('handle chosen command', () => {
     })
   })
 })
+
+describe('consider exiting early', () => {
+  const editorSet = {
+    chooser: '@khai96x/choose-text-editor@^3.2.1',
+    terminal: [
+      { program: 'vim' }
+    ]
+  }
+
+  describe('when FORCE_EDITOR environment variable is set', () => {
+    const FORCE_EDITOR = 'FORCE_EDITOR'
+
+    class Param extends MockedMainParam {
+      constructor () {
+        super(
+          { FORCE_EDITOR },
+          ok({
+            isEmpty: false,
+            config: editorSet,
+            filepath: '/path/to/config'
+          })
+        )
+      }
+    }
+
+    it('calls choose', async () => {
+      const { param } = await setup(Param)
+      expect(param.choose.mock.calls).toMatchSnapshot()
+    })
+
+    it('prints command of FORCE_EDITOR', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getInfoText()).toMatchSnapshot()
+    })
+
+    it('does not call cosmiconfig', async () => {
+      const { param } = await setup(Param)
+      expect(param.cosmiconfig).not.toBeCalled()
+    })
+
+    it('returns status code of Success', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.Success])
+    })
+  })
+
+  describe('when FORCE_EDITOR environment variable is not set', () => {
+    class Param extends MockedMainParam {
+      constructor () {
+        super(
+          { ISINTTY: 'false' },
+          ok({
+            isEmpty: false,
+            config: editorSet,
+            filepath: '/path/to/config'
+          })
+        )
+      }
+    }
+
+    it('calls choose', async () => {
+      const { param } = await setup(Param)
+      expect(param.choose.mock.calls).toMatchSnapshot()
+    })
+
+    it('prints command of found editor', async () => {
+      const { param } = await setup(Param)
+      expect(param.console.getInfoText()).toMatchSnapshot()
+    })
+
+    it('calls cosmiconfig', async () => {
+      const { param } = await setup(Param)
+      expect(param.cosmiconfig.mock.calls).toMatchSnapshot()
+    })
+
+    it('returns status code of Success', async () => {
+      const { statusName } = await setup(Param)
+      expect(statusName).toBe(Status[Status.Success])
+    })
+  })
+})
