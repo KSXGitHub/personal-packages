@@ -2,7 +2,7 @@ dependencies:
   '@tools/places': 'link:../places'
   '@types/yargs': 15.0.0
   chalk: 3.0.0
-  git-ts: 0.0.6
+  git-ts: 0.0.7
   nested-workspace-helper: 0.2.14
   yargs: 15.1.0
 lockfileVersion: 5.1
@@ -27,6 +27,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
+  /@types/node/13.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
   /@types/ramda/0.26.26:
     dependencies:
       ts-toolbelt: 4.8.3
@@ -237,15 +241,15 @@ packages:
       node: 6.* || 8.* || >= 10.*
     resolution:
       integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
-  /git-ts/0.0.6:
+  /git-ts/0.0.7:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 13.1.6
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-Kn+hLjPSWrOmQVGZoMtImx4BR2w3q3w2X3UmDJZ59CK9k3KlBX3j57jlVIumEHIy5U+hm5vGV6Y9jCskH9fubw==
+      integrity: sha512-nFY6XeSaoeGGpibOKYnNdvpiHJrF9yYPH2ipmCzTiKhOgNBQjJeZw6IKY/iutMjXYqAcoEuEcI/amb9NLo5UuA==
   /graceful-fs/4.2.2:
     dev: false
     resolution:
@@ -608,6 +612,6 @@ specifiers:
   '@tools/places': 'file:../places'
   '@types/yargs': ^15.0.0
   chalk: ^3.0.0
-  git-ts: ^0.0.6
+  git-ts: ^0.0.7
   nested-workspace-helper: ^0.2.14
   yargs: ^15.1.0
