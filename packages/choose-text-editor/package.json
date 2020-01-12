@@ -26,7 +26,7 @@
     "jsonschema": "^1.2.5",
     "cosmiconfig": "6.0.0",
     "yargs": "^15.1.0",
-    "exec-once": "0.1.2",
+    "exec-once": "0.1.4",
     "string-template-format": "^0.2.5",
     "@tsfun/option": "^0.0.10",
     "@tsfun/result": "^0.0.11",
