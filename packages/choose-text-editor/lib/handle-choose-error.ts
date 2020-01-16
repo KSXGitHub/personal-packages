@@ -1,4 +1,4 @@
-import { dbg } from 'string-template-format'
+import { dbg } from 'string-template-format-inspect'
 import { Logger } from './console'
 import { Status } from './status'
 

@@ -1,4 +1,4 @@
-import { dbg } from 'string-template-format'
+import { dbg } from 'string-template-format-inspect'
 import { ok, err } from '@tsfun/result'
 import { Process } from './process'
 import { Console } from './console'

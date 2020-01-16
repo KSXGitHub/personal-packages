@@ -1,4 +1,4 @@
-import { dbg } from 'string-template-format'
+import { dbg } from 'string-template-format-inspect'
 import { validateChooser } from './validate'
 import { Logger } from './console'
 import { PACKAGE_NAME } from './constants'

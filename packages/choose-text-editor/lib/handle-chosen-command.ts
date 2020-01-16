@@ -54,7 +54,7 @@ class CommandHandler {
   public async [CommandHandlingMethod.Execute] (): Promise<Status> {
     const { logError, command } = this.options
     const args = [...command.args, ...this.options.args]
-    const { dbg } = await import('string-template-format')
+    const { dbg } = await import('string-template-format-inspect')
     const { EXEC_OPTIONS } = await import('./constants')
     const { toStringArray } = await import('@khai96x/utils')
 
