@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/bump-package-versions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Bump \"version\" field of multiple package.json files",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
