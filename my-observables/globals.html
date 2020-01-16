@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> @khai96x/my-observables — Reference</h1>
+			<h1>@khai96x/my-observables — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -81,13 +81,16 @@
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#diffs" class="tsd-kind-icon">diffs</a></li>
-								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#getintervalobservable" class="tsd-kind-icon">get<wbr>Interval<wbr>Observable</a></li>
+								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#filter" class="tsd-kind-icon">filter</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#getpluggedobservable" class="tsd-kind-icon">get<wbr>Plugged<wbr>Observable</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#getstatusdiffobservable" class="tsd-kind-icon">get<wbr>Status<wbr>Diff<wbr>Observable</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#getstatusobservable" class="tsd-kind-icon">get<wbr>Status<wbr>Observable</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#getstatuspairobservable" class="tsd-kind-icon">get<wbr>Status<wbr>Pair<wbr>Observable</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#getunpluggedobservable" class="tsd-kind-icon">get<wbr>Unplugged<wbr>Observable</a></li>
+								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#map" class="tsd-kind-icon">map</a></li>
+								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#mergeall" class="tsd-kind-icon">merge<wbr>All</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#pairs" class="tsd-kind-icon">pairs</a></li>
+								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#pairwise" class="tsd-kind-icon">pairwise</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#plugged" class="tsd-kind-icon">plugged</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#statuses" class="tsd-kind-icon">statuses</a></li>
 								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#unplugged" class="tsd-kind-icon">unplugged</a></li>
@@ -98,7 +101,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#analyzeacpioutput" class="tsd-kind-icon">analyze<wbr>Acpi<wbr>Output</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#checkstatus" class="tsd-kind-icon">check<wbr>Status</a></li>
-								<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#pipeline" class="tsd-kind-icon">pipeline</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,343 +111,142 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="diffs" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> diffs</h3>
-					<div class="tsd-signature tsd-kind-icon">diffs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getStatusDiffObservable</span></div>
+					<div class="tsd-signature tsd-kind-icon">diffs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getStatusDiffObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L56">my-observables/lib/ac-adapter.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L56">lib/ac-adapter.ts:56</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
-					<a name="getintervalobservable" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Interval<wbr>Observable</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Interval<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline((period: number) &#x3D;&gt; interval(period)).fn</span></div>
+					<a name="filter" class="tsd-anchor"></a>
+					<h3>filter</h3>
+					<div class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/interval-observable-universe/index.ts#L6">interval-observable-universe/index.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="getpluggedobservable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Plugged<wbr>Observable</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Plugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Plugged)).fn</span></div>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Plugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Plugged)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L46">my-observables/lib/ac-adapter.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L46">lib/ac-adapter.ts:46</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="getstatusdiffobservable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Status<wbr>Diff<wbr>Observable</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Diff<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusPairObservable).to(filter(([a, b]) &#x3D;&gt; a !&#x3D;&#x3D; b)).to(map(([a, b]) &#x3D;&gt; new StatusDiff(a, b))).fn</span></div>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Diff<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusPairObservable).to(filter(([a, b]) &#x3D;&gt; a !&#x3D;&#x3D; b)).to(map(([a, b]) &#x3D;&gt; new StatusDiff(a, b))).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L41">my-observables/lib/ac-adapter.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L41">lib/ac-adapter.ts:41</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="getstatusobservable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Status<wbr>Observable</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getIntervalObservable).to(map(checkStatus)).to(map(x &#x3D;&gt; from(x))).to(mergeAll()).to(filter((x): x is Status &#x3D;&gt; x !&#x3D;&#x3D; &#x27;Unknown&#x27;)).fn</span></div>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getIntervalObservable).to(map(checkStatus)).to(map(x &#x3D;&gt; from(x))).to(mergeAll()).to(filter((x): x is Status &#x3D;&gt; x !&#x3D;&#x3D; &#x27;Unknown&#x27;)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L23">my-observables/lib/ac-adapter.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L23">lib/ac-adapter.ts:23</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="getstatuspairobservable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Status<wbr>Pair<wbr>Observable</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Pair<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusObservable).to(pairwise()).fn</span></div>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Pair<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusObservable).to(pairwise()).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L30">my-observables/lib/ac-adapter.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L30">lib/ac-adapter.ts:30</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="getunpluggedobservable" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Unplugged<wbr>Observable</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Unplugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Unplugged)).fn</span></div>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Unplugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Unplugged)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L50">my-observables/lib/ac-adapter.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L50">lib/ac-adapter.ts:50</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
+					<a name="map" class="tsd-anchor"></a>
+					<h3>map</h3>
+					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
 						</ul>
-					</div>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
+					<a name="mergeall" class="tsd-anchor"></a>
+					<h3>merge<wbr>All</h3>
+					<div class="tsd-signature tsd-kind-icon">merge<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="pairs" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> pairs</h3>
-					<div class="tsd-signature tsd-kind-icon">pairs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getStatusPairObservable</span></div>
+					<div class="tsd-signature tsd-kind-icon">pairs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getStatusPairObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L55">my-observables/lib/ac-adapter.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L55">lib/ac-adapter.ts:55</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
+					<a name="pairwise" class="tsd-anchor"></a>
+					<h3>pairwise</h3>
+					<div class="tsd-signature tsd-kind-icon">pairwise<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
 						</ul>
-					</div>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="plugged" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> plugged</h3>
-					<div class="tsd-signature tsd-kind-icon">plugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getPluggedObservable</span></div>
+					<div class="tsd-signature tsd-kind-icon">plugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getPluggedObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L57">my-observables/lib/ac-adapter.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L57">lib/ac-adapter.ts:57</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="statuses" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> statuses</h3>
-					<div class="tsd-signature tsd-kind-icon">statuses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getStatusObservable</span></div>
+					<div class="tsd-signature tsd-kind-icon">statuses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getStatusObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L54">my-observables/lib/ac-adapter.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L54">lib/ac-adapter.ts:54</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
 					<a name="unplugged" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> unplugged</h3>
-					<div class="tsd-signature tsd-kind-icon">unplugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;getUnpluggedObservable</span></div>
+					<div class="tsd-signature tsd-kind-icon">unplugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getUnpluggedObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L58">my-observables/lib/ac-adapter.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L58">lib/ac-adapter.ts:58</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>x: <span class="tsd-signature-type">X</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
@@ -460,7 +261,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L19">my-observables/lib/ac-adapter.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L19">lib/ac-adapter.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -483,62 +284,10 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/my-observables/lib/ac-adapter.ts#L10">my-observables/lib/ac-adapter.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/feec1fc/packages/my-observables/lib/ac-adapter.ts#L10">lib/ac-adapter.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="enums/status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Unknown"</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
-					<a name="pipeline" class="tsd-anchor"></a>
-					<h3>pipeline</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">pipeline&lt;X, Y&gt;<span class="tsd-signature-symbol">(</span>fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/1744385/packages/interval-observable-universe/index.ts#L9">interval-observable-universe/index.ts:9</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>X</h4>
-								</li>
-								<li>
-									<h4>Y</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>fn: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">X</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>x: <span class="tsd-signature-type">X</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Y</span><span class="tsd-signature-symbol">&gt;</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
-							<ul class="tsd-parameters">
-							</ul>
 						</li>
 					</ul>
 				</section>
@@ -564,7 +313,7 @@
 						<a href="globals.html#diffs" class="tsd-kind-icon">diffs</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#getintervalobservable" class="tsd-kind-icon">get<wbr>Interval<wbr>Observable</a>
+						<a href="globals.html#filter" class="tsd-kind-icon">filter</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#getpluggedobservable" class="tsd-kind-icon">get<wbr>Plugged<wbr>Observable</a>
@@ -582,7 +331,16 @@
 						<a href="globals.html#getunpluggedobservable" class="tsd-kind-icon">get<wbr>Unplugged<wbr>Observable</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#map" class="tsd-kind-icon">map</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#mergeall" class="tsd-kind-icon">merge<wbr>All</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#pairs" class="tsd-kind-icon">pairs</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#pairwise" class="tsd-kind-icon">pairwise</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-external">
 						<a href="globals.html#plugged" class="tsd-kind-icon">plugged</a>
@@ -598,9 +356,6 @@
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#checkstatus" class="tsd-kind-icon">check<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#pipeline" class="tsd-kind-icon">pipeline</a>
 					</li>
 				</ul>
 			</nav>

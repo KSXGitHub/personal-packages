@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> @khai96x/choose-text-editor — Reference</h1>
+			<h1>@khai96x/choose-text-editor — Reference</h1>
 		</div>
 	</div>
 </header>
@@ -62,7 +62,78 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p>This directory contains all publishable packages</p>
+				<a href="#choose-text-editor" id="choose-text-editor" style="color: inherit; text-decoration: none;">
+					<h1>Choose Text Editor</h1>
+				</a>
+				<p>Get path to a text editor executable base on some environment variables</p>
+				<a href="#configuration" id="configuration" style="color: inherit; text-decoration: none;">
+					<h2>Configuration</h2>
+				</a>
+				<a href="#location" id="location" style="color: inherit; text-decoration: none;">
+					<h3>Location</h3>
+				</a>
+				<p>This package uses <a href="https://github.com/davidtheclark/cosmiconfig">cosmiconfig</a> to load configuration. It will search files with matching name from working directory to <code>stopDir</code> (default to home directory).</p>
+				<p><strong>Names:</strong></p>
+				<ul>
+					<li><code>choose-text-editor</code> (yaml format)</li>
+					<li><code>choose-text-editor.json</code></li>
+					<li><code>choose-text-editor.yaml</code></li>
+					<li><code>choose-text-editor.config.js</code></li>
+					<li><code>choose-text-editor.js</code></li>
+					<li><code>package.json#choose-text-editor</code></li>
+					<li><code>package.yaml#choose-text-editor</code></li>
+				</ul>
+				<a href="#schema" id="schema" style="color: inherit; text-decoration: none;">
+					<h2>Schema</h2>
+				</a>
+				<p>A config file have a structure satisfies <a href="https://raw.githubusercontent.com/KSXGitHub/personal-packages/%40khai96x/choose-text-editor/0.2.1/packages/choose-text-editor/schemas/editor-set.schema.json">schemas/editor-set.schema.json</a> or <a href="https://github.com/KSXGitHub/personal-packages/blob/%40khai96x/choose-text-editor/0.2.1/packages/choose-text-editor/lib/editors.ts#L1-L5">EditorSet interface</a></p>
+				<a href="#example-configuration" id="example-configuration" style="color: inherit; text-decoration: none;">
+					<h2>Example Configuration</h2>
+				</a>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/KSXGitHub/personal-packages/%40khai96x/choose-text-editor/0.2.1/packages/choose-text-editor/schemas/editor-set.schema.json#"</span>,
+  <span class="hljs-attr">"graphical"</span>: [
+    { <span class="hljs-attr">"program"</span>: <span class="hljs-string">"code"</span>, <span class="hljs-attr">"flags"</span>: [<span class="hljs-string">"wait"</span>] },
+    { <span class="hljs-attr">"program"</span>: <span class="hljs-string">"atom"</span>, <span class="hljs-attr">"suffixes"</span>: [<span class="hljs-string">"--wait"</span>] }
+  ],
+  <span class="hljs-attr">"terminal"</span>: [
+    { <span class="hljs-attr">"program"</span>: <span class="hljs-string">"vim"</span> }
+  ],
+  <span class="hljs-attr">"chooser"</span>: <span class="hljs-string">"@khai96x/choose-text-editor@^0.2.1"</span>
+}</code></pre>
+				<a href="#environment-variables" id="environment-variables" style="color: inherit; text-decoration: none;">
+					<h2>Environment Variables</h2>
+				</a>
+				<ul>
+					<li>When <code>FORCE_EDITOR</code> is set, <code>choose-text-editor</code> will skip reading config and choose forced editor.</li>
+					<li>When <code>FORCE_EDITOR</code> is not set, <code>ISINTTY</code> must always be set to either <code>true</code> or <code>false</code> (case-sensitive):<ul>
+							<li><code>ISINTTY=true</code> to consider only terminal editors.</li>
+							<li><code>ISINTTY=false</code> to consider graphical editors before terminal editors.</li>
+						</ul>
+					</li>
+					<li><code>FORCE_EDITOR_PREFIXES</code> when set, must be a valid yaml array of string. This prefix will be added to output command line.</li>
+				</ul>
+				<a href="#basic-commands" id="basic-commands" style="color: inherit; text-decoration: none;">
+					<h2>Basic Commands</h2>
+				</a>
+				<a href="#find-an-editor-and-display-its-command" id="find-an-editor-and-display-its-command" style="color: inherit; text-decoration: none;">
+					<h3>Find an editor and display its command</h3>
+				</a>
+				<pre><code class="language-sh">ISINTTY=<span class="hljs-literal">false</span>
+choose-text-editor</code></pre>
+				<a href="#find-an-editor-to-open-a-file" id="find-an-editor-to-open-a-file" style="color: inherit; text-decoration: none;">
+					<h3>Find an editor to open a file</h3>
+				</a>
+				<pre><code class="language-sh">ISINTTY=<span class="hljs-literal">false</span>
+choose-text-editor -x <span class="hljs-built_in">exec</span> -- my-file.txt</code></pre>
+				<a href="#print-help-message" id="print-help-message" style="color: inherit; text-decoration: none;">
+					<h3>Print help message</h3>
+				</a>
+				<pre><code class="language-sh">choose-text-editor --<span class="hljs-built_in">help</span></code></pre>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p><a href="https://git.io/fj9XO">MIT</a> © <a href="https://github.com/KSXGitHub">Hoàng Văn Khải</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -75,228 +146,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="enums/cachetype.html" class="tsd-kind-icon">Cache<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="enums/commandhandlingmethod.html" class="tsd-kind-icon">Command<wbr>Handling<wbr>Method</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-is-external">
-						<a href="enums/status.html" class="tsd-kind-icon">Status</a>
-					</li>
-					<li class=" tsd-kind-class tsd-is-external">
-						<a href="classes/schemacontainer.html" class="tsd-kind-icon">Schema<wbr>Container</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/chooseparam.html" class="tsd-kind-icon">Choose<wbr>Param</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/chosen.html" class="tsd-kind-icon">Chosen</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/command.html" class="tsd-kind-icon">Command</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/commandconstructorparam.html" class="tsd-kind-icon">Command<wbr>Constructor<wbr>Param</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/console.html" class="tsd-kind-icon">Console</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/cosmiconfig.html" class="tsd-kind-icon">Cosmi<wbr>Config</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/cosmiconfigexplorer.html" class="tsd-kind-icon">Cosmi<wbr>Config<wbr>Explorer</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/cosmiconfigoptions.html" class="tsd-kind-icon">Cosmi<wbr>Config<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/cosmiconfigresult.html" class="tsd-kind-icon">Cosmi<wbr>Config<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/editor.html" class="tsd-kind-icon">Editor</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/editoroptions.html" class="tsd-kind-icon">Editor<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/editorset.html" class="tsd-kind-icon">Editor<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/env.html" class="tsd-kind-icon">Env</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/indeterminabletty.html" class="tsd-kind-icon">IndeterminableTTY</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/invalidprefixes.html" class="tsd-kind-icon">Invalid<wbr>Prefixes</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/logger.html" class="tsd-kind-icon">Logger</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/mainparam.html" class="tsd-kind-icon">Main<wbr>Param</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/noeditor.html" class="tsd-kind-icon">No<wbr>Editor</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/notfound.html" class="tsd-kind-icon">Not<wbr>Found</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/prefixesparsingfailure.html" class="tsd-kind-icon">Prefixes<wbr>Parsing<wbr>Failure</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/process.html" class="tsd-kind-icon">Process</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/schemaloader.html" class="tsd-kind-icon">Schema<wbr>Loader</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/spawnsync.html" class="tsd-kind-icon">Spawn<wbr>Sync</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/spawnsyncreturn.html" class="tsd-kind-icon">Spawn<wbr>Sync<wbr>Return</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/which.html" class="tsd-kind-icon">Which</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/whichoptions.html" class="tsd-kind-icon">Which<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#chooseerror" class="tsd-kind-icon">Choose<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#chooseresult" class="tsd-kind-icon">Choose<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#cliarguments" class="tsd-kind-icon">Cli<wbr>Arguments</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#cliargumentselement" class="tsd-kind-icon">Cli<wbr>Arguments<wbr>Element</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-is-external">
-						<a href="globals.html#execoptions" class="tsd-kind-icon">Exec<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#cliarguments" class="tsd-kind-icon">Cli<wbr>Arguments</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#exec_options" class="tsd-kind-icon">EXEC_<wbr>OPTIONS</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#editorset" class="tsd-kind-icon">Editor<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#indeterminable_tty" class="tsd-kind-icon">INDETERMINABLE_<wbr>TTY</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#invalid_prefixes" class="tsd-kind-icon">INVALID_<wbr>PREFIXES</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#indeterminabletty" class="tsd-kind-icon">IndeterminableTTY</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#not_found" class="tsd-kind-icon">NOT_<wbr>FOUND</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#no_editor" class="tsd-kind-icon">NO_<wbr>EDITOR</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#noeditor" class="tsd-kind-icon">No<wbr>Editor</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#notfound" class="tsd-kind-icon">Not<wbr>Found</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#package_json" class="tsd-kind-icon">PACKAGE_<wbr>JSON</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#package_name" class="tsd-kind-icon">PACKAGE_<wbr>NAME</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#package_prop" class="tsd-kind-icon">PACKAGE_<wbr>PROP</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#package_version" class="tsd-kind-icon">PACKAGE_<wbr>VERSION</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#prefixes_parsing_failure" class="tsd-kind-icon">PREFIXES_<wbr>PARSING_<wbr>FAILURE</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#search_places" class="tsd-kind-icon">SEARCH_<wbr>PLACES</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#str2bool" class="tsd-kind-icon">STR2BOOL</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#which_options" class="tsd-kind-icon">WHICH_<wbr>OPTIONS</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#validatecliarguments" class="tsd-kind-icon">validate<wbr>Cli<wbr>Arguments</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#validateeditorset" class="tsd-kind-icon">validate<wbr>Editor<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#chosen" class="tsd-kind-icon">Chosen</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#command" class="tsd-kind-icon">Command</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#invalidprefixes" class="tsd-kind-icon">Invalid<wbr>Prefixes</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#prefixesparsingfailure" class="tsd-kind-icon">Prefixes<wbr>Parsing<wbr>Failure</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#schemaloader" class="tsd-kind-icon">Schema<wbr>Loader</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#choose" class="tsd-kind-icon">choose</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#clearcache" class="tsd-kind-icon">clear<wbr>Cache</a>
-					</li>
-					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
-						<a href="globals.html#concatwithlength" class="tsd-kind-icon">concat<wbr>With<wbr>Length</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#encodecliflag" class="tsd-kind-icon">encode<wbr>Cli<wbr>Flag</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#encodeclioptions" class="tsd-kind-icon">encode<wbr>Cli<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#handlechooseerror" class="tsd-kind-icon">handle<wbr>Choose<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#handlechooservalidation" class="tsd-kind-icon">handle<wbr>Chooser<wbr>Validation</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#handlechosencommand" class="tsd-kind-icon">handle<wbr>Chosen<wbr>Command</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#logschemaerrors" class="tsd-kind-icon">log<wbr>Schema<wbr>Errors</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#main" class="tsd-kind-icon">main</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#shellescape" class="tsd-kind-icon">shell<wbr>Escape</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#showstatus" class="tsd-kind-icon">show<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#tostringarray" class="tsd-kind-icon">to<wbr>String<wbr>Array</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#validatechooser" class="tsd-kind-icon">validate<wbr>Chooser</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
