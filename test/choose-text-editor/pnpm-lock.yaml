@@ -1,58 +1,58 @@
 dependencies:
   '@khai96x/choose-text-editor': 'link:../../packages/choose-text-editor'
-  '@tsfun/option': 0.0.10
-  '@tsfun/result': 0.0.11
+  '@tsfun/option': 0.0.12
+  '@tsfun/result': 0.0.13
   '@types/fs-extra': 8.0.1
   fs-extra: 8.1.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/option/0.0.10:
+  /@tsfun/option/0.0.12:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.6
-      '@tsfun/prv-types': 0.0.4
-      '@tsfun/tap': 0.0.7
-      '@types/node': 12.12.21
+      '@tsfun/prv-option-result-common': 0.0.8
+      '@tsfun/prv-types': 0.0.5
+      '@tsfun/tap': 0.0.8
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-AaMbpVZcwUh4RL7emzB8XRruo9GJCvih6xtafEHLkpnKFoFqn+dEE/6Mgv/VrHWVSa0HuyuPdtBZ9ijpa+G0uA==
-  /@tsfun/prv-option-result-common/0.0.6:
+      integrity: sha512-b5/yeMLMyTBJ7IGIDEnmcw79vbN4i3KRkvJwC80Aj5qcHNmqsu8mwMFDKhkCK1AHfChkqhYlXrpWfq02tkPjlA==
+  /@tsfun/prv-option-result-common/0.0.8:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-aVv5GFxuIDIDXh+wDLiza5EA78/J0drPPy8MR2zdrjN2wVcETxH9+/1K/RjbR74BGHFFoofW4OfVAZI4/9pxyg==
-  /@tsfun/prv-types/0.0.4:
+      integrity: sha512-KHBMOE0nlFIILaxLBC46JqRwnhXCqZ+kcJ1voLWvjBhAe01+7XNkZYYSllkCxUroAkmJa1PjdyuQZMvOXngLQQ==
+  /@tsfun/prv-types/0.0.5:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-F2gkqgZ8ZEVnggVUB5tg+R1e68caP1DCMsuXjIIGEoLnZ7JDGFfJNgciA3m5FS6Eovk+6DkJsjbELzNTJDmkFw==
-  /@tsfun/result/0.0.11:
+      integrity: sha512-Y2xd7OWDoaBY9dUJHBF56km3AKY1Di/NwA0cFSZQWxtL0bo3Xk937oFBzOAn8wBkRHTOl+SvyU42XGrFC1jG6Q==
+  /@tsfun/result/0.0.13:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.6
-      '@tsfun/prv-types': 0.0.4
-      '@tsfun/tap': 0.0.7
-      '@types/node': 12.12.21
+      '@tsfun/prv-option-result-common': 0.0.8
+      '@tsfun/prv-types': 0.0.5
+      '@tsfun/tap': 0.0.8
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-aE5wVxI4HbHrwGyQ9ze8GIOEFEtfQE+gJxHfwb19KsBMunHBOWOSrLOajLxCbtn8pgKN69cRO7ThEOmIIYQ09g==
-  /@tsfun/tap/0.0.7:
+      integrity: sha512-gTa7EX7YLD31sKI3Q0xnMU8AsqJaBBhL22KtS6MDyF2s9Mx6GwdRkuLJx0LJ22XlFVG8i7UG0R0tg042MgTZ3w==
+  /@tsfun/tap/0.0.8:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-63sdVAxTGbkFp5kikmQJDxx/OuDJ93zy63sbksv7nCJvNA9/GabeZJE/MReVNfTz73/dtRPXCumTEIacakLUSw==
+      integrity: sha512-QASQDYuFJZGFUb8maN/ip3g7r3zq3abQHkJsgypWgUtBSBdFLF5ZLq7BFpIR3bEpX1iGmhadGeU1yVQNKyeGjA==
   /@types/fs-extra/8.0.1:
     dependencies:
       '@types/node': 12.12.21
@@ -63,6 +63,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
+  /@types/node/13.1.7:
+    dev: false
+    resolution:
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /fs-extra/8.1.0:
     dependencies:
       graceful-fs: 4.2.3
@@ -95,7 +99,7 @@ packages:
       integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
   '@khai96x/choose-text-editor': 'file:../../packages/choose-text-editor'
-  '@tsfun/option': ^0.0.10
-  '@tsfun/result': ^0.0.11
+  '@tsfun/option': ^0.0.12
+  '@tsfun/result': ^0.0.13
   '@types/fs-extra': ^8.0.1
   fs-extra: ^8.1.0

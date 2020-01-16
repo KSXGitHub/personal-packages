@@ -1,6 +1,6 @@
 dependencies:
-  '@types/node': 13.1.6
-  advanced-map-initialized: 0.0.3
+  '@types/node': 13.1.7
+  advanced-map-initialized: 0.0.4
   rxjs: 6.5.4
   tslib: 1.10.0
 lockfileVersion: 5.1
@@ -9,46 +9,46 @@ packages:
     dev: false
     resolution:
       integrity: sha512-An+MXSV8CGXz/BO9C1KKsoJ/8WDrvlNUaRMsm2h+IHZuSyQkM8U5bJJkb8ItLKA73VePG/nUK+t+EuW2IWuhsQ==
-  /@types/node/12.7.11:
-    dev: false
-    resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
   /@types/node/13.1.6:
     dev: false
     resolution:
       integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
-  /advanced-map-base/0.0.3:
+  /@types/node/13.1.7:
+    dev: false
+    resolution:
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+  /advanced-map-base/0.0.4:
     dependencies:
-      '@types/node': 12.7.11
-      advanced-map-types: 0.0.3
+      '@types/node': 13.1.6
+      advanced-map-types: 0.0.4
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-2iVMbTr1ioSdvYiMWybCXc4jaTw9nsS9VV3XilQUVSt0nxRpb2bSw55/ItCG3GUP1UMb91tQOSSXAl7ronhPvg==
-  /advanced-map-initialized/0.0.3:
+      integrity: sha512-auTlMKEPMll9I6InsV7XNbDRfTra8u9kBd73/rSe0VuzYFFyAU5mb41wpV8Urs/1CYb+ysE+FetN6zRxfhC0EQ==
+  /advanced-map-initialized/0.0.4:
     dependencies:
-      '@types/node': 12.7.11
-      advanced-map-base: 0.0.3
-      advanced-map-types: 0.0.3
+      '@types/node': 13.1.7
+      advanced-map-base: 0.0.4
+      advanced-map-types: 0.0.4
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-mlPzbrojhQXOOwOP1RIZ0u4MLA2bGphMUGCgFUib1e46lM3hB9Xbm0qswDTX7E44uCVPaqMGQF4oMP/yTnVFhw==
-  /advanced-map-types/0.0.3:
+      integrity: sha512-mvPQ6Q1ZwUZ3Uwseh/8jog/PC2E6OmmpUYir5+eGkBw0eoMYAF880qYL1NTIS9k5jW1NExyV2ADoqVLzZ4pePA==
+  /advanced-map-types/0.0.4:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 13.1.6
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-W/L5l30/AwWXR16W6ODU4vo7zfOaMJ44VgZMnkM2rgHrKJCD3w9heB18yoMrqy0AkEodIKiDs2FFjS57zMK9nQ==
+      integrity: sha512-1z2ags9Y3SbsvRBsANA60J8HGfWeEOnrFwavN72EIQVCt/iFB6fujjvf8dwER7Xpo7tttPfxWxnLnvCiFHU7hA==
   /rxjs/6.5.4:
     dependencies:
       tslib: 1.10.0
@@ -72,7 +72,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^13.1.6
-  advanced-map-initialized: ^0.0.3
+  '@types/node': ^13.1.7
+  advanced-map-initialized: ^0.0.4
   rxjs: ^6.5.4
   tslib: ^1.10.0

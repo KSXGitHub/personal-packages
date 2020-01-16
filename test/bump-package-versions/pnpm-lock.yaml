@@ -3,11 +3,11 @@ dependencies:
   '@types/diff': 4.0.2
   '@types/js-yaml': 3.12.1
   '@types/semver': 6.2.0
-  diff: 4.0.1
+  diff: 4.0.2
   js-yaml: 3.13.1
-  just-json-type: 0.1.1
+  just-json-type: 0.1.3
   semver: 7.1.1
-  string-template-format-inspect: 0.1.2
+  string-template-format-inspect: 0.1.4
 lockfileVersion: 5.1
 packages:
   /@types/diff/4.0.2:
@@ -18,10 +18,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
-  /@types/node/12.12.21:
+  /@types/node/13.1.7:
     dev: false
     resolution:
-      integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /@types/semver/6.2.0:
     dev: false
     resolution:
@@ -32,12 +32,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  /diff/4.0.1:
+  /diff/4.0.2:
     dev: false
     engines:
       node: '>=0.3.1'
     resolution:
-      integrity: sha512-s2+XdvhPCOF01LRQBC8hf4vhbVmI2CGS5aZnxLJlT5FtdhPCDFq80q++zK2KlrVorVDdL5BOGZ/VfLrVtYNF+Q==
+      integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==
   /esprima/4.0.1:
     dev: false
     engines:
@@ -53,13 +53,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
-  /just-json-type/0.1.1:
+  /just-json-type/0.1.3:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-GeYdjPyXd8ziaYOFOqSSgIvGAyJaPWwtzYiKxDbZGNZDLhf5KIYJjdUPQAGmNygwrzIDXoUgiGxbaINHKFh+gQ==
+      integrity: sha512-l8LhbNHsdrh46vt3iNuwl/I0QnNAYtWsX5xvb4GkMMDfItanwcYXALhBRqGQHGb7k/Pb4qlYc7ICbUBhYjW+lQ==
   /semver/7.1.1:
     dev: false
     engines:
@@ -71,21 +71,21 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /string-template-format-base/0.1.1:
+  /string-template-format-base/0.1.3:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-XURxIRG3t9X8afee3MFIwMyUEqp1EBd8hQIPnTq0IUHqlId7smZfhpZyt5cuIwBmIY8aZYKZWJyNWdlYNobCmg==
-  /string-template-format-inspect/0.1.2:
+      integrity: sha512-qERO1R4bP2xYlHvHH1PjPGzFciYehbT3uksMCimd0WF54Ou55JGr+IBtaP4hj79T+uGTbu1mnqJgZK0s02lFKQ==
+  /string-template-format-inspect/0.1.4:
     dependencies:
-      '@types/node': 12.12.21
-      string-template-format-base: 0.1.1
+      '@types/node': 13.1.7
+      string-template-format-base: 0.1.3
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-1i/FqZVsmwUJNRihQzkrsyLD2coZd7OJLLmOPusap6WvLQgF5MA9W9vOQ5BdRwn8MTcpZp3cCt91axxs0b+V7A==
+      integrity: sha512-i4tz6pO4Rt+WSfoOtOaI1s5ORjUddXGadipmaBLKr9XIlr/UcYa1kYmJOUTKn2K9u/iCmNRFV+xS87YRdvsKhw==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -95,8 +95,8 @@ specifiers:
   '@types/diff': ^4.0.2
   '@types/js-yaml': ^3.12.1
   '@types/semver': ^6.2.0
-  diff: ^4.0.1
+  diff: ^4.0.2
   js-yaml: ^3.13.1
-  just-json-type: ^0.1.1
+  just-json-type: ^0.1.3
   semver: ^7.1.1
-  string-template-format-inspect: ^0.1.2
+  string-template-format-inspect: ^0.1.4

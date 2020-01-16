@@ -1,16 +1,16 @@
 dependencies:
   '@khai96x/utils': 'link:../utils'
-  '@tsfun/option': 0.0.10
-  '@tsfun/result': 0.0.11
+  '@tsfun/option': 0.0.12
+  '@tsfun/result': 0.0.13
   '@types/js-yaml': 3.12.1
-  '@types/node': 13.1.6
+  '@types/node': 13.1.7
   '@types/parse-package-name': 0.1.0
   '@types/semver': 6.2.0
   '@types/shell-escape': 0.2.0
   '@types/which': 1.3.2
   '@types/yargs': 15.0.0
   cosmiconfig: 6.0.0
-  exec-once: 0.1.2
+  exec-once: 0.1.4
   iter-tools: 6.2.6
   js-yaml: 3.13.1
   jsonschema: 1.2.5
@@ -50,65 +50,65 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SQ0sS7KUJDvgCI2cpZG0nJygO6002oTbhgSuw4WcocsnbxLwL5Q8I3fqbJdyBAc3uFrWZiR2JomseuxSuci3SQ==
-  /@tsfun/option/0.0.10:
+  /@tsfun/option/0.0.12:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.6
-      '@tsfun/prv-types': 0.0.4
-      '@tsfun/tap': 0.0.7
-      '@types/node': 12.12.21
+      '@tsfun/prv-option-result-common': 0.0.8
+      '@tsfun/prv-types': 0.0.5
+      '@tsfun/tap': 0.0.8
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-AaMbpVZcwUh4RL7emzB8XRruo9GJCvih6xtafEHLkpnKFoFqn+dEE/6Mgv/VrHWVSa0HuyuPdtBZ9ijpa+G0uA==
-  /@tsfun/prv-option-result-common/0.0.6:
+      integrity: sha512-b5/yeMLMyTBJ7IGIDEnmcw79vbN4i3KRkvJwC80Aj5qcHNmqsu8mwMFDKhkCK1AHfChkqhYlXrpWfq02tkPjlA==
+  /@tsfun/prv-option-result-common/0.0.8:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.6
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-aVv5GFxuIDIDXh+wDLiza5EA78/J0drPPy8MR2zdrjN2wVcETxH9+/1K/RjbR74BGHFFoofW4OfVAZI4/9pxyg==
-  /@tsfun/prv-types/0.0.4:
+      integrity: sha512-KHBMOE0nlFIILaxLBC46JqRwnhXCqZ+kcJ1voLWvjBhAe01+7XNkZYYSllkCxUroAkmJa1PjdyuQZMvOXngLQQ==
+  /@tsfun/prv-types/0.0.5:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.6
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-F2gkqgZ8ZEVnggVUB5tg+R1e68caP1DCMsuXjIIGEoLnZ7JDGFfJNgciA3m5FS6Eovk+6DkJsjbELzNTJDmkFw==
-  /@tsfun/result/0.0.11:
+      integrity: sha512-Y2xd7OWDoaBY9dUJHBF56km3AKY1Di/NwA0cFSZQWxtL0bo3Xk937oFBzOAn8wBkRHTOl+SvyU42XGrFC1jG6Q==
+  /@tsfun/result/0.0.13:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.6
-      '@tsfun/prv-types': 0.0.4
-      '@tsfun/tap': 0.0.7
-      '@types/node': 12.12.21
+      '@tsfun/prv-option-result-common': 0.0.8
+      '@tsfun/prv-types': 0.0.5
+      '@tsfun/tap': 0.0.8
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-aE5wVxI4HbHrwGyQ9ze8GIOEFEtfQE+gJxHfwb19KsBMunHBOWOSrLOajLxCbtn8pgKN69cRO7ThEOmIIYQ09g==
-  /@tsfun/tap/0.0.7:
+      integrity: sha512-gTa7EX7YLD31sKI3Q0xnMU8AsqJaBBhL22KtS6MDyF2s9Mx6GwdRkuLJx0LJ22XlFVG8i7UG0R0tg042MgTZ3w==
+  /@tsfun/tap/0.0.8:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.6
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-63sdVAxTGbkFp5kikmQJDxx/OuDJ93zy63sbksv7nCJvNA9/GabeZJE/MReVNfTz73/dtRPXCumTEIacakLUSw==
+      integrity: sha512-QASQDYuFJZGFUb8maN/ip3g7r3zq3abQHkJsgypWgUtBSBdFLF5ZLq7BFpIR3bEpX1iGmhadGeU1yVQNKyeGjA==
   /@types/js-yaml/3.12.1:
     dev: false
     resolution:
       integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
-  /@types/node/12.12.21:
-    dev: false
-    resolution:
-      integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
   /@types/node/13.1.6:
     dev: false
     resolution:
       integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+  /@types/node/13.1.7:
+    dev: false
+    resolution:
+      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
   /@types/parse-json/4.0.0:
     dev: false
     resolution:
@@ -275,13 +275,13 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
-  /exec-once/0.1.2:
+  /exec-once/0.1.4:
     dependencies:
-      '@types/node': 12.12.21
+      '@types/node': 13.1.7
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-LvJgAPoXfNHOMGAw5mh8V5JB6liJIgSHj2mtRiO8T3nGfuJKAltKhTNY5H2UvbpA4MPmIJSHGx4us8gqchIh6Q==
+      integrity: sha512-B9msEzFWJPl6gyim8Ca2gjYen1a8/RB9Rau2H50t1euRm5TX1luH1FV23xhnRvTMK9y2UkoPT0fRgjl2DERfbg==
   /find-up/4.1.0:
     dependencies:
       locate-path: 5.0.0
@@ -608,17 +608,17 @@ packages:
       integrity: sha512-T39FNN1b6hCW4SOIk1XyTOWxtXdcen0t+XYrysQmChzSipvhBO8Bj0nK1ozAasdk24dNWuMZvr4k24nz+8HHLg==
 specifiers:
   '@khai96x/utils': ^0.0.0
-  '@tsfun/option': ^0.0.10
-  '@tsfun/result': ^0.0.11
+  '@tsfun/option': ^0.0.12
+  '@tsfun/result': ^0.0.13
   '@types/js-yaml': ^3.12.1
-  '@types/node': ^13.1.6
+  '@types/node': ^13.1.7
   '@types/parse-package-name': ^0.1.0
   '@types/semver': ^6.2.0
   '@types/shell-escape': ^0.2.0
   '@types/which': ^1.3.2
   '@types/yargs': ^15.0.0
   cosmiconfig: 6.0.0
-  exec-once: 0.1.2
+  exec-once: ^0.1.4
   iter-tools: ^6.2.6
   js-yaml: ^3.13.1
   jsonschema: ^1.2.5
