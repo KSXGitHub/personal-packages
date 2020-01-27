@@ -1,7 +1,7 @@
 dependencies:
   '@types/fs-extra': 8.0.1
   '@types/node': 13.1.7
-  '@types/semver': 6.2.0
+  '@types/semver': 7.1.0
   '@types/yargs': 15.0.0
   fs-extra: 8.1.0
   just-json-type: 0.1.3
@@ -29,10 +29,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/semver/6.2.0:
+  /@types/node/13.5.0:
     dev: false
     resolution:
-      integrity: sha512-1OzrNb4RuAzIT7wHSsgZRlMBlNsJl+do6UblR7JMW4oB7bbR+uBEYtUh7gEc/jM84GGilh68lSOokyM/zNUlBA==
+      integrity: sha512-Onhn+z72D2O2Pb2ql2xukJ55rglumsVo1H6Fmyi8mlU9SvKdBk/pUSUAiBY/d9bAOF7VVWajX3sths/+g6ZiAQ==
+  /@types/semver/7.1.0:
+    dependencies:
+      '@types/node': 13.5.0
+    dev: false
+    resolution:
+      integrity: sha512-pOKLaubrAEMUItGNpgwl0HMFPrSAFic8oSVIvfu1UwcgGNmNyK9gyhBHKmBnUTwwVvpZfkzUC0GaMgnL6P86uA==
   /@types/yargs-parser/13.1.0:
     dev: false
     resolution:
@@ -287,7 +293,7 @@ packages:
 specifiers:
   '@types/fs-extra': ^8.0.1
   '@types/node': ^13.1.7
-  '@types/semver': ^6.2.0
+  '@types/semver': ^7.0.0
   '@types/yargs': ^15.0.0
   fs-extra: ^8.1.0
   just-json-type: ^0.1.3
