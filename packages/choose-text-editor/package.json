@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/choose-text-editor",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Get path to a text editor executable base on some environment variables",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

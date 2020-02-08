@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/all",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "All packages within @khai96x",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "@khai96x/interval-observable-universe": "^0.0.4",
     "@khai96x/my-observables": "^0.0.4",
     "@khai96x/bump-package-versions": "^0.0.2",
-    "@khai96x/choose-text-editor": "^0.2.2",
+    "@khai96x/choose-text-editor": "^0.2.3",
     "tslib": "^1.10.0",
     "@types/node": "^13.1.7"
   }
