@@ -1,25 +1,54 @@
 {
   "$ref": "#/definitions/EditorSet",
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
-    "Editor": {
+    "EditorSet": {
+      "title": "EditorSet",
+      "type": "object",
       "properties": {
+        "chooser": {
+          "type": "string",
+          "title": "chooser"
+        },
+        "graphical": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Editor"
+          },
+          "title": "graphical"
+        },
+        "terminal": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Editor"
+          },
+          "title": "terminal"
+        }
+      },
+      "required": [
+        "chooser"
+      ]
+    },
+    "Editor": {
+      "title": "Editor",
+      "type": "object",
+      "properties": {
+        "program": {
+          "type": "string",
+          "title": "program"
+        },
         "flags": {
+          "type": "array",
           "items": {
             "type": "string"
           },
-          "title": "flags",
-          "type": "array"
+          "title": "flags"
         },
         "options": {
           "$ref": "#/definitions/EditorOptions",
           "title": "options"
         },
-        "program": {
-          "title": "program",
-          "type": "string"
-        },
         "suffixes": {
+          "type": "array",
           "items": {
             "type": [
               "null",
@@ -28,26 +57,26 @@
               "boolean"
             ]
           },
-          "title": "suffixes",
-          "type": "array"
+          "title": "suffixes"
         }
       },
       "required": [
         "program"
-      ],
-      "title": "Editor",
-      "type": "object"
+      ]
     },
     "EditorOptions": {
+      "title": "EditorOptions",
+      "type": "object",
       "additionalProperties": {
-        "anyOf": [{
+        "anyOf": [
+          {
+            "type": "array",
             "items": {
               "type": [
                 "string",
                 "number"
               ]
-            },
-            "type": "array"
+            }
           },
           {
             "type": [
@@ -57,36 +86,8 @@
             ]
           }
         ]
-      },
-      "title": "EditorOptions",
-      "type": "object"
-    },
-    "EditorSet": {
-      "properties": {
-        "chooser": {
-          "title": "chooser",
-          "type": "string"
-        },
-        "graphical": {
-          "items": {
-            "$ref": "#/definitions/Editor"
-          },
-          "title": "graphical",
-          "type": "array"
-        },
-        "terminal": {
-          "items": {
-            "$ref": "#/definitions/Editor"
-          },
-          "title": "terminal",
-          "type": "array"
-        }
-      },
-      "required": [
-        "chooser"
-      ],
-      "title": "EditorSet",
-      "type": "object"
+      }
     }
-  }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }

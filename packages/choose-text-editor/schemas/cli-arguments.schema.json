@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
   "items": {
     "type": [
       "null",
@@ -8,5 +8,94 @@
       "boolean"
     ]
   },
-  "type": "array"
+  "definitions": {
+    "EditorSet": {
+      "title": "EditorSet",
+      "type": "object",
+      "properties": {
+        "chooser": {
+          "type": "string",
+          "title": "chooser"
+        },
+        "graphical": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Editor"
+          },
+          "title": "graphical"
+        },
+        "terminal": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Editor"
+          },
+          "title": "terminal"
+        }
+      },
+      "required": [
+        "chooser"
+      ]
+    },
+    "Editor": {
+      "title": "Editor",
+      "type": "object",
+      "properties": {
+        "program": {
+          "type": "string",
+          "title": "program"
+        },
+        "flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "flags"
+        },
+        "options": {
+          "$ref": "#/definitions/EditorOptions",
+          "title": "options"
+        },
+        "suffixes": {
+          "type": "array",
+          "items": {
+            "type": [
+              "null",
+              "string",
+              "number",
+              "boolean"
+            ]
+          },
+          "title": "suffixes"
+        }
+      },
+      "required": [
+        "program"
+      ]
+    },
+    "EditorOptions": {
+      "title": "EditorOptions",
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "type": [
+                "string",
+                "number"
+              ]
+            }
+          },
+          {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }
