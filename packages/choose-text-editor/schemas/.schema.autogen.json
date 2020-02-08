@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json",
+  "instruction": {
+    "compilerOptions": {
+      "strictNullChecks": true,
+      "target": "ES2018",
+      "strict": true,
+      "esModuleInterop": true,
+      "noEmit": true
+    },
+    "schemaSettings": {
+      "topRef": true,
+      "ref": true,
+      "titles": true,
+      "required": true,
+      "strictNullChecks": true
+    },
+    "input": [
+      "../lib/editors.ts"
+    ],
+    "list": [
+      {
+        "symbol": "EditorSet",
+        "output": "editor-set.schema.json"
+      },
+      {
+        "symbol": "CliArguments",
+        "output": "cli-arguments.schema.json"
+      }
+    ]
+  }
+}
