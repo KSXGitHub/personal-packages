@@ -28,7 +28,7 @@
     "yargs": "^15.1.0",
     "exec-once": "^0.1.4",
     "string-template-format-inspect": "^0.1.4",
-    "@tsfun/option": "^0.0.12",
+    "@tsfun/option": "^0.0.15",
     "@tsfun/result": "^0.0.13",
     "@khai96x/utils": "^0.0.1",
     "tslib": "^1.10.0",

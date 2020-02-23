@@ -1,6 +1,6 @@
 dependencies:
   '@khai96x/utils': 'link:../utils'
-  '@tsfun/option': 0.0.12
+  '@tsfun/option': 0.0.15
   '@tsfun/result': 0.0.13
   '@types/js-yaml': 3.12.1
   '@types/node': 13.1.7
@@ -50,18 +50,27 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SQ0sS7KUJDvgCI2cpZG0nJygO6002oTbhgSuw4WcocsnbxLwL5Q8I3fqbJdyBAc3uFrWZiR2JomseuxSuci3SQ==
-  /@tsfun/option/0.0.12:
+  /@tsfun/option/0.0.15:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.8
-      '@tsfun/prv-types': 0.0.5
-      '@tsfun/tap': 0.0.8
-      '@types/node': 13.1.7
-      tslib: 1.10.0
+      '@tsfun/prv-option-result-common': 0.0.11
+      '@tsfun/prv-types': 0.0.6
+      '@tsfun/tap': 0.0.10
+      '@types/node': 13.7.4
+      tslib: 1.11.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-b5/yeMLMyTBJ7IGIDEnmcw79vbN4i3KRkvJwC80Aj5qcHNmqsu8mwMFDKhkCK1AHfChkqhYlXrpWfq02tkPjlA==
+      integrity: sha512-HU+iVZB0WVwe1zIJNQIt0PeUHaIM/a8wwF6k20qXYr0gv2EFX/bEw45kC9qlUg2BBS1qBH5lUuQz8fkPewRQFw==
+  /@tsfun/prv-option-result-common/0.0.11:
+    dependencies:
+      '@types/node': 13.7.4
+      tslib: 1.11.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-AIp2Oygr9WD12BG4p+fUEhyGtPnchRVALahzDab2eobkD2IhxRnHsKZh4J3v84faEIuXbnpdfALwGkzaOcgkPA==
   /@tsfun/prv-option-result-common/0.0.8:
     dependencies:
       '@types/node': 13.1.6
@@ -78,6 +87,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Y2xd7OWDoaBY9dUJHBF56km3AKY1Di/NwA0cFSZQWxtL0bo3Xk937oFBzOAn8wBkRHTOl+SvyU42XGrFC1jG6Q==
+  /@tsfun/prv-types/0.0.6:
+    dependencies:
+      '@types/node': 13.7.4
+      tslib: 1.11.0
+    dev: false
+    resolution:
+      integrity: sha512-s97gvRX2SjGTdU+Odsi6RgsVFi+xNOx3T6Jew2mo7m7Wj6eJmM0HB0HlFPmwIIi2MtXIpSr71TZmRVcMeU3Atw==
   /@tsfun/result/0.0.13:
     dependencies:
       '@tsfun/prv-option-result-common': 0.0.8
@@ -90,6 +106,13 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-gTa7EX7YLD31sKI3Q0xnMU8AsqJaBBhL22KtS6MDyF2s9Mx6GwdRkuLJx0LJ22XlFVG8i7UG0R0tg042MgTZ3w==
+  /@tsfun/tap/0.0.10:
+    dependencies:
+      '@types/node': 13.7.4
+      tslib: 1.11.0
+    dev: false
+    resolution:
+      integrity: sha512-ArfW5g+1BxUXhqWOCOceiR3iviWn6PvDjOHzSBCCw3luYlVJ8JwYMcvj9ZXITBbP33uM8NKbxwzjRGGVckXLdg==
   /@tsfun/tap/0.0.8:
     dependencies:
       '@types/node': 13.1.6
@@ -109,6 +132,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+  /@types/node/13.7.4:
+    dev: false
+    resolution:
+      integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
   /@types/parse-json/4.0.0:
     dev: false
     resolution:
@@ -517,6 +544,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.0:
+    dev: false
+    resolution:
+      integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
   /typescript-compare/0.0.2:
     dependencies:
       typescript-logic: 0.0.0
@@ -608,7 +639,7 @@ packages:
       integrity: sha512-T39FNN1b6hCW4SOIk1XyTOWxtXdcen0t+XYrysQmChzSipvhBO8Bj0nK1ozAasdk24dNWuMZvr4k24nz+8HHLg==
 specifiers:
   '@khai96x/utils': ^0.0.1
-  '@tsfun/option': ^0.0.12
+  '@tsfun/option': ^0.0.15
   '@tsfun/result': ^0.0.13
   '@types/js-yaml': ^3.12.1
   '@types/node': ^13.1.7
