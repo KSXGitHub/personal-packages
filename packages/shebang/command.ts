@@ -1,5 +1,5 @@
 export function command (shebang: string): string | null {
-  if (!shebang.startsWith('#!')) return null
+  if (!shebang || !shebang.startsWith('#!')) return null
   shebang = shebang.slice(2).trim()
   const segments = shebang.split(/\s+/)
   while (segments[0].endsWith('/env') && segments.length > 1) {
