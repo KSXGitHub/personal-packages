@@ -1,8 +1,8 @@
 dependencies:
-  '@types/node': 13.1.7
+  '@types/node': 13.7.7
   advanced-map-initialized: 0.0.4
   rxjs: 6.5.4
-  tslib: 1.10.0
+  tslib: 1.11.1
 lockfileVersion: 5.1
 packages:
   /@types/node/10.14.20:
@@ -17,6 +17,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
+  /@types/node/13.7.7:
+    dev: false
+    resolution:
+      integrity: sha512-Uo4chgKbnPNlxQwoFmYIwctkQVkMMmsAoGGU4JKwLuvBefF0pCq4FybNSnfkfRCpC7ZW7kttcC/TrRtAJsvGtg==
   /advanced-map-base/0.0.4:
     dependencies:
       '@types/node': 13.1.6
@@ -61,6 +65,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.1:
+    dev: false
+    resolution:
+      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /typescript-miscellaneous/0.1.1:
     dependencies:
       '@types/node': 10.14.20
@@ -72,7 +80,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^13.1.7
+  '@types/node': ^13.7.7
   advanced-map-initialized: ^0.0.4
   rxjs: ^6.5.4
-  tslib: ^1.10.0
+  tslib: ^1.11.1
