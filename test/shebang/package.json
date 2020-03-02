@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "@khai96x/shebang": "file:../../packages/shebang"
+  }
+}

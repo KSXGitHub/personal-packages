@@ -1,7 +1,7 @@
 {
-  "name": "@khai96x/all",
-  "version": "0.0.12",
-  "description": "All packages within @khai96x",
+  "name": "@khai96x/shebang",
+  "version": "0.0.0",
+  "description": "Extract shebang information from a file",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
@@ -12,12 +12,11 @@
   "bugs": {
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
+  "keywords": [
+    "shebang"
+  ],
+  "sideEffects": false,
   "dependencies": {
-    "@khai96x/interval-observable-universe": "^0.0.4",
-    "@khai96x/my-observables": "^0.0.4",
-    "@khai96x/bump-package-versions": "^0.0.2",
-    "@khai96x/choose-text-editor": "^0.2.3",
-    "@khai96x/shebang": "^0.0.0",
     "tslib": "^1.11.1",
     "@types/node": "^13.7.7"
   }

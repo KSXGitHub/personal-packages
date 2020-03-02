@@ -1,0 +1,5 @@
+dependencies:
+  '@khai96x/shebang': 'link:../../packages/shebang'
+lockfileVersion: 5.1
+specifiers:
+  '@khai96x/shebang': 'file:../../packages/shebang'

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+Array [
+  Object {
+    "command": "sh",
+    "shebang": "#!/bin/sh",
+  },
+  Object {
+    "command": "sh",
+    "shebang": "#!/usr/bin/sh",
+  },
+  Object {
+    "command": "sh",
+    "shebang": "#!/bin/env sh",
+  },
+  Object {
+    "command": "sh",
+    "shebang": "#!/usr/bin/env sh -",
+  },
+  Object {
+    "command": "bash",
+    "shebang": "#! /bin/bash",
+  },
+  Object {
+    "command": "bash",
+    "shebang": "#! /usr/bin/bash",
+  },
+  Object {
+    "command": "bash",
+    "shebang": "#! /bin/env bash",
+  },
+  Object {
+    "command": "bash",
+    "shebang": "#! /usr/bin/env bash -",
+  },
+  Object {
+    "command": null,
+    "shebang": "not-shebang",
+  },
+]
+`;

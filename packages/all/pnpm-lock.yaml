@@ -3,6 +3,7 @@ dependencies:
   '@khai96x/choose-text-editor': 'link:../choose-text-editor'
   '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
   '@khai96x/my-observables': 'link:../my-observables'
+  '@khai96x/shebang': 'link:../shebang'
   '@types/node': 13.7.7
   tslib: 1.11.1
 lockfileVersion: 5.1
@@ -20,5 +21,6 @@ specifiers:
   '@khai96x/choose-text-editor': ^0.2.3
   '@khai96x/interval-observable-universe': ^0.0.4
   '@khai96x/my-observables': ^0.0.4
+  '@khai96x/shebang': ^0.0.0
   '@types/node': ^13.7.7
   tslib: ^1.11.1
