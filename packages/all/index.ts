@@ -2,3 +2,4 @@ export * as intervalObservableUniverse from '@khai96x/interval-observable-univer
 export * as myObservables from '@khai96x/my-observables'
 export * as bumpPackageVersions from '@khai96x/bump-package-versions'
 export * as shebang from '@khai96x/shebang'
+export * as listShellFiles from '@khai96x/list-shell-files'

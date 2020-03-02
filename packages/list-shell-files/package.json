@@ -1,7 +1,7 @@
 {
-  "name": "@khai96x/all",
-  "version": "0.0.12",
-  "description": "All packages within @khai96x",
+  "name": "@khai96x/list-shell-files",
+  "version": "0.0.0",
+  "description": "Find all sh/bash files from CLI arguments",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
@@ -12,14 +12,22 @@
   "bugs": {
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
+  "keywords": [
+    "shell",
+    "sh",
+    "bash"
+  ],
+  "bin": {
+    "list-shell-files": "list-shell-files"
+  },
+  "sideEffects": false,
   "dependencies": {
-    "@khai96x/interval-observable-universe": "^0.0.4",
-    "@khai96x/my-observables": "^0.0.4",
-    "@khai96x/bump-package-versions": "^0.0.2",
-    "@khai96x/choose-text-editor": "^0.2.3",
-    "@khai96x/shebang": "^0.0.0",
-    "@khai96x/list-shell-files": "^0.0.0",
+    "yargs": "^15.1.0",
+    "@types/yargs": "^15.0.4",
+    "fs-extra": "^8.1.0",
+    "@types/fs-extra": "^8.1.0",
     "tslib": "^1.11.1",
+    "@khai96x/shebang": "^0.0.0",
     "@types/node": "^13.7.7"
   }
 }
