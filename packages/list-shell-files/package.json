@@ -24,8 +24,8 @@
   "dependencies": {
     "yargs": "^15.1.0",
     "@types/yargs": "^15.0.4",
-    "fs-extra": "^8.1.0",
-    "@types/fs-extra": "^8.1.0",
+    "fs-extra": "^9.0.0",
+    "@types/fs-extra": "^9.0.0",
     "tslib": "^1.11.1",
     "@khai96x/shebang": "^0.0.0",
     "@types/node": "^13.7.7"
