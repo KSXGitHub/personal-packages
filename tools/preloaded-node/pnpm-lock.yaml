@@ -4,7 +4,7 @@ dependencies:
   '@types/node': 13.7.7
   json5: 2.1.1
   ts-node: 8.6.2_typescript@3.8.3
-  tslib: 1.11.1
+  tslib: 2.0.0
   typescript: 3.8.3
 lockfileVersion: 5.1
 packages:
@@ -76,10 +76,10 @@ packages:
       typescript: '>=2.7'
     resolution:
       integrity: sha512-4mZEbofxGqLL2RImpe3zMJukvEvcO1XP8bj8ozBPySdCUXEcU5cIRwR0aM3R+VoZq7iXc8N86NC0FspGRqP4gg==
-  /tslib/1.11.1:
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /typescript/3.8.3:
     dev: false
     engines:
@@ -99,5 +99,5 @@ specifiers:
   '@types/node': ^13.7.7
   json5: ^2.1.1
   ts-node: ^8.6.2
-  tslib: ^1.11.1
+  tslib: ^2.0.0
   typescript: ^3.8.3

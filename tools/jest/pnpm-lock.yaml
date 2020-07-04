@@ -11,7 +11,7 @@ dependencies:
   parse-dependency-range: 0.0.4
   semver: 7.1.3
   ts-jest: 25.2.1_jest@25.1.0
-  tslib: 1.11.1
+  tslib: 2.0.0
   typescript: 3.8.3
   yaml-jest: 1.0.5
 lockfileVersion: 5.1
@@ -140,6 +140,7 @@ packages:
       integrity: sha512-trGNYSfwq5s0SgM1BMEB8hX3NDmO7EP2wsDGDexiaKMB92BaRpS+qZfpkMqUBhcsOTBwNy9B/jieo4ad/t/z2g==
   /@babel/plugin-syntax-bigint/7.8.3_@babel+core@7.8.4:
     dependencies:
+      '@babel/core': 7.8.4
       '@babel/helper-plugin-utils': 7.8.3
     dev: false
     peerDependencies:
@@ -157,6 +158,7 @@ packages:
       integrity: sha512-wnTnFlG+YxQm3vDxpGE57Pj0srRU4sHE/mDkt1qv2YJJSeUAec2ma4WLUnUPeKjyrfntVwe/N6dCXpU+zL3Npg==
   /@babel/plugin-syntax-object-rest-spread/7.7.4_@babel+core@7.8.4:
     dependencies:
+      '@babel/core': 7.8.4
       '@babel/helper-plugin-utils': 7.8.3
     dev: false
     peerDependencies:
@@ -682,6 +684,7 @@ packages:
       integrity: sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==
   /babel-jest/25.1.0_@babel+core@7.8.4:
     dependencies:
+      '@babel/core': 7.8.4
       '@jest/transform': 25.1.0
       '@jest/types': 25.1.0
       '@types/babel__core': 7.1.3
@@ -735,6 +738,7 @@ packages:
       integrity: sha512-oIsopO41vW4YFZ9yNYoLQATnnN46lp+MZ6H4VvPKFkcc2/fkl3CfE/NZZSmnEIEsJRmJAgkVEK0R7Zbl50CpTw==
   /babel-preset-jest/25.1.0_@babel+core@7.8.4:
     dependencies:
+      '@babel/core': 7.8.4
       '@babel/plugin-syntax-bigint': 7.8.3_@babel+core@7.8.4
       '@babel/plugin-syntax-object-rest-spread': 7.7.4_@babel+core@7.8.4
       babel-plugin-jest-hoist: 25.1.0
@@ -2102,6 +2106,9 @@ packages:
       node: '>=6'
     peerDependencies:
       jest-resolve: '*'
+    peerDependenciesMeta:
+      jest-resolve:
+        optional: true
     resolution:
       integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
   /jest-regex-util/25.1.0:
@@ -3546,10 +3553,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
-  /tslib/1.11.1:
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /tunnel-agent/0.6.0:
     dependencies:
       safe-buffer: 5.2.0
@@ -3822,6 +3829,6 @@ specifiers:
   parse-dependency-range: ^0.0.4
   semver: ^7.1.3
   ts-jest: ^25.2.1
-  tslib: ^1.11.1
+  tslib: ^2.0.0
   typescript: ^3.8.3
   yaml-jest: ^1.0.5

@@ -15,7 +15,7 @@
   "dependencies": {
     "advanced-spawn-async": "^0.1.1",
     "@khai96x/interval-observable-universe": "^0.0.4",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "@types/node": "^13.7.7"
   }
 }

@@ -4,7 +4,7 @@ dependencies:
   '@types/node': 13.7.7
   '@types/yargs': 15.0.4
   fs-extra: 8.1.0
-  tslib: 1.11.1
+  tslib: 2.0.0
   yargs: 15.2.0
 lockfileVersion: 5.1
 packages:
@@ -192,10 +192,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
-  /tslib/1.11.1:
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /universalify/0.1.2:
     dev: false
     engines:
@@ -253,5 +253,5 @@ specifiers:
   '@types/node': ^13.7.7
   '@types/yargs': ^15.0.4
   fs-extra: ^8.1.0
-  tslib: ^1.11.1
+  tslib: ^2.0.0
   yargs: ^15.1.0
