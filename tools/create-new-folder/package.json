@@ -7,7 +7,7 @@
     "inquirer": "^7.0.5",
     "fs-extra": "^8.1.0",
     "yargs": "^15.1.0",
-    "@types/inquirer": "^6.5.0",
+    "@types/inquirer": "^7.0.0",
     "@types/fs-extra": "^8.1.0",
     "@types/yargs": "^15.0.4",
     "@tools/preloaded-node": "file:../preloaded-node",

@@ -3,7 +3,7 @@ dependencies:
   '@tools/preloaded-node': 'link:../preloaded-node'
   '@tools/utils': 'link:../utils'
   '@types/fs-extra': 8.1.0
-  '@types/inquirer': 6.5.0
+  '@types/inquirer': 7.3.1
   fs-extra: 8.1.0
   inquirer: 7.0.5
 lockfileVersion: 5.1
@@ -18,24 +18,20 @@ packages:
     dev: false
     resolution:
       integrity: sha512-UoOfVEzAUpeSPmjm7h1uk5MH6KZma2z2O7a75onTGjnNvAvMVrPzPL/vBbT65iIGHWj6rokwfmYcmxmlSf2uwg==
-  /@types/inquirer/6.5.0:
+  /@types/inquirer/7.3.1:
     dependencies:
       '@types/through': 0.0.29
       rxjs: 6.5.3
     dev: false
     resolution:
-      integrity: sha512-rjaYQ9b9y/VFGOpqBEXRavc3jh0a+e6evAbI31tMda8VlPaSy0AZJfXsvmIe3wklc7W6C3zCSfleuMXR7NOyXw==
+      integrity: sha512-osD38QVIfcdgsPCT0V3lD7eH0OFurX71Jft18bZrsVQWVRt6TuxRzlr0GJLrxoHZR2V5ph7/qP8se/dcnI7o0g==
   /@types/node/12.12.21:
     dev: false
     resolution:
       integrity: sha512-8sRGhbpU+ck1n0PGAUgVrWrWdjSW2aqNeyC15W88GRsMpSwzv6RJGlLhE7s2RhVSOdyDmxbqlWSeThq4/7xqlA==
-  /@types/node/12.7.11:
-    dev: false
-    resolution:
-      integrity: sha512-Otxmr2rrZLKRYIybtdG/sgeO+tHY20GxeDjcGmUnmmlCWyEnv2a2x1ZXBo3BTec4OiTXMQCiazB8NMBf0iRlFw==
   /@types/through/0.0.29:
     dependencies:
-      '@types/node': 12.7.11
+      '@types/node': 12.12.21
     dev: false
     resolution:
       integrity: sha512-9a7C5VHh+1BKblaYiq+7Tfc+EOmjMdZaD1MYtkQjSoxgB69tBjW98ry6SKsi4zEIWztLOMRuL87A3bdT/Fc/4w==
@@ -325,6 +321,6 @@ specifiers:
   '@tools/preloaded-node': 'file:../preloaded-node'
   '@tools/utils': 'file:../utils'
   '@types/fs-extra': ^8.1.0
-  '@types/inquirer': ^6.5.0
+  '@types/inquirer': ^7.0.0
   fs-extra: ^8.1.0
   inquirer: ^7.0.5
