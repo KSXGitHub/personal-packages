@@ -5,7 +5,7 @@ const proceed = require('@make-mjs/main').main
 const { DEFAULT_PARSER_OPTIONS } = require('@make-mjs/code')
 const places = require('@tools/places')
 
-async function main () {
+async function main() {
   const IGNORED_DIRECTORIES = ['.git', 'node_modules']
 
   const knownMjsPackagesPromises = (
@@ -26,21 +26,12 @@ async function main () {
     filter: param => param.base.endsWith('.js'),
     codeTransformOptions: {
       parserOptions: DEFAULT_PARSER_OPTIONS,
-      isMjsPackage: param => knownMjsPackages.includes(param.packageName)
-    }
+      isMjsPackage: param => knownMjsPackages.includes(param.packageName),
+    },
   })
 
-  for await (const event of events) {
-    if (event.type === 'AfterWrite') {
-      const { root, dir, name } = path.parse(event.file.path)
-      const oldDef = path.join(root, dir, name + '.d.ts')
-      const newDef = event.file.path + '.d.ts'
-      if (await fsx.pathExists(oldDef)) {
-        await fsx.copyFile(oldDef, newDef)
-      }
-    }
-  }
-
+  // iterate events to execute actions
+  for await (const _ of events) {} // eslint-disable-line
   return 0
 }
 
@@ -49,5 +40,5 @@ main().then(
   error => {
     console.error(error)
     process.exit(1)
-  }
+  },
 )
