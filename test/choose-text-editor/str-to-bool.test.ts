@@ -1,3 +1,5 @@
+// tslint:disable:no-string-literal
+
 import { STR2BOOL } from '@khai96x/choose-text-editor'
 
 it('true', () => {
