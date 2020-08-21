@@ -1,7 +1,7 @@
 import { EditorOptions } from './editors'
 import encodeCliFlag from './encode-cli-flag'
 
-export function encodeCliOptions (options: EditorOptions) {
+export function encodeCliOptions(options: EditorOptions) {
   const result = Array<string>()
 
   for (const [key, value] of Object.entries(options)) {

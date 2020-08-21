@@ -3,13 +3,13 @@ import { ChangeType, incSemVer } from '@khai96x/bump-package-versions'
 
 const inc = (
   version: string,
-  change: ChangeType
+  change: ChangeType,
 ) => incSemVer(parse(version)!, change).raw
 
 const tester = (
   oldVer: string,
   change: ChangeType,
-  newVer: string
+  newVer: string,
 ) => () => expect(inc(oldVer, change)).toBe(newVer)
 
 describe('ChangeType.OfficialRelease', () => {

@@ -4,19 +4,17 @@ const { map, filter, mergeAll, pairwise } = operators
 
 export enum Status {
   Plugged = 'Plugged',
-  Unplugged = 'Unplugged'
+  Unplugged = 'Unplugged',
 }
 
-export function checkStatus (): Promise<Status | 'Unknown'> {
+export function checkStatus(): Promise<Status | 'Unknown'> {
   return spawn('acpi', ['-a']).onclose.then(
-    x => analyzeAcpiOutput(x.stdout.trim())
-      ? Status.Plugged
-      : Status.Unplugged,
-    (): 'Unknown' => 'Unknown'
+    x => analyzeAcpiOutput(x.stdout.trim()) ? Status.Plugged : Status.Unplugged,
+    (): 'Unknown' => 'Unknown',
   )
 }
 
-export function analyzeAcpiOutput (output: string) {
+export function analyzeAcpiOutput(output: string) {
   return /on-line/i.test(output)
 }
 
@@ -32,9 +30,9 @@ export const getStatusPairObservable = pipeline(getStatusObservable)
   .fn
 
 export class StatusDiff {
-  constructor (
+  constructor(
     public readonly oldStatus: Status,
-    public readonly newStatus: Status
+    public readonly newStatus: Status,
   ) {}
 }
 

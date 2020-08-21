@@ -1,14 +1,14 @@
 import { handleChooserValidation } from '@khai96x/choose-text-editor'
 import MockedLogger from './lib/mocked-logger'
 
-function setup (chooser: string) {
+function setup(chooser: string) {
   const { log, getLogs, getText } = new MockedLogger()
   const result = handleChooserValidation(
     log,
     chooser,
     '@khai96x/choose-text-editor', // not necessary actual package name
     '3.2.1', // not necessary actual package version
-    '/path/to/config/file'
+    '/path/to/config/file',
   )
   return { chooser, log, getLogs, getText, result }
 }

@@ -3,19 +3,19 @@ import {
   CommandHandlingMethod,
   Status,
   SpawnSync,
-  handleChosenCommand
+  handleChosenCommand,
 } from '@khai96x/choose-text-editor'
 
 import MockedConsole from './lib/mocked-console'
 
-async function setup (
+async function setup(
   handle: CommandHandlingMethod,
-  spawnSyncImpl: SpawnSync = () => ({ status: 0 })
+  spawnSyncImpl: SpawnSync = () => ({ status: 0 }),
 ) {
   const args = ['a', 0, true, 'multiple words']
   const command: Command = {
     path: '/usr/bin/chosen-command',
-    args: ['abc', 'def', 'multiple words again']
+    args: ['abc', 'def', 'multiple words again'],
   }
   const console = new MockedConsole()
   const spawnSync = jest.fn(spawnSyncImpl)
@@ -26,7 +26,7 @@ async function setup (
     command,
     spawnSync,
     logInfo: console.info,
-    logError: console.error
+    logError: console.error,
   })
 
   const status = Status[result]
@@ -38,7 +38,7 @@ async function setup (
     console,
     spawnSync,
     result,
-    status
+    status,
   }
 }
 
@@ -189,7 +189,7 @@ describe(`when handling method is ${CommandHandlingMethod.Execute}`, () => {
 
     const spawnSyncImpl: SpawnSync = () => ({
       status: null,
-      error: new CustomError() as any
+      error: new CustomError() as any,
     })
 
     it('does not call logInfo', async () => {

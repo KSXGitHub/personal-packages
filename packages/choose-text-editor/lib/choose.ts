@@ -16,7 +16,7 @@ import {
   PrefixesParsingFailure,
   Chosen,
   ChooseResult,
-  InvalidPrefixes
+  InvalidPrefixes,
 } from './choose-result'
 
 export interface ChooseParam {
@@ -25,7 +25,7 @@ export interface ChooseParam {
   readonly editorSet: EditorSet
 }
 
-export async function choose (param: ChooseParam): Promise<ChooseResult> {
+export async function choose(param: ChooseParam): Promise<ChooseResult> {
   const { env, which, editorSet } = param
   const { FORCE_EDITOR, FORCE_EDITOR_PREFIXES = '[]', ISINTTY } = env
 
@@ -34,21 +34,23 @@ export async function choose (param: ChooseParam): Promise<ChooseResult> {
     return PrefixesParsingFailure(
       prefixesResult.error,
       FORCE_EDITOR_PREFIXES,
-      'FORCE_EDITOR_PREFIXES'
+      'FORCE_EDITOR_PREFIXES',
     )
   }
 
   const prefixes = prefixesResult.value
 
   let validatorResult: JsonSchemaValidatorResult
-  if (!validateCliArguments(prefixes, result => {
-    validatorResult = result
-  })) {
+  if (
+    !validateCliArguments(prefixes, result => {
+      validatorResult = result
+    })
+  ) {
     return InvalidPrefixes(
       // @ts-ignore
       validatorResult,
       prefixes,
-      'FORCE_EDITOR_PREFIXES'
+      'FORCE_EDITOR_PREFIXES',
     )
   }
 
@@ -70,7 +72,7 @@ export async function choose (param: ChooseParam): Promise<ChooseResult> {
     const command = await Command({
       editor,
       which,
-      prefixes
+      prefixes,
     })
 
     if (command.tag) return Chosen(command.value)

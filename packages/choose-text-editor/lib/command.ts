@@ -15,7 +15,7 @@ export interface CommandConstructorParam {
   readonly prefixes: Iterable<CliArgumentsElement>
 }
 
-export async function Command (param: CommandConstructorParam): Promise<Option<Command>> {
+export async function Command(param: CommandConstructorParam): Promise<Option<Command>> {
   const { editor, which, prefixes } = param
   const { program, flags = [], options = {}, suffixes = [] } = editor
   const path = await which(program, WHICH_OPTIONS).catch(() => null)

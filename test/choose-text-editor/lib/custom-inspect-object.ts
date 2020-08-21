@@ -5,10 +5,7 @@ export interface CustomInspectObject {
 }
 
 export const CustomInspectObject = (
-  msg: string | (() => string)
-): CustomInspectObject =>
-  typeof msg === 'string'
-    ? CustomInspectObject(() => msg)
-    : { [inspect.custom]: msg }
+  msg: string | (() => string),
+): CustomInspectObject => typeof msg === 'string' ? CustomInspectObject(() => msg) : { [inspect.custom]: msg }
 
 export default CustomInspectObject

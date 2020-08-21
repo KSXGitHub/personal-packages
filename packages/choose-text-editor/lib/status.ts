@@ -10,7 +10,7 @@ export enum Status {
   ExecutionFailure = 8,
   UnsatisfiedChooser = 9,
   InvalidPrefix = 10,
-  EmptyEditorSet = 11
+  EmptyEditorSet = 11,
 }
 
 export default Status

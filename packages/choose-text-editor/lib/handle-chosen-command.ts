@@ -9,7 +9,7 @@ export const enum CommandHandlingMethod {
   PrintSingleLine = 'print:single',
   PrintMultiLine = 'print:multi',
   PrintJson = 'print:json',
-  Execute = 'exec'
+  Execute = 'exec',
 }
 
 interface Options {
@@ -22,16 +22,16 @@ interface Options {
 }
 
 class CommandHandler {
-  constructor (private readonly options: Options) {}
+  constructor(private readonly options: Options) {}
 
-  public async [CommandHandlingMethod.PrintSingleLine] (): Promise<Status> {
+  public async [CommandHandlingMethod.PrintSingleLine](): Promise<Status> {
     const { path, args } = this.options.command
     const { shellEscape } = await import('./shell-escape-any-array')
     this.options.logInfo(shellEscape([path, ...args, ...this.options.args]))
     return Status.Success
   }
 
-  public async [CommandHandlingMethod.PrintMultiLine] (): Promise<Status> {
+  public async [CommandHandlingMethod.PrintMultiLine](): Promise<Status> {
     const { path, args } = this.options.command
     const { shellEscape } = await import('./shell-escape-any-array')
     for (const line of concat([path], args, this.options.args)) {
@@ -40,18 +40,18 @@ class CommandHandler {
     return Status.Success
   }
 
-  public async [CommandHandlingMethod.PrintJson] (): Promise<Status> {
+  public async [CommandHandlingMethod.PrintJson](): Promise<Status> {
     const { command } = this.options
     const { toStringArray } = await import('@khai96x/utils')
     const newCommand: Command = {
       path: command.path,
-      args: toStringArray([...command.args, ...this.options.args])
+      args: toStringArray([...command.args, ...this.options.args]),
     }
     this.options.logInfo(JSON.stringify(newCommand, undefined, 2))
     return Status.Success
   }
 
-  public async [CommandHandlingMethod.Execute] (): Promise<Status> {
+  public async [CommandHandlingMethod.Execute](): Promise<Status> {
     const { logError, command } = this.options
     const args = [...command.args, ...this.options.args]
     const { dbg } = await import('string-template-format-inspect')
@@ -61,7 +61,7 @@ class CommandHandler {
     const spawnReturn = this.options.spawnSync(
       this.options.command.path,
       toStringArray(args),
-      EXEC_OPTIONS
+      EXEC_OPTIONS,
     )
 
     if (spawnReturn.error) {
@@ -83,7 +83,7 @@ class CommandHandler {
   }
 }
 
-export function handleChosenCommand (options: Options): Promise<Status> {
+export function handleChosenCommand(options: Options): Promise<Status> {
   const handler = new CommandHandler(options)
   return handler[options.handle]()
 }

@@ -5,21 +5,21 @@ interface IterableWithLength<Element> extends Iterable<Element> {
 }
 
 class ConcatLengthResult<Element> implements IterableWithLength<Element> {
-  constructor (
+  constructor(
     private readonly left: IterableWithLength<Element>,
-    private readonly right: IterableWithLength<Element>
+    private readonly right: IterableWithLength<Element>,
   ) {}
 
-  public get length () {
+  public get length() {
     return this.left.length + this.right.length
   }
 
-  public [Symbol.iterator] () {
+  public [Symbol.iterator]() {
     return concat(this.left, this.right)
   }
 }
 
-export function concatWithLength<Element> (
+export function concatWithLength<Element>(
   a: IterableWithLength<Element>,
   b: IterableWithLength<Element>,
   ...more: IterableWithLength<Element>[]

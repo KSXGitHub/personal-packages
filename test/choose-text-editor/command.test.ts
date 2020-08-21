@@ -3,7 +3,7 @@ import { Command } from '@khai96x/choose-text-editor'
 
 describe('when which returns a promise that resolves', () => {
   describe('without editor.flags, editor.options, and editor.suffixes', () => {
-    async function setup () {
+    async function setup() {
       const program = 'expected-program'
       const whichReturn = '/full/path/to/expected-program'
       const which = jest.fn(async () => whichReturn)
@@ -11,10 +11,10 @@ describe('when which returns a promise that resolves', () => {
 
       const result = await Command({
         editor: {
-          program
+          program,
         },
         which,
-        prefixes
+        prefixes,
       })
 
       return { program, whichReturn, which, prefixes, result }
@@ -34,13 +34,13 @@ describe('when which returns a promise that resolves', () => {
       const { whichReturn, prefixes, result } = await setup()
       expect(result).toEqual(some({
         path: whichReturn,
-        args: prefixes
+        args: prefixes,
       }))
     })
   })
 
   describe('with editor.flags, editor.options, and editor.suffixes', () => {
-    async function setup () {
+    async function setup() {
       const program = 'expected-program'
       const whichReturn = '/full/path/to/expected-program'
       const which = jest.fn(async () => whichReturn)
@@ -52,12 +52,12 @@ describe('when which returns a promise that resolves', () => {
           flags: ['a', 'foo', 'b', 'c', 'bar'],
           options: {
             abc: 123,
-            def: 456
+            def: 456,
           },
-          suffixes: ['suffix1', 'suffix2']
+          suffixes: ['suffix1', 'suffix2'],
         },
         which,
-        prefixes
+        prefixes,
       })
 
       return { program, whichReturn, which, prefixes, result }
@@ -81,17 +81,17 @@ describe('when which returns a promise that resolves', () => {
 })
 
 describe('when which returns a promise that rejects', () => {
-  async function setup () {
+  async function setup() {
     const program = 'expected-program'
     const which = jest.fn(() => Promise.reject())
     const prefixes = [...'prefixes']
 
     const result = await Command({
       editor: {
-        program
+        program,
       },
       which,
-      prefixes
+      prefixes,
     })
 
     return { program, which, prefixes, result }

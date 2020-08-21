@@ -8,10 +8,10 @@ import {
   NoEditor,
   ChooseError,
   Status,
-  handleChooseError
+  handleChooseError,
 } from '@khai96x/choose-text-editor'
 
-async function setup (error: ChooseError) {
+async function setup(error: ChooseError) {
   const { log, getLogs, getText } = new MockedLogger()
   const status = await handleChooseError(log, error)
   return { error, log, getLogs, getText, status }
@@ -78,7 +78,7 @@ describe('PrefixesParsingFailure', () => {
   const error = PrefixesParsingFailure(
     new Error('{error message}'),
     '{invalid prefixes}',
-    'FORCE_EDITOR_PREFIXES'
+    'FORCE_EDITOR_PREFIXES',
   )
 
   it('calls logError', async () => {
@@ -98,16 +98,16 @@ describe('PrefixesParsingFailure', () => {
 })
 
 describe('InvalidPrefixes', () => {
-  async function makeError () {
+  async function makeError() {
     const { schemas } = await import('@khai96x/choose-text-editor')
     const invalidCliArguments = ['abc', 123, true, { object: 'illegal' }, ['illegal', 'array']]
     const validatorResult = schemas.CliArguments().validate(invalidCliArguments, {
-      allowUnknownAttributes: true
+      allowUnknownAttributes: true,
     })
     return InvalidPrefixes(
       validatorResult,
       invalidCliArguments,
-      'FORCE_EDITOR_PREFIXES'
+      'FORCE_EDITOR_PREFIXES',
     )
   }
 

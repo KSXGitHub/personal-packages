@@ -2,11 +2,11 @@ import {
   EditorSet,
   JsonSchemaValidatorResult,
   validateEditorSet,
-  validateChooser
+  validateChooser,
 } from '@khai96x/choose-text-editor'
 
 describe('validateEditorSet', () => {
-  function setup<EditorSet> (editorSet: EditorSet) {
+  function setup<EditorSet>(editorSet: EditorSet) {
     const callback = jest.fn()
     const result = validateEditorSet(editorSet, callback)
     return { editorSet, callback, result }
@@ -15,7 +15,7 @@ describe('validateEditorSet', () => {
   describe('valid EditorSet', () => {
     describe('with neither "graphical" or "terminal" property', () => {
       const editorSet: EditorSet = {
-        chooser: '@khai96x/choose-text-editor'
+        chooser: '@khai96x/choose-text-editor',
       }
 
       it('returns true', () => {
@@ -31,7 +31,7 @@ describe('validateEditorSet', () => {
       const editorSet: EditorSet = {
         graphical: [],
         terminal: [],
-        chooser: '@khai96x/choose-text-editor'
+        chooser: '@khai96x/choose-text-editor',
       }
 
       it('returns true', () => {
@@ -50,14 +50,14 @@ describe('validateEditorSet', () => {
           { program: 'atom', flags: ['wait'] },
           { program: 'subl', flags: ['wait'] },
           { program: 'gedit', flags: ['wait'] },
-          { program: 'kate', flags: ['wait'] }
+          { program: 'kate', flags: ['wait'] },
         ],
         terminal: [
           { program: 'vim' },
           { program: 'emacs' },
-          { program: 'edit' }
+          { program: 'edit' },
         ],
-        chooser: '@khai96x/choose-text-editor'
+        chooser: '@khai96x/choose-text-editor',
       }
 
       it('returns true', () => {
@@ -98,7 +98,7 @@ describe('validateChooser', () => {
     public readonly onUnsatisfiedVersion = jest.fn()
   }
 
-  function setup (chooser: string) {
+  function setup(chooser: string) {
     const callbacks = new Callbacks()
     const result = validateChooser(chooser, PACKAGE_NAME, PACKAGE_VERSION, callbacks)
     return { chooser, callbacks, result }
@@ -217,7 +217,7 @@ describe('validateChooser', () => {
       it('calls callbacks.onInvalidPackageName with package names', () => {
         expect(setup(chooser).callbacks.onInvalidPackageName).toBeCalledWith(
           expect.any(String),
-          PACKAGE_NAME
+          PACKAGE_NAME,
         )
       })
 
@@ -323,7 +323,7 @@ describe('validateChooser', () => {
       it('calls callbacks.onUnsatisfiedVersion with chooser version range and used version', () => {
         expect(setup(chooser).callbacks.onUnsatisfiedVersion).toBeCalledWith(
           versionRange,
-          PACKAGE_VERSION
+          PACKAGE_VERSION,
         )
       })
     })
@@ -355,7 +355,7 @@ describe('validateChooser', () => {
       it('calls callbacks.onUnsatisfiedVersion with chooser version range and used version', () => {
         expect(setup(chooser).callbacks.onUnsatisfiedVersion).toBeCalledWith(
           versionRange,
-          PACKAGE_VERSION
+          PACKAGE_VERSION,
         )
       })
     })

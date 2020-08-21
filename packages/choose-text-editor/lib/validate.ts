@@ -13,36 +13,37 @@ interface SchemaValidator<Type> {
   (instance: unknown, callback: SchemaValidatorCallback): instance is Type
 }
 
-const SchemaValidator = <Type> (
-  loadSchemaContainer: () => SchemaContainer
-): SchemaValidator<Type> => (instance, callback): instance is Type => {
-  const result = loadSchemaContainer().validate(instance, {
-    allowUnknownAttributes: true
-  })
+const SchemaValidator = <Type>(
+  loadSchemaContainer: () => SchemaContainer,
+): SchemaValidator<Type> =>
+  (instance, callback): instance is Type => {
+    const result = loadSchemaContainer().validate(instance, {
+      allowUnknownAttributes: true,
+    })
 
-  if (!result.valid) {
-    callback(result)
-    return false
+    if (!result.valid) {
+      callback(result)
+      return false
+    }
+
+    return true
   }
-
-  return true
-}
 
 export const validateEditorSet = SchemaValidator<EditorSet>(schemas.EditorSet)
 export const validateCliArguments = SchemaValidator<CliArguments>(schemas.CliArguments)
 
 interface ChooserCallbacks {
-  onInvalidPackageName (configPackageName: string, usedPackageName: string): void
-  onNonEmptyPath (path: string): void
-  onInvalidVersionRange (versionRange: string): void
-  onUnsatisfiedVersion (configVersionRange: string, usedVersion: string): void
+  onInvalidPackageName(configPackageName: string, usedPackageName: string): void
+  onNonEmptyPath(path: string): void
+  onInvalidVersionRange(versionRange: string): void
+  onUnsatisfiedVersion(configVersionRange: string, usedVersion: string): void
 }
 
-export function validateChooser (
+export function validateChooser(
   chooser: string,
   name: string,
   version: string,
-  callbacks: ChooserCallbacks
+  callbacks: ChooserCallbacks,
 ): boolean {
   const config = parsePackageName(chooser)
 

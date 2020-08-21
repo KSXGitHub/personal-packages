@@ -1,6 +1,6 @@
 import { CacheType, CosmiConfigExplorer, clearCache } from '@khai96x/choose-text-editor'
 
-function NEVER_CALL (): never {
+function NEVER_CALL(): never {
   throw new Error('This function is not to be called')
 }
 
@@ -11,7 +11,7 @@ class Explorer implements CosmiConfigExplorer {
   public readonly search = NEVER_CALL
 }
 
-function setup (type: CacheType) {
+function setup(type: CacheType) {
   const explorer = new Explorer()
   clearCache(explorer, type)
   return { type, explorer }

@@ -8,7 +8,7 @@ const { argv } = yargs
   .option('shells', {
     describe: 'Shell types',
     type: 'array',
-    default: ['sh', 'bash']
+    default: ['sh', 'bash'],
   })
   .env('FIND_ALL_SHELL_FILES')
   .help()
@@ -16,7 +16,7 @@ const { argv } = yargs
 const options: MainOptions = {
   files: argv._,
   shells: argv.shells,
-  log: console.info
+  log: console.info,
 }
 
 main(options)

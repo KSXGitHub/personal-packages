@@ -7,16 +7,16 @@ import {
   Env,
   CommandHandlingMethod,
   SpawnSyncReturn,
-  main
+  main,
 } from '@khai96x/choose-text-editor'
 
 class DefaultParam extends MockedMainParam {
-  constructor () {
+  constructor() {
     super({}, ok(null))
   }
 }
 
-async function setup (Param: typeof DefaultParam) {
+async function setup(Param: typeof DefaultParam) {
   const param = new Param()
   const statusCode = await main(param)
   const statusName = Status[statusCode]
@@ -39,7 +39,7 @@ describe('--clearCache all', () => {
       searchPlaces: param.searchPlaces,
       packageProp: param.packageProp,
       cache: param.cache,
-      stopDir: param.stopDir
+      stopDir: param.stopDir,
     })
   })
 
@@ -83,7 +83,7 @@ describe('--showStatus', () => {
 describe('load configuration file', () => {
   describe('when it fails to load configuration file', () => {
     class Param extends MockedMainParam {
-      constructor () {
+      constructor() {
         super({}, err(new Error('Failed to load configuration file')))
       }
     }
@@ -101,7 +101,7 @@ describe('load configuration file', () => {
 
   describe('when no configuration file found', () => {
     class Param extends MockedMainParam {
-      constructor () {
+      constructor() {
         super({}, ok(null))
       }
     }
@@ -119,12 +119,15 @@ describe('load configuration file', () => {
 
   describe('when configuration file is empty', () => {
     class Param extends MockedMainParam {
-      constructor () {
-        super({}, ok({
-          isEmpty: true,
-          config: undefined,
-          filepath: '/path/to/config'
-        }))
+      constructor() {
+        super(
+          {},
+          ok({
+            isEmpty: true,
+            config: undefined,
+            filepath: '/path/to/config',
+          }),
+        )
       }
     }
 
@@ -145,17 +148,20 @@ describe('validate loaded configuration', () => {
     const invalidEditorSet = {
       chooser: ['not', 'a', 'string'],
       graphical: [
-        { program: 123 }
-      ]
+        { program: 123 },
+      ],
     }
 
     class Param extends MockedMainParam {
-      constructor () {
-        super({}, ok({
-          isEmpty: false,
-          config: invalidEditorSet,
-          filepath: '/path/to/config'
-        }))
+      constructor() {
+        super(
+          {},
+          ok({
+            isEmpty: false,
+            config: invalidEditorSet,
+            filepath: '/path/to/config',
+          }),
+        )
       }
     }
 
@@ -172,16 +178,19 @@ describe('validate loaded configuration', () => {
 
   describe('invalid chooser', () => {
     const invalidEditorSet = {
-      chooser: 'not-valid-chooser'
+      chooser: 'not-valid-chooser',
     }
 
     class Param extends MockedMainParam {
-      constructor () {
-        super({}, ok({
-          isEmpty: false,
-          config: invalidEditorSet,
-          filepath: '/path/to/config'
-        }))
+      constructor() {
+        super(
+          {},
+          ok({
+            isEmpty: false,
+            config: invalidEditorSet,
+            filepath: '/path/to/config',
+          }),
+        )
       }
     }
 
@@ -199,23 +208,26 @@ describe('validate loaded configuration', () => {
 
 describe('fail to choose', () => {
   const env: Env = {
-    ISINTTY: 'true'
+    ISINTTY: 'true',
   }
 
   const editorSet = {
     chooser: '@khai96x/choose-text-editor@^3.2.1',
     terminal: [
-      { program: 'magic' }
-    ]
+      { program: 'magic' },
+    ],
   }
 
   class Param extends MockedMainParam {
-    constructor () {
-      super(env, ok({
-        isEmpty: false,
-        config: editorSet,
-        filepath: 'path/to/config'
-      }))
+    constructor() {
+      super(
+        env,
+        ok({
+          isEmpty: false,
+          config: editorSet,
+          filepath: 'path/to/config',
+        }),
+      )
     }
   }
 
@@ -232,23 +244,26 @@ describe('fail to choose', () => {
 
 describe('handle chosen command', () => {
   const env: Env = {
-    ISINTTY: 'false'
+    ISINTTY: 'false',
   }
 
   const editorSet = {
     chooser: '@khai96x/choose-text-editor@^3.2.1',
     graphical: [
-      { program: 'code', flags: ['wait'] }
-    ]
+      { program: 'code', flags: ['wait'] },
+    ],
   }
 
   class DefaultParam extends MockedMainParam {
-    constructor () {
-      super(env, ok({
-        isEmpty: false,
-        config: editorSet,
-        filepath: 'path/to/config'
-      }))
+    constructor() {
+      super(
+        env,
+        ok({
+          isEmpty: false,
+          config: editorSet,
+          filepath: 'path/to/config',
+        }),
+      )
     }
   }
 
@@ -293,7 +308,7 @@ describe('handle chosen command', () => {
       expect(param.spawnSync).toBeCalledWith(
         await which('code'),
         ['--wait', 'args from cli command'],
-        { stdio: 'inherit' }
+        { stdio: 'inherit' },
       )
     })
 
@@ -308,22 +323,22 @@ describe('consider exiting early', () => {
   const editorSet = {
     chooser: '@khai96x/choose-text-editor@^3.2.1',
     terminal: [
-      { program: 'vim' }
-    ]
+      { program: 'vim' },
+    ],
   }
 
   describe('when FORCE_EDITOR environment variable is set', () => {
     const FORCE_EDITOR = 'FORCE_EDITOR'
 
     class Param extends MockedMainParam {
-      constructor () {
+      constructor() {
         super(
           { FORCE_EDITOR },
           ok({
             isEmpty: false,
             config: editorSet,
-            filepath: '/path/to/config'
-          })
+            filepath: '/path/to/config',
+          }),
         )
       }
     }
@@ -351,14 +366,14 @@ describe('consider exiting early', () => {
 
   describe('when FORCE_EDITOR environment variable is not set', () => {
     class Param extends MockedMainParam {
-      constructor () {
+      constructor() {
         super(
           { ISINTTY: 'false' },
           ok({
             isEmpty: false,
             config: editorSet,
-            filepath: '/path/to/config'
-          })
+            filepath: '/path/to/config',
+          }),
         )
       }
     }

@@ -8,7 +8,7 @@ it('works', () => {
     Infinity,
     undefined,
     null,
-    { toString: () => 'custom toString' }
+    { toString: () => 'custom toString' },
   ])).toEqual([
     'abc',
     '123',
@@ -16,6 +16,6 @@ it('works', () => {
     'Infinity',
     'undefined',
     'null',
-    'custom toString'
+    'custom toString',
   ])
 })

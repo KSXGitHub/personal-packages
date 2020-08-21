@@ -34,7 +34,7 @@ export interface MainParam {
   readonly choose: typeof choose
 }
 
-export async function main (param: MainParam): Promise<Status> {
+export async function main(param: MainParam): Promise<Status> {
   const { which } = param
   const { env } = param.process
   const { info: logInfo, error: logError } = param.console
@@ -43,12 +43,13 @@ export async function main (param: MainParam): Promise<Status> {
   //   * This function should be called only once for each branch
   //   * Add test to guarantee this!
   //   * Should this be called more than once, exec-once will be needed
-  const configExplorer = () => param.cosmiconfig(param.packageName, {
-    searchPlaces: param.searchPlaces,
-    packageProp: param.packageProp,
-    cache: param.cache,
-    stopDir: param.stopDir
-  })
+  const configExplorer = () =>
+    param.cosmiconfig(param.packageName, {
+      searchPlaces: param.searchPlaces,
+      packageProp: param.packageProp,
+      cache: param.cache,
+      stopDir: param.stopDir,
+    })
 
   /* UNRELATED COMMANDS */
 
@@ -95,27 +96,31 @@ export async function main (param: MainParam): Promise<Status> {
 
   const editorSet = searchResult.value.config
 
-  if (!validateEditorSet(editorSet, validatorResult => {
-    logError('[ERROR] Config does not satisfy schema')
-    logError(dbg`* config file: ${searchResult.value!.filepath}`)
-    logSchemaErrors(validatorResult, logError)
-  })) {
+  if (
+    !validateEditorSet(editorSet, validatorResult => {
+      logError('[ERROR] Config does not satisfy schema')
+      logError(dbg`* config file: ${searchResult.value!.filepath}`)
+      logSchemaErrors(validatorResult, logError)
+    })
+  ) {
     return Status.InvalidEditorSet
   }
 
-  if (!handleChooserValidation(
-    logError,
-    editorSet.chooser,
-    param.packageName,
-    param.packageVersion,
-    searchResult.value.filepath
-  )) {
+  if (
+    !handleChooserValidation(
+      logError,
+      editorSet.chooser,
+      param.packageName,
+      param.packageVersion,
+      searchResult.value.filepath,
+    )
+  ) {
     return Status.UnsatisfiedChooser
   }
 
   return finalStep(editorSet)
 
-  async function finalStep (editorSet: EditorSet) {
+  async function finalStep(editorSet: EditorSet) {
     /* CHOOSE A COMMAND */
 
     const result = await param.choose({ env, which, editorSet })
@@ -129,7 +134,7 @@ export async function main (param: MainParam): Promise<Status> {
       args: param.args,
       logInfo,
       logError,
-      spawnSync: param.spawnSync
+      spawnSync: param.spawnSync,
     })
   }
 }

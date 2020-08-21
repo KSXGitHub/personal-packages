@@ -16,7 +16,7 @@ const param: MainParam = {
   cosmiconfig,
   choose,
   args: args._,
-  ...args
+  ...args,
 }
 
 main(param).then(process.exit).catch(error => {

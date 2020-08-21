@@ -5,35 +5,35 @@ const validatorResult = schemas.EditorSet().validate({
     {
       program: 'valid graphical program',
       flags: ['valid flag'],
-      options: { validOption: 'value' }
+      options: { validOption: 'value' },
     },
     {
       program: 'valid graphical program',
       flags: 'invalid flag',
-      options: { invalidOption: ['value'] }
+      options: { invalidOption: ['value'] },
     },
     {
       program: undefined,
       flags: ['valid part', 123],
-      options: { validOption: 'value' }
+      options: { validOption: 'value' },
     },
-    'invalid graphical program'
+    'invalid graphical program',
   ],
   terminal: [
     {
       program: 'valid program',
       flags: ['valid flag'],
-      options: { validOption: 'value' }
+      options: { validOption: 'value' },
     },
     {
       program: 'valid program',
       flags: 'invalid flag',
-      options: { invalidOption: ['value'] }
+      options: { invalidOption: ['value'] },
     },
     ['invalid', 'terminal', 'program'],
     undefined,
-    null
-  ]
+    null,
+  ],
 })
 
 it('calls logError multiple times', () => {
@@ -44,7 +44,7 @@ it('calls logError multiple times', () => {
 
 it('print a text', () => {
   let message = '\n'
-  function logError (...chunks: any[]) {
+  function logError(...chunks: any[]) {
     message += chunks.join(' ') + '\n'
   }
   logSchemaErrors(validatorResult, logError)

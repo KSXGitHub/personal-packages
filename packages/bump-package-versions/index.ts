@@ -7,16 +7,16 @@ export const enum ChangeType {
   OfficialRelease = 'official',
   BreakingChange = 'break',
   FeatureAddition = 'feature',
-  Patch = 'patch'
+  Patch = 'patch',
 }
 
 export const enum ReleaseType {
   Major = 'major',
   Minor = 'minor',
-  Patch = 'patch'
+  Patch = 'patch',
 }
 
-export function getReleaseType (version: SemVer, change: ChangeType): ReleaseType {
+export function getReleaseType(version: SemVer, change: ChangeType): ReleaseType {
   switch (change) {
     case ChangeType.OfficialRelease:
       if (version.major) return ReleaseType.Patch
@@ -33,27 +33,27 @@ export function getReleaseType (version: SemVer, change: ChangeType): ReleaseTyp
   }
 }
 
-export function incSemVer (version: SemVer, change: ChangeType): SemVer {
+export function incSemVer(version: SemVer, change: ChangeType): SemVer {
   return version.inc(getReleaseType(version, change))
 }
 
 export interface FileSystem {
-  readFile (filename: string, encoding: 'utf8'): string | Promise<string>
-  writeFile (filename: string, content: string): void | Promise<void>
+  readFile(filename: string, encoding: 'utf8'): string | Promise<string>
+  writeFile(filename: string, content: string): void | Promise<void>
 }
 
 export interface Console {
-  info (message: string): void
-  error (message: string): void
+  info(message: string): void
+  error(message: string): void
 }
 
 export interface Process<Return> {
-  exit (status: ExitStatus): Return
+  exit(status: ExitStatus): Return
 }
 
 export const enum ExitStatus {
   Success = 0,
-  Failure = 1
+  Failure = 1,
 }
 
 export interface Options<ExitReturn> {
@@ -67,7 +67,7 @@ export interface Options<ExitReturn> {
   readonly process: Process<ExitReturn>
 }
 
-export async function bumpPackageVersions<ExitReturn> (options: Options<ExitReturn>) {
+export async function bumpPackageVersions<ExitReturn>(options: Options<ExitReturn>) {
   const { parse } = await import('semver')
   const { load, dump } = await import('just-json-type')
 
@@ -79,14 +79,14 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
     finalNewLines,
     fs,
     console,
-    process
+    process,
   } = options
 
   const inc = (ver: SemVer) => incSemVer(ver, changeType)
 
   let errorCount = 0
 
-  function addError (message: string, filename: string, content: any) {
+  function addError(message: string, filename: string, content: any) {
     console.error(`Error: ${message}`)
     console.error(dbg`  - filename: ${filename}`)
     console.error(dbg`  - content: ${content}`)
@@ -94,11 +94,11 @@ export async function bumpPackageVersions<ExitReturn> (options: Options<ExitRetu
   }
 
   let act = async () => undefined as void
-  function addAct (
+  function addAct(
     filename: string,
     jsonObject: import('just-json-type').WritableJsonObject<never>,
     oldVer: string,
-    newVer: string
+    newVer: string,
   ): void {
     const prev = act
     act = async () => {

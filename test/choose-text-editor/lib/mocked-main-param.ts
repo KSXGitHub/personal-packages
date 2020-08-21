@@ -9,24 +9,24 @@ import {
   CommandHandlingMethod,
   Env,
   SEARCH_PLACES,
-  choose
+  choose,
 } from '@khai96x/choose-text-editor'
 
 class Unimplemented extends Error {
-  constructor () {
+  constructor() {
     super('This function is not implemented')
   }
   public readonly name = 'Unimplemented'
 }
 
-function NEVER (): never {
+function NEVER(): never {
   throw new Unimplemented()
 }
 
 export class MockedMainParam implements MainParam {
-  constructor (
+  constructor(
     public readonly processEnv: Env,
-    public readonly cosmiConfigResult: ConfigResult
+    public readonly cosmiConfigResult: ConfigResult,
   ) {}
 
   public readonly mockedCosmiConfig = new MockedCosmiConfig(this.cosmiConfigResult)

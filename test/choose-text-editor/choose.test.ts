@@ -9,7 +9,7 @@ import {
   INDETERMINABLE_TTY,
   PREFIXES_PARSING_FAILURE,
   INVALID_PREFIXES,
-  choose
+  choose,
 } from '@khai96x/choose-text-editor'
 
 const chooser = '@khai96x/choose-text-editor'
@@ -19,11 +19,11 @@ interface SetupParam {
   readonly env: Env
 }
 
-async function setup (param: SetupParam) {
+async function setup(param: SetupParam) {
   const which = jest.fn(mockedWhichImpl)
   const result = await choose({
     which,
-    ...param
+    ...param,
   })
   return { ...param, which, result }
 }
@@ -32,7 +32,7 @@ describe('when there is no editor specified', () => {
   describe('with ISINTTY=true', () => {
     const param: SetupParam = {
       editorSet: { chooser },
-      env: { ISINTTY: 'true' }
+      env: { ISINTTY: 'true' },
     }
 
     it('returns NotFound()', async () => {
@@ -49,7 +49,7 @@ describe('when there is no editor specified', () => {
   describe('with ISINTTY=false', () => {
     const param: SetupParam = {
       editorSet: { chooser },
-      env: { ISINTTY: 'false' }
+      env: { ISINTTY: 'false' },
     }
 
     it('returns NotFound()', async () => {
@@ -66,7 +66,7 @@ describe('when there is no editor specified', () => {
   describe('with ISINTTY absent', () => {
     const param: SetupParam = {
       editorSet: { chooser },
-      env: { ISINTTY: undefined }
+      env: { ISINTTY: undefined },
     }
 
     it('returns IndeterminableTTY()', async () => {
@@ -89,21 +89,21 @@ describe('when no valid terminal editor can be found', () => {
       { program: 'code', flags: ['wait'] },
       { program: 'zeus' },
       { program: 'atom', flags: ['wait'] },
-      { program: 'subl', flags: ['wait'] }
+      { program: 'subl', flags: ['wait'] },
     ],
     terminal: [
       { program: 'unicorn' },
       { program: 'magic' },
       { program: 'god' },
-      { program: 'santa' }
+      { program: 'santa' },
     ],
-    chooser
+    chooser,
   }
 
   describe('when ISINTTY=true', () => {
     const param: SetupParam = {
       editorSet,
-      env: { ISINTTY: 'true' }
+      env: { ISINTTY: 'true' },
     }
 
     it('returns NotFound()', async () => {
@@ -117,7 +117,7 @@ describe('when no valid terminal editor can be found', () => {
         ['unicorn', { all: false }],
         ['magic', { all: false }],
         ['god', { all: false }],
-        ['santa', { all: false }]
+        ['santa', { all: false }],
       ])
     })
   })
@@ -125,7 +125,7 @@ describe('when no valid terminal editor can be found', () => {
   describe('when ISINTTY=false', () => {
     const param: SetupParam = {
       editorSet,
-      env: { ISINTTY: 'false' }
+      env: { ISINTTY: 'false' },
     }
 
     it('returns Found(<FirstFound>)', async () => {
@@ -134,8 +134,8 @@ describe('when no valid terminal editor can be found', () => {
         error: null,
         command: {
           path: await mockedWhichImpl('code'),
-          args: ['--wait']
-        }
+          args: ['--wait'],
+        },
       })
     })
 
@@ -144,7 +144,7 @@ describe('when no valid terminal editor can be found', () => {
       expect(which.mock.calls).toEqual([
         ['ghost', { all: false }],
         ['vampire', { all: false }],
-        ['code', { all: false }]
+        ['code', { all: false }],
       ])
     })
   })
@@ -154,7 +154,7 @@ describe('when no valid graphical editor can be found', () => {
   const editorSet: EditorSet = {
     graphical: [
       { program: 'vampire' },
-      { program: 'zeus' }
+      { program: 'zeus' },
     ],
     terminal: [
       { program: 'unicorn' },
@@ -163,15 +163,15 @@ describe('when no valid graphical editor can be found', () => {
       { program: 'god' },
       { program: 'nano' },
       { program: 'santa' },
-      { program: 'emacs' }
+      { program: 'emacs' },
     ],
-    chooser
+    chooser,
   }
 
   describe('when ISINTTY=true', () => {
     const param: SetupParam = {
       editorSet,
-      env: { ISINTTY: 'true' }
+      env: { ISINTTY: 'true' },
     }
 
     it('returns Found(<FirstFoundTerminalEditor>)', async () => {
@@ -180,8 +180,8 @@ describe('when no valid graphical editor can be found', () => {
         error: null,
         command: {
           path: await mockedWhichImpl('vim'),
-          args: []
-        }
+          args: [],
+        },
       })
     })
 
@@ -190,7 +190,7 @@ describe('when no valid graphical editor can be found', () => {
       expect(which.mock.calls).toEqual([
         ['unicorn', { all: false }],
         ['magic', { all: false }],
-        ['vim', { all: false }]
+        ['vim', { all: false }],
       ])
     })
   })
@@ -198,7 +198,7 @@ describe('when no valid graphical editor can be found', () => {
   describe('when ISINTTY=false', () => {
     const param: SetupParam = {
       editorSet,
-      env: { ISINTTY: 'false' }
+      env: { ISINTTY: 'false' },
     }
 
     it('returns Found(<FirstFoundTerminalEditor>)', async () => {
@@ -207,8 +207,8 @@ describe('when no valid graphical editor can be found', () => {
         error: null,
         command: {
           path: await mockedWhichImpl('vim'),
-          args: []
-        }
+          args: [],
+        },
       })
     })
 
@@ -219,7 +219,7 @@ describe('when no valid graphical editor can be found', () => {
         ['zeus', { all: false }],
         ['unicorn', { all: false }],
         ['magic', { all: false }],
-        ['vim', { all: false }]
+        ['vim', { all: false }],
       ])
     })
   })
@@ -231,7 +231,7 @@ describe('when FORCE_EDITOR is specified', () => {
   describe('without FORCE_EDITOR_PREFIXES', () => {
     const param: SetupParam = {
       editorSet: { chooser },
-      env: { FORCE_EDITOR }
+      env: { FORCE_EDITOR },
     }
 
     it('returns forced editor', async () => {
@@ -240,8 +240,8 @@ describe('when FORCE_EDITOR is specified', () => {
         error: null,
         command: {
           path: FORCE_EDITOR,
-          args: []
-        }
+          args: [],
+        },
       })
     })
 
@@ -256,8 +256,8 @@ describe('when FORCE_EDITOR is specified', () => {
       editorSet: { chooser },
       env: {
         FORCE_EDITOR,
-        FORCE_EDITOR_PREFIXES: '[abc, def, 123, ghi, 456, true, null, false]'
-      }
+        FORCE_EDITOR_PREFIXES: '[abc, def, 123, ghi, 456, true, null, false]',
+      },
     }
 
     it('returns Chosen(<Forced Editor>)', async () => {
@@ -266,8 +266,8 @@ describe('when FORCE_EDITOR is specified', () => {
         error: null,
         command: {
           path: FORCE_EDITOR,
-          args: ['abc', 'def', 123, 'ghi', 456, true, null, false]
-        }
+          args: ['abc', 'def', 123, 'ghi', 456, true, null, false],
+        },
       })
     })
 
@@ -282,8 +282,8 @@ describe('when FORCE_EDITOR is specified', () => {
       editorSet: { chooser },
       env: {
         FORCE_EDITOR,
-        FORCE_EDITOR_PREFIXES: '[abc, 123, {}, []]'
-      }
+        FORCE_EDITOR_PREFIXES: '[abc, 123, {}, []]',
+      },
     }
 
     it('returns InvalidPrefixes', async () => {
@@ -292,7 +292,7 @@ describe('when FORCE_EDITOR is specified', () => {
         error: INVALID_PREFIXES,
         validatorResult: expect.any(JsonSchemaValidatorResult),
         instance: ['abc', 123, {}, []],
-        envKey: 'FORCE_EDITOR_PREFIXES'
+        envKey: 'FORCE_EDITOR_PREFIXES',
       })
     })
 
@@ -307,8 +307,8 @@ describe('when FORCE_EDITOR is specified', () => {
       editorSet: { chooser },
       env: {
         FORCE_EDITOR,
-        FORCE_EDITOR_PREFIXES: 'abc: 123'
-      }
+        FORCE_EDITOR_PREFIXES: 'abc: 123',
+      },
     }
 
     it('returns InvalidPrefixes', async () => {
@@ -317,7 +317,7 @@ describe('when FORCE_EDITOR is specified', () => {
         error: INVALID_PREFIXES,
         validatorResult: expect.any(JsonSchemaValidatorResult),
         instance: { abc: 123 },
-        envKey: 'FORCE_EDITOR_PREFIXES'
+        envKey: 'FORCE_EDITOR_PREFIXES',
       })
     })
 
@@ -332,8 +332,8 @@ describe('when FORCE_EDITOR is specified', () => {
       editorSet: { chooser },
       env: {
         FORCE_EDITOR,
-        FORCE_EDITOR_PREFIXES: ': invalid : yaml : syntax :'
-      }
+        FORCE_EDITOR_PREFIXES: ': invalid : yaml : syntax :',
+      },
     }
 
     it('returns PrefixesParsingFailure', async () => {
@@ -342,7 +342,7 @@ describe('when FORCE_EDITOR is specified', () => {
         error: PREFIXES_PARSING_FAILURE,
         errorObject: expect.anything(),
         envValue: ': invalid : yaml : syntax :',
-        envKey: 'FORCE_EDITOR_PREFIXES'
+        envKey: 'FORCE_EDITOR_PREFIXES',
       })
     })
 
@@ -360,11 +360,11 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
         program: 'code',
         flags: ['prefix'],
         options: { abc: 123, def: 456 },
-        suffixes: ['suffix']
-      }
+        suffixes: ['suffix'],
+      },
     ],
     terminal: [],
-    chooser
+    chooser,
   }
 
   const ISINTTY = 'false'
@@ -374,8 +374,8 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
       editorSet,
       env: {
         ISINTTY,
-        FORCE_EDITOR_PREFIXES: '[abc, def, 123, ghi, 456, true, null, false]'
-      }
+        FORCE_EDITOR_PREFIXES: '[abc, def, 123, ghi, 456, true, null, false]',
+      },
     }
 
     it('returns chosen editor', async () => {
@@ -385,19 +385,29 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
         command: {
           path: await mockedWhichImpl('code'),
           args: [
-            'abc', 'def', 123, 'ghi', 456, true, null, false,
+            'abc',
+            'def',
+            123,
+            'ghi',
+            456,
+            true,
+            null,
+            false,
             '--prefix',
-            '--abc', '123', '--def', '456',
-            'suffix'
-          ]
-        }
+            '--abc',
+            '123',
+            '--def',
+            '456',
+            'suffix',
+          ],
+        },
       })
     })
 
     it('calls which till chosen one', async () => {
       const { which } = await setup(param)
       expect(which.mock.calls).toEqual([
-        ['code', { all: false }]
+        ['code', { all: false }],
       ])
     })
   })
@@ -407,8 +417,8 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
       editorSet,
       env: {
         ISINTTY,
-        FORCE_EDITOR_PREFIXES: '[abc, 123, {}, []]'
-      }
+        FORCE_EDITOR_PREFIXES: '[abc, 123, {}, []]',
+      },
     }
 
     it('returns InvalidPrefixes', async () => {
@@ -417,7 +427,7 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
         error: INVALID_PREFIXES,
         validatorResult: expect.any(JsonSchemaValidatorResult),
         instance: ['abc', 123, {}, []],
-        envKey: 'FORCE_EDITOR_PREFIXES'
+        envKey: 'FORCE_EDITOR_PREFIXES',
       })
     })
 
@@ -432,8 +442,8 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
       editorSet,
       env: {
         ISINTTY,
-        FORCE_EDITOR_PREFIXES: 'abc: 123'
-      }
+        FORCE_EDITOR_PREFIXES: 'abc: 123',
+      },
     }
 
     it('returns InvalidPrefixes', async () => {
@@ -442,7 +452,7 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
         error: INVALID_PREFIXES,
         validatorResult: expect.any(JsonSchemaValidatorResult),
         instance: { abc: 123 },
-        envKey: 'FORCE_EDITOR_PREFIXES'
+        envKey: 'FORCE_EDITOR_PREFIXES',
       })
     })
 
@@ -457,8 +467,8 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
       editorSet,
       env: {
         ISINTTY,
-        FORCE_EDITOR_PREFIXES: ': not : valid : yaml :'
-      }
+        FORCE_EDITOR_PREFIXES: ': not : valid : yaml :',
+      },
     }
 
     it('returns PrefixesParsingFailure', async () => {
@@ -467,7 +477,7 @@ describe('when FORCE_EDITOR_PREFIXES is specified', () => {
         error: PREFIXES_PARSING_FAILURE,
         errorObject: expect.anything(),
         envValue: ': not : valid : yaml :',
-        envKey: 'FORCE_EDITOR_PREFIXES'
+        envKey: 'FORCE_EDITOR_PREFIXES',
       })
     })
 

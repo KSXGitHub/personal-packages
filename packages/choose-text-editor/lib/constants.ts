@@ -8,7 +8,7 @@ export const SEARCH_PLACES = [
   'choose-text-editor.json',
   'choose-text-editor.yaml',
   'choose-text-editor.config.js',
-  'choose-text-editor.js'
+  'choose-text-editor.js',
 ]
 
 export const PACKAGE_PROP = 'choose-text-editor'

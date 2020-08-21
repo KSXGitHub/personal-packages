@@ -1,4 +1,4 @@
-export function command (shebang: string): string | null {
+export function command(shebang: string): string | null {
   if (!shebang || !shebang.startsWith('#!')) return null
   shebang = shebang.slice(2).trim()
   const segments = shebang.split(/\s+/)

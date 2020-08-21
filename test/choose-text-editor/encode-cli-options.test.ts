@@ -11,7 +11,7 @@ it('matches snapshot', () => {
     b: 456,
     c: true,
     d: false,
-    e: ['a', 0, 'b', 1, 2]
+    e: ['a', 0, 'b', 1, 2],
   })).toMatchSnapshot()
 })
 
@@ -26,16 +26,29 @@ it('works as intended', () => {
     b: 456,
     c: true,
     d: false,
-    e: ['a', 0, 'b', 1, 2]
+    e: ['a', 0, 'b', 1, 2],
   })).toEqual([
-    '--stringOption', 'abc',
-    '--numberOption', '123',
+    '--stringOption',
+    'abc',
+    '--numberOption',
+    '123',
     '--trueOption',
-    '--arrayOption', 'abc', 'def', '123', '456',
-    '-a', 'foo',
-    '-b', '456',
+    '--arrayOption',
+    'abc',
+    'def',
+    '123',
+    '456',
+    '-a',
+    'foo',
+    '-b',
+    '456',
     '-c',
-    '-e', 'a', '0', 'b', '1', '2'
+    '-e',
+    'a',
+    '0',
+    'b',
+    '1',
+    '2',
   ])
 })
 

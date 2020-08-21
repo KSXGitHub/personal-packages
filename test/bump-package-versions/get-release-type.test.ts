@@ -3,13 +3,13 @@ import { ChangeType, ReleaseType, getReleaseType } from '@khai96x/bump-package-v
 
 const get = (
   version: string,
-  change: ChangeType
+  change: ChangeType,
 ) => getReleaseType(parse(version)!, change)
 
 const tester = (
   version: string,
   change: ChangeType,
-  release: ReleaseType
+  release: ReleaseType,
 ) => () => expect(get(version, change)).toBe(release)
 
 describe('ChangeType.OfficialRelease', () => {

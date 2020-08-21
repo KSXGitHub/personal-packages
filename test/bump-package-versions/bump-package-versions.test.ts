@@ -4,50 +4,50 @@ import createFileSystem from './filesystem'
 class FileSystem {
   public readonly core = createFileSystem({
     'public/0.0.0/package.json': {
-      version: '0.0.0'
+      version: '0.0.0',
     },
     'public/0.0.1/package.json': {
-      version: '0.0.1'
+      version: '0.0.1',
     },
     'public/0.1.2/package.json': {
-      version: '0.1.2'
+      version: '0.1.2',
     },
     'public/1.2.3/package.json': {
-      version: '1.2.3'
+      version: '1.2.3',
     },
     'private/0.0.0/package.json': {
       private: true,
-      version: '0.0.0'
+      version: '0.0.0',
     },
     'private/0.0.1/package.json': {
       private: true,
-      version: '0.0.1'
+      version: '0.0.1',
     },
     'private/0.1.2/package.json': {
       private: true,
-      version: '0.1.2'
+      version: '0.1.2',
     },
     'private/1.2.3/package.json': {
       name: 'a',
       private: true,
-      version: '1.2.3'
+      version: '1.2.3',
     },
     'invalid/no-version/package.json': {},
     'invalid/version-null/package.json': {
-      version: null
+      version: null,
     },
     'invalid/version-number/package.json': {
-      version: 123
+      version: 123,
     },
     'invalid/version-not-semver/package.json': {
-      version: 'abcdef'
+      version: 'abcdef',
     },
     'invalid/null/package.json': null,
     'invalid/true/package.json': true,
     'invalid/false/package.json': false,
     'invalid/string/package.json': 'string',
     'invalid/number/package.json': 123,
-    'invalid/array/package.json': [0, 1, 2, 3]
+    'invalid/array/package.json': [0, 1, 2, 3],
   })
 
   public readonly readFile = this.core.readFile
@@ -69,11 +69,11 @@ class Process {
 const DEFAULT_OPTIONS = {
   finalNewLines: 1,
   jsonIndent: 2,
-  skipPrivate: false
+  skipPrivate: false,
 } as const
 
 describe('when filenames is empty', () => {
-  async function setup () {
+  async function setup() {
     const { core, ...fs } = new FileSystem()
     const console = new Console()
     const process = new Process()
@@ -86,7 +86,7 @@ describe('when filenames is empty', () => {
       changeType: ChangeType.OfficialRelease,
       fs,
       console,
-      process
+      process,
     })
 
     const newFsObj = core.snapshotObject()
@@ -100,7 +100,7 @@ describe('when filenames is empty', () => {
       result,
       ...fs,
       ...console,
-      ...process
+      ...process,
     }
   }
 
@@ -169,10 +169,10 @@ describe('when filenames includes path that point to invalid file', () => {
     'invalid/false/package.json',
     'invalid/string/package.json',
     'invalid/number/package.json',
-    'invalid/array/package.json'
+    'invalid/array/package.json',
   ]
 
-  async function setup () {
+  async function setup() {
     const { core, ...fs } = new FileSystem()
     const console = new Console()
     const process = new Process()
@@ -185,7 +185,7 @@ describe('when filenames includes path that point to invalid file', () => {
       filenames,
       fs,
       console,
-      process
+      process,
     })
 
     const newFsObj = core.snapshotObject()
@@ -199,7 +199,7 @@ describe('when filenames includes path that point to invalid file', () => {
       result,
       ...fs,
       ...console,
-      ...process
+      ...process,
     }
   }
 
@@ -258,14 +258,14 @@ describe('when filenames contains only paths that point to valid files', () => {
     'private/0.0.0/package.json',
     'private/0.0.1/package.json',
     'private/0.1.2/package.json',
-    'private/1.2.3/package.json'
+    'private/1.2.3/package.json',
   ] as const
 
   describe('changeType = ChangeType.OfficialRelease; skipPrivate = false', () => {
     const changeType = ChangeType.OfficialRelease
     const skipPrivate = false
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -279,7 +279,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -293,7 +293,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -311,7 +311,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -319,7 +319,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 
@@ -365,7 +365,7 @@ describe('when filenames contains only paths that point to valid files', () => {
     const changeType = ChangeType.BreakingChange
     const skipPrivate = false
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -379,7 +379,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -393,7 +393,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -411,7 +411,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -419,7 +419,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 
@@ -465,7 +465,7 @@ describe('when filenames contains only paths that point to valid files', () => {
     const changeType = ChangeType.FeatureAddition
     const skipPrivate = false
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -479,7 +479,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -493,7 +493,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -511,7 +511,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -519,7 +519,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 
@@ -565,7 +565,7 @@ describe('when filenames contains only paths that point to valid files', () => {
     const changeType = ChangeType.Patch
     const skipPrivate = false
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -579,7 +579,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -593,7 +593,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -611,7 +611,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -619,7 +619,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 
@@ -665,7 +665,7 @@ describe('when filenames contains only paths that point to valid files', () => {
     const changeType = ChangeType.OfficialRelease
     const skipPrivate = true
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -679,7 +679,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -693,7 +693,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -711,7 +711,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -719,7 +719,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).not.toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 
@@ -765,7 +765,7 @@ describe('when filenames contains only paths that point to valid files', () => {
     const changeType = ChangeType.BreakingChange
     const skipPrivate = true
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -779,7 +779,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -793,7 +793,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -811,7 +811,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -819,7 +819,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).not.toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 
@@ -865,7 +865,7 @@ describe('when filenames contains only paths that point to valid files', () => {
     const changeType = ChangeType.FeatureAddition
     const skipPrivate = true
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -879,7 +879,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -893,7 +893,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -911,7 +911,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -919,7 +919,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).not.toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 
@@ -965,7 +965,7 @@ describe('when filenames contains only paths that point to valid files', () => {
     const changeType = ChangeType.Patch
     const skipPrivate = true
 
-    async function setup () {
+    async function setup() {
       const { core, ...fs } = new FileSystem()
       const console = new Console()
       const process = new Process()
@@ -979,7 +979,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         skipPrivate,
         fs,
         console,
-        process
+        process,
       })
 
       const newFsObj = core.snapshotObject()
@@ -993,7 +993,7 @@ describe('when filenames contains only paths that point to valid files', () => {
         result,
         ...fs,
         ...console,
-        ...process
+        ...process,
       }
     }
 
@@ -1011,7 +1011,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).toBeCalledWith(
         expect.anything(),
-        expect.not.stringContaining('"private": true')
+        expect.not.stringContaining('"private": true'),
       )
     })
 
@@ -1019,7 +1019,7 @@ describe('when filenames contains only paths that point to valid files', () => {
       const { writeFile } = await setup()
       expect(writeFile).not.toBeCalledWith(
         expect.anything(),
-        expect.stringContaining('"private": true')
+        expect.stringContaining('"private": true'),
       )
     })
 

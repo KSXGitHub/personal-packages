@@ -1,7 +1,7 @@
 import { Status } from './status'
 import { Logger } from './console'
 
-export function showStatus (logInfo: Logger) {
+export function showStatus(logInfo: Logger) {
   const longestNameLength = Object
     .keys(Status)
     .reduce((prev, current) => prev.length > current.length ? prev : current)

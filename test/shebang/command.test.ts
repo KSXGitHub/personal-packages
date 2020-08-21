@@ -10,10 +10,10 @@ it('matches snapshot', () => {
     '#! /usr/bin/bash',
     '#! /bin/env bash',
     '#! /usr/bin/env bash -',
-    'not-shebang'
+    'not-shebang',
   ].map(shebang => ({
     shebang,
-    command: command(shebang)
+    command: command(shebang),
   }))
   expect(result).toMatchSnapshot()
 })

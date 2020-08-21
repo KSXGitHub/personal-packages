@@ -5,17 +5,17 @@ import { dbg } from 'string-template-format-inspect'
 export type Value = json.ReadonlyJsonValue
 export interface Dict extends json.ReadonlyJsonObject<Value> {}
 
-export function createFileSystem (dict: Dict) {
+export function createFileSystem(dict: Dict) {
   const texts = new Map(
     Object
       .entries(dict)
-      .map(([key, value]) => [key, json.dump(value, undefined, 2) + '\n'])
+      .map(([key, value]) => [key, json.dump(value, undefined, 2) + '\n']),
   )
 
   const snapshot = () => new Map(texts)
   const snapshotObject = () => Object.fromEntries(texts)
 
-  function snapshotYaml (object = snapshotObject()) {
+  function snapshotYaml(object = snapshotObject()) {
     const yamlText = yaml.dump(object)
     return '\n' + yamlText + '\n'
   }

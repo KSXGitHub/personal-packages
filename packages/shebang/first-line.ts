@@ -3,7 +3,7 @@ import { createInterface } from 'readline'
 
 const READ_STREAM_OPTIONS = { encoding: 'utf8' } as const
 
-export function firstLine (filename: string) {
+export function firstLine(filename: string) {
   const stream = createReadStream(filename, READ_STREAM_OPTIONS)
   const reader = createInterface(stream)
   let result: string

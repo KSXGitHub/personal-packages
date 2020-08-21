@@ -9,12 +9,12 @@ import {
   NOT_FOUND,
   PREFIXES_PARSING_FAILURE,
   INVALID_PREFIXES,
-  NO_EDITOR
+  NO_EDITOR,
 } from './choose-result'
 
 export type ChooseError = Exclude<ChooseResult, Chosen>
 
-export async function handleChooseError (logError: Logger, result: ChooseError) {
+export async function handleChooseError(logError: Logger, result: ChooseError) {
   switch (result.error) {
     case (INDETERMINABLE_TTY):
       logError('[ERROR] Cannot determine whether terminal is graphical or not')

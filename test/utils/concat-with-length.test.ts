@@ -2,7 +2,7 @@ import { concatWithLength } from '@khai96x/utils'
 
 describe('concatenation of arrays', () => {
   describe('when no operand are mutated after concatenation', () => {
-    function init () {
+    function init() {
       const a = [0, 1, 2, 3]
       const b = [4, 5]
       const c = [7, 8, 9]
@@ -22,7 +22,7 @@ describe('concatenation of arrays', () => {
   })
 
   describe('when some operands are mutated after concatenation', () => {
-    function init () {
+    function init() {
       const a = [0, 1, 2, 3]
       const b = [4, 5]
       const c = [7, 8, 9]
@@ -46,7 +46,7 @@ describe('concatenation of arrays', () => {
 
 describe('concatenation of concatenations', () => {
   describe('when no operand are mutated after concatenation', () => {
-    function init () {
+    function init() {
       const a = [0, 1, 2, 3]
       const b = [4, 5]
       const c = [7, 8, 9]
@@ -72,7 +72,7 @@ describe('concatenation of concatenations', () => {
   })
 
   describe('when some operands are mutated after concatenation', () => {
-    function init () {
+    function init() {
       const a = [0, 1, 2, 3]
       const b = [4, 5]
       const c = [7, 8, 9]

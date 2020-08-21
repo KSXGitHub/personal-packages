@@ -6,10 +6,10 @@ it('matches snapshot', () => {
     'foo-bar',
     'fooBar',
     'f',
-    'a'
+    'a',
   ].map(input => ({
     input,
-    output: encodeCliFlag(input)
+    output: encodeCliFlag(input),
   }))
 
   expect(result).toMatchSnapshot()
@@ -21,12 +21,12 @@ it('works as intended', () => {
     'foo-bar',
     'fooBar',
     'f',
-    'a'
+    'a',
   ].map(encodeCliFlag)).toEqual([
     '--foo',
     '--foo-bar',
     '--fooBar',
     '-f',
-    '-a'
+    '-a',
   ])
 })

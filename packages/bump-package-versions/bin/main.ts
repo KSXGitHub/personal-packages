@@ -14,24 +14,24 @@ const {
       ChangeType.OfficialRelease,
       ChangeType.BreakingChange,
       ChangeType.FeatureAddition,
-      ChangeType.Patch
+      ChangeType.Patch,
     ] as const,
-    required: true
+    required: true,
   })
   .option('skipPrivate', {
     describe: 'Skip files that have "private" property set to true',
     type: 'boolean',
-    default: true
+    default: true,
   })
   .option('jsonIndent', {
     describe: 'Indentation of resulting JSON',
     type: 'number',
-    default: 2
+    default: 2,
   })
   .option('finalNewLines', {
     describe: 'How many empty lines to add after resulting JSON',
     type: 'number',
-    default: 1
+    default: 1,
   })
   .env('BUMP_PKG_VERS')
   .help()
@@ -42,7 +42,7 @@ bumpPackageVersions({
   filenames,
   fs,
   console,
-  process
+  process,
 }).catch(error => {
   console.error(error)
   return process.exit(-1)

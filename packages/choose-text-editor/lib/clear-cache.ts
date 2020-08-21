@@ -3,10 +3,10 @@ import { CosmiConfigExplorer } from './cosmiconfig'
 export const enum CacheType {
   Load = 'load',
   Search = 'search',
-  All = 'all'
+  All = 'all',
 }
 
-export function clearCache (explorer: CosmiConfigExplorer, cacheType: CacheType) {
+export function clearCache(explorer: CosmiConfigExplorer, cacheType: CacheType) {
   switch (cacheType) {
     case CacheType.Load:
       return explorer.clearLoadCache()

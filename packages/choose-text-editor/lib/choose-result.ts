@@ -18,8 +18,8 @@ interface SimpleConstructor<Type extends ResultBase<any>> {
  *
  * @note Only use this for type that only has "error" property
  */
-function SimpleConstructor<Type extends ResultBase<any>> (
-  error: ErrorOf<Type>
+function SimpleConstructor<Type extends ResultBase<any>>(
+  error: ErrorOf<Type>,
 ): SimpleConstructor<Type> {
   const result = Object.freeze({ error })
   return (): Type => result as any
@@ -46,12 +46,12 @@ export interface PrefixesParsingFailure extends ResultBase<typeof PREFIXES_PARSI
 export const PrefixesParsingFailure = (
   errorObject: Error,
   envValue: string,
-  envKey: string
+  envKey: string,
 ): PrefixesParsingFailure => ({
   error: PREFIXES_PARSING_FAILURE,
   envKey,
   envValue,
-  errorObject
+  errorObject,
 })
 
 export const INVALID_PREFIXES = Symbol('INVALID_PREFIXES')
@@ -63,12 +63,12 @@ export interface InvalidPrefixes extends ResultBase<typeof INVALID_PREFIXES> {
 export const InvalidPrefixes = (
   validatorResult: ValidatorResult,
   instance: any,
-  envKey: string
+  envKey: string,
 ): InvalidPrefixes => ({
   error: INVALID_PREFIXES,
   envKey,
   instance,
-  validatorResult
+  validatorResult,
 })
 
 export interface Chosen extends ResultBase<null> {
@@ -76,13 +76,13 @@ export interface Chosen extends ResultBase<null> {
 }
 export const Chosen = (command: Command): Chosen => ({
   error: null,
-  command
+  command,
 })
 
 export type ChooseResult =
-  NotFound |
-  NoEditor |
-  IndeterminableTTY |
-  PrefixesParsingFailure |
-  InvalidPrefixes |
-  Chosen
+  | NotFound
+  | NoEditor
+  | IndeterminableTTY
+  | PrefixesParsingFailure
+  | InvalidPrefixes
+  | Chosen

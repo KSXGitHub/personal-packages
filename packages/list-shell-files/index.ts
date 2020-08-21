@@ -11,14 +11,16 @@ export interface MainOptions {
   readonly log: Logger
 }
 
-export async function main (options: MainOptions) {
+export async function main(options: MainOptions) {
   const { files, shells, log } = options
   const promises: Promise<void>[] = []
   for (const filename of files) {
-    if (!await stat(filename).then(
-      x => x.isFile(),
-      () => false
-    )) {
+    if (
+      !await stat(filename).then(
+        x => x.isFile(),
+        () => false,
+      )
+    ) {
       continue
     }
 
@@ -29,7 +31,7 @@ export async function main (options: MainOptions) {
     }
   }
   await Promise.all(promises)
-  async function makePromise (filename: string) {
+  async function makePromise(filename: string) {
     const command = await shebangCommand(filename)
     if (command && shells.includes(command)) log(filename)
   }
