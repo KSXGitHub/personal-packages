@@ -1,8 +1,8 @@
 dependencies:
-  '@types/node': 13.7.7
+  '@types/node': 14.6.0
   advanced-map-initialized: 0.0.4
-  rxjs: 6.5.4
-  tslib: 1.11.1
+  rxjs: 6.6.2
+  tslib: 2.0.1
 lockfileVersion: 5.1
 packages:
   /@types/node/10.14.20:
@@ -17,10 +17,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/13.7.7:
+  /@types/node/14.6.0:
     dev: false
     resolution:
-      integrity: sha512-Uo4chgKbnPNlxQwoFmYIwctkQVkMMmsAoGGU4JKwLuvBefF0pCq4FybNSnfkfRCpC7ZW7kttcC/TrRtAJsvGtg==
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /advanced-map-base/0.0.4:
     dependencies:
       '@types/node': 13.1.6
@@ -53,14 +53,14 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-1z2ags9Y3SbsvRBsANA60J8HGfWeEOnrFwavN72EIQVCt/iFB6fujjvf8dwER7Xpo7tttPfxWxnLnvCiFHU7hA==
-  /rxjs/6.5.4:
+  /rxjs/6.6.2:
     dependencies:
-      tslib: 1.10.0
+      tslib: 1.11.1
     dev: false
     engines:
       npm: '>=2.0.0'
     resolution:
-      integrity: sha512-naMQXcgEo3csAEGvw/NydRA0fuS2nDZJiw1YUWFKU7aPPAPGZEsD4Iimit96qwCieH6y614MCLYwdkrWx7z/7Q==
+      integrity: sha512-BHdBMVoWC2sL26w//BCu3YzKT4s2jip/WhwsGEDmeKYBhKDZeYezVUnHatYB7L85v5xs0BAQmg6BEYJEKxBabg==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -69,6 +69,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+  /tslib/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /typescript-miscellaneous/0.1.1:
     dependencies:
       '@types/node': 10.14.20
@@ -80,7 +84,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^13.7.7
+  '@types/node': ^14.6.0
   advanced-map-initialized: ^0.0.4
-  rxjs: ^6.5.4
-  tslib: ^1.11.1
+  rxjs: ^6.6.2
+  tslib: ^2.0.1

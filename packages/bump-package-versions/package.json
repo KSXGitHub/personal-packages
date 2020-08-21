@@ -28,15 +28,15 @@
     "incpkgvers": "bin/index"
   },
   "dependencies": {
-    "semver": "^7.1.3",
-    "fs-extra": "^8.1.0",
-    "yargs": "^15.1.0",
-    "just-json-type": "^0.1.5",
-    "string-template-format-inspect": "^0.1.6",
-    "tslib": "^1.11.1",
-    "@types/semver": "^7.1.0",
-    "@types/fs-extra": "^8.1.0",
-    "@types/yargs": "^15.0.4",
-    "@types/node": "^13.7.7"
+    "semver": "^7.3.2",
+    "fs-extra": "^9.0.1",
+    "yargs": "^15.4.1",
+    "just-json-type": "^0.1.6",
+    "string-template-format-inspect": "^0.1.7",
+    "tslib": "^2.0.1",
+    "@types/semver": "^7.3.3",
+    "@types/fs-extra": "^9.0.1",
+    "@types/yargs": "^15.0.5",
+    "@types/node": "^14.6.0"
   }
 }
