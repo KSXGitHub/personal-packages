@@ -11,7 +11,7 @@ export interface QuObservableParams extends SingleCycleUpdateCheckerParams {
 
 export interface QuObservableValue extends SingleCycleUpdateCheckerReturn {}
 
-export function getPacmanQuObservable(params: QuObservableParams): Observable<QuObservableValue> {
+export function getQuObservable(params: QuObservableParams): Observable<QuObservableValue> {
   return pipeline(() => getIntervalObservable(params.runPeriod))
     .to(map(() => checkForUpdatesSingleCycle(params)))
     .to(map(asyncToArray))
@@ -20,9 +20,9 @@ export function getPacmanQuObservable(params: QuObservableParams): Observable<Qu
     .fn(undefined)
 }
 
-export const getPacmanQuPositiveObservable = pipeline(getPacmanQuObservable)
+export const getQuPositiveObservable = pipeline(getQuObservable)
   .to(filter(update => update.updates.length !== 0))
   .fn
 
-export const pacmanQu = getPacmanQuObservable
-export const pacmanQuPos = getPacmanQuPositiveObservable
+export const qu = getQuObservable
+export const quPos = getQuPositiveObservable
