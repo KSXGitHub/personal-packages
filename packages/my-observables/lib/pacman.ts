@@ -21,7 +21,7 @@ export function getQuObservable(params: QuObservableParams): Observable<QuObserv
 }
 
 export const getQuPositiveObservable = pipeline(getQuObservable)
-  .to(filter(update => update.updates.length !== 0))
+  .to(filter(item => item.updates.length > 0))
   .fn
 
 export const qu = getQuObservable
