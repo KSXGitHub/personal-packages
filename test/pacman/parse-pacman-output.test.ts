@@ -61,37 +61,45 @@ describe('parseQuStream', () => {
   ]
 
   it('one huge chunk', async () => {
-    expect(await pipe(
-      [streamSource.join('\n')],
-      parseQuStream,
-      asyncToArray,
-    )).toEqual(expectedOutput)
+    expect(
+      await pipe(
+        [streamSource.join('\n')],
+        parseQuStream,
+        asyncToArray,
+      ),
+    ).toEqual(expectedOutput)
   })
 
   it('every chunk is a line', async () => {
-    expect(await pipe(
-      streamSource,
-      map(line => line + '\n'),
-      parseQuStream,
-      asyncToArray,
-    )).toEqual(expectedOutput)
+    expect(
+      await pipe(
+        streamSource,
+        map(line => line + '\n'),
+        parseQuStream,
+        asyncToArray,
+      ),
+    ).toEqual(expectedOutput)
   })
 
   it('every chunk is a line followed by a newline', async () => {
-    expect(await pipe(
-      streamSource,
-      interpose('\n'),
-      parseQuStream,
-      asyncToArray,
-    )).toEqual(expectedOutput)
+    expect(
+      await pipe(
+        streamSource,
+        interpose('\n'),
+        parseQuStream,
+        asyncToArray,
+      ),
+    ).toEqual(expectedOutput)
   })
 
   it('every chunk is a character', async () => {
-    expect(await pipe(
-      streamSource.join('\n'),
-      Array.from,
-      parseQuStream,
-      asyncToArray,
-    )).toEqual(expectedOutput)
+    expect(
+      await pipe(
+        streamSource.join('\n'),
+        Array.from,
+        parseQuStream,
+        asyncToArray,
+      ),
+    ).toEqual(expectedOutput)
   })
 })
