@@ -1,6 +1,11 @@
 import { asyncToArray } from 'iter-tools'
 import { getIntervalObservable, pipeline, operators, from, Observable } from '@khai96x/interval-observable-universe'
-import { QuLine, SingleCycleUpdateCheckerParams, SingleCycleUpdateCheckerReturn, checkForUpdatesSingleCycle } from '@khai96x/pacman'
+import {
+  QuLine,
+  SingleCycleUpdateCheckerParams,
+  SingleCycleUpdateCheckerReturn,
+  checkForUpdatesSingleCycle,
+} from '@khai96x/pacman'
 const { map, flatMap, mergeAll, filter } = operators
 
 export { QuLine }
