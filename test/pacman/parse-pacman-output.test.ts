@@ -102,4 +102,16 @@ describe('parseQuStream', () => {
       ),
     ).toEqual(expectedOutput)
   })
+
+  it('every chunk is a buffer', async () => {
+    expect(
+      await pipe(
+        streamSource,
+        map(line => line + '\n'),
+        map(Buffer.from),
+        parseQuStream,
+        asyncToArray,
+      )
+    ).toEqual(expectedOutput)
+  })
 })

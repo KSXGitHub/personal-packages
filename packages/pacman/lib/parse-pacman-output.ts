@@ -22,10 +22,17 @@ export function parseQuLine(line: string): QuLine | null {
   }
 }
 
+interface ToString {
+  toString (this: this): string
+}
+
+type Stream = AsyncIterable<ToString> | Iterable<ToString>
+
 /** Parse an stdout stream of `pacman -Qu` */
-export function parseQuStream(input: AsyncIterable<string> | Iterable<string>) {
+export function parseQuStream(input: Stream) {
   return pipe(
     input,
+    asyncMap(String),
     asyncFlat(1),
     asyncSplitLines,
     asyncMap(parseQuLine),
