@@ -1,7 +1,7 @@
 {
-  "name": "@khai96x/my-observables",
-  "version": "0.0.4",
-  "description": "Events that I use",
+  "name": "@khai96x/pacman",
+  "version": "0.0.0",
+  "description": "Utilities related to ArchLinux Package Manager (pacman)",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
@@ -12,12 +12,20 @@
   "bugs": {
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
+  "keywords": [
+    "archlinux",
+    "pacman",
+    "aur"
+  ],
+  "main": "index.js",
+  "module": "index.mjs",
+  "browser": "index.mjs",
+  "sideEffects": false,
   "dependencies": {
     "iter-tools": "^6.2.6",
-    "advanced-spawn-async": "^0.1.3",
-    "@khai96x/interval-observable-universe": "^0.0.4",
-    "@khai96x/pacman": "^0.0.0",
+    "fs-extra": "^9.0.1",
     "tslib": "^2.0.1",
+    "@types/fs-extra": "^9.0.1",
     "@types/node": "^14.6.0"
   }
 }
