@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "iter-tools": "^6.2.6",
+    "@khai96x/pacman": "file:../../packages/pacman"
+  }
+}

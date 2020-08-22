@@ -1,7 +1,7 @@
 {
-  "name": "@khai96x/all",
-  "version": "0.0.13",
-  "description": "All packages within @khai96x",
+  "name": "@khai96x/pacman",
+  "version": "0.0.0",
+  "description": "Utilities related to ArchLinux Package Manager (pacman)",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
@@ -12,14 +12,17 @@
   "bugs": {
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
+  "keywords": [
+    "archlinux",
+    "pacman",
+    "aur"
+  ],
+  "main": "index.js",
+  "module": "index.mjs",
+  "browser": "index.mjs",
+  "sideEffects": false,
   "dependencies": {
-    "@khai96x/interval-observable-universe": "^0.0.4",
-    "@khai96x/my-observables": "^0.0.4",
-    "@khai96x/bump-package-versions": "^0.0.2",
-    "@khai96x/choose-text-editor": "^0.2.3",
-    "@khai96x/shebang": "^0.0.0",
-    "@khai96x/list-shell-files": "^0.0.0",
-    "@khai96x/pacman": "^0.0.0",
+    "iter-tools": "^6.2.6",
     "tslib": "^2.0.1",
     "@types/node": "^14.6.0"
   }
