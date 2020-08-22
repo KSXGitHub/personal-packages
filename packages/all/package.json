@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/all",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "All packages within @khai96x",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@khai96x/interval-observable-universe": "^0.0.4",
-    "@khai96x/my-observables": "^0.0.4",
+    "@khai96x/my-observables": "^0.0.5",
     "@khai96x/bump-package-versions": "^0.0.2",
     "@khai96x/choose-text-editor": "^0.2.3",
     "@khai96x/shebang": "^0.0.0",
