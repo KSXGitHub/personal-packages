@@ -111,7 +111,7 @@ describe('parseQuStream', () => {
         map(Buffer.from),
         parseQuStream,
         asyncToArray,
-      )
+      ),
     ).toEqual(expectedOutput)
   })
 })

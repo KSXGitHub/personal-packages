@@ -16,7 +16,7 @@ export function parseQuLine(line: string): QuLine | null {
 }
 
 interface ToString {
-  toString (this: this): string
+  toString(this: this): string
 }
 
 type Stream = AsyncIterable<ToString> | Iterable<ToString>

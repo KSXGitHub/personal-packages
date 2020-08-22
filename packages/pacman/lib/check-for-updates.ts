@@ -10,7 +10,7 @@ export interface UpdateCheckerParams {
 }
 
 /** Run `pacman -Qu` and return a stream of results */
-export function checkForUpdates (params: UpdateCheckerParams = {}) {
+export function checkForUpdates(params: UpdateCheckerParams = {}) {
   const {
     packageManager = 'pacman',
     additionalArguments = [],
