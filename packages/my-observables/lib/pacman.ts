@@ -20,16 +20,20 @@ export { QuLine }
 
 export interface QuObservableParams extends SingleCycleUpdateCheckerParams {
   readonly runPeriod: number
+  readonly initiate?: boolean
 }
 
 export interface QuObservableValue extends SingleCycleUpdateCheckerReturn {}
 
 export function getQuObservable(params: QuObservableParams): Observable<QuObservableValue> {
-  return pipeline(() =>
-    merge(
-      of('first trigger'),
-      getIntervalObservable(params.runPeriod),
-    )
+  return pipeline(
+    params.initiate
+      ? () =>
+        merge(
+          of('first trigger'),
+          getIntervalObservable(params.runPeriod),
+        )
+      : () => getIntervalObservable(params.runPeriod),
   )
     .to(map(() => checkForUpdatesSingleCycle(params)))
     .to(map(asyncToArray))
