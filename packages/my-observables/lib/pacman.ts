@@ -1,5 +1,13 @@
 import { asyncToArray } from 'iter-tools'
-import { getIntervalObservable, pipeline, operators, from, Observable } from '@khai96x/interval-observable-universe'
+import {
+  getIntervalObservable,
+  merge,
+  of,
+  pipeline,
+  operators,
+  from,
+  Observable,
+} from '@khai96x/interval-observable-universe'
 import {
   QuLine,
   SingleCycleUpdateCheckerParams,
@@ -12,12 +20,21 @@ export { QuLine }
 
 export interface QuObservableParams extends SingleCycleUpdateCheckerParams {
   readonly runPeriod: number
+  readonly initiate?: boolean
 }
 
 export interface QuObservableValue extends SingleCycleUpdateCheckerReturn {}
 
 export function getQuObservable(params: QuObservableParams): Observable<QuObservableValue> {
-  return pipeline(() => getIntervalObservable(params.runPeriod))
+  return pipeline(
+    params.initiate
+      ? () =>
+        merge(
+          of('first trigger'),
+          getIntervalObservable(params.runPeriod),
+        )
+      : () => getIntervalObservable(params.runPeriod),
+  )
     .to(map(() => checkForUpdatesSingleCycle(params)))
     .to(map(asyncToArray))
     .to(flatMap(async updates => from(await updates)))
