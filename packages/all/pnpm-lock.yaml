@@ -23,7 +23,7 @@ specifiers:
   '@khai96x/choose-text-editor': ^0.2.3
   '@khai96x/interval-observable-universe': ^0.0.4
   '@khai96x/list-shell-files': ^0.0.0
-  '@khai96x/my-observables': ^0.0.5
+  '@khai96x/my-observables': ^0.0.6
   '@khai96x/pacman': ^0.0.0
   '@khai96x/shebang': ^0.0.0
   '@types/node': ^14.6.0
