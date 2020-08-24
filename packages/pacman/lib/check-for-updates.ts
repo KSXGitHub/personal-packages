@@ -63,7 +63,7 @@ export async function* checkForUpdatesSingleCycle(
       asyncToArray,
     )
 
-    const nextDueDate = dueDate + period
+    const nextDueDate = currentDate + period
 
     yield {
       updates,
