@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/pacman",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Utilities related to ArchLinux Package Manager (pacman)",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

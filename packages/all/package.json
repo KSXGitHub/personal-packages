@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/all",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "All packages within @khai96x",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -14,12 +14,12 @@
   },
   "dependencies": {
     "@khai96x/interval-observable-universe": "^0.0.4",
-    "@khai96x/my-observables": "^0.0.6",
+    "@khai96x/my-observables": "^0.0.7",
     "@khai96x/bump-package-versions": "^0.0.2",
     "@khai96x/choose-text-editor": "^0.2.3",
     "@khai96x/shebang": "^0.0.0",
     "@khai96x/list-shell-files": "^0.0.0",
-    "@khai96x/pacman": "^0.0.0",
+    "@khai96x/pacman": "^0.0.1",
     "tslib": "^2.0.1",
     "@types/node": "^14.6.0"
   }
