@@ -3,6 +3,7 @@ const url = require('url')
 const fs = require('fs')
 const process = require('process')
 const git = require('isomorphic-git')
+const { tryExec } = require('@tsfun/result')
 const { parseSrcInfo } = require('@khai96x/srcinfo')
 
 const {
@@ -44,10 +45,17 @@ const Status = {
   GenericFailure: 1,
   InvalidSrcInfo: 2,
   RemoteExists: 3,
+  FileSystemError: 4,
 }
 
 async function main() {
-  const result = parseSrcInfo(fs.readFileSync(srcinfo, 'utf8'))
+  const fileContent = tryExec(() => fs.readFileSync(srcinfo, 'utf8'))
+  if (!fileContent.tag) {
+    console.error(`[ERROR] ${fileContent.error.message}`)
+    return Status.FileSystemError
+  }
+
+  const result = parseSrcInfo(fileContent.value)
 
   if (!result.tag) {
     for (const { type, message } of result.error) {
