@@ -34,7 +34,7 @@ const {
   })
   .option('replace', {
     type: 'boolean',
-    describe: 'Call `git set-url` should remote already exist',
+    describe: 'Overwrite remote if it already exist',
   })
   .help()
   .argv
