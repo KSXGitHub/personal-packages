@@ -19,7 +19,7 @@
   "main": "index.js",
   "module": "index.mjs",
   "browser": "index.mjs",
-  "scripts": {
+  "bin": {
     "git-set-aur": "./bin/git-set-aur"
   },
   "sideEffects": false,
