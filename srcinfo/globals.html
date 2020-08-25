@@ -61,6 +61,263 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#arrayfield" class="tsd-kind-icon">Array<wbr>Field</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#parseerror" class="tsd-kind-icon">Parse<wbr>Error</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#partialfield" class="tsd-kind-icon">Partial<wbr>Field</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#requiredfield" class="tsd-kind-icon">Required<wbr>Field</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#srcinfo" class="tsd-kind-icon">Src<wbr>Info</a></li>
+								<li class="tsd-kind-type-alias tsd-is-external"><a href="globals.html#srcinfolines" class="tsd-kind-icon">Src<wbr>Info<wbr>Lines</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#arrayfields" class="tsd-kind-icon">array<wbr>Fields</a></li>
+								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#partialfields" class="tsd-kind-icon">partial<wbr>Fields</a></li>
+								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#requiredfields" class="tsd-kind-icon">required<wbr>Fields</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#getarray" class="tsd-kind-icon">get<wbr>Array</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#getunique" class="tsd-kind-icon">get<wbr>Unique</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#parseline" class="tsd-kind-icon">parse<wbr>Line</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#parsesrcinfo" class="tsd-kind-icon">parse<wbr>Src<wbr>Info</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="arrayfield" class="tsd-anchor"></a>
+					<h3>Array<wbr>Field</h3>
+					<div class="tsd-signature tsd-kind-icon">Array<wbr>Field<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">arrayFields</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/types.ts#L10">lib/types.ts:10</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Field that may appear multiple times in <code>.SRCINFO</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="parseerror" class="tsd-anchor"></a>
+					<h3>Parse<wbr>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Parse<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"InvalidSyntax"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>field<span class="tsd-signature-symbol">: </span><a href="globals.html#requiredfield" class="tsd-signature-type">RequiredField</a><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"MissingRequiredField"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/types.ts#L19">lib/types.ts:19</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="partialfield" class="tsd-anchor"></a>
+					<h3>Partial<wbr>Field</h3>
+					<div class="tsd-signature tsd-kind-icon">Partial<wbr>Field<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">partialFields</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/types.ts#L8">lib/types.ts:8</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Field that appears at most once in <code>.SRCINFO</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="requiredfield" class="tsd-anchor"></a>
+					<h3>Required<wbr>Field</h3>
+					<div class="tsd-signature tsd-kind-icon">Required<wbr>Field<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">requiredFields</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/types.ts#L6">lib/types.ts:6</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Field that always appear in <code>.SRCINFO</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="srcinfo" class="tsd-anchor"></a>
+					<h3>Src<wbr>Info</h3>
+					<div class="tsd-signature tsd-kind-icon">Src<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#requiredfield" class="tsd-signature-type">RequiredField</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#partialfield" class="tsd-signature-type">PartialField</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#arrayfield" class="tsd-signature-type">ArrayField</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/types.ts#L13">lib/types.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Interface of <code>.SRCINFO</code></p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-is-external">
+					<a name="srcinfolines" class="tsd-anchor"></a>
+					<h3>Src<wbr>Info<wbr>Lines</h3>
+					<div class="tsd-signature tsd-kind-icon">Src<wbr>Info<wbr>Lines<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/parse-src-info.ts#L12">lib/parse-src-info.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
+					<a name="arrayfields" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> array<wbr>Fields</h3>
+					<div class="tsd-signature tsd-kind-icon">array<wbr>Fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"arch"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"groups"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"license"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"noextract"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"options"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"backup"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"validgpgkeys"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"source"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"depends"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"checkdepends"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"makedepends"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"optdepends"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"provides"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"conflicts"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"replaces"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"md5sums"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"sha1sums"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"sha224sums"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"sha256sums"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"sha348sums"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"sha512sums"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> = [&#x27;arch&#x27;,&#x27;groups&#x27;,&#x27;license&#x27;,&#x27;noextract&#x27;,&#x27;options&#x27;,&#x27;backup&#x27;,&#x27;validgpgkeys&#x27;,&#x27;source&#x27;,&#x27;depends&#x27;,&#x27;checkdepends&#x27;,&#x27;makedepends&#x27;,&#x27;optdepends&#x27;,&#x27;provides&#x27;,&#x27;conflicts&#x27;,&#x27;replaces&#x27;,&#x27;md5sums&#x27;,&#x27;sha1sums&#x27;,&#x27;sha224sums&#x27;,&#x27;sha256sums&#x27;,&#x27;sha348sums&#x27;,&#x27;sha512sums&#x27;,] as const</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/utils/fields.ts#L15">utils/fields.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
+					<a name="partialfields" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> partial<wbr>Fields</h3>
+					<div class="tsd-signature tsd-kind-icon">partial<wbr>Fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"epoch"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"pkgdesc"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"url"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"install"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"changelog"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> = [&#x27;epoch&#x27;,&#x27;pkgdesc&#x27;,&#x27;url&#x27;,&#x27;install&#x27;,&#x27;changelog&#x27;,] as const</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/utils/fields.ts#L7">utils/fields.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
+					<a name="requiredfields" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> required<wbr>Fields</h3>
+					<div class="tsd-signature tsd-kind-icon">required<wbr>Fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">"pkgname"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"pkgver"</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">"pkgrel"</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> = [&#x27;pkgname&#x27;,&#x27;pkgver&#x27;,&#x27;pkgrel&#x27;,] as const</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/utils/fields.ts#L1">utils/fields.ts:1</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="getarray" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Array</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Array<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="globals.html#srcinfolines" class="tsd-signature-type">SrcInfoLines</a>, key<span class="tsd-signature-symbol">: </span><a href="globals.html#arrayfield" class="tsd-signature-type">ArrayField</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/parse-src-info.ts#L19">lib/parse-src-info.ts:19</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>source: <a href="globals.html#srcinfolines" class="tsd-signature-type">SrcInfoLines</a></h5>
+								</li>
+								<li>
+									<h5>key: <a href="globals.html#arrayfield" class="tsd-signature-type">ArrayField</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="getunique" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Unique</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Unique<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="globals.html#srcinfolines" class="tsd-signature-type">SrcInfoLines</a>, key<span class="tsd-signature-symbol">: </span><a href="globals.html#requiredfield" class="tsd-signature-type">RequiredField</a><span class="tsd-signature-symbol"> | </span><a href="globals.html#partialfield" class="tsd-signature-type">PartialField</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/parse-src-info.ts#L14">lib/parse-src-info.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>source: <a href="globals.html#srcinfolines" class="tsd-signature-type">SrcInfoLines</a></h5>
+								</li>
+								<li>
+									<h5>key: <a href="globals.html#requiredfield" class="tsd-signature-type">RequiredField</a><span class="tsd-signature-symbol"> | </span><a href="globals.html#partialfield" class="tsd-signature-type">PartialField</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="parseline" class="tsd-anchor"></a>
+					<h3>parse<wbr>Line</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Line<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/parse-src-info.ts#L5">lib/parse-src-info.ts:5</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>line: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="parsesrcinfo" class="tsd-anchor"></a>
+					<h3>parse<wbr>Src<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Src<wbr>Info<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Result</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#srcinfo" class="tsd-signature-type">SrcInfo</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">keyof </span><a href="globals.html#parseerror" class="tsd-signature-type">ParseError</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/d970e58/packages/srcinfo/lib/parse-src-info.ts#L25">lib/parse-src-info.ts:25</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Parse content of a <code>.SRCINFO</code> file</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>source: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Result</span><span class="tsd-signature-symbol">&lt;</span><a href="globals.html#srcinfo" class="tsd-signature-type">SrcInfo</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">keyof </span><a href="globals.html#parseerror" class="tsd-signature-type">ParseError</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
@@ -72,6 +329,45 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#arrayfield" class="tsd-kind-icon">Array<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#parseerror" class="tsd-kind-icon">Parse<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#partialfield" class="tsd-kind-icon">Partial<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#requiredfield" class="tsd-kind-icon">Required<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#srcinfo" class="tsd-kind-icon">Src<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-external">
+						<a href="globals.html#srcinfolines" class="tsd-kind-icon">Src<wbr>Info<wbr>Lines</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#arrayfields" class="tsd-kind-icon">array<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#partialfields" class="tsd-kind-icon">partial<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-external">
+						<a href="globals.html#requiredfields" class="tsd-kind-icon">required<wbr>Fields</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#getarray" class="tsd-kind-icon">get<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#getunique" class="tsd-kind-icon">get<wbr>Unique</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parseline" class="tsd-kind-icon">parse<wbr>Line</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#parsesrcinfo" class="tsd-kind-icon">parse<wbr>Src<wbr>Info</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
