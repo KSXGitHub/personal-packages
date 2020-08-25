@@ -1,5 +1,5 @@
 import { Result, ok, err } from '@tsfun/result'
-import { RequiredField, PartialField, ArrayField, SrcInfo, SrcInfoError } from './types'
+import { RequiredField, PartialField, ArrayField, SrcInfo, ParseError } from './types'
 import { requiredFields, partialFields, arrayFields } from '../utils/fields'
 
 function parseLine(line: string): readonly [string, string] | null {
@@ -22,14 +22,14 @@ const getArray = (
 ) => source.filter(pair => key === pair[0]).map(pair => pair[1])
 
 /** Parse content of a `.SRCINFO` file */
-export function parseSrcInfo(source: string): Result<SrcInfo, readonly SrcInfoError[]> {
+export function parseSrcInfo(source: string): Result<SrcInfo, readonly ParseError[]> {
   const lines = source
     .split('\n') // LF is sufficient, no needs for CRLF
     .map((line, index) => ({ line, index }))
     .filter(x => x.line.trim())
     .map(({ line, index }) => ({ line, index, entry: parseLine(line) }))
 
-  const errors: SrcInfoError[] = []
+  const errors: ParseError[] = []
 
   for (const { line, index, entry } of lines) {
     if (!entry) {

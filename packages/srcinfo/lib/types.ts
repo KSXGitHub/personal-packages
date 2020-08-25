@@ -16,7 +16,7 @@ export type SrcInfo = Readonly<
   & Record<ArrayField, readonly string[]>
 >
 
-export type SrcInfoError =
+export type ParseError =
   & Readonly<
     | { type: 'Syntax', line: string, index: number }
     | { type: 'MissingRequiredField', field: RequiredField }
