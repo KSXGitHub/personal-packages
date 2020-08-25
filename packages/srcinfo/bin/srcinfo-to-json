@@ -1,0 +1,48 @@
+#! /usr/bin/env node
+const process = require('process')
+const { readFileSync } = require('fs')
+const { parseSrcInfo } = require('..')
+
+const {
+  _: [input],
+  fallible,
+  indent,
+} = require('yargs')
+  .usage('$0 [options] <input>')
+  .option('indent', {
+    type: 'number',
+    describe: 'Output JSON indentation',
+    default: 2,
+  })
+  .option('fallible', {
+    type: 'boolean',
+    describe: 'Always print { tag, value?, error? } regardless of whether errors may occur',
+  })
+  .env('SRCINFO2JSON')
+  .help()
+  .argv
+
+if (!input) {
+  console.error('Missing argument: input')
+  throw process.exit(1)
+}
+
+const content = readFileSync(input, 'utf8')
+const result = parseSrcInfo(content)
+const output = x => console.info(JSON.stringify(x, undefined, indent))
+
+if (fallible) {
+  output(result)
+  throw process.exit(0)
+}
+
+if (result.tag) {
+  output(result.value)
+  throw process.exit(0)
+}
+
+for (const { type, message } of result.error) {
+  console.error(`[ERROR] ${type}: ${message}`)
+}
+
+throw process.exit(2)

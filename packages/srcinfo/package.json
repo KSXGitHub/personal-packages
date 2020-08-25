@@ -21,10 +21,15 @@
   "main": "index.js",
   "module": "index.mjs",
   "browser": "index.mjs",
+  "bin": {
+    "srcinfo-to-json": "./bin/srcinfo-to-json"
+  },
   "sideEffects": false,
   "dependencies": {
+    "yargs": "^15.4.1",
     "tslib": "^2.0.1",
     "@tsfun/result": "^0.0.19",
+    "@types/yargs": "^15.0.5",
     "@types/node": "^14.6.0"
   }
 }
