@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/my-observables",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Events that I use",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "iter-tools": "^6.2.6",
     "advanced-spawn-async": "^0.1.3",
     "@khai96x/interval-observable-universe": "^0.0.4",
-    "@khai96x/pacman": "^0.0.1",
+    "@khai96x/pacman": "^0.0.3",
     "tslib": "^2.0.1",
     "@types/node": "^14.6.0"
   }
