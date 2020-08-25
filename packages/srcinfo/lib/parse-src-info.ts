@@ -3,7 +3,7 @@ import { RequiredField, PartialField, ArrayField, SrcInfo, ParseError } from './
 import { requiredFields, partialFields, arrayFields } from '../utils/fields'
 
 function parseLine(line: string): readonly [string, string] | null {
-  const result = /(?<key>[^\s]+)\s*=\s*(?<value>[^\s]+)/.exec(line)
+  const result = /^\s*(?<key>[^\s]+)\s*=\s*(?<value>.+)\s*$/.exec(line)
   if (!result) return null
   const { key, value } = result.groups!
   return [key, value]
