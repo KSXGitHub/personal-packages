@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/all",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "All packages within @khai96x",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -21,7 +21,7 @@
     "@khai96x/list-shell-files": "^0.0.0",
     "@khai96x/pacman": "^0.0.1",
     "@khai96x/srcinfo": "^0.0.0",
-    "@khai96x/git-utils": "^0.0.1",
+    "@khai96x/git-utils": "^0.0.2",
     "tslib": "^2.0.1",
     "@types/node": "^14.6.0"
   }

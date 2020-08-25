@@ -23,7 +23,7 @@ packages:
 specifiers:
   '@khai96x/bump-package-versions': ^0.0.2
   '@khai96x/choose-text-editor': ^0.2.3
-  '@khai96x/git-utils': ^0.0.1
+  '@khai96x/git-utils': ^0.0.2
   '@khai96x/interval-observable-universe': ^0.0.4
   '@khai96x/list-shell-files': ^0.0.0
   '@khai96x/my-observables': ^0.0.7
