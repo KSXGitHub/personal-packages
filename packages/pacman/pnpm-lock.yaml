@@ -1,5 +1,4 @@
 dependencies:
-  '@tsfun/result': 0.0.19
   '@types/fs-extra': 9.0.1
   '@types/node': 14.6.0
   fs-extra: 9.0.1
@@ -20,51 +19,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
-  /@tsfun/prv-option-result-common/0.0.14:
-    dependencies:
-      '@types/node': 13.13.15
-      tslib: 1.13.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-Mh+8Xw8UwfDi1WSe1CG9ZYNgxo5/LVOmphV7lRIrBypjjNvBCyOTj0s+nH0E5CxzRjDCcAhhXOl5SlXEFAwFLQ==
-  /@tsfun/prv-types/0.0.9:
-    dependencies:
-      '@types/node': 13.13.15
-      tslib: 1.13.0
-    dev: false
-    resolution:
-      integrity: sha512-DgssZu94W1nUDjRNyhZBYVgAEGN5+t/3fkpQY95Ay/SMlaJ4GIUIDJOO9gaH0wWjC1+CCMfjbPKh7ECuOTzYPw==
-  /@tsfun/result/0.0.19:
-    dependencies:
-      '@tsfun/prv-option-result-common': 0.0.14
-      '@tsfun/prv-types': 0.0.9
-      '@tsfun/tap': 0.0.13
-      '@types/node': 13.13.15
-      tslib: 1.13.0
-    dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-9UEExaO0XIBM0S10JCB/9BODGJAhKC7/rwyp6OKJko2soAO2eiyp2Jd8CgL15iTNgOhIFKD27ZFTbVwergbL5Q==
-  /@tsfun/tap/0.0.13:
-    dependencies:
-      '@types/node': 13.13.15
-      tslib: 1.13.0
-    dev: false
-    resolution:
-      integrity: sha512-2iK0EnUQZeOQT4aZJbPvG9Hv0U9nHGxFVEemZffAlDkycVfE7klp0Kw/80SkiWVa23yqbDX5XR/KtnkVvvfDCg==
   /@types/fs-extra/9.0.1:
     dependencies:
       '@types/node': 14.6.0
     dev: false
     resolution:
       integrity: sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==
-  /@types/node/13.13.15:
-    dev: false
-    resolution:
-      integrity: sha512-kwbcs0jySLxzLsa2nWUAGOd/s21WU1jebrEdtzhsj1D4Yps1EOuyI1Qcu+FD56dL7NRNIJtDDjcqIG22NwkgLw==
   /@types/node/14.6.0:
     dev: false
     resolution:
@@ -128,10 +88,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
-  /tslib/1.13.0:
-    dev: false
-    resolution:
-      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
   /tslib/2.0.1:
     dev: false
     resolution:
@@ -172,7 +128,6 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@tsfun/result': ^0.0.19
   '@types/fs-extra': ^9.0.1
   '@types/node': ^14.6.0
   fs-extra: ^9.0.1

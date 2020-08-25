@@ -1,5 +1,3 @@
-export type { Result, Ok, Err } from '@tsfun/result'
-
 /** Interface of a single line of `pacman -Qu` */
 export interface QuLine {
   readonly packageName: string

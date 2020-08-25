@@ -1,4 +1,5 @@
-import { Result, ok, err } from '@tsfun/result'
+import { Result, Ok, Err, ok, err } from '@tsfun/result'
+export type { Result, Ok, Err }
 
 const requiredFields = [
   'pkgver',
