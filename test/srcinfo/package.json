@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "@khai96x/srcinfo": "file:../../packages/srcinfo",
+    "@types/fs-extra": "^9.0.1"
+  }
+}
