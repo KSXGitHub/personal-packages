@@ -15,6 +15,7 @@
   "keywords": [
     "archlinux",
     "pacman",
+    "srcinfo",
     "aur"
   ],
   "main": "index.js",
