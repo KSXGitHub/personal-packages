@@ -1,10 +1,10 @@
 export const requiredFields = [
   'pkgver',
   'pkgrel',
-  'epoch',
 ] as const
 
 export const partialFields = [
+  'epoch',
   'pkgdesc',
   'url',
   'install',
