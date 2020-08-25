@@ -43,7 +43,7 @@ export function parseSrcInfo(source: string): Result<SrcInfo, readonly ParseErro
   }
 
   for (const field of requiredFields) {
-    if (!lines.some(x => field === x.entry![0])) {
+    if (!lines.some(x => field === x.entry?.[0])) {
       errors.push({
         type: 'MissingRequiredField',
         field,
