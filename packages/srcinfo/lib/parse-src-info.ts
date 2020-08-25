@@ -34,7 +34,7 @@ export function parseSrcInfo(source: string): Result<SrcInfo, readonly ParseErro
   for (const { line, index, entry } of lines) {
     if (!entry) {
       errors.push({
-        type: 'Syntax',
+        type: 'InvalidSyntax',
         line,
         index,
         message: `Line ${index + 1} is invalid`,

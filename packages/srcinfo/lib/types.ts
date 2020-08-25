@@ -18,7 +18,7 @@ export type SrcInfo = Readonly<
 
 export type ParseError =
   & Readonly<
-    | { type: 'Syntax', line: string, index: number }
+    | { type: 'InvalidSyntax', line: string, index: number }
     | { type: 'MissingRequiredField', field: RequiredField }
   >
   & { readonly message: string }
