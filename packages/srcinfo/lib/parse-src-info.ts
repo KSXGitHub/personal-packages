@@ -66,3 +66,5 @@ export function parseSrcInfo(source: string): Result<SrcInfo, readonly ParseErro
 
   return ok({ ...uniques, ...arrays } as any)
 }
+
+export default parseSrcInfo
