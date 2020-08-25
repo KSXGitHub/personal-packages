@@ -22,3 +22,8 @@ end_of_line = crlf
 # Trailing White Space
 [*.{js,sh,json,md,{c,h}{,pp,xx},cc,hh,{c,le,sa}ss,{x,y,ht}ml}]
 trim_trailing_whitespace = true
+
+[*.SRCINFO]
+end_of_line = lf
+indent_style = tab
+indent_size = 4

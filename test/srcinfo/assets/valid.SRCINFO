@@ -1,0 +1,26 @@
+pkgbase = foo-bin
+	pkgdesc = An example .SRCINFO
+	pkgver = 0.1.2
+	pkgrel = 3
+	url = https://example.com
+	arch = x86_64
+	arch = i686
+	license = MIT
+	license = MPL
+	makedepends = coreutils
+	makedepends = ar
+	makedepends = tar
+	provides = foo
+	provides = bar
+	conflicts = foo
+	conflicts = foo-git
+	conflicts = bar
+	conflicts = bar-git
+	source = https://example.com/a.tar.gz
+	source = https://example.com/b.tar.gz
+	source = https://example.com/c.tar.gz
+	sha512sums = SKIP
+	sha512sums = SKIP
+	sha512sums = SKIP
+
+pkgname = foo-bin

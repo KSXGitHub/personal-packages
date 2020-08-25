@@ -6,6 +6,7 @@ dependencies:
   '@khai96x/my-observables': 'link:../my-observables'
   '@khai96x/pacman': 'link:../pacman'
   '@khai96x/shebang': 'link:../shebang'
+  '@khai96x/srcinfo': 'link:../srcinfo'
   '@types/node': 14.6.0
   tslib: 2.0.1
 lockfileVersion: 5.1
@@ -26,5 +27,6 @@ specifiers:
   '@khai96x/my-observables': ^0.0.7
   '@khai96x/pacman': ^0.0.1
   '@khai96x/shebang': ^0.0.0
+  '@khai96x/srcinfo': ^0.0.0
   '@types/node': ^14.6.0
   tslib: ^2.0.1

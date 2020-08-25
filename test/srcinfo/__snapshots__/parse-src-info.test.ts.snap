@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`invalid 1`] = `
+Object {
+  "error": Array [
+    Object {
+      "index": 2,
+      "line": "	url : https://example.com",
+      "message": "Line 3 is invalid",
+      "type": "InvalidSyntax",
+    },
+    Object {
+      "index": 3,
+      "line": "	arch : x86_64",
+      "message": "Line 4 is invalid",
+      "type": "InvalidSyntax",
+    },
+    Object {
+      "field": "pkgname",
+      "message": "Field \\"pkgname\\" is required but not found",
+      "type": "MissingRequiredField",
+    },
+    Object {
+      "field": "pkgver",
+      "message": "Field \\"pkgver\\" is required but not found",
+      "type": "MissingRequiredField",
+    },
+    Object {
+      "field": "pkgrel",
+      "message": "Field \\"pkgrel\\" is required but not found",
+      "type": "MissingRequiredField",
+    },
+  ],
+  "tag": false,
+}
+`;
+
+exports[`valid 1`] = `
+Object {
+  "tag": true,
+  "value": Object {
+    "arch": Array [
+      "x86_64",
+      "i686",
+    ],
+    "backup": Array [],
+    "changelog": undefined,
+    "checkdepends": Array [],
+    "conflicts": Array [
+      "foo",
+      "foo-git",
+      "bar",
+      "bar-git",
+    ],
+    "depends": Array [],
+    "epoch": undefined,
+    "groups": Array [],
+    "install": undefined,
+    "license": Array [
+      "MIT",
+      "MPL",
+    ],
+    "makedepends": Array [
+      "coreutils",
+      "ar",
+      "tar",
+    ],
+    "md5sums": Array [],
+    "noextract": Array [],
+    "optdepends": Array [],
+    "options": Array [],
+    "pkgdesc": "An example .SRCINFO",
+    "pkgname": "foo-bin",
+    "pkgrel": "3",
+    "pkgver": "0.1.2",
+    "provides": Array [
+      "foo",
+      "bar",
+    ],
+    "replaces": Array [],
+    "sha1sums": Array [],
+    "sha224sums": Array [],
+    "sha256sums": Array [],
+    "sha348sums": Array [],
+    "sha512sums": Array [
+      "SKIP",
+      "SKIP",
+      "SKIP",
+    ],
+    "source": Array [
+      "https://example.com/a.tar.gz",
+      "https://example.com/b.tar.gz",
+      "https://example.com/c.tar.gz",
+    ],
+    "url": "https://example.com",
+    "validgpgkeys": Array [],
+  },
+}
+`;
