@@ -16,6 +16,11 @@ Object {
       "type": "InvalidSyntax",
     },
     Object {
+      "field": "pkgname",
+      "message": "Field \\"pkgname\\" is required but not found",
+      "type": "MissingRequiredField",
+    },
+    Object {
       "field": "pkgver",
       "message": "Field \\"pkgver\\" is required but not found",
       "type": "MissingRequiredField",
@@ -65,6 +70,7 @@ Object {
     "optdepends": Array [],
     "options": Array [],
     "pkgdesc": "An example .SRCINFO",
+    "pkgname": "foo-bin",
     "pkgrel": "3",
     "pkgver": "0.1.2",
     "provides": Array [

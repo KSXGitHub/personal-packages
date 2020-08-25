@@ -1,4 +1,5 @@
 export const requiredFields = [
+  'pkgname',
   'pkgver',
   'pkgrel',
 ] as const
