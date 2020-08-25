@@ -1,0 +1,79 @@
+#! /usr/bin/env node
+const url = require('url')
+const fs = require('fs')
+const process = require('process')
+const git = require('isomorphic-git')
+const { parseSrcInfo } = require('@khai96x/srcinfo')
+
+const {
+  srcinfo,
+  gitdir,
+  remote,
+  urlPrefix,
+  replace,
+} = require('yargs')
+  .option('srcinfo', {
+    type: 'string',
+    describe: 'Path to .SRCINFO file',
+    default: '.SRCINFO',
+  })
+  .option('gitdir', {
+    type: 'string',
+    describe: 'Path to .git directory',
+    default: '.git'
+  })
+  .option('remote', {
+    type: 'string',
+    describe: 'Name of the remote',
+    default: 'aur',
+  })
+  .option('urlPrefix', {
+    type: 'string',
+    describe: 'Prefix of remote URL',
+    default: 'ssh://aur@aur.archlinux.org/',
+  })
+  .option('replace', {
+    type: 'boolean',
+    describe: 'Call `git set-url` should remote already exist',
+  })
+  .help()
+  .argv
+
+const Status = {
+  Success: 0,
+  GenericFailure: 1,
+  InvalidSrcInfo: 2,
+  RemoteExists: 3,
+}
+
+async function main() {
+  const result = parseSrcInfo(fs.readFileSync(srcinfo, 'utf8'))
+
+  if (!result.tag) {
+    for (const { type, message } of result.error) {
+      console.error(`[ERROR] ${type}: ${message}`)
+    }
+
+    return Status.InvalidSrcInfo
+  }
+
+  const remoteUrl = url.resolve(urlPrefix, result.value.pkgname + '.git')
+  const remoteList = await git.listRemotes({ fs, gitdir })
+
+  if (remoteList.some(x => x.remote === remote)) {
+    if (replace) {
+      console.error(`[INFO] Remote ${remote} already exists. Replacing...`)
+    } else {
+      console.error(`[ERROR] Remote ${remote} already exists.`)
+      return Status.RemoteExists
+    }
+  }
+  await git.addRemote({ fs, gitdir, remote, url: remoteUrl, force: true })
+  console.error(`[INFO] Set remote ${remote} to '${remoteUrl}'`)
+  return Status.Success
+}
+
+main().then(process.exit).catch(error => {
+  console.error(error)
+  throw process.exit(Status.GenericFailure)
+})

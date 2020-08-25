@@ -1,6 +1,7 @@
 dependencies:
   '@khai96x/bump-package-versions': 'link:../bump-package-versions'
   '@khai96x/choose-text-editor': 'link:../choose-text-editor'
+  '@khai96x/git-utils': 'link:../git-utils'
   '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
   '@khai96x/list-shell-files': 'link:../list-shell-files'
   '@khai96x/my-observables': 'link:../my-observables'
@@ -22,6 +23,7 @@ packages:
 specifiers:
   '@khai96x/bump-package-versions': ^0.0.2
   '@khai96x/choose-text-editor': ^0.2.3
+  '@khai96x/git-utils': ^0.0.0
   '@khai96x/interval-observable-universe': ^0.0.4
   '@khai96x/list-shell-files': ^0.0.0
   '@khai96x/my-observables': ^0.0.7
