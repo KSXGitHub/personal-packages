@@ -1,0 +1,34 @@
+{
+  "name": "@khai96x/git-utils",
+  "version": "0.0.0",
+  "description": "Convenient git subcommands",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSXGitHub/personal-packages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSXGitHub/personal-packages/issues"
+  },
+  "keywords": [
+    "git",
+    "util"
+  ],
+  "main": "index.js",
+  "module": "index.mjs",
+  "browser": "index.mjs",
+  "scripts": {
+    "git-set-aur": "./bin/git-set-aur"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "isomorphic-git": "^1.7.4",
+    "yargs": "^15.4.1",
+    "tslib": "^2.0.1",
+    "@khai96x/srcinfo": "^0.0.0",
+    "@types/yargs": "^15.0.5",
+    "@types/node": "^14.6.0"
+  }
+}
