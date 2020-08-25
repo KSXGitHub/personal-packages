@@ -14,7 +14,7 @@ type SrcInfoLines = ReadonlyArray<readonly [string, string]>
 const getUnique = (
   source: SrcInfoLines,
   key: RequiredField | PartialField,
-) => source.find(pair => key === pair[0])?.[1] ?? null
+) => source.find(pair => key === pair[0])?.[1]
 
 const getArray = (
   source: SrcInfoLines,
