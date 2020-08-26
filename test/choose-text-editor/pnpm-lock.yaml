@@ -1,58 +1,58 @@
 dependencies:
   '@khai96x/choose-text-editor': 'link:../../packages/choose-text-editor'
-  '@tsfun/option': 0.0.18
-  '@tsfun/result': 0.0.19
+  '@tsfun/option': 0.0.19
+  '@tsfun/result': 0.0.20
   '@types/fs-extra': 9.0.1
   fs-extra: 9.0.1
 lockfileVersion: 5.1
 packages:
-  /@tsfun/option/0.0.18:
+  /@tsfun/option/0.0.19:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.14
-      '@tsfun/prv-types': 0.0.9
-      '@tsfun/tap': 0.0.13
-      '@types/node': 13.7.7
-      tslib: 1.13.0
+      '@tsfun/prv-option-result-common': 0.0.15
+      '@tsfun/prv-types': 0.0.10
+      '@tsfun/tap': 0.0.14
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-ZxsSiStjCXb2/P2LkcSD3h5eZQKMlA51c/GIe0pbVTWaWkqj7kJsMUIulc4cv5wKg0YoT4Au6M6ehrgPzS8WiQ==
-  /@tsfun/prv-option-result-common/0.0.14:
+      integrity: sha512-qOiWLoJb2P25/PC/0GbxeTCGFeOc8FJfI3+dLccBne/pjUuEri+JypZJKMkDgnrWhIWxNxZqsGlac+sy8SMr6A==
+  /@tsfun/prv-option-result-common/0.0.15:
     dependencies:
-      '@types/node': 13.7.7
-      tslib: 1.13.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-Mh+8Xw8UwfDi1WSe1CG9ZYNgxo5/LVOmphV7lRIrBypjjNvBCyOTj0s+nH0E5CxzRjDCcAhhXOl5SlXEFAwFLQ==
-  /@tsfun/prv-types/0.0.9:
+      integrity: sha512-oqmmMHkoD1IXADxtOupJ9JFBcocuToxbSuqMIw3VszZIyvysJ3t9y+LlP+qxo92pOj/GJz4oohhzKBHkaaLqWA==
+  /@tsfun/prv-types/0.0.10:
     dependencies:
-      '@types/node': 13.7.7
-      tslib: 1.13.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-DgssZu94W1nUDjRNyhZBYVgAEGN5+t/3fkpQY95Ay/SMlaJ4GIUIDJOO9gaH0wWjC1+CCMfjbPKh7ECuOTzYPw==
-  /@tsfun/result/0.0.19:
+      integrity: sha512-8QJUR81Zyf9gLhl7llp10bTZ+4WgXBM6LaiKZTmgjmviggFIQobm1hDzirZ9gUMxG1lGtTr4glszSkvuCcSjaA==
+  /@tsfun/result/0.0.20:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.14
-      '@tsfun/prv-types': 0.0.9
-      '@tsfun/tap': 0.0.13
-      '@types/node': 13.7.7
-      tslib: 1.13.0
+      '@tsfun/prv-option-result-common': 0.0.15
+      '@tsfun/prv-types': 0.0.10
+      '@tsfun/tap': 0.0.14
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-9UEExaO0XIBM0S10JCB/9BODGJAhKC7/rwyp6OKJko2soAO2eiyp2Jd8CgL15iTNgOhIFKD27ZFTbVwergbL5Q==
-  /@tsfun/tap/0.0.13:
+      integrity: sha512-7IXm8ab6hRl7dNliHvFCoHdDXcDITSOPFKZl+7VxEKTXXmSrUe5QupvzzBro1G5Q104do/xiHZT1RBhwLzg1iw==
+  /@tsfun/tap/0.0.14:
     dependencies:
-      '@types/node': 13.7.7
-      tslib: 1.13.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-2iK0EnUQZeOQT4aZJbPvG9Hv0U9nHGxFVEemZffAlDkycVfE7klp0Kw/80SkiWVa23yqbDX5XR/KtnkVvvfDCg==
+      integrity: sha512-hXrhnrFidsbi4zeo6HaiHEMFLcjNTSc4osYps2Py7cgbgwW6nNxcZwRbDlQaMIdvpuQuHFd1+bxhDYQ0C9r6xA==
   /@types/fs-extra/9.0.1:
     dependencies:
       '@types/node': 13.7.7
@@ -63,6 +63,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Uo4chgKbnPNlxQwoFmYIwctkQVkMMmsAoGGU4JKwLuvBefF0pCq4FybNSnfkfRCpC7ZW7kttcC/TrRtAJsvGtg==
+  /@types/node/14.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /at-least-node/1.0.0:
     dev: false
     engines:
@@ -92,10 +96,10 @@ packages:
       graceful-fs: 4.2.3
     resolution:
       integrity: sha512-jR2b5v7d2vIOust+w3wtFKZIfpC2pnRmFAhAC/BuweZFQR8qZzxH1OyrQ10HmdVYiXWkYUqPVsz91cG7EL2FBg==
-  /tslib/1.13.0:
+  /tslib/2.0.1:
     dev: false
     resolution:
-      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /universalify/1.0.0:
     dev: false
     engines:
@@ -104,7 +108,7 @@ packages:
       integrity: sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==
 specifiers:
   '@khai96x/choose-text-editor': 'file:../../packages/choose-text-editor'
-  '@tsfun/option': ^0.0.18
-  '@tsfun/result': ^0.0.19
+  '@tsfun/option': ^0.0.19
+  '@tsfun/result': ^0.0.20
   '@types/fs-extra': ^9.0.1
   fs-extra: ^9.0.1

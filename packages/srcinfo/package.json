@@ -28,7 +28,7 @@
   "dependencies": {
     "yargs": "^15.4.1",
     "tslib": "^2.0.1",
-    "@tsfun/result": "^0.0.19",
+    "@tsfun/result": "^0.0.20",
     "@types/yargs": "^15.0.5",
     "@types/node": "^14.6.0"
   }
