@@ -403,7 +403,7 @@ packages:
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
-  '@khai96x/srcinfo': ^0.0.2
+  '@khai96x/srcinfo': ^0.0.3
   '@tsfun/result': ^0.0.20
   '@types/node': ^14.6.0
   '@types/yargs': ^15.0.5
