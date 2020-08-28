@@ -26,8 +26,8 @@
     "jsonschema": "^1.2.6",
     "cosmiconfig": "^7.0.0",
     "yargs": "^15.4.1",
-    "exec-once": "^0.1.7",
-    "string-template-format-inspect": "^0.1.7",
+    "exec-once": "^0.1.8",
+    "string-template-format-inspect": "^0.1.8",
     "@tsfun/option": "^0.0.19",
     "@tsfun/result": "^0.0.20",
     "@khai96x/utils": "^0.0.2",
@@ -38,6 +38,6 @@
     "@types/parse-package-name": "^0.1.0",
     "@types/shell-escape": "^0.2.0",
     "@types/yargs": "^15.0.5",
-    "@types/node": "^14.6.0"
+    "@types/node": "^14.6.1"
   }
 }

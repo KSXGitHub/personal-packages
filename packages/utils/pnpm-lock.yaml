@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 14.6.0
+  '@types/node': 14.6.1
   iter-tools: 6.2.6
   tslib: 2.0.1
 lockfileVersion: 5.1
@@ -17,10 +17,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-SQ0sS7KUJDvgCI2cpZG0nJygO6002oTbhgSuw4WcocsnbxLwL5Q8I3fqbJdyBAc3uFrWZiR2JomseuxSuci3SQ==
-  /@types/node/14.6.0:
+  /@types/node/14.6.1:
     dev: false
     resolution:
-      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
+      integrity: sha512-HnYlg/BRF8uC1FyKRFZwRaCPTPYKa+6I8QiUZFLredaGOou481cgFS4wKRFyKvQtX8xudqkSdBczJHIYSQYKrQ==
   /core-js/2.6.10:
     dev: false
     requiresBuild: true
@@ -84,6 +84,6 @@ packages:
     resolution:
       integrity: sha512-bUUsGr7NuI1p/6GpDCI/PUCJ1y5KWO4xul8RWOcmUwXSjLoi6WoV9YLNqBF7lH4RRy/jgmhYCE49eM0bnaijMQ==
 specifiers:
-  '@types/node': ^14.6.0
+  '@types/node': ^14.6.1
   iter-tools: ^6.2.6
   tslib: ^2.0.1

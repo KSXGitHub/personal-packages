@@ -1,12 +1,12 @@
 dependencies:
   '@types/fs-extra': 9.0.1
-  '@types/node': 14.6.0
+  '@types/node': 14.6.1
   '@types/semver': 7.3.3
   '@types/yargs': 15.0.5
   fs-extra: 9.0.1
-  just-json-type: 0.1.6
+  just-json-type: 0.1.7
   semver: 7.3.2
-  string-template-format-inspect: 0.1.7
+  string-template-format-inspect: 0.1.8
   tslib: 2.0.1
   yargs: 15.4.1
 lockfileVersion: 5.1
@@ -17,14 +17,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==
-  /@types/node/13.13.15:
-    dev: false
-    resolution:
-      integrity: sha512-kwbcs0jySLxzLsa2nWUAGOd/s21WU1jebrEdtzhsj1D4Yps1EOuyI1Qcu+FD56dL7NRNIJtDDjcqIG22NwkgLw==
   /@types/node/14.6.0:
     dev: false
     resolution:
       integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
+  /@types/node/14.6.1:
+    dev: false
+    resolution:
+      integrity: sha512-HnYlg/BRF8uC1FyKRFZwRaCPTPYKa+6I8QiUZFLredaGOou481cgFS4wKRFyKvQtX8xudqkSdBczJHIYSQYKrQ==
   /@types/semver/7.3.3:
     dev: false
     resolution:
@@ -139,13 +139,13 @@ packages:
       graceful-fs: 4.2.2
     resolution:
       integrity: sha512-jR2b5v7d2vIOust+w3wtFKZIfpC2pnRmFAhAC/BuweZFQR8qZzxH1OyrQ10HmdVYiXWkYUqPVsz91cG7EL2FBg==
-  /just-json-type/0.1.6:
+  /just-json-type/0.1.7:
     dependencies:
-      '@types/node': 13.13.15
-      tslib: 1.11.1
+      '@types/node': 14.6.1
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-kcUAgs8q/uVCb2yRkGS4xbo+UGYfJSfUYK4a8BSERfo2tV0Zk/SzRskSPKOd6P70NUmYkBGgDu8n+3YLX3dA2w==
+      integrity: sha512-s5SXWxOCMYiDLGyLzyKuFPZAvxwENKA7pN+Tg90eBNtICpxH1/Kt/NcCmyKLkyuGHfyaHQzcG5pkBRRqyLZ1/w==
   /locate-path/5.0.0:
     dependencies:
       p-locate: 4.1.0
@@ -203,21 +203,21 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BF+XgtARrppoA93TgrJDkrPYkPc=
-  /string-template-format-base/0.1.6:
+  /string-template-format-base/0.1.7:
     dependencies:
-      '@types/node': 13.13.15
-      tslib: 1.11.1
+      '@types/node': 14.6.1
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-4mvYtipF6d/XUUEQ5/V/EHlnT1JhdrfOIen2GO7gdt2grF8sd2Wi8+Frmyr0+huedmloca51vvk6R0xYBdr/Hw==
-  /string-template-format-inspect/0.1.7:
+      integrity: sha512-ySUoRCuRa6nhwJ6Xcu41VEpvwuDDVVPPqOnEf4P0UG4L860xbvC66YH0xno7dKW2JjN8jX0YstAcGk2q6Z6JzA==
+  /string-template-format-inspect/0.1.8:
     dependencies:
-      '@types/node': 13.13.15
-      string-template-format-base: 0.1.6
-      tslib: 1.11.1
+      '@types/node': 14.6.1
+      string-template-format-base: 0.1.7
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-1TsPe/viDWaZU6s0vRL0JgKqgZZlzrVfzLOL6CkOX+l2nvOADQh6cjfLOXgYKs/1AW/rBbINRDOZi9KDxw9q3Q==
+      integrity: sha512-k3lQNBDZ8o6Q0o9WYXLUgKwDtmn1OpERFJZb4NPwG2MvgDD2iI6+9yDVK66WsyGI90ljF2wh/5KjO0E5tIE1Ig==
   /string-width/4.2.0:
     dependencies:
       emoji-regex: 8.0.0
@@ -236,10 +236,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
-  /tslib/1.11.1:
-    dev: false
-    resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
   /tslib/2.0.1:
     dev: false
     resolution:
@@ -297,12 +293,12 @@ packages:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
   '@types/fs-extra': ^9.0.1
-  '@types/node': ^14.6.0
+  '@types/node': ^14.6.1
   '@types/semver': ^7.3.3
   '@types/yargs': ^15.0.5
   fs-extra: ^9.0.1
-  just-json-type: ^0.1.6
+  just-json-type: ^0.1.7
   semver: ^7.3.2
-  string-template-format-inspect: ^0.1.7
+  string-template-format-inspect: ^0.1.8
   tslib: ^2.0.1
   yargs: ^15.4.1
