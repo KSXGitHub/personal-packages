@@ -24,10 +24,11 @@ export function main(param: Param): Promise<number> {
   const include: {
     (directory: string, name: string): boolean | Promise<boolean>
   } = directoriesOnly
-    ? (directory, name) => stat(path.join(directory, name)).then(
-      stats => stats.isDirectory(),
-      () => false,
-    )
+    ? (directory, name) =>
+      stat(path.join(directory, name)).then(
+        stats => stats.isDirectory(),
+        () => false,
+      )
     : () => true
 
   function loop(directory: string): Promise<number> {
