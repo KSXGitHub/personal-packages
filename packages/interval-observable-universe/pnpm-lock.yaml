@@ -1,5 +1,5 @@
 dependencies:
-  '@types/node': 14.6.1
+  '@types/node': 14.6.2
   advanced-map-initialized: 0.0.4
   rxjs: 6.6.2
   tslib: 2.0.1
@@ -17,10 +17,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/14.6.1:
+  /@types/node/14.6.2:
     dev: false
     resolution:
-      integrity: sha512-HnYlg/BRF8uC1FyKRFZwRaCPTPYKa+6I8QiUZFLredaGOou481cgFS4wKRFyKvQtX8xudqkSdBczJHIYSQYKrQ==
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
   /advanced-map-base/0.0.4:
     dependencies:
       '@types/node': 13.1.6
@@ -84,7 +84,7 @@ packages:
     resolution:
       integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
 specifiers:
-  '@types/node': ^14.6.1
+  '@types/node': ^14.6.2
   advanced-map-initialized: ^0.0.4
   rxjs: ^6.6.2
   tslib: ^2.0.1

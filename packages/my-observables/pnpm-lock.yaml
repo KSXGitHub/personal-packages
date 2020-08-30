@@ -1,7 +1,7 @@
 dependencies:
   '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
   '@khai96x/pacman': 'link:../pacman'
-  '@types/node': 14.6.1
+  '@types/node': 14.6.2
   advanced-spawn-async: 0.1.3
   iter-tools: 6.2.6
   tslib: 2.0.1
@@ -24,10 +24,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
-  /@types/node/14.6.1:
+  /@types/node/14.6.2:
     dev: false
     resolution:
-      integrity: sha512-HnYlg/BRF8uC1FyKRFZwRaCPTPYKa+6I8QiUZFLredaGOou481cgFS4wKRFyKvQtX8xudqkSdBczJHIYSQYKrQ==
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
   /advanced-spawn-async/0.1.3:
     dependencies:
       '@types/node': 14.6.0
@@ -101,7 +101,7 @@ packages:
 specifiers:
   '@khai96x/interval-observable-universe': ^0.0.5
   '@khai96x/pacman': ^0.0.4
-  '@types/node': ^14.6.1
+  '@types/node': ^14.6.2
   advanced-spawn-async: ^0.1.3
   iter-tools: ^6.2.6
   tslib: ^2.0.1
