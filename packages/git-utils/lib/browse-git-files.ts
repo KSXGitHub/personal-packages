@@ -1,5 +1,8 @@
+import path from 'path'
 import { SpawnOptions, spawn } from 'child_process'
+import { cwd, exit } from 'process'
 import { pipe, asyncMap, asyncFlat, asyncSplitLines, asyncFilter, asyncConcat } from 'iter-tools'
+import { pathExists } from 'fs-extra'
 
 const spawnOptions: SpawnOptions = {
   stdio: ['pipe', 'pipe', 'inherit'],
@@ -46,10 +49,31 @@ export async function* gitStatus() {
   )
 }
 
+export async function findRepoRoot() {
+  let current = cwd()
+  while (!await pathExists(path.resolve(current, '.git'))) {
+    const parent = path.dirname(current)
+    if (parent === current) throw new Error('Not a git repo')
+    current = parent
+  }
+  return current
+}
+
 export async function* untrackedFiles() {
+  const workingDirectory = cwd()
+  const repoRoot = await findRepoRoot()
+  let prefix: string
+  if (workingDirectory.startsWith(repoRoot)) {
+    prefix = workingDirectory.slice(repoRoot.length)
+  } else {
+    throw new Error(`Working directory (${workingDirectory}) does not belong to repo root (${repoRoot})`)
+  }
+
   yield* pipe(
     gitStatus(),
     asyncMap(status => status.name),
+    asyncFilter(name => name.startsWith(prefix)),
+    asyncMap(name => name.slice(prefix.length)),
   )
 }
 
@@ -79,13 +103,12 @@ export function main(param: Param): Promise<number> {
     cp.on('close', resolve)
 
     for await (const line of inputLines) {
-      cp.stdin.write(line + '\n')
+      if (line.trim()) cp.stdin.write(line + '\n')
     }
   })
 }
 
 export async function program(defaultFuzzyFinder?: string) {
-  const { exit } = await import('process')
   const { default: yargs } = await import('yargs')
 
   const param: Param = yargs
