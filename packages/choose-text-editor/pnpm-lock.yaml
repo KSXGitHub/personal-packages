@@ -224,6 +224,7 @@ packages:
     resolution:
       integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
   /core-js/2.6.10:
+    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
     dev: false
     requiresBuild: true
     resolution:
@@ -611,7 +612,7 @@ packages:
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
-  '@khai96x/utils': ^0.0.2
+  '@khai96x/utils': ^0.0.3
   '@tsfun/option': ^0.0.19
   '@tsfun/result': ^0.0.20
   '@types/js-yaml': ^3.12.5

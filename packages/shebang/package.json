@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/shebang",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extract shebang information from a file",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

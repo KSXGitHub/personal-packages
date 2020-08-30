@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/choose-text-editor",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Get path to a text editor executable base on some environment variables",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "string-template-format-inspect": "^0.1.8",
     "@tsfun/option": "^0.0.19",
     "@tsfun/result": "^0.0.20",
-    "@khai96x/utils": "^0.0.2",
+    "@khai96x/utils": "^0.0.3",
     "tslib": "^2.0.1",
     "@types/which": "^1.3.2",
     "@types/semver": "^7.3.3",

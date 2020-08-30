@@ -24,7 +24,7 @@ packages:
       integrity: sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
   /@tsfun/prv-option-result-common/0.0.15:
     dependencies:
-      '@types/node': 14.6.0
+      '@types/node': 14.6.2
       tslib: 2.0.1
     dev: false
     engines:
@@ -33,7 +33,7 @@ packages:
       integrity: sha512-oqmmMHkoD1IXADxtOupJ9JFBcocuToxbSuqMIw3VszZIyvysJ3t9y+LlP+qxo92pOj/GJz4oohhzKBHkaaLqWA==
   /@tsfun/prv-types/0.0.10:
     dependencies:
-      '@types/node': 14.6.0
+      '@types/node': 14.6.2
       tslib: 2.0.1
     dev: false
     resolution:
@@ -43,7 +43,7 @@ packages:
       '@tsfun/prv-option-result-common': 0.0.15
       '@tsfun/prv-types': 0.0.10
       '@tsfun/tap': 0.0.14
-      '@types/node': 14.6.0
+      '@types/node': 14.6.2
       tslib: 2.0.1
     dev: false
     engines:
@@ -52,7 +52,7 @@ packages:
       integrity: sha512-7IXm8ab6hRl7dNliHvFCoHdDXcDITSOPFKZl+7VxEKTXXmSrUe5QupvzzBro1G5Q104do/xiHZT1RBhwLzg1iw==
   /@tsfun/tap/0.0.14:
     dependencies:
-      '@types/node': 14.6.0
+      '@types/node': 14.6.2
       tslib: 2.0.1
     dev: false
     resolution:
@@ -61,10 +61,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/node/14.6.0:
-    dev: false
-    resolution:
-      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /@types/node/14.6.2:
     dev: false
     resolution:
@@ -480,7 +476,7 @@ packages:
     resolution:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
-  '@khai96x/srcinfo': ^0.0.3
+  '@khai96x/srcinfo': ^0.0.4
   '@tsfun/result': ^0.0.20
   '@types/node': ^14.6.2
   '@types/yargs': ^15.0.5
