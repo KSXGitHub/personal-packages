@@ -1,4 +1,5 @@
 dependencies:
+  '@khai96x/browse-fs-tree': 'link:../browse-fs-tree'
   '@khai96x/bump-package-versions': 'link:../bump-package-versions'
   '@khai96x/choose-text-editor': 'link:../choose-text-editor'
   '@khai96x/git-utils': 'link:../git-utils'
@@ -8,19 +9,20 @@ dependencies:
   '@khai96x/pacman': 'link:../pacman'
   '@khai96x/shebang': 'link:../shebang'
   '@khai96x/srcinfo': 'link:../srcinfo'
-  '@types/node': 14.6.1
+  '@types/node': 14.6.2
   tslib: 2.0.1
 lockfileVersion: 5.1
 packages:
-  /@types/node/14.6.1:
+  /@types/node/14.6.2:
     dev: false
     resolution:
-      integrity: sha512-HnYlg/BRF8uC1FyKRFZwRaCPTPYKa+6I8QiUZFLredaGOou481cgFS4wKRFyKvQtX8xudqkSdBczJHIYSQYKrQ==
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
   /tslib/2.0.1:
     dev: false
     resolution:
       integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 specifiers:
+  '@khai96x/browse-fs-tree': ^0.0.0
   '@khai96x/bump-package-versions': ^0.0.3
   '@khai96x/choose-text-editor': ^0.2.6
   '@khai96x/git-utils': ^0.0.5
@@ -30,5 +32,5 @@ specifiers:
   '@khai96x/pacman': ^0.0.4
   '@khai96x/shebang': ^0.0.1
   '@khai96x/srcinfo': ^0.0.3
-  '@types/node': ^14.6.1
+  '@types/node': ^14.6.2
   tslib: ^2.0.1

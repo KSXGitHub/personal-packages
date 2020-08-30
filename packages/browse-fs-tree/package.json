@@ -1,7 +1,7 @@
 {
-  "name": "@khai96x/bump-package-versions",
-  "version": "0.0.3",
-  "description": "Bump \"version\" field of multiple package.json files",
+  "name": "@khai96x/browse-fs-tree",
+  "version": "0.0.0",
+  "description": "Use a fuzzy finder program to browse files and directories",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
@@ -13,28 +13,22 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "keywords": [
-    "package",
-    "json",
-    "version",
-    "semver"
+    "fzf",
+    "browser",
+    "spawn"
   ],
+  "main": "index.js",
+  "module": "index.mjs",
+  "browser": "index.mjs",
   "sideEffects": false,
   "bin": {
-    "bump-package-versions": "bin/index",
-    "inc-package-versions": "bin/index",
-    "bump-pkg-vers": "bin/index",
-    "inc-pkg-vers": "bin/index",
-    "bumppkgvers": "bin/index",
-    "incpkgvers": "bin/index"
+    "browse-fs-tree": "./bin/browse-fs-tree"
   },
   "dependencies": {
-    "semver": "^7.3.2",
     "fs-extra": "^9.0.1",
     "yargs": "^15.4.1",
-    "just-json-type": "^0.1.7",
-    "string-template-format-inspect": "^0.1.8",
     "tslib": "^2.0.1",
-    "@types/semver": "^7.3.3",
+    "@tsfun/result": "^0.0.20",
     "@types/fs-extra": "^9.0.1",
     "@types/yargs": "^15.0.5",
     "@types/node": "^14.6.2"
