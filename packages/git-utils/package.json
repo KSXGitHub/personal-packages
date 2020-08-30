@@ -20,10 +20,15 @@
   "module": "index.mjs",
   "browser": "index.mjs",
   "bin": {
+    "browse-git-files": "./bin/browse-git-files",
+    "git-browse-files": "./bin/browse-git-files",
+    "git-sk": "./bin/git-sk",
+    "git-fzf": "./bin/git-fzf",
     "git-set-aur": "./bin/git-set-aur"
   },
   "sideEffects": false,
   "dependencies": {
+    "iter-tools": "^6.2.6",
     "isomorphic-git": "^1.7.4",
     "yargs": "^15.4.1",
     "@tsfun/result": "^0.0.20",
