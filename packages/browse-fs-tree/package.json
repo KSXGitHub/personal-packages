@@ -1,0 +1,28 @@
+{
+  "name": "@khai96x/browse-fs-tree",
+  "version": "0.0.0",
+  "description": "Use a fuzzy finder program to browse files and directories",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/KSXGitHub/personal-packages#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSXGitHub/personal-packages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KSXGitHub/personal-packages/issues"
+  },
+  "keywords": [
+    "fzf",
+    "browser",
+    "spawn"
+  ],
+  "main": "index.js",
+  "module": "index.mjs",
+  "browser": "index.mjs",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.0.1",
+    "@types/node": "^14.6.1"
+  }
+}
