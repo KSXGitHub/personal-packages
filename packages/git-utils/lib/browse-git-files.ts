@@ -10,7 +10,7 @@ interface Chunk {
 }
 
 export async function* lines(chunks: AsyncIterable<Chunk>) {
-  yield * pipe(
+  yield* pipe(
     chunks,
     asyncMap(String),
     asyncFlat(1),
@@ -38,7 +38,7 @@ export function parsePorcelainLine(line: string): GitStatus | null {
 
 export async function* gitStatus() {
   const cp = spawn('git', ['status', '--porcelain=v1'], spawnOptions)
-  yield * pipe(
+  yield* pipe(
     cp.stdout!,
     lines,
     asyncMap(parsePorcelainLine),
@@ -47,7 +47,7 @@ export async function* gitStatus() {
 }
 
 export async function* untrackedFiles() {
-  yield * pipe(
+  yield* pipe(
     gitStatus(),
     asyncMap(status => status.name),
   )
@@ -93,9 +93,7 @@ export async function program(defaultFuzzyFinder?: string) {
       alias: ['P'],
       type: 'string',
       describe: 'Command to spawn fuzzy finder',
-      ...defaultFuzzyFinder
-        ? { default: defaultFuzzyFinder }
-        : { required: true },
+      ...defaultFuzzyFinder ? { default: defaultFuzzyFinder } : { required: true },
     })
     .option('untracked', {
       alias: ['u'],
