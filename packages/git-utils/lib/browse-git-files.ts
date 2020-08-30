@@ -60,20 +60,13 @@ export async function findRepoRoot() {
 }
 
 export async function* untrackedFiles() {
-  const workingDirectory = cwd()
-  const repoRoot = await findRepoRoot()
-  let prefix: string
-  if (workingDirectory.startsWith(repoRoot)) {
-    prefix = workingDirectory.slice(repoRoot.length)
-  } else {
-    throw new Error(`Working directory (${workingDirectory}) does not belong to repo root (${repoRoot})`)
-  }
+  const prefix = path.relative(await findRepoRoot(), cwd())
 
   yield* pipe(
     gitStatus(),
     asyncMap(status => status.name),
     asyncFilter(name => name.startsWith(prefix)),
-    asyncMap(name => name.slice(prefix.length)),
+    asyncMap(name => path.relative(prefix, name)),
   )
 }
 
