@@ -79,7 +79,7 @@ export function main(param: Param): Promise<number> {
     cp.on('close', resolve)
 
     for await (const line of inputLines) {
-      cp.stdin.write(line + '\n')
+      if (line.trim()) cp.stdin.write(line + '\n')
     }
   })
 }
