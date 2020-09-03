@@ -1,0 +1,18 @@
+#! /usr/bin/env node
+const { exit } = require('process')
+const getStdIn = require('get-stdin')
+const { parsePorcelainStatus } = require('../lib/parse-porcelain-status')
+
+async function main() {
+  let input = await getStdIn()
+  while (input.endsWith('\n')) {
+    input = input.slice(0, -1)
+  }
+  console.info(JSON.stringify(parsePorcelainStatus(input)))
+  return 0
+}
+
+main().then(exit).catch(error => {
+  console.error(error)
+  exit(1)
+})

@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parsePorcelainStatus separator is not a space 1`] = `"Third character of plain"`;
+
+exports[`parsePorcelainStatus success 1`] = `
+Array [
+  Object {
+    "path": "unstaged new file",
+    "plain": "?? unstaged new file",
+    "value": Object {
+      "plain": "??",
+      "staged": "?",
+      "unstaged": "?",
+    },
+  },
+  Object {
+    "path": "unstaged deleted file",
+    "plain": " D unstaged deleted file",
+    "value": Object {
+      "plain": " D",
+      "staged": " ",
+      "unstaged": "D",
+    },
+  },
+  Object {
+    "path": "unstaged modified file",
+    "plain": " M unstaged modified file",
+    "value": Object {
+      "plain": " M",
+      "staged": " ",
+      "unstaged": "M",
+    },
+  },
+  Object {
+    "path": "staged new file",
+    "plain": "A  staged new file",
+    "value": Object {
+      "plain": "A ",
+      "staged": "A",
+      "unstaged": " ",
+    },
+  },
+  Object {
+    "path": "staged deleted file",
+    "plain": "D  staged deleted file",
+    "value": Object {
+      "plain": "D ",
+      "staged": "D",
+      "unstaged": " ",
+    },
+  },
+  Object {
+    "path": "staged modified file",
+    "plain": "M  staged modified file",
+    "value": Object {
+      "plain": "M ",
+      "staged": "M",
+      "unstaged": " ",
+    },
+  },
+  Object {
+    "path": "added and deleted",
+    "plain": "AD added and deleted",
+    "value": Object {
+      "plain": "AD",
+      "staged": "A",
+      "unstaged": "D",
+    },
+  },
+  Object {
+    "path": "added and modified",
+    "plain": "AM added and modified",
+    "value": Object {
+      "plain": "AM",
+      "staged": "A",
+      "unstaged": "M",
+    },
+  },
+  Object {
+    "path": "modified twice",
+    "plain": "MM modified twice",
+    "value": Object {
+      "plain": "MM",
+      "staged": "M",
+      "unstaged": "M",
+    },
+  },
+]
+`;
+
+exports[`parsePorcelainStatusValue excessive characters 1`] = `"Excessive characters: ???"`;
+
+exports[`parsePorcelainStatusValue invalid staged character 1`] = `"[?, A, D, M,  ] does not include *"`;
+
+exports[`parsePorcelainStatusValue invalid unstaged character 1`] = `"[?, D, M,  ] does not include A"`;
+
+exports[`parsePorcelainStatusValue success 1`] = `
+Array [
+  Object {
+    "plain": "??",
+    "staged": "?",
+    "unstaged": "?",
+  },
+  Object {
+    "plain": " M",
+    "staged": " ",
+    "unstaged": "M",
+  },
+  Object {
+    "plain": " D",
+    "staged": " ",
+    "unstaged": "D",
+  },
+  Object {
+    "plain": "A ",
+    "staged": "A",
+    "unstaged": " ",
+  },
+  Object {
+    "plain": "M ",
+    "staged": "M",
+    "unstaged": " ",
+  },
+  Object {
+    "plain": "D ",
+    "staged": "D",
+    "unstaged": " ",
+  },
+  Object {
+    "plain": "AD",
+    "staged": "A",
+    "unstaged": "D",
+  },
+  Object {
+    "plain": "AM",
+    "staged": "A",
+    "unstaged": "M",
+  },
+  Object {
+    "plain": "MD",
+    "staged": "M",
+    "unstaged": "D",
+  },
+]
+`;

@@ -1,0 +1,5 @@
+dependencies:
+  '@khai96x/git-utils': 'link:../../packages/git-utils'
+lockfileVersion: 5.1
+specifiers:
+  '@khai96x/git-utils': 'file:../../packages/git-utils'

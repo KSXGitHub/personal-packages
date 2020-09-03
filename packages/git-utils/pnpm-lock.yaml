@@ -2,9 +2,12 @@ dependencies:
   '@khai96x/srcinfo': 'link:../srcinfo'
   '@tsfun/result': 0.0.20
   '@types/fs-extra': 9.0.1
+  '@types/get-stdin': 7.0.0
   '@types/node': 14.6.2
   '@types/yargs': 15.0.5
+  exec-once: 0.1.8
   fs-extra: 9.0.1
+  get-stdin: 8.0.0
   isomorphic-git: 1.7.4
   iter-tools: 6.2.6
   tslib: 2.0.1
@@ -69,6 +72,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==
+  /@types/get-stdin/7.0.0:
+    dependencies:
+      get-stdin: 8.0.0
+    deprecated: 'This is a stub types definition. get-stdin provides its own type definitions, so you do not need this installed.'
+    dev: false
+    resolution:
+      integrity: sha512-kiDwIsKQvsLRvtBOnasij+6eChbCzcUT7OyVvrC5BEOE4QSKbpnwejEp0xND/9sIdOTfiu+BBl3zsB16MJ3Fww==
   /@types/node/14.6.2:
     dev: false
     resolution:
@@ -180,6 +190,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
+  /exec-once/0.1.8:
+    dependencies:
+      '@types/node': 14.6.2
+      tslib: 2.0.1
+    dev: false
+    resolution:
+      integrity: sha512-zv8nmN+jF366nAEuNgOh5U2owy5MMkv+N1LCp1utCH63ujSXr92H3x2lDR+Mstm9xNmXNlo45W/Ch+TrN1jAdw==
   /exit-on-epipe/1.0.1:
     dev: false
     engines:
@@ -212,6 +229,12 @@ packages:
       node: 6.* || 8.* || >= 10.*
     resolution:
       integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
+  /get-stdin/8.0.0:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-sY22aA6xchAzprjyqmSEQv4UbAAzRN0L2dQB0NlN5acTTK9Don6nhoc3eAbUnpZiCANAMfd/+40kVdKfFygohg==
   /graceful-fs/4.2.4:
     dev: false
     resolution:
@@ -522,9 +545,12 @@ specifiers:
   '@khai96x/srcinfo': ^0.0.4
   '@tsfun/result': ^0.0.20
   '@types/fs-extra': ^9.0.1
+  '@types/get-stdin': ^7.0.0
   '@types/node': ^14.6.2
   '@types/yargs': ^15.0.5
+  exec-once: ^0.1.8
   fs-extra: ^9.0.1
+  get-stdin: ^8.0.0
   isomorphic-git: ^1.7.4
   iter-tools: ^6.2.6
   tslib: ^2.0.1

@@ -20,6 +20,7 @@
   "module": "index.mjs",
   "browser": "index.mjs",
   "bin": {
+    "porcelain-git-status-to-json": "./bin/porcelain-git-status-to-json",
     "browse-git-files": "./bin/browse-git-files",
     "git-browse-files": "./bin/browse-git-files",
     "git-sk": "./bin/git-sk",
@@ -31,11 +32,14 @@
     "iter-tools": "^6.2.6",
     "isomorphic-git": "^1.7.4",
     "fs-extra": "^9.0.1",
+    "get-stdin": "^8.0.0",
     "yargs": "^15.4.1",
+    "exec-once": "^0.1.8",
     "@tsfun/result": "^0.0.20",
     "@khai96x/srcinfo": "^0.0.4",
     "tslib": "^2.0.1",
     "@types/fs-extra": "^9.0.1",
+    "@types/get-stdin": "^7.0.0",
     "@types/yargs": "^15.0.5",
     "@types/node": "^14.6.2"
   }

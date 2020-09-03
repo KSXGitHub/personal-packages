@@ -3,6 +3,7 @@ import { SpawnOptions, spawn } from 'child_process'
 import { cwd, exit } from 'process'
 import { pipe, asyncMap, asyncFlat, asyncSplitLines, asyncFilter, asyncConcat } from 'iter-tools'
 import { pathExists } from 'fs-extra'
+import { parsePorcelainStatus } from './parse-porcelain-status'
 
 const spawnOptions: SpawnOptions = {
   stdio: ['pipe', 'pipe', 'inherit'],
@@ -26,26 +27,13 @@ export function gitLsFiles() {
   return lines(cp.stdout!)
 }
 
-export interface GitStatus {
-  readonly status: string
-  readonly name: string
-}
-
-const PORCELAIN_STATUS_REGEX = /^(?<status>..) (?<name>.*)$/
-
-export function parsePorcelainLine(line: string): GitStatus | null {
-  const result = PORCELAIN_STATUS_REGEX.exec(line)
-  if (!result) return null
-  return result.groups as any
-}
-
 export async function* gitStatus() {
   const cp = spawn('git', ['status', '--porcelain=v1'], spawnOptions)
   yield* pipe(
     cp.stdout!,
     lines,
-    asyncMap(parsePorcelainLine),
-    asyncFilter((status): status is GitStatus => status !== null),
+    asyncFilter(line => Boolean(line)),
+    asyncMap(parsePorcelainStatus),
   )
 }
 
@@ -59,12 +47,12 @@ export async function findRepoRoot() {
   return current
 }
 
-export async function* untrackedFiles() {
+export async function* changedFiles() {
   const prefix = path.relative(await findRepoRoot(), cwd())
 
   yield* pipe(
     gitStatus(),
-    asyncMap(status => status.name),
+    asyncMap(status => status.path),
     asyncFilter(name => name.startsWith(prefix)),
     asyncMap(name => path.relative(prefix, name)),
   )
@@ -83,7 +71,7 @@ export function main(param: Param): Promise<number> {
 
   const inputLines = asyncConcat(
     gitLsFiles(),
-    untracked ? untrackedFiles() : [],
+    untracked ? changedFiles() : [],
   )
 
   const [program, ...args] = fuzzyFinder.split(/\s+/).filter(Boolean)
