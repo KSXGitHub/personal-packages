@@ -1,40 +1,18 @@
 import path from 'path'
 import { SpawnOptions, spawn } from 'child_process'
 import { cwd, exit } from 'process'
-import { pipe, asyncMap, asyncFlat, asyncSplitLines, asyncFilter, asyncConcat } from 'iter-tools'
+import { pipe, asyncMap, asyncFilter, asyncConcat } from 'iter-tools'
 import { pathExists } from 'fs-extra'
-import { parsePorcelainStatus } from './parse-porcelain-status'
+import lines from './utils/lines'
+import gitStatus from './git-status'
 
 const spawnOptions: SpawnOptions = {
   stdio: ['pipe', 'pipe', 'inherit'],
 }
 
-interface Chunk {
-  toString(): string
-}
-
-export async function* lines(chunks: AsyncIterable<Chunk>) {
-  yield* pipe(
-    chunks,
-    asyncMap(String),
-    asyncFlat(1),
-    asyncSplitLines,
-  )
-}
-
 export function gitLsFiles() {
   const cp = spawn('git', ['ls-files'], spawnOptions)
   return lines(cp.stdout!)
-}
-
-export async function* gitStatus() {
-  const cp = spawn('git', ['status', '--porcelain=v1'], spawnOptions)
-  yield* pipe(
-    cp.stdout!,
-    lines,
-    asyncFilter(line => Boolean(line)),
-    asyncMap(parsePorcelainStatus),
-  )
 }
 
 export async function findRepoRoot() {
