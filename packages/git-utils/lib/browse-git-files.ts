@@ -47,7 +47,7 @@ export async function findRepoRoot() {
   return current
 }
 
-export async function* untrackedFiles() {
+export async function* changedFiles() {
   const prefix = path.relative(await findRepoRoot(), cwd())
 
   yield* pipe(
@@ -71,7 +71,7 @@ export function main(param: Param): Promise<number> {
 
   const inputLines = asyncConcat(
     gitLsFiles(),
-    untracked ? untrackedFiles() : [],
+    untracked ? changedFiles() : [],
   )
 
   const [program, ...args] = fuzzyFinder.split(/\s+/).filter(Boolean)
