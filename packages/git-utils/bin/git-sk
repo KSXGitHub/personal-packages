@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-require('../lib/browse-git-files').program('sk').catch(error => {
+require('../lib/browse-git-files').browseGitFilesProgram('sk').catch(error => {
   console.error(error)
   require('process').exit(1)
 })

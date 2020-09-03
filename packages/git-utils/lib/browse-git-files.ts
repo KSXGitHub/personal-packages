@@ -41,7 +41,7 @@ export interface Param {
   readonly untracked: boolean
 }
 
-export function main(param: Param): Promise<number> {
+export function browseGitFiles(param: Param): Promise<number> {
   const {
     fuzzyFinder,
     untracked,
@@ -67,7 +67,7 @@ export function main(param: Param): Promise<number> {
   })
 }
 
-export async function program(defaultFuzzyFinder?: string) {
+export async function browseGitFilesProgram(defaultFuzzyFinder?: string) {
   const { default: yargs } = await import('yargs')
 
   const param: Param = yargs
@@ -86,6 +86,6 @@ export async function program(defaultFuzzyFinder?: string) {
     .help()
     .argv
 
-  const status = await main(param)
+  const status = await browseGitFiles(param)
   return exit(status)
 }

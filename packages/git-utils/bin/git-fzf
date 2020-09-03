@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-require('../lib/browse-git-files').program('fzf').catch(error => {
+require('../lib/browse-git-files').browseGitFilesProgram('fzf').catch(error => {
   console.error(error)
   require('process').exit(1)
 })
