@@ -32,6 +32,7 @@
     "isomorphic-git": "^1.7.4",
     "fs-extra": "^9.0.1",
     "yargs": "^15.4.1",
+    "exec-once": "^0.1.8",
     "@tsfun/result": "^0.0.20",
     "@khai96x/srcinfo": "^0.0.4",
     "tslib": "^2.0.1",
