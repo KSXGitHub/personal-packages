@@ -36,12 +36,7 @@ export async function* changedFiles() {
   )
 }
 
-export interface Param {
-  readonly fuzzyFinder: string
-  readonly untracked: boolean
-}
-
-export function browseGitFiles(param: Param): Promise<number> {
+export function browseGitFiles(param: browseGitFiles.Param): Promise<number> {
   const {
     fuzzyFinder,
     untracked,
@@ -67,10 +62,17 @@ export function browseGitFiles(param: Param): Promise<number> {
   })
 }
 
+export namespace browseGitFiles {
+  export interface Param {
+    readonly fuzzyFinder: string
+    readonly untracked: boolean
+  }
+}
+
 export async function browseGitFilesProgram(defaultFuzzyFinder?: string) {
   const { default: yargs } = await import('yargs')
 
-  const param: Param = yargs
+  const param: browseGitFiles.Param = yargs
     .option('fuzzyFinder', {
       alias: ['P'],
       type: 'string',
