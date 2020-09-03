@@ -24,7 +24,7 @@ describe('parsePorcelainStatusValue', () => {
   it('success', () => {
     expect(
       ['??', ' M', ' D', 'A ', 'M ', 'D ', 'AD', 'AM', 'MD']
-        .map(parsePorcelainStatusValue)
+        .map(parsePorcelainStatusValue),
     ).toMatchSnapshot()
   })
 
