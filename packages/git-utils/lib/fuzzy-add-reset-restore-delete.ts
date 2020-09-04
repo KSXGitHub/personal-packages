@@ -231,3 +231,90 @@ export function fuzzyDelete(param: fuzzyDelete.Param) {
 export namespace fuzzyDelete {
   export type Param = fuzzyRestoreDelete.CustomizedParam<'deleteCommand'>
 }
+
+async function yargsPrefix(defaultAction: 'log' | 'execute') {
+  const { default: yargs } = await import('yargs')
+  return yargs
+    .option('fuzzyFinder', {
+      alias: ['P'],
+      type: 'string',
+      describe: 'Command to spawn fuzzy finder',
+      default: 'sk',
+    })
+    .option('action', {
+      alias: ['x'],
+      choices: ['log', 'execute'],
+      describe: 'Whether to log the command or to execute it',
+      default: defaultAction,
+    })
+}
+
+function yargsPrefix1() {
+  return yargsPrefix('execute')
+}
+
+async function yargsPrefix2() {
+  return (await yargsPrefix('log'))
+    .option('noConfirm', {
+      alias: ['y'],
+      type: 'boolean',
+      describe: 'Proceed final action without user answering yes/no question',
+      default: false,
+    })
+}
+
+export async function fuzzyAddProgram() {
+  const param: fuzzyAdd.Param = (await yargsPrefix1())
+    .option('addCommand', {
+      type: 'string',
+      describe: 'Substitute to `git add` command',
+      default: 'git add -v --',
+    })
+    .env('GIT_FUZZY')
+    .help()
+    .argv
+
+  return fuzzyAdd(param)
+}
+
+export async function fuzzyResetProgram() {
+  const param: fuzzyReset.Param = (await yargsPrefix1())
+    .option('resetCommand', {
+      type: 'string',
+      describe: 'Substitute to `git add` command',
+      default: 'git reset --',
+    })
+    .env('GIT_FUZZY')
+    .help()
+    .argv
+
+  return fuzzyReset(param)
+}
+
+export async function fuzzyRestoreProgram() {
+  const param: fuzzyRestore.Param = (await yargsPrefix2())
+    .option('restoreCommand', {
+      type: 'string',
+      describe: 'Substitute to `git restore` command',
+      default: 'git restore --',
+    })
+    .env('GIT_FUZZY')
+    .help()
+    .argv
+
+  return fuzzyRestore(param)
+}
+
+export async function fuzzyDeleteProgram() {
+  const param: fuzzyDelete.Param = (await yargsPrefix2())
+    .option('deleteCommand', {
+      type: 'string',
+      describe: 'Substitute to `git restore` command',
+      default: 'rm -v --',
+    })
+    .env('GIT_FUZZY')
+    .help()
+    .argv
+
+  return fuzzyDelete(param)
+}
