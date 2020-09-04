@@ -120,7 +120,7 @@ namespace fuzzyAddReset {
 
   export type CustomizedParam<CommandField extends string> =
     & Pick<Param, 'fuzzyFinder' | 'action'>
-    & Record<CommandField, string>
+    & Readonly<Record<CommandField, string>>
 }
 
 export function fuzzyAdd(param: fuzzyAdd.Param) {
@@ -147,4 +147,87 @@ export function fuzzyReset(param: fuzzyReset.Param) {
 
 export namespace fuzzyReset {
   export type Param = fuzzyAddReset.CustomizedParam<'resetCommand'>
+}
+
+export async function fuzzyRestoreDelete(param: fuzzyRestoreDelete.Param) {
+  const {
+    fuzzyFinder,
+    command,
+    action,
+    noConfirm,
+    when,
+    question,
+  } = param
+
+  const selectionResult = await fuzzySelectChange({
+    fuzzyFinder,
+    when,
+  })
+
+  switch (selectionResult.tag) {
+    case 'NonZeroReturn':
+      return selectionResult.cpStatus
+    case 'EmptyStdout':
+      console.error(selectionResult.message)
+      return 2
+    case 'Success':
+      break
+  }
+
+  const suffix = selectionResult.gitStatus.map(status => status.path)
+
+  if (!noConfirm) {
+    const { askYesNo } = await import('./utils/ask-yes-no')
+    console.error(`targets (${suffix.length})`, suffix)
+    const userConfirmation = await askYesNo(question)
+    if (!userConfirmation) {
+      console.error('action aborted by user')
+      return 3
+    }
+  }
+
+  return actionDict[action](command, suffix)
+}
+
+export namespace fuzzyRestoreDelete {
+  export interface Param {
+    readonly fuzzyFinder: string
+    readonly command: string
+    readonly action: 'log' | 'execute'
+    readonly noConfirm: boolean
+    readonly when: (status: Status) => boolean
+    readonly question: string
+  }
+
+  export type CustomizedParam<CommandField extends string> =
+    & Pick<Param, 'fuzzyFinder' | 'action' | 'noConfirm'>
+    & Readonly<Record<CommandField, string>>
+}
+
+export function fuzzyRestore(param: fuzzyRestore.Param) {
+  const { restoreCommand, ...rest } = param
+  return fuzzyRestoreDelete({
+    command: restoreCommand,
+    question: 'Proceed with restoration?',
+    when: ({ value }) => value.plain !== '??' && value.unstaged !== ' ',
+    ...rest,
+  })
+}
+
+export namespace fuzzyRestore {
+  export type Param = fuzzyRestoreDelete.CustomizedParam<'restoreCommand'>
+}
+
+export function fuzzyDelete(param: fuzzyDelete.Param) {
+  const { restoreCommand, ...rest } = param
+  return fuzzyRestoreDelete({
+    command: restoreCommand,
+    question: 'Proceed with deletion?',
+    when: status => status.value.plain === '??',
+    ...rest,
+  })
+}
+
+export namespace fuzzyDelete {
+  export type Param = fuzzyRestoreDelete.CustomizedParam<'restoreCommand'>
 }
