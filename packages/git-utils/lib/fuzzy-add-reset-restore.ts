@@ -119,7 +119,8 @@ namespace fuzzyAddReset {
   }
 
   export type CustomizedParam<CommandField extends string> =
-    Pick<Param, 'fuzzyFinder' | 'action'> & Record<CommandField, string>
+    & Pick<Param, 'fuzzyFinder' | 'action'>
+    & Record<CommandField, string>
 }
 
 export function fuzzyAdd(param: fuzzyAdd.Param) {
