@@ -23,6 +23,10 @@
     "porcelain-git-status-to-json": "./bin/porcelain-git-status-to-json",
     "browse-git-files": "./bin/browse-git-files",
     "git-browse-files": "./bin/browse-git-files",
+    "git-fuzzy-add": "./bin/git-fuzzy-add",
+    "git-fuzzy-reset": "./bin/git-fuzzy-reset",
+    "git-fuzzy-restore": "./bin/git-fuzzy-restore",
+    "git-fuzzy-delete": "./bin/git-fuzzy-delete",
     "git-sk": "./bin/git-sk",
     "git-fzf": "./bin/git-fzf",
     "git-set-aur": "./bin/git-set-aur"

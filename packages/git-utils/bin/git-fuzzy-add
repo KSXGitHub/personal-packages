@@ -1,0 +1,5 @@
+#! /usr/bin/env node
+require('../lib/fuzzy-add-reset-restore-delete').fuzzyAddProgram().catch(error => {
+  console.error(error)
+  return require('process').exit(1)
+})
