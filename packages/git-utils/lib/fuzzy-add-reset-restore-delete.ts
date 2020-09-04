@@ -5,6 +5,13 @@ import { trimNewLinesEnd } from './utils/trim-lf'
 import gitStatus from './git-status'
 import { Status, parsePorcelainStatus } from './parse-porcelain-status'
 
+const enum ExitStatusCode {
+  Success = 0,
+  GenericFailure = 1,
+  EmptyStdout = 2,
+  UserCancellation = 3,
+}
+
 export async function fuzzySelectChange(param: fuzzySelectChange.Param): Promise<fuzzySelectChange.Return> {
   const {
     fuzzyFinder,
@@ -101,7 +108,7 @@ async function fuzzyAddReset(param: fuzzyAddReset.Param) {
       return selectionResult.cpStatus
     case 'EmptyStdout':
       console.error(selectionResult.message)
-      return 2
+      return ExitStatusCode.EmptyStdout
     case 'Success':
       break
   }
@@ -169,7 +176,7 @@ export async function fuzzyRestoreDelete(param: fuzzyRestoreDelete.Param) {
       return selectionResult.cpStatus
     case 'EmptyStdout':
       console.error(selectionResult.message)
-      return 2
+      return ExitStatusCode.EmptyStdout
     case 'Success':
       break
   }
@@ -182,7 +189,7 @@ export async function fuzzyRestoreDelete(param: fuzzyRestoreDelete.Param) {
     const userConfirmation = await askYesNo(question)
     if (!userConfirmation) {
       console.error('action aborted by user')
-      return 3
+      return ExitStatusCode.UserCancellation
     }
   }
 
