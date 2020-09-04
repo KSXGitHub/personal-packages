@@ -1,8 +1,10 @@
+import { relative } from 'path'
 import { spawn, spawnSync } from 'child_process'
-import { exit } from 'process'
+import { cwd, exit } from 'process'
 import { pipe, asyncFilter, asyncMap } from 'iter-tools'
 import shellEscape from 'shell-escape'
 import { trimNewLinesEnd } from './utils/trim-lf'
+import findRepoRoot from './find-repo-root'
 import gitStatus from './git-status'
 import { Status, parsePorcelainStatus } from './parse-porcelain-status'
 
@@ -19,10 +21,14 @@ export async function fuzzySelectChange(param: fuzzySelectChange.Param): Promise
     when,
   } = param
 
+  const repoRoot = await findRepoRoot()
+  const prefix = relative(repoRoot, cwd())
+
   const inputLines = pipe(
     gitStatus(),
     asyncFilter(when),
-    asyncMap(status => status.plain),
+    asyncFilter(status => status.path.startsWith(prefix)),
+    asyncMap(({ path, value }) => value.plain + ' ' + relative(prefix, path)),
   )
 
   const [fuzzyFinderProgram, ...fuzzyFinderArgs] = fuzzyFinder.split(/\s+/).filter(Boolean)
