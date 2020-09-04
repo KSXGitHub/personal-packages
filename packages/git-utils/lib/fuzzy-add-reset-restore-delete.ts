@@ -251,7 +251,7 @@ async function yargsPrefix(defaultAction: 'log' | 'execute') {
       alias: ['P'],
       type: 'string',
       describe: 'Command to spawn fuzzy finder',
-      default: 'sk',
+      default: 'sk --multi',
     })
     .option('action', {
       alias: ['x'],
