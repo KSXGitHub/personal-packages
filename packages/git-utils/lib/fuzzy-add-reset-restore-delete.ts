@@ -186,7 +186,11 @@ export async function fuzzyRestoreDelete(param: fuzzyRestoreDelete.Param) {
 
   if (!noConfirm) {
     const { askYesNo } = await import('./utils/ask-yes-no')
-    console.error(`targets (${suffix.length})`, suffix)
+    if (suffix.length === 1) {
+      console.error('target:', suffix[0])
+    } else {
+      console.error(`targets (${suffix.length})`, suffix)
+    }
     const userConfirmation = await askYesNo(question)
     if (!userConfirmation) {
       console.error('action aborted by user')
