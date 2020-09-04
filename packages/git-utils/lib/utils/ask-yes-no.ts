@@ -8,7 +8,7 @@ export function askYesNo(question: string): Promise<boolean> {
   })
 
   return new Promise((resolve, reject) => {
-    rl.question(`${question} [Y/n]`, async answer => {
+    rl.question(`${question} [Y/n] `, async answer => {
       rl.close()
 
       answer = answer.trim().toLowerCase()
