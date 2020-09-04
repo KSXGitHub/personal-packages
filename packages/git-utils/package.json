@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/git-utils",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Convenient git subcommands",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
