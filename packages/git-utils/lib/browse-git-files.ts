@@ -2,8 +2,8 @@ import path from 'path'
 import { SpawnOptions, spawn } from 'child_process'
 import { cwd, exit } from 'process'
 import { pipe, asyncMap, asyncFilter, asyncConcat } from 'iter-tools'
-import { pathExists } from 'fs-extra'
 import lines from './utils/lines'
+import findRepoRoot from './find-repo-root'
 import gitStatus from './git-status'
 
 const spawnOptions: SpawnOptions = {
@@ -13,16 +13,6 @@ const spawnOptions: SpawnOptions = {
 export function gitLsFiles() {
   const cp = spawn('git', ['ls-files'], spawnOptions)
   return lines(cp.stdout!)
-}
-
-export async function findRepoRoot() {
-  let current = cwd()
-  while (!await pathExists(path.resolve(current, '.git'))) {
-    const parent = path.dirname(current)
-    if (parent === current) throw new Error('Not a git repo')
-    current = parent
-  }
-  return current
 }
 
 export async function* changedFiles() {
