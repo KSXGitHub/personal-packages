@@ -219,9 +219,9 @@ export namespace fuzzyRestore {
 }
 
 export function fuzzyDelete(param: fuzzyDelete.Param) {
-  const { restoreCommand, ...rest } = param
+  const { deleteCommand, ...rest } = param
   return fuzzyRestoreDelete({
-    command: restoreCommand,
+    command: deleteCommand,
     question: 'Proceed with deletion?',
     when: status => status.value.plain === '??',
     ...rest,
@@ -229,5 +229,5 @@ export function fuzzyDelete(param: fuzzyDelete.Param) {
 }
 
 export namespace fuzzyDelete {
-  export type Param = fuzzyRestoreDelete.CustomizedParam<'restoreCommand'>
+  export type Param = fuzzyRestoreDelete.CustomizedParam<'deleteCommand'>
 }
