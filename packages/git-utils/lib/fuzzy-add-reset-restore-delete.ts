@@ -79,7 +79,7 @@ export namespace fuzzySelectChange {
 function executeStringCommand(command: string, suffix: Iterable<string>): number {
   const [program, ...prefix] = command.split(/\s+/).filter(Boolean)
   if (!program) throw new Error('command is empty')
-  const { error, status } = spawnSync(command, [...prefix, ...suffix], { stdio: 'inherit' })
+  const { error, status } = spawnSync(program, [...prefix, ...suffix], { stdio: 'inherit' })
   if (error) throw error
   return status!
 }
