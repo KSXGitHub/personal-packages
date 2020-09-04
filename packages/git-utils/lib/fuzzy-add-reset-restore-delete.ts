@@ -1,4 +1,5 @@
 import { spawn, spawnSync } from 'child_process'
+import { exit } from 'process'
 import { pipe, asyncFilter, asyncMap } from 'iter-tools'
 import shellEscape from 'shell-escape'
 import { trimNewLinesEnd } from './utils/trim-lf'
@@ -281,7 +282,7 @@ export async function fuzzyAddProgram() {
     .help()
     .argv
 
-  return fuzzyAdd(param)
+  return exit(await fuzzyAdd(param))
 }
 
 export async function fuzzyResetProgram() {
@@ -295,7 +296,7 @@ export async function fuzzyResetProgram() {
     .help()
     .argv
 
-  return fuzzyReset(param)
+  return exit(await fuzzyReset(param))
 }
 
 export async function fuzzyRestoreProgram() {
@@ -309,7 +310,7 @@ export async function fuzzyRestoreProgram() {
     .help()
     .argv
 
-  return fuzzyRestore(param)
+  return exit(await fuzzyRestore(param))
 }
 
 export async function fuzzyDeleteProgram() {
@@ -323,5 +324,5 @@ export async function fuzzyDeleteProgram() {
     .help()
     .argv
 
-  return fuzzyDelete(param)
+  return exit(await fuzzyDelete(param))
 }
