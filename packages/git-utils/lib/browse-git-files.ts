@@ -1,40 +1,18 @@
 import path from 'path'
 import { SpawnOptions, spawn } from 'child_process'
 import { cwd, exit } from 'process'
-import { pipe, asyncMap, asyncFlat, asyncSplitLines, asyncFilter, asyncConcat } from 'iter-tools'
+import { pipe, asyncMap, asyncFilter, asyncConcat } from 'iter-tools'
 import { pathExists } from 'fs-extra'
-import { parsePorcelainStatus } from './parse-porcelain-status'
+import lines from './utils/lines'
+import gitStatus from './git-status'
 
 const spawnOptions: SpawnOptions = {
   stdio: ['pipe', 'pipe', 'inherit'],
 }
 
-interface Chunk {
-  toString(): string
-}
-
-export async function* lines(chunks: AsyncIterable<Chunk>) {
-  yield* pipe(
-    chunks,
-    asyncMap(String),
-    asyncFlat(1),
-    asyncSplitLines,
-  )
-}
-
 export function gitLsFiles() {
   const cp = spawn('git', ['ls-files'], spawnOptions)
   return lines(cp.stdout!)
-}
-
-export async function* gitStatus() {
-  const cp = spawn('git', ['status', '--porcelain=v1'], spawnOptions)
-  yield* pipe(
-    cp.stdout!,
-    lines,
-    asyncFilter(line => Boolean(line)),
-    asyncMap(parsePorcelainStatus),
-  )
 }
 
 export async function findRepoRoot() {
@@ -58,12 +36,7 @@ export async function* changedFiles() {
   )
 }
 
-export interface Param {
-  readonly fuzzyFinder: string
-  readonly untracked: boolean
-}
-
-export function main(param: Param): Promise<number> {
+export function browseGitFiles(param: browseGitFiles.Param): Promise<number> {
   const {
     fuzzyFinder,
     untracked,
@@ -89,10 +62,17 @@ export function main(param: Param): Promise<number> {
   })
 }
 
-export async function program(defaultFuzzyFinder?: string) {
+export namespace browseGitFiles {
+  export interface Param {
+    readonly fuzzyFinder: string
+    readonly untracked: boolean
+  }
+}
+
+export async function browseGitFilesProgram(defaultFuzzyFinder?: string) {
   const { default: yargs } = await import('yargs')
 
-  const param: Param = yargs
+  const param: browseGitFiles.Param = yargs
     .option('fuzzyFinder', {
       alias: ['P'],
       type: 'string',
@@ -108,6 +88,6 @@ export async function program(defaultFuzzyFinder?: string) {
     .help()
     .argv
 
-  const status = await main(param)
+  const status = await browseGitFiles(param)
   return exit(status)
 }
