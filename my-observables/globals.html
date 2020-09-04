@@ -126,7 +126,7 @@
 					<div class="tsd-signature tsd-kind-icon">diffs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getStatusDiffObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L54">lib/ac-adapter.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L54">lib/ac-adapter.ts:54</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,8 +136,8 @@
 					<div class="tsd-signature tsd-kind-icon">filter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,7 +147,7 @@
 					<div class="tsd-signature tsd-kind-icon">flat<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -157,7 +157,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Plugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Plugged)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L44">lib/ac-adapter.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L44">lib/ac-adapter.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,7 +167,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>QuPositive<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getQuObservable).to(filter(item &#x3D;&gt; item.updates.length &gt; 0)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L45">lib/pacman.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L45">lib/pacman.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,7 +177,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Diff<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusPairObservable).to(filter(([a, b]) &#x3D;&gt; a !&#x3D;&#x3D; b)).to(map(([a, b]) &#x3D;&gt; new StatusDiff(a, b))).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L39">lib/ac-adapter.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L39">lib/ac-adapter.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -187,7 +187,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getIntervalObservable).to(map(checkStatus)).to(map(x &#x3D;&gt; from(x))).to(mergeAll()).to(filter((x): x is Status &#x3D;&gt; x !&#x3D;&#x3D; &#x27;Unknown&#x27;)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L21">lib/ac-adapter.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L21">lib/ac-adapter.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -197,7 +197,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Status<wbr>Pair<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusObservable).to(pairwise()).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L28">lib/ac-adapter.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L28">lib/ac-adapter.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -207,7 +207,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Unplugged<wbr>Observable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = pipeline(getStatusDiffObservable).to(filter(x &#x3D;&gt; x.newStatus &#x3D;&#x3D;&#x3D; Status.Unplugged)).fn</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L48">lib/ac-adapter.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L48">lib/ac-adapter.ts:48</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -217,8 +217,8 @@
 					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -228,8 +228,8 @@
 					<div class="tsd-signature tsd-kind-icon">merge<wbr>All<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L17">lib/pacman.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -239,7 +239,7 @@
 					<div class="tsd-signature tsd-kind-icon">pairs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getStatusPairObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L53">lib/ac-adapter.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L53">lib/ac-adapter.ts:53</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -249,7 +249,7 @@
 					<div class="tsd-signature tsd-kind-icon">pairwise<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L3">lib/ac-adapter.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -259,7 +259,7 @@
 					<div class="tsd-signature tsd-kind-icon">plugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getPluggedObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L55">lib/ac-adapter.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L55">lib/ac-adapter.ts:55</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -269,7 +269,7 @@
 					<div class="tsd-signature tsd-kind-icon">qu<span class="tsd-signature-symbol">:</span> <a href="globals.html#getquobservable" class="tsd-signature-type">getQuObservable</a><span class="tsd-signature-symbol"> = getQuObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L49">lib/pacman.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L49">lib/pacman.ts:49</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -279,7 +279,7 @@
 					<div class="tsd-signature tsd-kind-icon">qu<wbr>Pos<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getQuPositiveObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L50">lib/pacman.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L50">lib/pacman.ts:50</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -289,7 +289,7 @@
 					<div class="tsd-signature tsd-kind-icon">statuses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getStatusObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L52">lib/ac-adapter.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L52">lib/ac-adapter.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -299,7 +299,7 @@
 					<div class="tsd-signature tsd-kind-icon">unplugged<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = getUnpluggedObservable</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L56">lib/ac-adapter.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L56">lib/ac-adapter.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -316,7 +316,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L17">lib/ac-adapter.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L17">lib/ac-adapter.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -339,7 +339,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/ac-adapter.ts#L10">lib/ac-adapter.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/ac-adapter.ts#L10">lib/ac-adapter.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="enums/status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"Unknown"</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -356,7 +356,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c15ae1f/packages/my-observables/lib/pacman.ts#L28">lib/pacman.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/c5ede48/packages/my-observables/lib/pacman.ts#L28">lib/pacman.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
