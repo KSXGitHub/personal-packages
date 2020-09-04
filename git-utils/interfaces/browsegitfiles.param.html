@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Console | @khai96x/browse-fs-tree — Reference</title>
-	<meta name="description" content="Documentation for @khai96x/browse-fs-tree — Reference">
+	<title>Param | @khai96x/git-utils — Reference</title>
+	<meta name="description" content="Documentation for @khai96x/git-utils — Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@khai96x/browse-fs-tree — Reference</a>
+					<a href="../index.html" class="title">@khai96x/git-utils — Reference</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -54,10 +54,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="console.html">Console</a>
+					<a href="../modules/browsegitfiles.html">browseGitFiles</a>
+				</li>
+				<li>
+					<a href="browsegitfiles.param.html">Param</a>
 				</li>
 			</ul>
-			<h1>Interface Console</h1>
+			<h1>Interface Param</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +71,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Console</span>
+						<span class="target">Param</span>
 					</li>
 				</ul>
 			</section>
@@ -76,39 +79,37 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="console.html#info" class="tsd-kind-icon">info</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="browsegitfiles.param.html#fuzzyfinder" class="tsd-kind-icon">fuzzy<wbr>Finder</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="browsegitfiles.param.html#untracked" class="tsd-kind-icon">untracked</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="info" class="tsd-anchor"></a>
-					<h3>info</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">(</span>msg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/browse-fs-tree/index.ts#L7">index.ts:7</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>msg: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="fuzzyfinder" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> fuzzy<wbr>Finder</h3>
+					<div class="tsd-signature tsd-kind-icon">fuzzy<wbr>Finder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L67">lib/browse-git-files.ts:67</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="untracked" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> untracked</h3>
+					<div class="tsd-signature tsd-kind-icon">untracked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L68">lib/browse-git-files.ts:68</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -118,28 +119,31 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class="current tsd-kind-namespace tsd-is-external">
+						<a href="../modules/browsegitfiles.html">browse<wbr>Git<wbr>Files</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
-						<a href="console.html" class="tsd-kind-icon">Console</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="browsegitfiles.param.html" class="tsd-kind-icon">Param</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="console.html#info" class="tsd-kind-icon">info</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="browsegitfiles.param.html#fuzzyfinder" class="tsd-kind-icon">fuzzy<wbr>Finder</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="browsegitfiles.param.html#untracked" class="tsd-kind-icon">untracked</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="param.html" class="tsd-kind-icon">Param</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../globals.html#main" class="tsd-kind-icon">main</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -149,10 +153,6 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>

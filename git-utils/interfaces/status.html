@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Param | @khai96x/git-utils — Reference</title>
+	<title>Status | @khai96x/git-utils — Reference</title>
 	<meta name="description" content="Documentation for @khai96x/git-utils — Reference">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -54,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="param.html">Param</a>
+					<a href="status.html">Status</a>
 				</li>
 			</ul>
-			<h1>Interface Param</h1>
+			<h1>Interface Status</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Param</span>
+						<a href="base.html" class="tsd-signature-type">Base</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Status</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -79,8 +84,9 @@
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="param.html#fuzzyfinder" class="tsd-kind-icon">fuzzy<wbr>Finder</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="param.html#untracked" class="tsd-kind-icon">untracked</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="status.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="status.html#plain" class="tsd-kind-icon">plain</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="status.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 					</div>
@@ -89,22 +95,33 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="fuzzyfinder" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> fuzzy<wbr>Finder</h3>
-					<div class="tsd-signature tsd-kind-icon">fuzzy<wbr>Finder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="path" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> path</h3>
+					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L74">lib/browse-git-files.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/parse-porcelain-status.ts#L10">lib/parse-porcelain-status.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+					<a name="plain" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> plain</h3>
+					<div class="tsd-signature tsd-kind-icon">plain<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="base.html">Base</a>.<a href="base.html#plain">plain</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/parse-porcelain-status.ts#L5">lib/parse-porcelain-status.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a name="untracked" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> untracked</h3>
-					<div class="tsd-signature tsd-kind-icon">untracked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="value" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> value</h3>
+					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <a href="value.html" class="tsd-signature-type">Value</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L75">lib/browse-git-files.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/parse-porcelain-status.ts#L9">lib/parse-porcelain-status.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,31 +138,43 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="chunk.html" class="tsd-kind-icon">Chunk</a>
+						<a href="base.html" class="tsd-kind-icon">Base</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="gitstatus.html" class="tsd-kind-icon">Git<wbr>Status</a>
+						<a href="chunk.html" class="tsd-kind-icon">Chunk</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-is-external">
-						<a href="param.html" class="tsd-kind-icon">Param</a>
+						<a href="status.html" class="tsd-kind-icon">Status</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="param.html#fuzzyfinder" class="tsd-kind-icon">fuzzy<wbr>Finder</a>
+								<a href="status.html#path" class="tsd-kind-icon">path</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external">
+								<a href="status.html#plain" class="tsd-kind-icon">plain</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-								<a href="param.html#untracked" class="tsd-kind-icon">untracked</a>
+								<a href="status.html#value" class="tsd-kind-icon">value</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="../globals.html#porcelain_status_regex" class="tsd-kind-icon">PORCELAIN_<wbr>STATUS_<wbr>REGEX</a>
+					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="value.html" class="tsd-kind-icon">Value</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#setaur" class="tsd-kind-icon">set<wbr>Aur</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="../globals.html#assertincludes" class="tsd-kind-icon">assert<wbr>Includes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="../globals.html#browsegitfilesprogram" class="tsd-kind-icon">browse<wbr>Git<wbr>Files<wbr>Program</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="../globals.html#changedfiles" class="tsd-kind-icon">changed<wbr>Files</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="../globals.html#findreporoot" class="tsd-kind-icon">find<wbr>Repo<wbr>Root</a>
@@ -160,16 +189,10 @@
 						<a href="../globals.html#lines" class="tsd-kind-icon">lines</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
-						<a href="../globals.html#main" class="tsd-kind-icon">main</a>
+						<a href="../globals.html#parseporcelainstatus" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
-						<a href="../globals.html#parseporcelainline" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Line</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="../globals.html#program" class="tsd-kind-icon">program</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="../globals.html#untrackedfiles" class="tsd-kind-icon">untracked<wbr>Files</a>
+						<a href="../globals.html#parseporcelainstatusvalue" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Status<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-is-external">
 						<a href="../globals.html#spawnoptions" class="tsd-kind-icon">spawn<wbr>Options</a>

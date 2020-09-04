@@ -66,31 +66,38 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section tsd-is-external">
+							<h3>Namespaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-namespace tsd-is-external"><a href="modules/browsegitfiles.html" class="tsd-kind-icon">browse<wbr>Git<wbr>Files</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/base.html" class="tsd-kind-icon">Base</a></li>
 								<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/chunk.html" class="tsd-kind-icon">Chunk</a></li>
-								<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/gitstatus.html" class="tsd-kind-icon">Git<wbr>Status</a></li>
-								<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/param.html" class="tsd-kind-icon">Param</a></li>
+								<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/status.html" class="tsd-kind-icon">Status</a></li>
+								<li class="tsd-kind-interface tsd-is-external"><a href="interfaces/value.html" class="tsd-kind-icon">Value</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-is-external"><a href="globals.html#porcelain_status_regex" class="tsd-kind-icon">PORCELAIN_<wbr>STATUS_<wbr>REGEX</a></li>
 								<li class="tsd-kind-variable"><a href="globals.html#setaur" class="tsd-kind-icon">set<wbr>Aur</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-has-type-parameter tsd-is-external"><a href="globals.html#assertincludes" class="tsd-kind-icon">assert<wbr>Includes</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#browsegitfilesprogram" class="tsd-kind-icon">browse<wbr>Git<wbr>Files<wbr>Program</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#changedfiles" class="tsd-kind-icon">changed<wbr>Files</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#findreporoot" class="tsd-kind-icon">find<wbr>Repo<wbr>Root</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#gitlsfiles" class="tsd-kind-icon">git<wbr>LsFiles</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#gitstatus" class="tsd-kind-icon">git<wbr>Status</a></li>
 								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#lines" class="tsd-kind-icon">lines</a></li>
-								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#main" class="tsd-kind-icon">main</a></li>
-								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#parseporcelainline" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Line</a></li>
-								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#program" class="tsd-kind-icon">program</a></li>
-								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#untrackedfiles" class="tsd-kind-icon">untracked<wbr>Files</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#parseporcelainstatus" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Status</a></li>
+								<li class="tsd-kind-function tsd-is-external"><a href="globals.html#parseporcelainstatusvalue" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Status<wbr>Value</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-external">
@@ -104,29 +111,91 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-external">
-					<a name="porcelain_status_regex" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> PORCELAIN_<wbr>STATUS_<wbr>REGEX</h3>
-					<div class="tsd-signature tsd-kind-icon">PORCELAIN_<wbr>STATUS_<wbr>REGEX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /^(?&lt;status&gt;..) (?&lt;name&gt;.*)$/</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L34">lib/browse-git-files.ts:34</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="setaur" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> set<wbr>Aur</h3>
 					<div class="tsd-signature tsd-kind-icon">set<wbr>Aur<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = require.resolve(&#x27;./bin/git-set-aur&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/index.ts#L1">index.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/index.ts#L1">index.ts:1</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-external">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter tsd-is-external">
+					<a name="assertincludes" class="tsd-anchor"></a>
+					<h3>assert<wbr>Includes</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">assert<wbr>Includes&lt;Value&gt;<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Value</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">asserts</span><span class="tsd-signature-type">value</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Value</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/parse-porcelain-status.ts#L38">lib/parse-porcelain-status.ts:38</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>Value</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+								</li>
+								<li>
+									<h5>array: <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-type">Value</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">asserts</span><span class="tsd-signature-type">value</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Value</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="browsegitfilesprogram" class="tsd-anchor"></a>
+					<h3>browse<wbr>Git<wbr>Files<wbr>Program</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">browse<wbr>Git<wbr>Files<wbr>Program<span class="tsd-signature-symbol">(</span>defaultFuzzyFinder<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L72">lib/browse-git-files.ts:72</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> defaultFuzzyFinder: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
+					<a name="changedfiles" class="tsd-anchor"></a>
+					<h3>changed<wbr>Files</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">changed<wbr>Files<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L28">lib/browse-git-files.ts:28</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
 					<a name="findreporoot" class="tsd-anchor"></a>
 					<h3>find<wbr>Repo<wbr>Root</h3>
@@ -137,7 +206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L52">lib/browse-git-files.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L18">lib/browse-git-files.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -154,7 +223,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L24">lib/browse-git-files.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L13">lib/browse-git-files.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -171,7 +240,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L42">lib/browse-git-files.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/git-status.ts#L6">lib/git-status.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -188,7 +257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L15">lib/browse-git-files.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/utils/lines.ts#L7">lib/utils/lines.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -202,88 +271,48 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
-					<a name="main" class="tsd-anchor"></a>
-					<h3>main</h3>
+					<a name="parseporcelainstatus" class="tsd-anchor"></a>
+					<h3>parse<wbr>Porcelain<wbr>Status</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">main<span class="tsd-signature-symbol">(</span>param<span class="tsd-signature-symbol">: </span><a href="interfaces/param.html" class="tsd-signature-type">Param</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Porcelain<wbr>Status<span class="tsd-signature-symbol">(</span>plain<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/status.html" class="tsd-signature-type">Status</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L78">lib/browse-git-files.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/parse-porcelain-status.ts#L18">lib/parse-porcelain-status.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>param: <a href="interfaces/param.html" class="tsd-signature-type">Param</a></h5>
+									<h5>plain: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/status.html" class="tsd-signature-type">Status</a></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
-					<a name="parseporcelainline" class="tsd-anchor"></a>
-					<h3>parse<wbr>Porcelain<wbr>Line</h3>
+					<a name="parseporcelainstatusvalue" class="tsd-anchor"></a>
+					<h3>parse<wbr>Porcelain<wbr>Status<wbr>Value</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Porcelain<wbr>Line<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/gitstatus.html" class="tsd-signature-type">GitStatus</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Porcelain<wbr>Status<wbr>Value<span class="tsd-signature-symbol">(</span>plain<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/value.html" class="tsd-signature-type">Value</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L36">lib/browse-git-files.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/parse-porcelain-status.ts#L43">lib/parse-porcelain-status.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>line: <span class="tsd-signature-type">string</span></h5>
+									<h5>plain: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="interfaces/gitstatus.html" class="tsd-signature-type">GitStatus</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
-					<a name="program" class="tsd-anchor"></a>
-					<h3>program</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">program<span class="tsd-signature-symbol">(</span>defaultFuzzyFinder<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L104">lib/browse-git-files.ts:104</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> defaultFuzzyFinder: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-external">
-					<a name="untrackedfiles" class="tsd-anchor"></a>
-					<h3>untracked<wbr>Files</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-is-external">
-						<li class="tsd-signature tsd-kind-icon">untracked<wbr>Files<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L62">lib/browse-git-files.ts:62</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncGenerator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/value.html" class="tsd-signature-type">Value</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -296,7 +325,7 @@
 					<div class="tsd-signature tsd-kind-icon">spawn<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L7">lib/browse-git-files.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L9">lib/browse-git-files.ts:9</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-external">
@@ -305,7 +334,7 @@
 						<div class="tsd-signature tsd-kind-icon">stdio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">"pipe"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"inherit"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;pipe&#x27;, &#x27;pipe&#x27;, &#x27;inherit&#x27;]</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/cd24d83/packages/git-utils/lib/browse-git-files.ts#L8">lib/browse-git-files.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/KSXGitHub/personal-packages/blob/522c762/packages/git-utils/lib/browse-git-files.ts#L10">lib/browse-git-files.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -318,24 +347,39 @@
 					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
+					<li class="label tsd-is-external">
+						<span>Externals</span>
+					</li>
+					<li class=" tsd-kind-namespace tsd-is-external">
+						<a href="modules/browsegitfiles.html">browse<wbr>Git<wbr>Files</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-is-external">
+						<a href="interfaces/base.html" class="tsd-kind-icon">Base</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-external">
 						<a href="interfaces/chunk.html" class="tsd-kind-icon">Chunk</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/gitstatus.html" class="tsd-kind-icon">Git<wbr>Status</a>
+						<a href="interfaces/status.html" class="tsd-kind-icon">Status</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-is-external">
-						<a href="interfaces/param.html" class="tsd-kind-icon">Param</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-external">
-						<a href="globals.html#porcelain_status_regex" class="tsd-kind-icon">PORCELAIN_<wbr>STATUS_<wbr>REGEX</a>
+						<a href="interfaces/value.html" class="tsd-kind-icon">Value</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#setaur" class="tsd-kind-icon">set<wbr>Aur</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter tsd-is-external">
+						<a href="globals.html#assertincludes" class="tsd-kind-icon">assert<wbr>Includes</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#browsegitfilesprogram" class="tsd-kind-icon">browse<wbr>Git<wbr>Files<wbr>Program</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-external">
+						<a href="globals.html#changedfiles" class="tsd-kind-icon">changed<wbr>Files</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
 						<a href="globals.html#findreporoot" class="tsd-kind-icon">find<wbr>Repo<wbr>Root</a>
@@ -350,16 +394,10 @@
 						<a href="globals.html#lines" class="tsd-kind-icon">lines</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#main" class="tsd-kind-icon">main</a>
+						<a href="globals.html#parseporcelainstatus" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#parseporcelainline" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Line</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#program" class="tsd-kind-icon">program</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-external">
-						<a href="globals.html#untrackedfiles" class="tsd-kind-icon">untracked<wbr>Files</a>
+						<a href="globals.html#parseporcelainstatusvalue" class="tsd-kind-icon">parse<wbr>Porcelain<wbr>Status<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-is-external">
 						<a href="globals.html#spawnoptions" class="tsd-kind-icon">spawn<wbr>Options</a>
