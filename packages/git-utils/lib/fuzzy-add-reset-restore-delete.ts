@@ -321,7 +321,7 @@ export async function fuzzyDeleteProgram() {
   const param: fuzzyDelete.Param = (await yargsPrefix2())
     .option('deleteCommand', {
       type: 'string',
-      describe: 'Substitute to `git restore` command',
+      describe: 'Substitute to `rm` command',
       default: 'rm -v --',
     })
     .env('GIT_FUZZY')
