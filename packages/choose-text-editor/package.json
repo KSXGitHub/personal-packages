@@ -25,7 +25,7 @@
     "shell-escape": "^0.2.0",
     "jsonschema": "^1.2.6",
     "cosmiconfig": "^7.0.0",
-    "yargs": "^15.4.1",
+    "yargs": "^16.0.0",
     "exec-once": "^0.1.8",
     "string-template-format-inspect": "^0.1.8",
     "@tsfun/option": "^0.0.19",
@@ -38,6 +38,6 @@
     "@types/parse-package-name": "^0.1.0",
     "@types/shell-escape": "^0.2.0",
     "@types/yargs": "^15.0.5",
-    "@types/node": "^14.6.2"
+    "@types/node": "^14.6.4"
   }
 }
