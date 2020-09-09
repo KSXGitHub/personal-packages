@@ -488,7 +488,7 @@ packages:
     resolution:
       integrity: sha512-Ykb00VnWjee855QmeCrDAAmhVagt0T8PMML9WS2YrcU0VtvbeGq02MD7UiWmK6biiVPas6CaXmJNetL4Ye4+ng==
 specifiers:
-  '@khai96x/srcinfo': ^0.0.4
+  '@khai96x/srcinfo': ^0.0.5
   '@tsfun/result': ^0.0.20
   '@types/fs-extra': ^9.0.1
   '@types/get-stdin': ^7.0.0

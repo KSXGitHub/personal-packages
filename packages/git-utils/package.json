@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/git-utils",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Convenient git subcommands",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -41,7 +41,7 @@
     "yargs": "^16.0.0",
     "exec-once": "^0.1.8",
     "@tsfun/result": "^0.0.20",
-    "@khai96x/srcinfo": "^0.0.4",
+    "@khai96x/srcinfo": "^0.0.5",
     "tslib": "^2.0.1",
     "@types/shell-escape": "^0.2.0",
     "@types/fs-extra": "^9.0.1",

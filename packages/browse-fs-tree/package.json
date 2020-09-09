@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/browse-fs-tree",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Use a fuzzy finder program to browse files and directories",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

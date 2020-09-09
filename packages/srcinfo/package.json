@@ -1,6 +1,6 @@
 {
   "name": "@khai96x/srcinfo",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Parsing ArchLinux's .SRCINFO",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

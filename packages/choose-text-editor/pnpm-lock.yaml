@@ -544,7 +544,7 @@ packages:
     resolution:
       integrity: sha512-Ykb00VnWjee855QmeCrDAAmhVagt0T8PMML9WS2YrcU0VtvbeGq02MD7UiWmK6biiVPas6CaXmJNetL4Ye4+ng==
 specifiers:
-  '@khai96x/utils': ^0.0.3
+  '@khai96x/utils': ^0.0.4
   '@tsfun/option': ^0.0.19
   '@tsfun/result': ^0.0.20
   '@types/js-yaml': ^3.12.5
