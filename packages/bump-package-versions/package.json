@@ -30,7 +30,7 @@
   "dependencies": {
     "semver": "^7.3.2",
     "fs-extra": "^9.0.1",
-    "yargs": "^15.4.1",
+    "yargs": "^16.0.0",
     "just-json-type": "^0.1.7",
     "string-template-format-inspect": "^0.1.8",
     "tslib": "^2.0.1",
