@@ -37,7 +37,7 @@
     "iter-tools": "^6.2.6",
     "isomorphic-git": "^1.7.6",
     "fs-extra": "^9.0.1",
-    "get-stdin": "^8.0.0",
+    "get-stdin": "^9.0.0",
     "yargs": "^16.0.0",
     "exec-once": "^0.1.8",
     "@tsfun/result": "^0.0.20",
