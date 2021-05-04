@@ -23,7 +23,7 @@
   "sideEffects": false,
   "dependencies": {
     "yargs": "^17.0.0",
-    "@types/yargs": "^15.0.5",
+    "@types/yargs": "^16.0.0",
     "fs-extra": "^10.0.0",
     "@types/fs-extra": "^9.0.1",
     "tslib": "^2.0.1",

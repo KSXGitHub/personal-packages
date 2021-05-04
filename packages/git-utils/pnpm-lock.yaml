@@ -7,7 +7,7 @@ specifiers:
   '@types/get-stdin': ^7.0.0
   '@types/node': ^14.6.4
   '@types/shell-escape': ^0.2.0
-  '@types/yargs': ^15.0.5
+  '@types/yargs': ^16.0.0
   exec-once: ^0.1.8
   fs-extra: ^10.0.0
   get-stdin: ^9.0.0
@@ -24,7 +24,7 @@ dependencies:
   '@types/get-stdin': 7.0.0
   '@types/node': 14.6.4
   '@types/shell-escape': 0.2.0
-  '@types/yargs': 15.0.5
+  '@types/yargs': 16.0.1
   exec-once: 0.1.8
   fs-extra: 10.0.0
   get-stdin: 9.0.0
@@ -115,8 +115,8 @@ packages:
     resolution: {integrity: sha512-FA/BWv8t8ZWJ+gEOnLLd8ygxH/2UFbAvgEonyfN6yWGLKc7zVjbpl2Y4CTjid9h2RfgPP6SEt6uHwEOply00yw==}
     dev: false
 
-  /@types/yargs/15.0.5:
-    resolution: {integrity: sha512-Dk/IDOPtOgubt/IaevIUbTgV7doaKkoorvOyYM2CMwuDyP89bekI7H4xLIwunNYiK9jhCkmc6pUrJk3cj2AB9w==}
+  /@types/yargs/16.0.1:
+    resolution: {integrity: sha512-x4HABGLyzr5hKUzBC9dvjciOTm11WVH1NWonNjGgxapnTHu5SWUqyqn0zQ6Re0yQU0lsQ6ztLCoMAKDGZflyxA==}
     dependencies:
       '@types/yargs-parser': 15.0.0
     dev: false
