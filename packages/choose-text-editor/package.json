@@ -17,7 +17,7 @@
     "choose-text-editor": "bin/index"
   },
   "dependencies": {
-    "iter-tools": "^6.2.6",
+    "iter-tools": "^7.0.0",
     "which": "^2.0.2",
     "semver": "^7.3.2",
     "js-yaml": "^3.14.0",
