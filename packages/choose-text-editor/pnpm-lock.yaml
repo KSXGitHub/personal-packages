@@ -10,7 +10,7 @@ specifiers:
   '@types/semver': ^7.3.3
   '@types/shell-escape': ^0.2.0
   '@types/which': ^1.3.2
-  '@types/yargs': ^15.0.5
+  '@types/yargs': ^17.0.0
   cosmiconfig: ^7.0.0
   exec-once: ^0.1.8
   iter-tools: ^6.2.6
@@ -34,7 +34,7 @@ dependencies:
   '@types/semver': 7.3.3
   '@types/shell-escape': 0.2.0
   '@types/which': 1.3.2
-  '@types/yargs': 15.0.5
+  '@types/yargs': 17.0.2
   cosmiconfig: 7.0.0
   exec-once: 0.1.8
   iter-tools: 6.2.6
@@ -161,8 +161,8 @@ packages:
     resolution: {integrity: sha512-gCubfBUZ6KxzoibJ+SCUc/57Ms1jz5NjHe4+dI2krNmU5zCPAphyLJYyTOg06ueIyfj+SaCUqmzun7ImlxDcKg==}
     dev: false
 
-  /@types/yargs/15.0.5:
-    resolution: {integrity: sha512-Dk/IDOPtOgubt/IaevIUbTgV7doaKkoorvOyYM2CMwuDyP89bekI7H4xLIwunNYiK9jhCkmc6pUrJk3cj2AB9w==}
+  /@types/yargs/17.0.2:
+    resolution: {integrity: sha512-JhZ+pNdKMfB0rXauaDlrIvm+U7V4m03PPOSVoPS66z8gf+G4Z/UW8UlrVIj2MRQOBzuoEvYtjS0bqYwnpZaS9Q==}
     dependencies:
       '@types/yargs-parser': 13.1.0
     dev: false
