@@ -13,7 +13,7 @@
     "url": "https://github.com/KSXGitHub/personal-packages/issues"
   },
   "dependencies": {
-    "iter-tools": "^6.2.6",
+    "iter-tools": "^7.0.0",
     "advanced-spawn-async": "^0.1.3",
     "@khai96x/interval-observable-universe": "^0.0.7",
     "@khai96x/pacman": "^0.0.6",

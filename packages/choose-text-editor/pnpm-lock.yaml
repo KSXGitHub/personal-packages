@@ -13,7 +13,7 @@ specifiers:
   '@types/yargs': ^15.0.5
   cosmiconfig: ^7.0.0
   exec-once: ^0.1.8
-  iter-tools: ^6.2.6
+  iter-tools: ^7.0.0
   js-yaml: ^3.14.0
   jsonschema: ^1.2.6
   parse-package-name: ^0.1.0
@@ -37,7 +37,7 @@ dependencies:
   '@types/yargs': 15.0.5
   cosmiconfig: 7.0.0
   exec-once: 0.1.8
-  iter-tools: 6.2.6
+  iter-tools: 7.1.2
   js-yaml: 3.14.0
   jsonschema: 1.2.6
   parse-package-name: 0.1.0
@@ -64,17 +64,10 @@ packages:
       js-tokens: 4.0.0
     dev: false
 
-  /@babel/runtime-corejs2/7.7.1:
-    resolution: {integrity: sha512-nlxajcFXWFyrFOyzOkphfby2izqoB9B4a3+rMqG4dBKMaHZUUS3BkgFBIAbNK6s+VOx0vaGJVgaQL0+3oWnxDQ==}
+  /@babel/runtime/7.14.0:
+    resolution: {integrity: sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==}
     dependencies:
-      core-js: 2.6.10
-      regenerator-runtime: 0.13.3
-    dev: false
-
-  /@babel/runtime/7.7.1:
-    resolution: {integrity: sha512-SQ0sS7KUJDvgCI2cpZG0nJygO6002oTbhgSuw4WcocsnbxLwL5Q8I3fqbJdyBAc3uFrWZiR2JomseuxSuci3SQ==}
-    dependencies:
-      regenerator-runtime: 0.13.3
+      regenerator-runtime: 0.13.7
     dev: false
 
   /@tsfun/option/0.0.19:
@@ -235,12 +228,6 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: false
 
-  /core-js/2.6.10:
-    resolution: {integrity: sha512-I39t74+4t+zau64EN1fE5v2W31Adtc/REhzWN+gWRRXg6WH5qAsZm62DHpQ1+Yhe4047T55jvzz7MUqF/dBBlA==}
-    deprecated: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
-    requiresBuild: true
-    dev: false
-
   /cosmiconfig/7.0.0:
     resolution: {integrity: sha512-pondGvTuVYDk++upghXJabWzL6Kxu6f26ljFw64Swq9v6sQPUL3EUlVDV56diOjpCayKihL6hVe8exIACU4XcA==}
     engines: {node: '>=10'}
@@ -250,10 +237,6 @@ packages:
       parse-json: 5.0.0
       path-type: 4.0.0
       yaml: 1.10.0
-    dev: false
-
-  /dequeue/1.0.5:
-    resolution: {integrity: sha1-EPHO8H4yNLIdyzj0v6LWYDSrZ8c=}
     dev: false
 
   /emoji-regex/8.0.0:
@@ -325,16 +308,10 @@ packages:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
     dev: false
 
-  /iter-tools/6.2.6:
-    resolution: {integrity: sha512-DlBSv7cIrM214wYFxyz4vg98BmEpxFTGx37ei/ktYT05shJHoDwz7wuaPx3XhaJi1uGEc5bM+vUBWhm3z6yNIg==}
+  /iter-tools/7.1.2:
+    resolution: {integrity: sha512-pIXrFK1Mnm27janeYar6M1uhHE7eVPLZwo0FC2JxRLM41nJu0lACwQMam9L0ws8EOZl+mn6Vvq/QqObls53l3w==}
     dependencies:
-      '@babel/runtime': 7.7.1
-      '@babel/runtime-corejs2': 7.7.1
-      dequeue: 1.0.5
-      little-ds-toolkit: 1.1.1
-      typescript-tuple: 2.2.1
-      typescript-union: 0.1.2
-      utility-types: 3.9.0
+      '@babel/runtime': 7.14.0
     dev: false
 
   /js-tokens/4.0.0:
@@ -359,10 +336,6 @@ packages:
 
   /lines-and-columns/1.1.6:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
-    dev: false
-
-  /little-ds-toolkit/1.1.1:
-    resolution: {integrity: sha512-Zl5flhnd5W6nhRCyoL1bNlU8M5CWFp6SItMmK4pj39LKgzQD7LGg591OJ0jwDKat7mjHvJVkOyJT+BXOQH4iXw==}
     dev: false
 
   /parent-module/1.0.1:
@@ -392,8 +365,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /regenerator-runtime/0.13.3:
-    resolution: {integrity: sha512-naKIZz2GQ8JWh///G7L3X6LaQUAMp2lvb1rvwwsURe/VXwD6VMfr+/1NuNw3ag8v2kY1aQ/go5SNn79O9JU7yw==}
+  /regenerator-runtime/0.13.7:
+    resolution: {integrity: sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==}
     dev: false
 
   /require-directory/2.1.1:
@@ -460,34 +433,6 @@ packages:
 
   /tslib/2.0.1:
     resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
-    dev: false
-
-  /typescript-compare/0.0.2:
-    resolution: {integrity: sha512-8ja4j7pMHkfLJQO2/8tut7ub+J3Lw2S3061eJLFQcvs3tsmJKp8KG5NtpLn7KcY2w08edF74BSVN7qJS0U6oHA==}
-    dependencies:
-      typescript-logic: 0.0.0
-    dev: false
-
-  /typescript-logic/0.0.0:
-    resolution: {integrity: sha512-zXFars5LUkI3zP492ls0VskH3TtdeHCqu0i7/duGt60i5IGPIpAHE/DWo5FqJ6EjQ15YKXrt+AETjv60Dat34Q==}
-    dev: false
-
-  /typescript-tuple/2.2.1:
-    resolution: {integrity: sha512-Zcr0lbt8z5ZdEzERHAMAniTiIKerFCMgd7yjq1fPnDJ43et/k9twIFQMUYff9k5oXcsQ0WpvFcgzK2ZKASoW6Q==}
-    dependencies:
-      typescript-compare: 0.0.2
-    dev: false
-
-  /typescript-union/0.1.2:
-    resolution: {integrity: sha512-pzfdtUZ8teglF69/dllzgd6yV7ikoszPHVyOkl4WGICRhTJgCTwL3+ZnnF/hvII536VbsNMQfd9GmLBNhtsmgg==}
-    dependencies:
-      typescript-tuple: 2.2.1
-      utility-types: 3.9.0
-    dev: false
-
-  /utility-types/3.9.0:
-    resolution: {integrity: sha512-bUUsGr7NuI1p/6GpDCI/PUCJ1y5KWO4xul8RWOcmUwXSjLoi6WoV9YLNqBF7lH4RRy/jgmhYCE49eM0bnaijMQ==}
-    engines: {node: '>= 4'}
     dev: false
 
   /which/2.0.2:
