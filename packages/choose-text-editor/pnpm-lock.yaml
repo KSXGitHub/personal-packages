@@ -16,7 +16,7 @@ specifiers:
   iter-tools: ^6.2.6
   js-yaml: ^3.14.0
   jsonschema: ^1.2.6
-  parse-package-name: ^0.1.0
+  parse-package-name: ^1.0.0
   semver: ^7.3.2
   shell-escape: ^0.2.0
   string-template-format-inspect: ^0.1.8
@@ -40,7 +40,7 @@ dependencies:
   iter-tools: 6.2.6
   js-yaml: 3.14.0
   jsonschema: 1.2.6
-  parse-package-name: 0.1.0
+  parse-package-name: 1.0.0
   semver: 7.3.2
   shell-escape: 0.2.0
   string-template-format-inspect: 0.1.8
@@ -382,9 +382,8 @@ packages:
       lines-and-columns: 1.1.6
     dev: false
 
-  /parse-package-name/0.1.0:
-    resolution: {integrity: sha1-P0Tdg4/rTCvkvzGLrkR313BrreQ=}
-    engines: {node: '>=4'}
+  /parse-package-name/1.0.0:
+    resolution: {integrity: sha512-kBeTUtcj+SkyfaW4+KBe0HtsloBJ/mKTPoxpVdA57GZiPerREsUWJOhVj9anXweFiJkm5y8FG1sxFZkZ0SN6wg==}
     dev: false
 
   /path-type/4.0.0:
