@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/fs-extra': ^9.0.1
-  '@types/node': ^14.6.4
+  '@types/node': ^16.0.0
   '@types/semver': ^7.3.3
   '@types/yargs': ^15.0.5
   fs-extra: ^10.0.0
@@ -14,7 +14,7 @@ specifiers:
 
 dependencies:
   '@types/fs-extra': 9.0.1
-  '@types/node': 14.6.4
+  '@types/node': 16.11.38
   '@types/semver': 7.3.3
   '@types/yargs': 15.0.5
   fs-extra: 10.0.0
@@ -29,19 +29,15 @@ packages:
   /@types/fs-extra/9.0.1:
     resolution: {integrity: sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==}
     dependencies:
-      '@types/node': 14.6.0
-    dev: false
-
-  /@types/node/14.6.0:
-    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
-    dev: false
-
-  /@types/node/14.6.1:
-    resolution: {integrity: sha512-HnYlg/BRF8uC1FyKRFZwRaCPTPYKa+6I8QiUZFLredaGOou481cgFS4wKRFyKvQtX8xudqkSdBczJHIYSQYKrQ==}
+      '@types/node': 16.11.38
     dev: false
 
   /@types/node/14.6.4:
     resolution: {integrity: sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==}
+    dev: false
+
+  /@types/node/16.11.38:
+    resolution: {integrity: sha512-hjO/0K140An3GWDw2HJfq7gko3wWeznbjXgg+rzPdVzhe198hp4x2i1dgveAOEiFKd8sOilAxzoSJiVv5P/CUg==}
     dev: false
 
   /@types/semver/7.3.3:
@@ -132,7 +128,7 @@ packages:
   /just-json-type/0.1.7:
     resolution: {integrity: sha512-s5SXWxOCMYiDLGyLzyKuFPZAvxwENKA7pN+Tg90eBNtICpxH1/Kt/NcCmyKLkyuGHfyaHQzcG5pkBRRqyLZ1/w==}
     dependencies:
-      '@types/node': 14.6.1
+      '@types/node': 14.6.4
       tslib: 2.0.1
     dev: false
 
@@ -150,14 +146,14 @@ packages:
   /string-template-format-base/0.1.7:
     resolution: {integrity: sha512-ySUoRCuRa6nhwJ6Xcu41VEpvwuDDVVPPqOnEf4P0UG4L860xbvC66YH0xno7dKW2JjN8jX0YstAcGk2q6Z6JzA==}
     dependencies:
-      '@types/node': 14.6.1
+      '@types/node': 14.6.4
       tslib: 2.0.1
     dev: false
 
   /string-template-format-inspect/0.1.8:
     resolution: {integrity: sha512-k3lQNBDZ8o6Q0o9WYXLUgKwDtmn1OpERFJZb4NPwG2MvgDD2iI6+9yDVK66WsyGI90ljF2wh/5KjO0E5tIE1Ig==}
     dependencies:
-      '@types/node': 14.6.1
+      '@types/node': 14.6.4
       string-template-format-base: 0.1.7
       tslib: 2.0.1
     dev: false

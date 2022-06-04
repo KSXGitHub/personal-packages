@@ -2,14 +2,14 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/fs-extra': ^9.0.1
-  '@types/node': ^14.6.4
+  '@types/node': ^16.0.0
   fs-extra: ^10.0.0
   iter-tools: ^6.2.6
   tslib: ^2.0.1
 
 dependencies:
   '@types/fs-extra': 9.0.1
-  '@types/node': 14.6.4
+  '@types/node': 16.11.38
   fs-extra: 10.0.0
   iter-tools: 6.2.6
   tslib: 2.0.1
@@ -32,15 +32,11 @@ packages:
   /@types/fs-extra/9.0.1:
     resolution: {integrity: sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==}
     dependencies:
-      '@types/node': 14.6.0
+      '@types/node': 16.11.38
     dev: false
 
-  /@types/node/14.6.0:
-    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
-    dev: false
-
-  /@types/node/14.6.4:
-    resolution: {integrity: sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==}
+  /@types/node/16.11.38:
+    resolution: {integrity: sha512-hjO/0K140An3GWDw2HJfq7gko3wWeznbjXgg+rzPdVzhe198hp4x2i1dgveAOEiFKd8sOilAxzoSJiVv5P/CUg==}
     dev: false
 
   /core-js/2.6.11:

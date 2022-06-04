@@ -1,26 +1,5 @@
-dependencies:
-  '@khai96x/browse-fs-tree': 'link:../browse-fs-tree'
-  '@khai96x/bump-package-versions': 'link:../bump-package-versions'
-  '@khai96x/choose-text-editor': 'link:../choose-text-editor'
-  '@khai96x/git-utils': 'link:../git-utils'
-  '@khai96x/interval-observable-universe': 'link:../interval-observable-universe'
-  '@khai96x/list-shell-files': 'link:../list-shell-files'
-  '@khai96x/my-observables': 'link:../my-observables'
-  '@khai96x/pacman': 'link:../pacman'
-  '@khai96x/shebang': 'link:../shebang'
-  '@khai96x/srcinfo': 'link:../srcinfo'
-  '@types/node': 14.6.4
-  tslib: 2.0.1
-lockfileVersion: 5.1
-packages:
-  /@types/node/14.6.4:
-    dev: false
-    resolution:
-      integrity: sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
-  /tslib/2.0.1:
-    dev: false
-    resolution:
-      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
+lockfileVersion: 5.3
+
 specifiers:
   '@khai96x/browse-fs-tree': ^0.0.1
   '@khai96x/bump-package-versions': ^0.0.5
@@ -32,5 +11,29 @@ specifiers:
   '@khai96x/pacman': ^0.0.6
   '@khai96x/shebang': ^0.0.3
   '@khai96x/srcinfo': ^0.0.5
-  '@types/node': ^14.6.4
+  '@types/node': ^16.0.0
   tslib: ^2.0.1
+
+dependencies:
+  '@khai96x/browse-fs-tree': link:../browse-fs-tree
+  '@khai96x/bump-package-versions': link:../bump-package-versions
+  '@khai96x/choose-text-editor': link:../choose-text-editor
+  '@khai96x/git-utils': link:../git-utils
+  '@khai96x/interval-observable-universe': link:../interval-observable-universe
+  '@khai96x/list-shell-files': link:../list-shell-files
+  '@khai96x/my-observables': link:../my-observables
+  '@khai96x/pacman': link:../pacman
+  '@khai96x/shebang': link:../shebang
+  '@khai96x/srcinfo': link:../srcinfo
+  '@types/node': 16.11.38
+  tslib: 2.0.1
+
+packages:
+
+  /@types/node/16.11.38:
+    resolution: {integrity: sha512-hjO/0K140An3GWDw2HJfq7gko3wWeznbjXgg+rzPdVzhe198hp4x2i1dgveAOEiFKd8sOilAxzoSJiVv5P/CUg==}
+    dev: false
+
+  /tslib/2.0.1:
+    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
+    dev: false

@@ -2,14 +2,14 @@ lockfileVersion: 5.3
 
 specifiers:
   '@tsfun/result': ^0.0.20
-  '@types/node': ^14.6.4
+  '@types/node': ^16.0.0
   '@types/yargs': ^15.0.5
   tslib: ^2.0.1
   yargs: ^17.0.0
 
 dependencies:
   '@tsfun/result': 0.0.20
-  '@types/node': 14.6.4
+  '@types/node': 16.11.38
   '@types/yargs': 15.0.5
   tslib: 2.0.1
   yargs: 17.0.0
@@ -20,14 +20,14 @@ packages:
     resolution: {integrity: sha512-oqmmMHkoD1IXADxtOupJ9JFBcocuToxbSuqMIw3VszZIyvysJ3t9y+LlP+qxo92pOj/GJz4oohhzKBHkaaLqWA==}
     engines: {node: '>= 8.9.0'}
     dependencies:
-      '@types/node': 14.6.0
+      '@types/node': 14.6.4
       tslib: 2.0.1
     dev: false
 
   /@tsfun/prv-types/0.0.10:
     resolution: {integrity: sha512-8QJUR81Zyf9gLhl7llp10bTZ+4WgXBM6LaiKZTmgjmviggFIQobm1hDzirZ9gUMxG1lGtTr4glszSkvuCcSjaA==}
     dependencies:
-      '@types/node': 14.6.0
+      '@types/node': 14.6.4
       tslib: 2.0.1
     dev: false
 
@@ -38,14 +38,14 @@ packages:
       '@tsfun/prv-option-result-common': 0.0.15
       '@tsfun/prv-types': 0.0.10
       '@tsfun/tap': 0.0.14
-      '@types/node': 14.6.0
+      '@types/node': 14.6.4
       tslib: 2.0.1
     dev: false
 
   /@tsfun/tap/0.0.14:
     resolution: {integrity: sha512-hXrhnrFidsbi4zeo6HaiHEMFLcjNTSc4osYps2Py7cgbgwW6nNxcZwRbDlQaMIdvpuQuHFd1+bxhDYQ0C9r6xA==}
     dependencies:
-      '@types/node': 14.6.0
+      '@types/node': 14.6.4
       tslib: 2.0.1
     dev: false
 
@@ -53,12 +53,12 @@ packages:
     resolution: {integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==}
     dev: false
 
-  /@types/node/14.6.0:
-    resolution: {integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==}
-    dev: false
-
   /@types/node/14.6.4:
     resolution: {integrity: sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==}
+    dev: false
+
+  /@types/node/16.11.38:
+    resolution: {integrity: sha512-hjO/0K140An3GWDw2HJfq7gko3wWeznbjXgg+rzPdVzhe198hp4x2i1dgveAOEiFKd8sOilAxzoSJiVv5P/CUg==}
     dev: false
 
   /@types/yargs-parser/15.0.0:
