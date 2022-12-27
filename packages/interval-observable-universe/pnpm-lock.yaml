@@ -1,90 +1,83 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@types/node': ^16.0.0
+  advanced-map-initialized: ^0.0.4
+  rxjs: ^6.6.3
+  tslib: ^2.0.1
+
 dependencies:
-  '@types/node': 14.6.4
+  '@types/node': 16.11.38
   advanced-map-initialized: 0.0.4
   rxjs: 6.6.3
   tslib: 2.0.1
-lockfileVersion: 5.1
+
 packages:
+
   /@types/node/10.14.20:
+    resolution: {integrity: sha512-An+MXSV8CGXz/BO9C1KKsoJ/8WDrvlNUaRMsm2h+IHZuSyQkM8U5bJJkb8ItLKA73VePG/nUK+t+EuW2IWuhsQ==}
     dev: false
-    resolution:
-      integrity: sha512-An+MXSV8CGXz/BO9C1KKsoJ/8WDrvlNUaRMsm2h+IHZuSyQkM8U5bJJkb8ItLKA73VePG/nUK+t+EuW2IWuhsQ==
-  /@types/node/13.1.6:
-    dev: false
-    resolution:
-      integrity: sha512-Jg1F+bmxcpENHP23sVKkNuU3uaxPnsBMW0cLjleiikFKomJQbsn0Cqk2yDvQArqzZN6ABfBkZ0To7pQ8sLdWDg==
+
   /@types/node/13.1.7:
+    resolution: {integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==}
     dev: false
-    resolution:
-      integrity: sha512-HU0q9GXazqiKwviVxg9SI/+t/nAsGkvLDkIdxz+ObejG2nX6Si00TeLqHMoS+a/1tjH7a8YpKVQwtgHuMQsldg==
-  /@types/node/14.6.4:
+
+  /@types/node/16.11.38:
+    resolution: {integrity: sha512-hjO/0K140An3GWDw2HJfq7gko3wWeznbjXgg+rzPdVzhe198hp4x2i1dgveAOEiFKd8sOilAxzoSJiVv5P/CUg==}
     dev: false
-    resolution:
-      integrity: sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
+
   /advanced-map-base/0.0.4:
+    resolution: {integrity: sha512-auTlMKEPMll9I6InsV7XNbDRfTra8u9kBd73/rSe0VuzYFFyAU5mb41wpV8Urs/1CYb+ysE+FetN6zRxfhC0EQ==}
+    engines: {node: '>= 8.9.0'}
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       advanced-map-types: 0.0.4
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-auTlMKEPMll9I6InsV7XNbDRfTra8u9kBd73/rSe0VuzYFFyAU5mb41wpV8Urs/1CYb+ysE+FetN6zRxfhC0EQ==
+
   /advanced-map-initialized/0.0.4:
+    resolution: {integrity: sha512-mvPQ6Q1ZwUZ3Uwseh/8jog/PC2E6OmmpUYir5+eGkBw0eoMYAF880qYL1NTIS9k5jW1NExyV2ADoqVLzZ4pePA==}
+    engines: {node: '>= 8.9.0'}
     dependencies:
       '@types/node': 13.1.7
       advanced-map-base: 0.0.4
       advanced-map-types: 0.0.4
       tslib: 1.10.0
     dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-mvPQ6Q1ZwUZ3Uwseh/8jog/PC2E6OmmpUYir5+eGkBw0eoMYAF880qYL1NTIS9k5jW1NExyV2ADoqVLzZ4pePA==
+
   /advanced-map-types/0.0.4:
+    resolution: {integrity: sha512-1z2ags9Y3SbsvRBsANA60J8HGfWeEOnrFwavN72EIQVCt/iFB6fujjvf8dwER7Xpo7tttPfxWxnLnvCiFHU7hA==}
+    engines: {node: '>= 8.9.0'}
     dependencies:
-      '@types/node': 13.1.6
+      '@types/node': 13.1.7
       tslib: 1.10.0
       typescript-miscellaneous: 0.1.1
     dev: false
-    engines:
-      node: '>= 8.9.0'
-    resolution:
-      integrity: sha512-1z2ags9Y3SbsvRBsANA60J8HGfWeEOnrFwavN72EIQVCt/iFB6fujjvf8dwER7Xpo7tttPfxWxnLnvCiFHU7hA==
+
   /rxjs/6.6.3:
+    resolution: {integrity: sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==}
+    engines: {npm: '>=2.0.0'}
     dependencies:
       tslib: 1.11.1
     dev: false
-    engines:
-      npm: '>=2.0.0'
-    resolution:
-      integrity: sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
+
   /tslib/1.10.0:
+    resolution: {integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==}
     dev: false
-    resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+
   /tslib/1.11.1:
+    resolution: {integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==}
     dev: false
-    resolution:
-      integrity: sha512-aZW88SY8kQbU7gpV19lN24LtXh/yD4ZZg6qieAJDDg+YBsJcSmLGK9QpnUjAKVG/xefmvJGd1WUmfpT/g6AJGA==
+
   /tslib/2.0.1:
+    resolution: {integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==}
     dev: false
-    resolution:
-      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
+
   /typescript-miscellaneous/0.1.1:
+    resolution: {integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==}
+    engines: {node: '>= 8.9.0', typescript: '>= 3.0.0'}
     dependencies:
       '@types/node': 10.14.20
       tslib: 1.10.0
     dev: false
-    engines:
-      node: '>= 8.9.0'
-      typescript: '>= 3.0.0'
-    resolution:
-      integrity: sha512-dyGMilZPOL/qQMlJSWK+SbQyJpf6YZZPmPrbbdHGkAvGUvlhv4kGKTgddXWLxFWHTirR2I0VfD8mSwia3WLGtA==
-specifiers:
-  '@types/node': ^14.6.4
-  advanced-map-initialized: ^0.0.4
-  rxjs: ^6.6.3
-  tslib: ^2.0.1
