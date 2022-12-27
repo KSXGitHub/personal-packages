@@ -21,7 +21,7 @@
     "which": "^2.0.2",
     "semver": "^7.3.2",
     "js-yaml": "^3.14.0",
-    "parse-package-name": "^0.1.0",
+    "parse-package-name": "^1.0.0",
     "shell-escape": "^0.2.0",
     "jsonschema": "^1.2.6",
     "cosmiconfig": "^7.0.0",
