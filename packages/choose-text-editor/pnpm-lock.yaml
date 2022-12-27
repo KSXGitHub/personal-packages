@@ -4,7 +4,7 @@ specifiers:
   '@khai96x/utils': ^0.0.4
   '@tsfun/option': ^0.0.19
   '@tsfun/result': ^0.0.20
-  '@types/js-yaml': ^3.12.5
+  '@types/js-yaml': ^4.0.0
   '@types/node': ^14.6.4
   '@types/parse-package-name': ^0.1.0
   '@types/semver': ^7.3.3
@@ -14,7 +14,7 @@ specifiers:
   cosmiconfig: ^7.0.0
   exec-once: ^0.1.8
   iter-tools: ^6.2.6
-  js-yaml: ^3.14.0
+  js-yaml: ^4.0.0
   jsonschema: ^1.2.6
   parse-package-name: ^0.1.0
   semver: ^7.3.2
@@ -28,7 +28,7 @@ dependencies:
   '@khai96x/utils': link:../utils
   '@tsfun/option': 0.0.19
   '@tsfun/result': 0.0.20
-  '@types/js-yaml': 3.12.5
+  '@types/js-yaml': 4.0.1
   '@types/node': 14.6.4
   '@types/parse-package-name': 0.1.0
   '@types/semver': 7.3.3
@@ -38,7 +38,7 @@ dependencies:
   cosmiconfig: 7.0.0
   exec-once: 0.1.8
   iter-tools: 6.2.6
-  js-yaml: 3.14.0
+  js-yaml: 4.1.0
   jsonschema: 1.2.6
   parse-package-name: 0.1.0
   semver: 7.3.2
@@ -121,8 +121,8 @@ packages:
       tslib: 2.0.1
     dev: false
 
-  /@types/js-yaml/3.12.5:
-    resolution: {integrity: sha512-JCcp6J0GV66Y4ZMDAQCXot4xprYB+Zfd3meK9+INSJeVZwJmHAW30BBEEkPzXswMXuiyReUGOP3GxrADc9wPww==}
+  /@types/js-yaml/4.0.1:
+    resolution: {integrity: sha512-xdOvNmXmrZqqPy3kuCQ+fz6wA0xU5pji9cd1nDrflWaAWtYLLGk5ykW0H6yg5TVyehHP1pfmuuSaZkhP+kspVA==}
     dev: false
 
   /@types/node/14.6.0:
@@ -186,10 +186,8 @@ packages:
       color-convert: 2.0.1
     dev: false
 
-  /argparse/1.0.10:
-    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
-    dependencies:
-      sprintf-js: 1.0.3
+  /argparse/2.0.1:
+    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
     dev: false
 
   /callsites/3.1.0:
@@ -276,12 +274,6 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: false
 
-  /esprima/4.0.1:
-    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
-    engines: {node: '>=4'}
-    hasBin: true
-    dev: false
-
   /esutils/2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
@@ -341,12 +333,11 @@ packages:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: false
 
-  /js-yaml/3.14.0:
-    resolution: {integrity: sha512-/4IbIeHcD9VMHFqDR/gQ7EdZdLimOvW2DdcxFjdyyZ9NsbS+ccrXqVWDtab/lRl5AlUqmpBx8EhPaWR+OtY17A==}
+  /js-yaml/4.1.0:
+    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
     dependencies:
-      argparse: 1.0.10
-      esprima: 4.0.1
+      argparse: 2.0.1
     dev: false
 
   /json-parse-better-errors/1.0.2:
@@ -414,10 +405,6 @@ packages:
 
   /shell-escape/0.2.0:
     resolution: {integrity: sha1-aP0CXrBJC09WegJ/C/IkgLX4QTM=}
-    dev: false
-
-  /sprintf-js/1.0.3:
-    resolution: {integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=}
     dev: false
 
   /string-template-format-base/0.1.7:
